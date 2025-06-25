@@ -1,8 +1,20 @@
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import  AppSidebar  from "./page"; 
+import "@/app/globals.css"; 
+
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-        <div>
-          <main>{children}</main>
-        </div>
+    <SidebarProvider>
+      <AppSidebar />
+      <main>
+        <SidebarTrigger />
+        {children}
+      </main>
+    </SidebarProvider>
   );
 }
