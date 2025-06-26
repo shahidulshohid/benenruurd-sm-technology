@@ -22,7 +22,7 @@ interface InfoCardProps {
     icon: string;
 }
 
-function DashboardChild() {
+function Dashboard() {
     const workflows: WorkflowItem[] = [
         {
             workflow: "Gmail - Email Received",
@@ -301,4 +301,4 @@ function DashboardChild() {
     );
 }
 
-export default DashboardChild;
+export default Dashboard;

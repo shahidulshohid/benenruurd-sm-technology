@@ -179,7 +179,7 @@ export default function AppSidebar() {
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Overview</p>
                 <SidebarMenuItem>
                   <SidebarMenuButton className="bg-[#F7F7F81A] hover:bg-[#F7F7F81A]">
-                    <Link href="/dashboard/dashboardChild">
+                    <Link href="/dashboard/dashboard">
                       <button className="text-sm font-semibold rounded-sm text-white flex items-center gap-2">
                         <CiHome size={20} /> Dashboard
                       </button>
@@ -191,7 +191,7 @@ export default function AppSidebar() {
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Manage</p>
                 {[
                   { label: "Workflow", icon: "/dashboardIcons/workflow.png", href: "/dashboard/workflow" },
-                  { label: "Runs", icon: "/dashboardIcons/runs.png", href: "/dashboard/runs" },
+                  { label: "Runs", icon: "/dashboardIcons/runs.png", href: "/dashboard/runsoverview" },
                   { label: "Integrations", icon: "/dashboardIcons/integration.png", href: "/dashboard/workflow" },
                   { label: "Knowledge", icon: "/dashboardIcons/knowledge.png", href: "/dashboard/workflow" },
                 ].map(({ label, icon, href }) => (
