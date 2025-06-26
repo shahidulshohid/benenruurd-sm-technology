@@ -54,7 +54,6 @@ function DashboardChild() {
                     </Button>
                 </Link>
             </div>
-
             {/* Workflows that needs attention Table Section */}
             <div className='mb-24'>
                 <h3 className="text-xl text-[#22222F] font-semibold mb-3">
@@ -195,6 +194,10 @@ function DashboardChild() {
                         </tbody>
                     </table>
                 </div>
+            </div>
+            {/* Explore  */}
+            <div>
+                
             </div>
         </div>
     );
