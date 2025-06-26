@@ -2,8 +2,9 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import AuthImage from './AuthImage'
 
-function CheckEamilForm() {
+function CheckEmailForm() {
     return (
         <div className="min-h-screen flex flex-col md:flex-row">
             {/* message icon  */}
@@ -33,17 +34,9 @@ function CheckEamilForm() {
             </div>
 
             {/* Right: Image */}
-            <div className="flex flex-1 items-center justify-center bg-[#EEF8FF] px-8">
-                <Image
-                    src="/authenticationImg.png"
-                    width={400}
-                    height={400}
-                    alt="Login Illustration"
-                    className="object-contain w-full h-[900px]"
-                />
-            </div>
+            <AuthImage/>
         </div>
     )
 }
 
-export default CheckEamilForm
+export default CheckEmailForm

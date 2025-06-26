@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { Separator } from "@/components/ui/separator"
+import AuthImage from './AuthImage'
 
 type Inputs = {
     email: string;
@@ -81,7 +82,7 @@ function LoginForm() {
                         <div className='text-center'>
                             <Link href="#" className='text-blue-500'>Forgot your password?</Link>
                         </div>
-                        {/* saperatior  */}
+                        {/* separator  */}
                         <div>
                             <Separator />
                         </div>
@@ -92,17 +93,8 @@ function LoginForm() {
                     </form>
                 </div>
             </div>
-
             {/* Right: Image */}
-            <div className="flex flex-1 items-center justify-center bg-[#EEF8FF] px-8">
-                <Image
-                    src="/authenticationImg.png"
-                    width={400}
-                    height={400}
-                    alt="Login Illustration"
-                    className="object-contain w-full h-[900px]"
-                />
-            </div>
+                <AuthImage/>
         </div>
     )
 }
