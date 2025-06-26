@@ -193,7 +193,7 @@ export default function AppSidebar() {
                   { label: "Workflow", icon: "/dashboardIcons/workflow.png", href: "/dashboard/workflow" },
                   { label: "Runs", icon: "/dashboardIcons/runs.png", href: "/dashboard/runsoverview" },
                   { label: "Integrations", icon: "/dashboardIcons/integration.png", href: "/dashboard/workflow" },
-                  { label: "Knowledge", icon: "/dashboardIcons/knowledge.png", href: "/dashboard/workflow" },
+                  { label: "Knowledge", icon: "/dashboardIcons/knowledge.png", href: "/dashboard/knowledgeoverview" },
                 ].map(({ label, icon, href }) => (
                   <SidebarMenuItem key={label}>
                     <SidebarMenuButton className="hover:bg-transparent hover:text-[#D5D6E2] text-[#D5D6E2]">

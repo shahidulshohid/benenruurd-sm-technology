@@ -58,7 +58,7 @@ const RunsTable = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="w-full px-6 py-4">
       <div className="flex justify-between mb-4 flex-wrap gap-2">
         <h2 className="text-xl font-bold">Runs</h2>
         <div className="flex gap-2 flex-wrap items-center">
