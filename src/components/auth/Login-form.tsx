@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { Separator } from "@/components/ui/separator"
 import AuthImage from './AuthImage'
+import { useRouter } from 'next/navigation'
 
 type Inputs = {
     email: string;
@@ -12,6 +13,7 @@ type Inputs = {
 }
 
 function LoginForm() {
+    const router = useRouter()
     const {
         register,
         handleSubmit,
@@ -20,6 +22,7 @@ function LoginForm() {
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         console.log(data)
+        router.push("/dashboard/dashboard")
     }
 
     return (
@@ -80,7 +83,7 @@ function LoginForm() {
                         </button>
                         {/* forgot password  */}
                         <div className='text-center'>
-                            <Link href="#" className='text-blue-500'>Forgot your password?</Link>
+                            <Link href="/forgotpassword" className='text-blue-500'>Forgot your password?</Link>
                         </div>
                         {/* separator  */}
                         <div>
@@ -88,7 +91,7 @@ function LoginForm() {
                         </div>
                         {/* redirect signup page  */}
                         <div className='text-center'>
-                            <span>Don’t have an account?</span> <Link href="#" className='text-blue-500'>Sign Up</Link>
+                            <span>Don’t have an account?</span> <Link href="/signup" className='text-blue-500'>Sign Up</Link>
                         </div>
                     </form>
                 </div>

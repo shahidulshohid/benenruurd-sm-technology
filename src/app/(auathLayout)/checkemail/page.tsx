@@ -1,11 +1,11 @@
 
-import CheckEamilForm from "@/components/auth/Check-email"
-function CheckEamil() {
+import CheckEmailForm from "@/components/auth/Check-email"
+function CheckEmail() {
   return (
     <div>
-        <CheckEamilForm/>
+        <CheckEmailForm/>
     </div>
   )
 }
 
-export default CheckEamil
+export default CheckEmail

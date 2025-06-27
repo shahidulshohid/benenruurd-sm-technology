@@ -21,7 +21,7 @@ function CheckEmailForm() {
                         </p>
                     </div>
                     <div className="space-y-5">
-                        <Link href="#">
+                        <Link href="/login">
                         <button
                             type="submit"
                             className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
