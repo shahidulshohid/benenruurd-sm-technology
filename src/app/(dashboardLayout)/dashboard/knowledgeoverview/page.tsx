@@ -4,6 +4,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { FiChevronLeft, FiChevronRight, FiSearch } from "react-icons/fi";
 import { MdOutlineDelete } from "react-icons/md";
+import { Dialog } from "@/components/ui/dialog"
+import { DialogCloseContent } from '../../../../components/AddKnoledge-modal';
 
 interface KnowledgeItem {
     id: number;
@@ -112,24 +114,31 @@ const KnowledgePage = () => {
         if (currentPage < totalPages) setCurrentPage(currentPage + 1);
     };
 
+    //add knoledge modal 
+    const [open, setOpen] = useState(false)
+
+
     return (
         <div className="w-full px-6 py-4">
             {/* Header */}
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold">Knowledge</h1>
                 <div className="flex items-center gap-2">
-                    <button className="bg-blue-500 text-white px-4 py-1 rounded-lg">
+                    <button onClick={() => setOpen(true)} className="bg-blue-500 text-white px-4 py-1 rounded-lg">
                         + Add knowledge
                     </button>
+                    <Dialog open={open} onOpenChange={setOpen}>
+                        <DialogCloseContent />
+                    </Dialog>
                     <div className="relative">
-                    <input
-                        type="text"
-                        placeholder="Search knowledge"
-                        className="border border-gray-300 rounded-lg pl-10 pr-3 py-1 text-sm outline-none bg-transparent"
-                        value={searchTerm}
-                        onChange={handleSearch}
-                    />
-                    <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-base" />
+                        <input
+                            type="text"
+                            placeholder="Search knowledge"
+                            className="border border-gray-300 rounded-lg pl-10 pr-3 py-1 text-sm outline-none bg-transparent"
+                            value={searchTerm}
+                            onChange={handleSearch}
+                        />
+                        <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-base" />
                     </div>
                 </div>
             </div>
@@ -187,7 +196,7 @@ const KnowledgePage = () => {
                                 </td>
                                 <td className="px-6 py-2">
                                     <button className="text-red-500 hover:text-red-700">
-                                       <MdOutlineDelete size={20}/>
+                                        <MdOutlineDelete size={20} />
                                     </button>
                                 </td>
                             </tr>
@@ -213,8 +222,8 @@ const KnowledgePage = () => {
                             key={page}
                             onClick={() => handlePageChange(page)}
                             className={`px-3 py-1 text-sm rounded-sm font-medium ${page === currentPage
-                                    ? "border border-gray-300 text-gray-600"
-                                    : "border border-transparent text-gray-800"
+                                ? "border border-gray-300 text-gray-600"
+                                : "border border-transparent text-gray-800"
                                 }`}
                         >
                             {page}
@@ -236,3 +245,12 @@ const KnowledgePage = () => {
 };
 
 export default KnowledgePage;
+
+
+
+
+
+
+
+
+
