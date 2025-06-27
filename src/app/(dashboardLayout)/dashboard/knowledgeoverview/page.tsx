@@ -106,16 +106,8 @@ const KnowledgePage = () => {
         if (page >= 1 && page <= totalPages) setCurrentPage(page);
     };
 
-    const handlePrevious = () => {
-        if (currentPage > 1) setCurrentPage(currentPage - 1);
-    };
-
-    const handleNext = () => {
-        if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-    };
-
-    //add knoledge modal 
-    const [open, setOpen] = useState(false)
+    //add knowledge modal 
+    const [open, setOpen] = useState<boolean>(false)
 
 
     return (

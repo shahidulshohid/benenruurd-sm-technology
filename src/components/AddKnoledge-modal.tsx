@@ -1,57 +1,78 @@
-"use client"
+"use client";
 
 import {
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogClose,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import Image from "next/image"
-import { useRouter } from "next/navigation"
+} from "@/components/ui/dialog";
+import { Separator } from "@/components/ui/separator";
+import { useRouter } from "next/navigation";
+import { FaRegFileAlt } from "react-icons/fa";
+import { IoText } from "react-icons/io5";
+import { MdKeyboardArrowRight } from "react-icons/md";
+
+import { useState } from "react";
+import { DialogDemo } from "./AddText-modal";
 
 export function DialogCloseContent() {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleTextClick = () => {
-    router.push("/your-target-route") // ✅ replace with actual route
-  }
+    router.push("/your-target-route"); // replace with actual route
+  };
+
+
+  
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <DialogContent className="sm:max-w-md">
       <DialogHeader>
-        <DialogTitle className="text-5 font-semibold">Add new knowledge</DialogTitle>
+        <DialogTitle className="text-5 font-semibold">
+          Add new knowledge
+        </DialogTitle>
         <DialogDescription className="text-sm text-[#8588AB]">
-          Sync files and text, and grant the AI access to these sources as knowledge during interactions.
+          Sync files and text, and grant the AI access to these sources as
+          knowledge during interactions.
         </DialogDescription>
       </DialogHeader>
 
       <Separator />
 
       {/* Upload Files Option */}
-      <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded">
-        <Image src="/google.png" width={20} height={20} alt="Files icon" className="border p-1 rounded" />
-        <h4 className="text-sm font-semibold text-[#22222F]">Upload File(s)</h4>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3 cursor-pointer p-2 rounded">
+          <div className="border border-gray-300 p-1.5 rounded text-gray-600">
+            <FaRegFileAlt className="w-4 h-4" />
+          </div>
+          <h4 className="text-sm font-semibold text-[#22222F]">
+            Upload File(s)
+          </h4>
+        </div>
+        <MdKeyboardArrowRight size={20} className="text-gray-500" />
       </div>
 
       {/* Text Redirect Option */}
       <div
-        className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded"
         onClick={handleTextClick}
+        className="flex items-center justify-between"
       >
-        <Image src="/google.png" width={20} height={20} alt="Text icon" className="border p-1 rounded" />
-        <h4 className="text-sm font-semibold text-[#22222F]">Text</h4>
+        <div className="flex items-center gap-3 cursor-pointer p-2 rounded">
+          <div className="border border-gray-300 p-1.5 rounded text-gray-600">
+            <IoText className="w-4 h-4" />
+          </div>
+          <h4 className="text-sm font-semibold text-[#22222F]">Text</h4>
+        </div>
+        <MdKeyboardArrowRight size={20} className="text-gray-500" />
       </div>
-      <DialogFooter className="sm:justify-start">
-        <DialogClose asChild>
-          <Button type="button" variant="secondary">
-            Close
-          </Button>
-        </DialogClose>
-      </DialogFooter>
+      
+
+       <div>
+      <DialogDemo open={open} setOpen={setOpen} />
+    </div>
+
+
     </DialogContent>
-  )
+  );
 }
