@@ -36,6 +36,22 @@ export function DialogCloseContentSetting() {
     { label: "Plan & Billing", icon: IoPlanetSharp, category: "Team" },
   ];
 
+  // dropdown of general
+  const [selectedTimezone, setSelectedTimezone] = useState(
+    "(GMT+02:00) Central European Time (Amsterdam)"
+  );
+
+  const timezones = [
+    "(GMT+02:00) Central European Time (Amsterdam)",
+    "(GMT+06:00) Bangladesh Standard Time (Dhaka)",
+    "(GMT+05:30) India Standard Time (Kolkata)",
+    "(GMT+00:00) Greenwich Mean Time (London)",
+  ];
+
+  const [selectedRole, setSelectedRole] = useState("Admin");
+  const roles = ["Admin", "User", "Moderator", "Guest"];
+  // dropdown members
+
   return (
     <DialogContent className="px-0 py-0 h-[612px] min-w-[840px]">
       <DialogHeader className="h-full">
@@ -332,10 +348,50 @@ export function DialogCloseContentSetting() {
                   )) ||
                   // general
                   (activeItem === "General" && (
-                    <div className="pl-5">
-                      <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
+                    <div>
+                      <h1 className="text-xl pl-5 mb-4 font-semibold text-[#22222F]">
                         General Team Setting
                       </h1>
+                      <div>
+                        <div className="flex justify-between items-center mx-5">
+                          <div>
+                            <h3 className="text-[#22222F] text-sm font-semibold">
+                              Workspace name
+                            </h3>
+                            <p>The name of your workspace</p>
+                          </div>
+                          <div>
+                            <input
+                              type="text"
+                              placeholder="Acme Inc."
+                              className="border px-3 pb-1 rounded-sm pr-46 text-[#22222F] "
+                            />
+                          </div>
+                        </div>
+                        <div className="flex justify-between items-center mx-5 mt-6">
+                          <div>
+                            <h3 className="text-[#22222F] text-sm font-semibold">
+                              Workspace time zone
+                            </h3>
+                            <p>The timezone of your workspace</p>
+                          </div>
+                          <div className="inline-block">
+                            <select
+                              value={selectedTimezone}
+                              onChange={(e) =>
+                                setSelectedTimezone(e.target.value)
+                              }
+                              className="border border-gray-200 rounded-md px-3 pb-1 text-sm focus:outline-none focus:ring-2 focus:ring-gray-200"
+                            >
+                              {timezones.map((tz, idx) => (
+                                <option key={idx} value={tz}>
+                                  {tz}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   )) ||
                   (activeItem === "Members" && (
@@ -343,6 +399,62 @@ export function DialogCloseContentSetting() {
                       <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
                         Team Members
                       </h1>
+                      <div>
+                        <div className="flex justify-between items-center mb-6">
+                          <div className="flex items-center gap-2">
+                            <Image
+                              src="/dashboardIcons/profileImg.png"
+                              width={40}
+                              height={40}
+                              alt="Profile"
+                              className="rounded-full"
+                            />
+                            <div>
+                              <h3 className="text-lg text-[#22222F]">
+                                Ruben Vaalt
+                              </h3>
+                              <p className="text-sm">Acme Inc.</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center border border-gray-300 rounded-md px-2 pb-1 mr-5">
+                            <select
+                              value={selectedRole}
+                              onChange={(e) => setSelectedRole(e.target.value)}
+                              className="text-sm focus:outline-none"
+                            >
+                              {roles.map((role, idx) => (
+                                <option key={idx} value={role}>
+                                  {role}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <div className="flex items-center gap-2">
+                            <div className="w-8 h-8 rounded-full bg-gray-300 text-center">R</div>
+                            <div>
+                              <h3 className="text-lg text-[#22222F]">
+                                Ruben Vaalt
+                              </h3>
+                              <p className="text-sm">Acme Inc.</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center border border-gray-300 rounded-md px-2 pb-1 mr-5">
+                            <select
+                              value={selectedRole}
+                              onChange={(e) => setSelectedRole(e.target.value)}
+                              className="text-sm focus:outline-none"
+                            >
+                              {roles.map((role, idx) => (
+                                <option key={idx} value={role}>
+                                  {role}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   )) ||
                   (activeItem === "Plan & Billing" && (
