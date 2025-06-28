@@ -16,6 +16,7 @@ import { FaGoogleDrive } from "react-icons/fa";
 import { LuCalendarFold } from "react-icons/lu";
 import { IoHandRightOutline } from "react-icons/io5";
 import { MdOutlineWatchLater } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 type Tab = 'editor' | 'runs';
 
@@ -98,7 +99,7 @@ const WorkflowPage = () => {
     </div>
 
           {showTrigger && (
-            <div className='w-1/2 border rounded-lg'>
+            <div className='w-1/2 border rounded-lg mb-6'>
               {/* Cross and title */}
               <div className='p-3 flex items-center justify-between'>
                 <div className='flex items-center gap-2'>
@@ -124,60 +125,110 @@ const WorkflowPage = () => {
               {/* communication */}
                 <h1 className='text-[#8588AB] my-2 px-2 font-semibold'>Communication</h1>
                 <Separator/> 
-                <div className='flex items-center gap-3 py-3 px-2'>
+                <div className='flex justify-between items-center'>
+                  <div className='flex items-center gap-3 py-3 px-2'>
                   <PiSlackLogoLight size={25} className='text-black border rounded p-1'/>
                   <h3 className='font-semibold'>Slack</h3>
+                </div>
+                <div>
+                  <MdKeyboardArrowRight size={30} className='pr-3'/>
+                </div>
                 </div>
                 <Separator />
                 {/* Email */}
                 <h1 className='text-[#8588AB] my-2 px-2 font-semibold'>E-mail</h1>
                 <Separator/> 
-                <div className='flex items-center gap-3 py-3 px-2'>
+                <div className='flex justify-between items-center'>
+                  <div className='flex items-center gap-3 py-3 px-2'>
                   <SiGmail size={25} className='text-black border rounded p-1'/>
                   <h3 className='font-semibold'>Gmail</h3>
                 </div>
+                <div>
+                  <MdKeyboardArrowRight size={30} className='pr-3'/>
+                </div>
+                </div>
+                <Separator/>
                 {/* project management */}
                 <h1 className='text-[#8588AB] my-2 px-2 font-semibold'>Project manangement</h1>
                 <Separator/> 
-                <div className='flex items-center gap-3 py-3 px-2'>
+                <div className='flex justify-between items-center'>
+                  <div className='flex items-center gap-3 py-3 px-2'>
                   <SiNationalrail size={25} className='text-black border rounded p-1'/>
                   <h3 className='font-semibold'>Nation</h3>
                 </div>
-                <div className='flex items-center gap-3 py-3 px-2'>
+                <div>
+                  <MdKeyboardArrowRight size={30} className='pr-3'/>
+                </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <div className='flex items-center gap-3 py-3 px-2'>
                   <SiLinear size={25} className='text-black border rounded p-1'/>
                   <h3 className='font-semibold'>Linear</h3>
                 </div>
-                <div className='flex items-center gap-3 py-3 px-2'>
+                <div>
+                  <MdKeyboardArrowRight size={30} className='pr-3'/>
+                </div>
+                </div>
+                <div className='flex justify-between items-center'>
+                  <div className='flex items-center gap-3 py-3 px-2'>
                   <SiAsana size={25} className='text-black border rounded p-1'/>
                   <h3 className='font-semibold'>Asana</h3>
                 </div>
+                <div>
+                  <MdKeyboardArrowRight size={30} className='pr-3'/>
+                </div>
+                </div>
+                <Separator/>
                 {/* file store */}
                 <h1 className='text-[#8588AB] my-2 px-2 font-semibold'>File Store</h1>
                 <Separator/> 
-                <div className='flex items-center gap-3 py-3 px-2'>
+                <div className='flex justify-between items-center'>
+                  <div className='flex items-center gap-3 py-3 px-2'>
                   <FaGoogleDrive size={25} className='text-black border rounded p-1'/>
                   <h3 className='font-semibold'>Google Drive</h3>
                 </div>
+                <div>
+                  <MdKeyboardArrowRight size={30} className='pr-3'/>
+                </div>
+                </div>
+                <Separator/>
                 {/* calendar */}
                 <h1 className='text-[#8588AB] my-2 px-2 font-semibold'>Calendar</h1>
                 <Separator/> 
-                <div className='flex items-center gap-3 py-3 px-2'>
+                <div className='flex justify-between items-center'>
+                  <div className='flex items-center gap-3 py-3 px-2'>
                   <LuCalendarFold size={25} className='text-black border rounded p-1'/>
                   <h3 className='font-semibold'>Google Calender</h3>
                 </div>
+                <div>
+                  <MdKeyboardArrowRight size={30} className='pr-3'/>
+                </div>
+                </div>
+                <Separator/>
                 {/* manual */}
                 <h1 className='text-[#8588AB] my-2 px-2 font-semibold'>Manual</h1>
                 <Separator/> 
-                <div className='flex items-center gap-3 py-3 px-2'>
+                <div className='flex justify-between items-center'>
+                  <div className='flex items-center gap-3 py-3 px-2'>
                   <IoHandRightOutline size={25} className='text-black border rounded p-1'/>
                   <h3 className='font-semibold'>Start a signle run</h3>
                 </div>
+                <div>
+                  <MdKeyboardArrowRight size={30} className='pr-3'/>
+                </div>
+                </div>
+                <Separator/>
                 {/* secheduled */}
                 <h1 className='text-[#8588AB] my-2 px-2 font-semibold'>secheduled</h1>
                 <Separator/> 
-                <div className='flex items-center gap-3 py-3 px-2'>
+                <div className='flex justify-between items-center'>
+                  <div className='flex items-center gap-3 py-3 px-2'>
                   <MdOutlineWatchLater size={25} className='text-black border rounded p-1'/>
                   <h3 className='font-semibold'>Start a signle run</h3>
+                </div>
+                <div>
+                  <MdKeyboardArrowRight size={30} className='pr-3'/>
+                </div>
                 </div>
             </div>
           )}
