@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -5,7 +6,6 @@ import {
   DialogDescription,
   DialogHeader,
 } from "@/components/ui/dialog";
-import Link from "next/link";
 import { CiHome, CiSearch } from "react-icons/ci";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { GrIntegration } from "react-icons/gr";
@@ -25,11 +25,7 @@ export function DialogCloseContentSetting() {
 
   const menuItems = [
     { label: "Account Details", icon: CiHome, category: "General" },
-    {
-      label: "Notifications",
-      icon: IoMdNotificationsOutline,
-      category: "General",
-    },
+    { label: "Notifications", icon: IoMdNotificationsOutline, category: "General" },
     { label: "Integrations", icon: GrIntegration, category: "General" },
     { label: "General", icon: IoMdNotificationsOutline, category: "Team" },
     { label: "Members", icon: MdOutlineCardMembership, category: "Team" },
@@ -52,7 +48,6 @@ export function DialogCloseContentSetting() {
   const [selectedRole1, setSelectedRole1] = useState<string>("Admin");
   const roles = ["Admin", "User", "Moderator", "Guest"];
   const roles1 = ["Admin", "User", "Moderator", "Guest"];
-  // dropdown members
 
   return (
     <DialogContent className="px-0 py-0 h-[612px] min-w-[840px]">
@@ -61,64 +56,68 @@ export function DialogCloseContentSetting() {
           <div className="flex justify-between h-full rounded-lg">
             {/* Sidebar */}
             <div className="bg-[#ECECF2] w-1/4 p-6 flex flex-col gap-4 h-full">
-              <span className="text-sm font-semibold text-gray-600">
-                General
-              </span>
+              <span className="text-sm font-semibold text-gray-600">General</span>
               <div className="flex flex-col gap-2">
                 {menuItems
                   .filter((item) => item.category === "General")
-                  .map((item) => (
-                    <Link
-                      href="#"
-                      key={item.label}
-                      onClick={() => setActiveItem(item.label)}
-                      className="flex items-center"
-                    >
-                      <item.icon size={15}/>
+                  .map((item) => {
+                    const isActive = activeItem === item.label;
+                    const Icon = item.icon;
+                    return (
                       <button
-                        className={`text-left text-gray-800 px-2 py-1 rounded w-full ${activeItem === item.label
-                            ? "bg-blue-200"
-                            : "hover:bg-gray-200"
+                        key={item.label}
+                        onClick={() => setActiveItem(item.label)}
+                        className={`flex items-center gap-2 w-full px-3 py-2 rounded text-left
+                          ${
+                            isActive
+                              ? "bg-blue-200 text-blue-700 font-semibold"
+                              : "hover:bg-gray-200 text-gray-800"
                           }`}
                       >
-                        {item.label}
+                        <Icon
+                          size={16}
+                          className={isActive ? "text-blue-700" : "text-gray-600"}
+                        />
+                        <span>{item.label}</span>
                       </button>
-                    </Link>
-                  ))}
+                    );
+                  })}
               </div>
 
-              <span className="text-sm font-semibold text-gray-600 mt-4">
-                Team
-              </span>
+              <span className="text-sm font-semibold text-gray-600 mt-4">Team</span>
               <div className="flex flex-col gap-2">
                 {menuItems
                   .filter((item) => item.category === "Team")
-                  .map((item) => (
-                    <Link
-                      href="#"
-                      key={item.label}
-                      onClick={() => setActiveItem(item.label)}
-                      className="flex items-center"
-                    >
-                      <item.icon size={15} />
+                  .map((item) => {
+                    const isActive = activeItem === item.label;
+                    const Icon = item.icon;
+                    return (
                       <button
-                        className={`text-left text-gray-800 px-2 py-1 rounded w-full ${activeItem === item.label
-                            ? "bg-blue-200"
-                            : "hover:bg-gray-200"
+                        key={item.label}
+                        onClick={() => setActiveItem(item.label)}
+                        className={`flex items-center gap-2 w-full px-3 py-2 rounded text-left
+                          ${
+                            isActive
+                              ? "bg-blue-200 text-blue-700 font-semibold"
+                              : "hover:bg-gray-200 text-gray-800"
                           }`}
                       >
-                        {item.label}
+                        <Icon
+                          size={16}
+                          className={isActive ? "text-blue-700" : "text-gray-600"}
+                        />
+                        <span>{item.label}</span>
                       </button>
-                    </Link>
-                  ))}
+                    );
+                  })}
               </div>
             </div>
 
             {/* Main Content Area */}
-            <div className="bg-white flex-1 py-4 -pl-3 h-full">
+            <div className="bg-white flex-1 py-4 -pl-3 h-full overflow-y-auto">
               {
-                // account details
-                (activeItem === "Account Details" && (
+                // Account Details
+                activeItem === "Account Details" ? (
                   <div className="pl-4">
                     <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
                       Account details
@@ -133,9 +132,7 @@ export function DialogCloseContentSetting() {
                           className="rounded-full"
                         />
                         <div>
-                          <h3 className="text-lg text-[#22222F]">
-                            Ruben Vaalt
-                          </h3>
+                          <h3 className="text-lg text-[#22222F]">Ruben Vaalt</h3>
                           <p className="text-sm">Acme Inc.</p>
                         </div>
                       </div>
@@ -148,8 +145,8 @@ export function DialogCloseContentSetting() {
                     </h4>
                     <div className="flex justify-between items-center">
                       <p>
-                        Permanently delete this account and data. This action
-                        can’t be undone!
+                        Permanently delete this account and data. This action can’t be
+                        undone!
                       </p>
                       <Button
                         variant="outline"
@@ -159,9 +156,7 @@ export function DialogCloseContentSetting() {
                       </Button>
                     </div>
                   </div>
-                )) ||
-                // notifications
-                (activeItem === "Notifications" && (
+                ) : activeItem === "Notifications" ? (
                   <div className="pl-5">
                     <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
                       Notifications
@@ -171,30 +166,24 @@ export function DialogCloseContentSetting() {
                         <h4 className="text-[#22222F] font-semibold">
                           Email notifications
                         </h4>
-                        <p>
-                          Receive workflow notifications on your email address
-                        </p>
+                        <p>Receive workflow notifications on your email address</p>
                       </div>
-                      <Switch id="airplane-mode" className="mr-5" />
+                      <Switch id="email-notifications-1" className="mr-5" />
                     </div>
                     <div className="flex justify-between items-center">
                       <div>
                         <h4 className="text-[#22222F] font-semibold">
-                          Email notifications
+                          Mobile notifications
                         </h4>
-                        <p>
-                          Receive workflow notifications on your email address
-                        </p>
+                        <p>Receive workflow notifications on your mobile device</p>
                       </div>
-                      <Switch id="airplane-mode" className="mr-5" />
+                      <Switch id="mobile-notifications-2" className="mr-5" />
                     </div>
                   </div>
-                )) ||
-                // integrations
-                (activeItem === "Integrations" && (
+                ) : activeItem === "Integrations" ? (
                   <div>
                     <h1 className="text-xl pl-5 mb-4 font-semibold text-[#22222F]">
-                      Notifications
+                      Integrations
                     </h1>
                     <div>
                       {/* Search */}
@@ -247,7 +236,7 @@ export function DialogCloseContentSetting() {
                       {/* project management */}
                       <div className="border-t border-b">
                         <h1 className="text-[#8588AB] pl-5 my-2 px-2 font-semibold">
-                          Project manangement
+                          Project management
                         </h1>
                       </div>
                       <div className="flex justify-between items-center pl-3">
@@ -322,7 +311,7 @@ export function DialogCloseContentSetting() {
                             size={25}
                             className="text-black border rounded p-1"
                           />
-                          <h3 className="font-semibold">Google Calender</h3>
+                          <h3 className="font-semibold">Google Calendar</h3>
                         </div>
                         <div>
                           <Button variant="outline" className="mr-5">
@@ -333,10 +322,7 @@ export function DialogCloseContentSetting() {
                       <div className="flex justify-between items-center border-t">
                         <div className="flex items-center gap-2 pl-5 mt-3">
                           <p>Need help? Mail</p>
-                          <p className="text-blue-500">
-                            {" "}
-                            support@namehere.com
-                          </p>
+                          <p className="text-blue-500">support@namehere.com</p>
                         </div>
                         <div className="flex items-center text-blue-500 gap-5 pr-5 mt-3">
                           <p>Privacy Policy</p>
@@ -345,9 +331,7 @@ export function DialogCloseContentSetting() {
                       </div>
                     </div>
                   </div>
-                )) ||
-                // general
-                (activeItem === "General" && (
+                ) : activeItem === "General" ? (
                   <div>
                     <h1 className="text-xl pl-5 mb-4 font-semibold text-[#22222F]">
                       General Team Setting
@@ -378,9 +362,7 @@ export function DialogCloseContentSetting() {
                         <div className="inline-block">
                           <select
                             value={selectedTimezone}
-                            onChange={(e) =>
-                              setSelectedTimezone(e.target.value)
-                            }
+                            onChange={(e) => setSelectedTimezone(e.target.value)}
                             className="border border-gray-200 rounded-md px-3 pb-1 text-sm focus:outline-none focus:ring-2 focus:ring-gray-200"
                           >
                             {timezones.map((tz, idx) => (
@@ -393,8 +375,7 @@ export function DialogCloseContentSetting() {
                       </div>
                     </div>
                   </div>
-                )) ||
-                (activeItem === "Members" && (
+                ) : activeItem === "Members" ? (
                   <div className="pl-5">
                     <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
                       Team Members
@@ -413,9 +394,7 @@ export function DialogCloseContentSetting() {
                             className="rounded-full"
                           />
                           <div>
-                            <h3 className="text-lg text-[#22222F]">
-                              Ruben Vaalt
-                            </h3>
+                            <h3 className="text-lg text-[#22222F]">Ruben Vaalt</h3>
                             <p className="text-sm">Acme Inc.</p>
                           </div>
                         </div>
@@ -435,12 +414,16 @@ export function DialogCloseContentSetting() {
                       </div>
                       <div className="flex justify-between items-center">
                         <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-full bg-gray-300 flex justify-center items-center text-gray-700 font-semibold">R</div>
+                          <div className="w-8 h-8 rounded-full bg-gray-300 flex justify-center items-center text-gray-700 font-semibold">
+                            R
+                          </div>
                           <div className="flex items-center gap-2">
                             <h3 className="text-sm text-[#22222F]">
                               rubenvaalt@live.nl
                             </h3>
-                            <p className="text-sm text-blue-500 bg-[#D8EEFF] px-2 pb-1 rounded-full">Invite sent</p>
+                            <p className="text-sm text-blue-500 bg-[#D8EEFF] px-2 pb-1 rounded-full">
+                              Invite sent
+                            </p>
                           </div>
                         </div>
                         <div className="flex items-center border border-gray-300 rounded-md px-2 pb-1 mr-5">
@@ -459,17 +442,18 @@ export function DialogCloseContentSetting() {
                       </div>
                     </div>
                   </div>
-                )) ||
-                (activeItem === "Plan & Billing" && (
+                ) : activeItem === "Plan & Billing" ? (
                   <div className="pl-5">
                     <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
                       Plan & Billing
                     </h1>
                     <div className="text-center mt-[250px]">
-                      <h3 className="text-sm font-semibold text-[#000000]">Have to discuss this page</h3>
+                      <h3 className="text-sm font-semibold text-[#000000]">
+                        Have to discuss this page
+                      </h3>
                     </div>
                   </div>
-                ))
+                ) : null
               }
             </div>
           </div>
