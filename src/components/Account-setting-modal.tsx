@@ -37,7 +37,7 @@ export function DialogCloseContentSetting() {
   ];
 
   // dropdown of general
-  const [selectedTimezone, setSelectedTimezone] = useState(
+  const [selectedTimezone, setSelectedTimezone] = useState<string>(
     "(GMT+02:00) Central European Time (Amsterdam)"
   );
 
@@ -48,8 +48,10 @@ export function DialogCloseContentSetting() {
     "(GMT+00:00) Greenwich Mean Time (London)",
   ];
 
-  const [selectedRole, setSelectedRole] = useState("Admin");
+  const [selectedRole, setSelectedRole] = useState<string>("Admin");
+  const [selectedRole1, setSelectedRole1] = useState<string>("Admin");
   const roles = ["Admin", "User", "Moderator", "Guest"];
+  const roles1 = ["Admin", "User", "Moderator", "Guest"];
   // dropdown members
 
   return (
@@ -432,21 +434,21 @@ export function DialogCloseContentSetting() {
                         </div>
                         <div className="flex justify-between items-center">
                           <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-full bg-gray-300 text-center">R</div>
-                            <div>
-                              <h3 className="text-lg text-[#22222F]">
-                                Ruben Vaalt
+                            <div className="w-8 h-8 rounded-full bg-gray-300 flex justify-center items-center text-gray-700 font-semibold">R</div>
+                            <div className="flex items-center gap-2">
+                              <h3 className="text-sm text-[#22222F]">
+                                rubenvaalt@live.nl
                               </h3>
-                              <p className="text-sm">Acme Inc.</p>
+                              <p className="text-sm text-blue-500 bg-[#D8EEFF] px-2 pb-1 rounded-full">Invite sent</p>
                             </div>
                           </div>
                           <div className="flex items-center border border-gray-300 rounded-md px-2 pb-1 mr-5">
                             <select
-                              value={selectedRole}
-                              onChange={(e) => setSelectedRole(e.target.value)}
+                              value={selectedRole1}
+                              onChange={(e) => setSelectedRole1(e.target.value)}
                               className="text-sm focus:outline-none"
                             >
-                              {roles.map((role, idx) => (
+                              {roles1.map((role, idx) => (
                                 <option key={idx} value={role}>
                                   {role}
                                 </option>
@@ -462,6 +464,9 @@ export function DialogCloseContentSetting() {
                       <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
                         Plan & Billing
                       </h1>
+                      <div className="text-center mt-[250px]">
+                        <h3 className="text-sm font-semibold text-[#000000]">Have to discuss this page</h3>
+                      </div>
                     </div>
                   ))
               }
