@@ -89,10 +89,8 @@ export function DialogCloseContent() {
         </div>
         {/* <DialogFooter> */}
         <DialogClose asChild>
-          {/* have some problem */}
-          {/* <Button onClick={() => setChangeModal(true)} variant="outline">Cancel</Button> */}
-        <div className="text-right">
-          <Button onClick={() => setChangeModal(true)} type="submit" className="bg-blue-500">Add text</Button>
+        <div className="text-right border-t">
+          <Button onClick={() => setChangeModal(true)} type="submit" className="bg-blue-500 mt-3">Add text</Button>
         </div>
         </DialogClose>
       </form>
