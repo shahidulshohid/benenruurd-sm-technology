@@ -102,7 +102,7 @@ const WorkflowPage = () => {
                       <DatePicker
                         selected={selectedDate}
                         onChange={(date) => setSelectedDate(date)}
-                        className="w-full p-2 border border-gray-300 rounded text-sm focus:outline-none"
+                        className="w-full p-1 border border-gray-300 rounded text-sm focus:outline-none"
                         dateFormat="dd MMM yyyy"
                         placeholderText="Select date"
                       />
@@ -114,7 +114,7 @@ const WorkflowPage = () => {
                       <DatePicker
                         selected={selectedTime}
                         onChange={(date) => setSelectedTime(date)}
-                        className="w-full p-2 pr-8 border border-gray-300 rounded text-sm focus:outline-none"
+                        className="w-full p-1 pr-8 border border-gray-300 rounded text-sm focus:outline-none"
                         showTimeSelect
                         showTimeSelectOnly
                         timeIntervals={30}
@@ -134,7 +134,7 @@ const WorkflowPage = () => {
                     <select
                       value={selectedRepeat}
                       onChange={(e) => setSelectedRepeat(e.target.value)}
-                      className="w-full p-2 border rounded text-sm focus:outline-none appearance-none bg-white pr-8"
+                      className="w-full p-1 border rounded text-sm focus:outline-none appearance-none bg-white"
                     >
                       {repeatOptions.map((option) => (
                         <option key={option} value={option}>
