@@ -10,6 +10,7 @@ import AddTrigger from "@/components/allworkflowcomponent/Add-trigger";
 import Integrations from "@/components/allworkflowcomponent/Integrations";
 import ManualComponent from "@/components/allworkflowcomponent/Manual";
 import ScheduledComponent from "@/components/allworkflowcomponent/Scheduled";
+import ScheduedSingComponent from "@/components/allscheduledcomponent/Scheduled-single-run"
 
 type Tab = "editor" | "runs";
 
@@ -17,7 +18,7 @@ const WorkflowPage = () => {
   const [activeTab, setActiveTab] = useState<Tab>("editor");
   const [showTrigger, setShowTrigger] = useState<boolean>(false);
   const [showEditRuns, setShowEditRuns] = useState<boolean>(true);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   const normalizedQuery = searchQuery.trim().toLowerCase();
 
@@ -142,6 +143,7 @@ const WorkflowPage = () => {
           <h1 className="text-xl font-semibold">Work in progress</h1>
         </div>
       )}
+      <div><ScheduedSingComponent/></div>
     </div>
   );
 };
