@@ -69,19 +69,19 @@ export default function AppSidebar() {
 
                 {/* Overview */}
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Overview</p>
-                <SidebarMenuItem>
-                  <SidebarMenuButton
-                    className={`flex items-center gap-2 rounded-sm px-2 py-1 transition-colors ${pathname === "/dashboard/dashboard"
-                        ? "bg-[#1F2937] text-white"
-                        : "text-[#D5D6E2] hover:bg-[#1F2937] hover:text-white focus:bg-[#1F2937] focus:text-white"
+                <div>
+                  <button
+                    className={`flex w-full items-center gap-2 rounded-sm px-2 py-1 transition-colors ${pathname === "/dashboard/dashboard"
+                      ? "bg-[#F7F7F81A] text-white"
+                      : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
                       }`}
                   >
                     <Link href="/dashboard/dashboard" className="flex items-center gap-2 w-full">
-                      <CiHome size={20} />
+                      <CiHome size={15} />
                       <span className="text-sm">Dashboard</span>
                     </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
+                  </button>
+                </div>
 
                 {/* Manage */}
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Manage</p>
@@ -91,19 +91,19 @@ export default function AppSidebar() {
                   { label: "Integrations", icon: "/dashboardIcons/integration.png", href: "/dashboard/integration" },
                   { label: "Knowledge", icon: "/dashboardIcons/knowledge.png", href: "/dashboard/knowledgeoverview" },
                 ].map(({ label, icon, href }) => (
-                  <SidebarMenuItem key={label}>
-                    <SidebarMenuButton
-                      className={`flex items-center gap-2 rounded-sm px-2 py-1 transition-colors ${pathname === href
-                          ? "bg-[#1F2937] text-white"
-                          : "text-[#D5D6E2] hover:bg-[#1F2937] hover:text-white focus:bg-[#1F2937] focus:text-white"
+                  <div key={label}>
+                    <button
+                      className={`flex items-center w-full gap-2 rounded-sm px-2 py-1 transition-colors ${pathname === href
+                        ? "bg-[#F7F7F81A] text-white"
+                        : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
                         }`}
                     >
                       <Link href={href} className="flex items-center gap-2 w-full">
                         <Image src={icon} width={20} height={20} alt={label} />
                         <span className="text-sm">{label}</span>
                       </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
+                    </button>
+                  </div>
                 ))}
 
                 {/* Explore */}
@@ -115,8 +115,8 @@ export default function AppSidebar() {
                   <SidebarMenuItem key={label}>
                     <SidebarMenuButton
                       className={`flex items-center gap-2 rounded-sm px-2 py-1 transition-colors ${pathname === href
-                          ? "bg-[#1F2937] text-white"
-                          : "text-[#D5D6E2] hover:bg-[#1F2937] hover:text-white focus:bg-[#1F2937] focus:text-white"
+                        ? "bg-[#F7F7F81A] text-white"
+                        : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
                         }`}
                     >
                       <Link href={href} className="flex items-center gap-2 w-full">
@@ -138,7 +138,7 @@ export default function AppSidebar() {
             {/* Professional and Settings */}
             <div className="flex justify-between items-center text-white mb-2">
               <span className="text-sm font-semibold">Professional</span>
-                <Settings  onClick={() => setOpen(true)} size={18} />
+              <Settings onClick={() => setOpen(true)} size={18} />
               <Dialog open={open} onOpenChange={setOpen}>
                 <DialogCloseContentSetting />
               </Dialog>

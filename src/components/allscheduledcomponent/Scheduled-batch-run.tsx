@@ -12,7 +12,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa";
 
-const ScheduledSingleRun = () => {
+const ScheduledBatchRun = () => {
   const [showTrigger, setShowTrigger] = useState<boolean>(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [selectedTime, setSelectedTime] = useState<Date | null>(new Date());
@@ -184,4 +184,4 @@ const ScheduledSingleRun = () => {
   );
 };
 
-export default ScheduledSingleRun;
+export default ScheduledBatchRun;

@@ -70,13 +70,13 @@ export function DialogCloseContentSetting() {
                         className={`flex items-center gap-2 w-full px-3 py-2 rounded text-left
                           ${
                             isActive
-                              ? "bg-blue-200 text-blue-700 font-semibold"
-                              : "hover:bg-gray-200 text-gray-800"
+                              ? "bg-[#D5D6E2] text-[#22222F] font-semibold"
+                              : "hover:bg-[#D5D6E2] text-[#22222F]"
                           }`}
                       >
                         <Icon
                           size={16}
-                          className={isActive ? "text-blue-700" : "text-gray-600"}
+                          className={isActive ? "text-[#22222F]" : "text-[#22222F]"}
                         />
                         <span>{item.label}</span>
                       </button>
@@ -98,13 +98,13 @@ export function DialogCloseContentSetting() {
                         className={`flex items-center gap-2 w-full px-3 py-2 rounded text-left
                           ${
                             isActive
-                              ? "bg-blue-200 text-blue-700 font-semibold"
-                              : "hover:bg-gray-200 text-gray-800"
+                              ? "bg-[#D5D6E2] text-[#22222F] font-semibold"
+                              : "hover:bg-[#D5D6E2] text-[#22222F]"
                           }`}
                       >
                         <Icon
                           size={16}
-                          className={isActive ? "text-blue-700" : "text-gray-600"}
+                          className={isActive ? "text-[#22222F]" : "text-[#22222F]00"}
                         />
                         <span>{item.label}</span>
                       </button>

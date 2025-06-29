@@ -49,6 +49,56 @@ function Dashboard() {
             status: "Active",
         },
     ];
+    // most recent workflow
+    const mostRecentWorkflo = [
+        {
+            icon: "/google.png",
+            workflow: "Gmail - Email Received",
+            lastUpdated: "23-06-2025 10:21",
+            lastRun: "23-06-2025 10:21",
+            status: "Active",
+        },
+        {
+            icon: "/google.png",
+            workflow: "Gmail - Email Received",
+            lastUpdated: "23-06-2025 10:21",
+            lastRun: "23-06-2025 10:21",
+            status: "Inactive",
+        },
+        {
+            icon: "/google.png",
+            workflow: "Gmail - Email Received",
+            lastUpdated: "23-06-2025 10:21",
+            lastRun: "23-06-2025 10:21",
+            status: "Active",
+        },
+    ];
+    const mostWorkflowsRn = [
+  {
+    icon: "/google.png",
+    workflow: "Gmail - Email Received",
+    run: "Name of the run here",
+    lastUpdate: "23-06-2025 10:21",
+    interactions: "84",
+    status: "Completed",
+  },
+  {
+    icon: "/google.png",
+    workflow: "Gmail - Email Received",
+    run: "Name of the run here",
+    lastUpdate: "23-06-2025 10:21",
+    interactions: "84",
+    status: "Not completed",
+  },
+  {
+    icon: "/google.png",
+    workflow: "Gmail - Email Received",
+    run: "Name of the run here",
+    lastUpdate: "23-06-2025 10:21",
+    interactions: "84",
+    status: "Completed",
+  },
+];
     //   explore
     const infoCards: InfoCardProps[] = [
         {
@@ -64,18 +114,18 @@ function Dashboard() {
         },
         {
             title: "Documentation",
-            description: "Get support from other users and exchange ideas for new workflows and functions.",
+            description: "Get support from other users and exchange ideas for functions.",
             icon: "/dashboardIcons/explore1.png",
         },
     ];
 
     return (
-        <div className="w-full px-6 py-4">
+        <div className="w-full px-10 py-4">
             {/* Header */}
             <div className="flex justify-between items-center mb-6">
                 <Image src="/messageImg.png" width={40} height={40} alt="Message" />
                 <Link href="/dashboard/dashboard">
-                    <Button className="bg-blue-500 hover:bg-blue-500 flex items-center gap-2">
+                    <Button className="bg-[#0D5AE8] hover:bg-[#0D5AE8] flex items-center gap-2 font-semibold text-sm">
                         <HiPlus /> New Workflow
                     </Button>
                 </Link>
@@ -86,50 +136,50 @@ function Dashboard() {
                 <h3 className="text-xl text-[#22222F] font-semibold mb-3">
                     Workflows that need attention
                 </h3>
-                <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-gray-200">
+                <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
                     <table className="w-full table-auto min-w-[768px]">
-                        <thead className="border-b">
+                        <thead className="border-b-2">
                             <tr>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                     Workflow
                                 </th>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                     Last run
                                 </th>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                     Issue
                                 </th>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                     Status
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             {workflows.map((item, i) => (
-                                <tr key={i} className="border-b hover:bg-gray-50">
-                                    <td className="px-6 py-2 flex items-center gap-2 font-medium text-[#22222F]">
+                                <tr key={i} className="border-b-2 rounded-xl shadow-[#00020214]">
+                                    <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                                         <Image
                                             src={item.icon}
-                                            width={20}
-                                            height={20}
+                                            width={24}
+                                            height={24}
                                             alt="icon"
-                                            className="border p-1 rounded-sm"
+                                            className="border border-[#D5D6E2] p-1 rounded"
                                         />
-                                        {item.workflow}
+                                        <span className="text-[#22222F] text-sm">{item.workflow}</span>
                                     </td>
-                                    <td className="px-6 py-2 text-[#555770]">{item.lastRun}</td>
+                                    <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastRun}</td>
                                     <td className="px-6 py-2">
-                                        <span className="bg-red-100 text-red-600 text-sm px-3 py-1 rounded-full">
+                                        <span className="bg-[#FEF2F2] text-[#D94F4F] font-semibold text-sm px-3 py-1 rounded-full">
                                             {item.issue}
                                         </span>
                                     </td>
                                     <td className="px-6 py-2">
                                         {item.status === "Active" ? (
-                                            <span className="bg-green-100 text-green-700 text-sm px-3 py-1 rounded-full">
+                                            <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">
                                                 Active
                                             </span>
                                         ) : (
-                                            <span className="bg-gray-200 text-gray-700 text-sm px-3 py-1 rounded-full">
+                                            <span className="bg-[#EEEDF1] text-[#26252C] font-semibold text-sm px-3 py-1 rounded-full">
                                                 Inactive
                                             </span>
                                         )}
@@ -141,57 +191,50 @@ function Dashboard() {
                 </div>
             </div>
             {/* Most recent workflows Table Section */}
-            <div className="my-24">
-                <div className="flex justify-between items-center mb-3">
-                    <h3 className="text-xl text-[#22222F] font-semibold">
-                        Workflows that need attention
-                    </h3>
-                    <Button variant="outline">See all workflows</Button>
-                </div>
-                <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-gray-200">
+            <div className="mb-24">
+                <h3 className="text-xl text-[#22222F] font-semibold mb-3">
+                    Workflows that need attention
+                </h3>
+                <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
                     <table className="w-full table-auto min-w-[768px]">
-                        <thead className="border-b">
+                        <thead className="border-b-2">
                             <tr>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                     Workflow
                                 </th>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
+                                    Last updated
+                                </th>
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                     Last run
                                 </th>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
-                                    Issue
-                                </th>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                     Status
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            {workflows.map((item, i) => (
-                                <tr key={i} className="border-b hover:bg-gray-50">
-                                    <td className="px-6 py-2 flex items-center gap-2 font-medium text-[#22222F]">
+                            {mostRecentWorkflo.map((item, i) => (
+                                <tr key={i} className="border-b-2 rounded-xl shadow-[#00020214]">
+                                    <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                                         <Image
                                             src={item.icon}
-                                            width={20}
-                                            height={20}
+                                            width={24}
+                                            height={24}
                                             alt="icon"
-                                            className="border p-1 rounded-sm"
+                                            className="border border-[#D5D6E2] p-1 rounded"
                                         />
-                                        {item.workflow}
+                                        <span className="text-[#22222F] text-sm">{item.workflow}</span>
                                     </td>
-                                    <td className="px-6 py-2 text-[#555770]">{item.lastRun}</td>
-                                    <td className="px-6 py-2">
-                                        <span className="bg-red-100 text-red-600 text-sm px-3 py-1 rounded-full">
-                                            {item.issue}
-                                        </span>
-                                    </td>
+                                    <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastUpdated}</td>
+                                    <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastRun}</td>
                                     <td className="px-6 py-2">
                                         {item.status === "Active" ? (
-                                            <span className="bg-green-100 text-green-700 text-sm px-3 py-1 rounded-full">
+                                            <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">
                                                 Active
                                             </span>
                                         ) : (
-                                            <span className="bg-gray-200 text-gray-700 text-sm px-3 py-1 rounded-full">
+                                            <span className="bg-[#EEEDF1] text-[#26252C] font-semibold text-sm px-3 py-1 rounded-full">
                                                 Inactive
                                             </span>
                                         )}
@@ -203,58 +246,55 @@ function Dashboard() {
                 </div>
             </div>
             {/* Most recent runs Table Section */}
-            <div className="my-24">
-                <div className="flex justify-between items-center mb-3">
-                    <h3 className="text-xl text-[#22222F] font-semibold">
-                        Most recent runs
-                    </h3>
-                    <Button variant="outline">See all runs</Button>
-                </div>
-                <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-gray-200">
+            <div className="mb-24">
+                <h3 className="text-xl text-[#22222F] font-semibold mb-3">
+                    Workflows that need attention
+                </h3>
+                <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
                     <table className="w-full table-auto min-w-[768px]">
-                        <thead className="border-b">
+                        <thead className="border-b-2">
                             <tr>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                     Workflow
                                 </th>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
-                                    Last run
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
+                                    Run
                                 </th>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
-                                    Issue
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
+                                    Last update
                                 </th>
-                                <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
+                                    Interactions used
+                                </th>
+                                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                     Status
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            {workflows.map((item, i) => (
-                                <tr key={i} className="border-b hover:bg-gray-50">
-                                    <td className="px-6 py-2 flex items-center gap-2 font-medium text-[#22222F]">
+                            {mostWorkflowsRn.map((item, i) => (
+                                <tr key={i} className="border-b-2 rounded-xl shadow-[#00020214]">
+                                    <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                                         <Image
                                             src={item.icon}
-                                            width={20}
-                                            height={20}
+                                            width={24}
+                                            height={24}
                                             alt="icon"
-                                            className="border p-1 rounded-sm"
+                                            className="border border-[#D5D6E2] p-1 rounded"
                                         />
-                                        {item.workflow}
+                                        <span className="text-[#22222F] text-sm">{item.workflow}</span>
                                     </td>
-                                    <td className="px-6 py-2 text-[#555770]">{item.lastRun}</td>
+                                    <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.run}</td>
+                                    <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastUpdate}</td>
+                                    <td className="px-6 py-2 text-[#217AFC] font-semibold text-sm">{item.interactions}</td>
                                     <td className="px-6 py-2">
-                                        <span className="bg-red-100 text-red-600 text-sm px-3 py-1 rounded-full">
-                                            {item.issue}
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-2">
-                                        {item.status === "Active" ? (
-                                            <span className="bg-green-100 text-green-700 text-sm px-3 py-1 rounded-full">
-                                                Active
+                                        {item.status === "Completed" ? (
+                                            <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">
+                                                Completed
                                             </span>
                                         ) : (
-                                            <span className="bg-gray-200 text-gray-700 text-sm px-3 py-1 rounded-full">
-                                                Inactive
+                                            <span className="bg-[#FEF2F2] text-[#D94F4F] font-semibold text-sm px-3 py-1 rounded-full">
+                                                Not completed
                                             </span>
                                         )}
                                     </td>
@@ -275,7 +315,7 @@ function Dashboard() {
                             key={index}
                             className="flex items-start gap-3 rounded-xl border border-[#E4E4E7] bg-white p-5 shadow-sm transition hover:shadow-md"
                         >
-                            <div className="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-md">
+                            <div className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-md">
                                 <Image
                                     src={item?.icon}
                                     width={20}

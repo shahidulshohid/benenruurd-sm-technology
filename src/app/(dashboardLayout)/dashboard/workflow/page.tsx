@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
@@ -10,7 +9,9 @@ import AddTrigger from "@/components/allworkflowcomponent/Add-trigger";
 import Integrations from "@/components/allworkflowcomponent/Integrations";
 import ManualComponent from "@/components/allworkflowcomponent/Manual";
 import ScheduledComponent from "@/components/allworkflowcomponent/Scheduled";
-import ScheduedSingComponent from "@/components/allscheduledcomponent/Scheduled-single-run"
+import { CiStar } from "react-icons/ci";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+// import ScheduledSingComponent from "@/components/allscheduledcomponent/Scheduled-single-run"
 
 type Tab = "editor" | "runs";
 
@@ -42,14 +43,22 @@ const WorkflowPage = () => {
     <div>
       <div className="relative flex items-center justify-between px-8 h-[60px]">
         <div className="absolute left-1/2 transform -translate-x-1/2">
-          <Image
-            src="/dashboardIcons/middle.png"
-            width={464}
-            height={40}
-            alt="Middle image"
-          />
+          <div className="flex items-center gap-2 p-2">
+            <Image
+              src="/google.png"
+              width={35}
+              height={35}
+              alt="Gmail icon"
+              className="border p-1 rounded-lg cusop"
+            />
+            <div className="flex flex-col">
+              <p className="text-sm font-semibold text-[#22222F]">Gmail - Email received</p>
+            </div>
+            <CiStar className="text-[#8588AB]" />
+            <MdOutlineKeyboardArrowDown className="text-[#8588AB] cursor-pointer -ml-1" />
+          </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 cursor-pointer">
           <Image
             src="/messageImg.png"
             width={20}
@@ -63,39 +72,35 @@ const WorkflowPage = () => {
             alt="Vector image"
           />
         </div>
-        <div>
-          <Image
-            src="/dashboardIcons/right.png"
-            width={464}
-            height={40}
-            alt="Right image"
-          />
+        <div className="flex items-center gap-2">
+          <img src="/notifications.svg" alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
+          <img src="/share.svg" alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
+          <img src="/help.svg" alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
+          <img src="/dots.svg" alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
         </div>
       </div>
 
       <div className="text-center">
         <Separator className="mb-2 bg-gray-200" />
-        <div className="flex justify-center gap-5 border w-[200px] mx-auto py-1 rounded-lg">
-          <Button
-            variant={activeTab === "editor" ? "default" : "ghost"}
+        <div className="flex justify-center gap-5 border w-[235px] mx-auto py-1 rounded-lg">
+          <button
             onClick={() => {
-              setActiveTab("editor");
+              setActiveTab("editor");  
               setShowEditRuns(true);
             }}
-            className="px-6"
+            className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "editor" ? "bg-[#22222F] text-white" : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"}`}
           >
             Editor
-          </Button>
-          <Button
-            variant={activeTab === "runs" ? "default" : "ghost"}
+          </button>
+          <button
             onClick={() => {
               setActiveTab("runs");
               setShowEditRuns(false);
             }}
-            className="px-6"
+            className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "runs" ? "bg-[#22222F] text-white" : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"}`}
           >
             Runs
-          </Button>
+          </button>
         </div>
         <Separator className="mt-2 bg-gray-200" />
       </div>
@@ -123,7 +128,7 @@ const WorkflowPage = () => {
               <Separator />
 
               <div className="relative w-full">
-                <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" /> 
+                <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
                 <input
                   type="text"
                   placeholder={dynamicPlaceholder}
@@ -143,7 +148,7 @@ const WorkflowPage = () => {
           <h1 className="text-xl font-semibold">Work in progress</h1>
         </div>
       )}
-      <div><ScheduedSingComponent/></div>
+      {/* <div><ScheduledSingComponent/></div> */}
     </div>
   );
 };
