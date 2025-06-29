@@ -123,9 +123,9 @@ function Dashboard() {
         <div className="w-full px-10 py-4">
             {/* Header */}
             <div className="flex justify-between items-center mb-6">
-                <Image src="/messageImg.png" width={40} height={40} alt="Message" />
+                <Image src="/messageImg.png" width={40} height={40} alt="Message" className="cursor-pointer" />
                 <Link href="/dashboard/dashboard">
-                    <Button className="bg-[#0D5AE8] hover:bg-[#0D5AE8] flex items-center gap-2 font-semibold text-sm">
+                    <Button className="bg-[#0D5AE8] hover:bg-[#0D5AE8] flex items-center gap-2 font-semibold text-sm cursor-pointer">
                         <HiPlus /> New Workflow
                     </Button>
                 </Link>

@@ -58,18 +58,20 @@ const WorkflowPage = () => {
             <MdOutlineKeyboardArrowDown className="text-[#8588AB] cursor-pointer -ml-1" />
           </div>
         </div>
-        <div className="flex items-center gap-3 cursor-pointer">
+        <div className="flex items-center gap-3">
           <Image
             src="/messageImg.png"
             width={20}
             height={20}
             alt="Message image"
+            className="cursor-pointer"
           />
           <Image
             src="/dashboardIcons/vector.png"
             width={20}
             height={20}
             alt="Vector image"
+            className="cursor-pointer"
           />
         </div>
         <div className="flex items-center gap-2">

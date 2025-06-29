@@ -100,37 +100,37 @@ const RunsTable = () => {
         <table className="w-full table-auto">
           <thead className="border-b">
             <tr>
-              <th className="px-6 py-2 text-left text-[#8588AB] font-medium">Workflow</th>
-              <th className="px-6 py-2 text-left text-[#8588AB] font-medium">Run</th>
-              <th className="px-6 py-2 text-left text-[#8588AB] font-medium">Last update</th>
-              <th className="px-6 py-2 text-left text-[#8588AB] font-medium">Interactions used</th>
-              <th className="px-6 py-2 text-left text-[#8588AB] font-medium">Status</th>
+              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
+              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Run</th>
+              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Last update</th>
+              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Interactions used</th>
+              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Status</th>
             </tr>
           </thead>
           <tbody>
             {paginatedWorkflows.length ? (
               paginatedWorkflows.map((item, i) => (
                 <tr key={i} className="border-b hover:bg-gray-50">
-                  <td className="px-6 py-2 flex items-center gap-2 font-medium text-[#22222F]">
+                  <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                     <Image
                       src={item.icon}
-                      width={20}
-                      height={20}
+                      width={24}
+                      height={24}
                       alt="icon"
-                      className="border p-1 rounded-sm"
+                      className="border border-[#D5D6E2] p-1 rounded"
                     />
-                    {item.workflow}
+                    <span className="text-[#22222F] text-sm">{item.workflow}</span>
                   </td>
-                  <td className="px-6 py-2 text-[#555770]">{item.runName}</td>
-                  <td className="px-6 py-2 text-[#555770]">{item.lastUpdate}</td>
-                  <td className="px-6 py-2 text-blue-500">{item.interactions}</td>
+                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.runName}</td>
+                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastUpdate}</td>
+                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.interactions}</td>
                   <td className="px-6 py-2">
                     {item.status === "Completed" ? (
-                      <span className="bg-green-100 text-green-700 text-sm px-3 py-1 rounded-full">
+                      <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">
                         {item.status}
                       </span>
                     ) : (
-                      <span className="bg-red-200 text-red-800 text-sm px-3 py-1 rounded-full">
+                      <span className="bg-[#FEF2F2] text-[#D94F4F] font-semibold text-sm px-3 py-1 rounded-full">
                         {item.status}
                       </span>
                     )}

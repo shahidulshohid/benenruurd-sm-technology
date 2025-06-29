@@ -60,7 +60,7 @@ export default function AppSidebar() {
                 <SidebarMenuItem>
                   <SidebarMenuButton className="bg-blue-500 hover:bg-blue-500 flex justify-center mt-4">
                     <Link href="/dashboard/workflow">
-                      <button className="text-sm py-1 font-semibold rounded-sm text-white flex items-center gap-1">
+                      <button className="text-sm py-1 font-semibold rounded-sm text-white flex items-center gap-1 cursor-pointer">
                         <HiPlus /> New Workflow
                       </button>
                     </Link>
@@ -138,7 +138,7 @@ export default function AppSidebar() {
             {/* Professional and Settings */}
             <div className="flex justify-between items-center text-white mb-2">
               <span className="text-sm font-semibold">Professional</span>
-              <Settings onClick={() => setOpen(true)} size={18} />
+              <Settings onClick={() => setOpen(true)} size={18} className="cursor-pointer"/>
               <Dialog open={open} onOpenChange={setOpen}>
                 <DialogCloseContentSetting />
               </Dialog>
