@@ -95,7 +95,7 @@ export default function AppSidebar() {
                     <button
                       className={`flex items-center w-full gap-2 rounded-sm px-2 py-1 transition-colors ${pathname === href
                         ? "bg-[#F7F7F81A] text-white"
-                        : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
+                        : "text-[#D5D6E2] hover:bg-[#6565721a] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
                         }`}
                     >
                       <Link href={href} className="flex items-center gap-2 w-full">
