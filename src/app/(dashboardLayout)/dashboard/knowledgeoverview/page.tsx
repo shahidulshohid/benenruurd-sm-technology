@@ -116,7 +116,7 @@ const KnowledgePage = () => {
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold">Knowledge</h1>
                 <div className="flex items-center gap-2">
-                    <button onClick={() => setOpen(true)} className="bg-blue-500 text-white px-4 py-1 rounded-lg">
+                    <button onClick={() => setOpen(true)} className="bg-blue-500 text-white px-4 py-1 rounded-lg cursor-pointer">
                         + Add knowledge
                     </button>
                     <Dialog open={open} onOpenChange={setOpen}>
@@ -136,10 +136,10 @@ const KnowledgePage = () => {
             </div>
 
             {/* Table */}
-            <div className="overflow-hidden rounded-xl border-2 border-gray-200">
-                <table className="w-full">
+            <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
+                <table className="w-full table-auto min-w-[768px]">
                     <thead>
-                        <tr className="border-b">
+                        <tr className="border-b-2">
                             <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
                                 File name
                             </th>
@@ -160,7 +160,7 @@ const KnowledgePage = () => {
                     </thead>
                     <tbody>
                         {currentItems.map((item) => (
-                            <tr key={item.id} className="border-b hover:bg-gray-50 border-gray-300 cursor-pointer">
+                            <tr key={item.id} className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition">
                                 <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                                     <Image
                                         src={item.icon}

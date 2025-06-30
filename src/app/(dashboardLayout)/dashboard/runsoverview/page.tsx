@@ -96,9 +96,9 @@ const RunsTable = () => {
       </div>
 
       {/* Table */}
-      <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-gray-200">
-        <table className="w-full table-auto">
-          <thead className="border-b">
+      <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
+        <table className="w-full table-auto min-w-[768px]">
+          <thead className="border-b-2">
             <tr>
               <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
               <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Run</th>
@@ -110,7 +110,7 @@ const RunsTable = () => {
           <tbody>
             {paginatedWorkflows.length ? (
               paginatedWorkflows.map((item, i) => (
-                <tr key={i} className="border-b hover:bg-gray-50 cursor-pointer">
+                <tr key={i} className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition">
                   <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                     <Image
                       src={item.icon}
