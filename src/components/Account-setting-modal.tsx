@@ -29,7 +29,7 @@ export function DialogCloseContentSetting() {
     { label: "Integrations", icon: GrIntegration, category: "General" },
     { label: "General", icon: IoMdNotificationsOutline, category: "Team" },
     { label: "Members", icon: MdOutlineCardMembership, category: "Team" },
-    { label: "Plan & Billing", icon: IoPlanetSharp, category: "Team" },
+    { label: "Usages & Billing", icon: IoPlanetSharp, category: "Team" },
   ];
 
   // dropdown of general
@@ -68,15 +68,14 @@ export function DialogCloseContentSetting() {
                         key={item.label}
                         onClick={() => setActiveItem(item.label)}
                         className={`flex items-center gap-2 w-full px-3 py-2 rounded text-left
-                          ${
-                            isActive
-                              ? "bg-[#D5D6E2] text-[#22222F] font-semibold"
-                              : "hover:bg-[#D5D6E2] text-[#22222F]"
+                          ${isActive
+                            ? "bg-[#D5D6E2] text-[#22222F] font-semibold"
+                            : "hover:bg-[#D5D6E2] text-sm font-semibold text-[#22222F]"
                           }`}
                       >
                         <Icon
                           size={16}
-                          className={isActive ? "text-[#22222F]" : "text-[#22222F]"}
+                          className={isActive ? "text-[#22222F] text-sm font-semibold" : "text-[#22222F]"}
                         />
                         <span>{item.label}</span>
                       </button>
@@ -96,15 +95,14 @@ export function DialogCloseContentSetting() {
                         key={item.label}
                         onClick={() => setActiveItem(item.label)}
                         className={`flex items-center gap-2 w-full px-3 py-2 rounded text-left
-                          ${
-                            isActive
-                              ? "bg-[#D5D6E2] text-[#22222F] font-semibold"
-                              : "hover:bg-[#D5D6E2] text-[#22222F]"
+                          ${isActive
+                            ? "bg-[#D5D6E2] text-[#22222F] font-semibold"
+                            : "hover:bg-[#D5D6E2] text-[#22222F] text-sm font-semibold"
                           }`}
                       >
                         <Icon
                           size={16}
-                          className={isActive ? "text-[#22222F]" : "text-[#22222F]00"}
+                          className={isActive ? "text-[#22222F] text-sm font-semibold" : "text-[#22222F"}
                         />
                         <span>{item.label}</span>
                       </button>
@@ -112,7 +110,6 @@ export function DialogCloseContentSetting() {
                   })}
               </div>
             </div>
-
             {/* Main Content Area */}
             <div className="bg-white flex-1 py-4 -pl-3 h-full overflow-y-auto">
               {
@@ -319,16 +316,6 @@ export function DialogCloseContentSetting() {
                           </Button>
                         </div>
                       </div>
-                      <div className="flex justify-between items-center border-t">
-                        <div className="flex items-center gap-2 pl-5 mt-3">
-                          <p>Need help? Mail</p>
-                          <p className="text-blue-500">support@namehere.com</p>
-                        </div>
-                        <div className="flex items-center text-blue-500 gap-5 pr-5 mt-3">
-                          <p>Privacy Policy</p>
-                          <p>Terms of Use</p>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 ) : activeItem === "General" ? (
@@ -442,10 +429,10 @@ export function DialogCloseContentSetting() {
                       </div>
                     </div>
                   </div>
-                ) : activeItem === "Plan & Billing" ? (
+                ) : activeItem === "Usages & Billing" ? (
                   <div className="pl-5">
                     <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
-                      Plan & Billing
+                      Usage & Billing
                     </h1>
                     <div className="text-center mt-[250px]">
                       <h3 className="text-sm font-semibold text-[#000000]">
@@ -455,6 +442,17 @@ export function DialogCloseContentSetting() {
                   </div>
                 ) : null
               }
+              {/* Footer only at the bottom of right side */}
+              <div className="flex justify-between items-center border-t py-3 px-5">
+                <div className="flex items-center gap-2">
+                  <p>Need help? Mail</p>
+                  <p className="text-blue-500">support@namehere.com</p>
+                </div>
+                <div className="flex items-center text-blue-500 gap-5">
+                  <p>Privacy Policy</p>
+                  <p>Terms of Use</p>
+                </div>
+              </div>
             </div>
           </div>
         </DialogDescription>

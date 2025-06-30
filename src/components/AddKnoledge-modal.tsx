@@ -90,7 +90,7 @@ export function DialogCloseContent() {
         {/* <DialogFooter> */}
         <DialogClose asChild>
         <div className="text-right border-t">
-          <Button onClick={() => setChangeModal(true)} type="submit" className="bg-[#0D5AE8] hover:bg-[#0D5AE8] mt-3 cursor-pointer">Add text</Button>
+          <Button onClick={() => setChangeModal(true)} type="submit" className="bg-[#217AFC] hover:bg-[#217AFC] mt-3 cursor-pointer">Add text</Button>
         </div>
         </DialogClose>
       </form>
