@@ -16,7 +16,9 @@ const ScheduledSingleRun = () => {
   const [showTrigger, setShowTrigger] = useState<boolean>(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [selectedTime, setSelectedTime] = useState<Date | null>(new Date());
-  const [selectedRepeat, setSelectedRepeat] = useState<string>("Custom (every 2 days)");
+  const [selectedRepeat, setSelectedRepeat] = useState<string>(
+    "Custom (every 2 days)"
+  );
   const [customNumber, setCustomNumber] = useState<string>("2");
   const [customUnit, setCustomUnit] = useState<string>("days");
 
@@ -28,8 +30,10 @@ const ScheduledSingleRun = () => {
       selectedDate,
       selectedTime,
       selectedRepeat,
-      customNumber: selectedRepeat === "Custom (every 2 days)" ? customNumber : undefined,
-      customUnit: selectedRepeat === "Custom (every 2 days)" ? customUnit : undefined,
+      customNumber:
+        selectedRepeat === "Custom (every 2 days)" ? customNumber : undefined,
+      customUnit:
+        selectedRepeat === "Custom (every 2 days)" ? customUnit : undefined,
     });
   };
 
@@ -40,7 +44,9 @@ const ScheduledSingleRun = () => {
           {/* Left Panel */}
           <div className="w-full md:w-1/2 space-y-4">
             <div className="border rounded-lg bg-white shadow-sm">
-              <h3 className="p-4 text-gray-800 font-medium border-b">Workflow Steps</h3>
+              <h3 className="p-4 text-gray-800 font-medium border-b">
+                Workflow Steps
+              </h3>
               <div className="flex items-center justify-between px-4 py-3">
                 <div className="flex items-center gap-3">
                   <span className="text-sm text-gray-700">1</span>
@@ -50,7 +56,10 @@ const ScheduledSingleRun = () => {
                   <span className="text-sm text-gray-700">Every 2 days</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Switch id="workflow-switch" />
+                  <Switch
+                    id="workflow-switch"
+                    className="data-[state=checked]:bg-blue-500"
+                  />
                   <BsThreeDotsVertical className="text-gray-400" />
                 </div>
               </div>
@@ -73,10 +82,15 @@ const ScheduledSingleRun = () => {
                   <div className="border p-1 rounded text-gray-600">
                     <MdOutlineWatchLater />
                   </div>
-                  <span className="text-gray-800 font-medium">Start run on a schedule</span>
+                  <span className="text-gray-800 font-medium">
+                    Start run on a schedule
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Button variant="outline" className="flex items-center gap-2 text-sm">
+                  <Button
+                    variant="outline"
+                    className="flex items-center gap-2 text-sm"
+                  >
                     <span>Run as</span>
                     <Image
                       src="/dashboardIcons/profileImg.png"
@@ -95,7 +109,9 @@ const ScheduledSingleRun = () => {
               <div className="p-4 space-y-4">
                 {/* First Instance */}
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">First Instance</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                    First Instance
+                  </label>
                   <div className="flex gap-2">
                     {/* Date Picker */}
                     <div className="w-1/2 relative">
@@ -129,7 +145,9 @@ const ScheduledSingleRun = () => {
 
                 {/* Repeats */}
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">Repeats</label>
+                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                    Repeats
+                  </label>
                   <div className="relative">
                     <select
                       value={selectedRepeat}
