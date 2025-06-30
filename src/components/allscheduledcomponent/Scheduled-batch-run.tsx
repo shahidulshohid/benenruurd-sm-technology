@@ -36,8 +36,9 @@ const ScheduledBatchRun = () => {
                 <div className="flex items-center gap-2">
                   <Switch
                     id="workflow-switch"
-                    className="scale-125 data-[state=checked]:bg-[#D5D6E2] cursor-pointer"
+                    className="scale-125 bg-transparent data-[state=checked]:bg-transparent border border-gray-300 rounded-full cursor-pointer [&>span]:border [&>span]:border-gray-300"
                   />
+
                   <BsThreeDotsVertical className="text-gray-400" />
                 </div>
 

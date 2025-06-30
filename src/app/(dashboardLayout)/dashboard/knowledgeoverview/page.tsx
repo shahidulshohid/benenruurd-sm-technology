@@ -179,7 +179,7 @@ const KnowledgePage = () => {
                                     <span
                                         className={
                                             item.status === "Syncing"
-                                                ? "bg-[#D5D6E2] px-2 p-1 rounded-full text-[#6466F1] text-sm font-semibold"
+                                                ? "bg-[#EEF2FF] px-2 p-2 rounded-full text-[#6466F1] text-sm font-semibold"
                                                 : "text-[#26252C] text-sm bg-[#EEEDF1] px-2 p-1 rounded-full font-semibold"
                                         }
                                     >
@@ -201,7 +201,7 @@ const KnowledgePage = () => {
             <div className="flex justify-between items-center mt-4">
                 <button
                     onClick={() => handlePageChange(currentPage - 1)}
-                    className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 text-sm disabled:opacity-50"
+                    className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
                     disabled={currentPage === 1}
                 >
                     <FiChevronLeft />
@@ -214,8 +214,8 @@ const KnowledgePage = () => {
                             key={page}
                             onClick={() => handlePageChange(page)}
                             className={`px-3 py-1 text-sm rounded-sm font-medium ${page === currentPage
-                                ? "border border-gray-300 text-gray-600"
-                                : "border border-transparent text-gray-800"
+                                ? "border border-gray-300 text-[#22222F]"
+                                : "border border-transparent text-[#8588AB]"
                                 }`}
                         >
                             {page}
@@ -225,7 +225,7 @@ const KnowledgePage = () => {
 
                 <button
                     onClick={() => handlePageChange(currentPage + 1)}
-                    className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 text-sm disabled:opacity-50"
+                    className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
                     disabled={currentPage === totalPages}
                 >
                     Next

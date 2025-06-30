@@ -152,7 +152,7 @@ const RunsTable = () => {
       <div className="flex justify-between items-center mt-4 flex-wrap gap-3">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
-          className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 text-sm disabled:opacity-50"
+          className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
           disabled={currentPage === 1}
         >
           <FiChevronLeft />
@@ -165,8 +165,8 @@ const RunsTable = () => {
               onClick={() => handlePageChange(page)}
               className={`px-3 py-1 text-sm rounded-sm font-medium ${
                 page === currentPage
-                  ? "border border-gray-300 text-gray-600"
-                  : "border border-transparent text-gray-800"
+                  ? "border border-gray-300 text-[#22222F]"
+                  : "border border-transparent text-[#8588AB]"
               }`}
             >
               {page}
@@ -175,7 +175,7 @@ const RunsTable = () => {
         </div>
         <button
           onClick={() => handlePageChange(currentPage + 1)}
-          className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 text-sm disabled:opacity-50"
+          className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
           disabled={currentPage === totalPages}
         >
           Next

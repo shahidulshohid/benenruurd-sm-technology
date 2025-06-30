@@ -10,6 +10,7 @@ import { CiSearch } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
 import { GoArrowLeft } from "react-icons/go";
 import Image from "next/image";
+import Link from "next/link";
 
 const WorkflowStepTwo = () => {
     const [showTrigger, setShowTrigger] = useState<boolean>(false);
@@ -71,6 +72,7 @@ const WorkflowStepTwo = () => {
                                 </div>
                                 <Separator />
                                 <div className="space-y-2">
+                                        <Link href="/dashboard/workflowstepthree">
                                         <div
                                             className="flex justify-between items-center p-3 cursor-pointer"  >
                                             <div className="flex items-center gap-3">
@@ -86,6 +88,7 @@ const WorkflowStepTwo = () => {
                                             </div>
                                             <MdKeyboardArrowRight className="text-gray-400" size={20} />
                                         </div>
+                                        </Link>
                                         <div
                                             className="flex justify-between items-center p-3 cursor-pointer"  >
                                             <div className="flex items-center gap-3">

@@ -26,7 +26,7 @@ function SignUpForm() {
         <div className="min-h-screen flex flex-col md:flex-row">
             {/* message icon  */}
             <div>
-                <Image src="/messageImg.png" width={40} height={40} alt='Message image' className='m-6'/>
+                <Image src="/messageImg.png" width={40} height={40} alt='Message image' className='m-6' />
             </div>
             {/* Left: Form */}
             <div className="flex-1 flex items-center justify-center p-8 bg-white">
@@ -34,12 +34,16 @@ function SignUpForm() {
                     <div className="text-left">
                         <h1 className="text-3xl font-bold text-gray-800 mb-2">Sign Up</h1>
                         <p className="text-sm text-gray-600">
-                            Welcome back! Sign Up with your name, email and <br/> password to continue.
+                            Welcome back! Sign Up with your name, email and <br /> password to continue.
                         </p>
+                    </div>
+                    <div className='flex items-center justify-center gap-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 cursor-pointer p-2.5'>
+                        <Image src="/google.png" width={25} height={25} alt='google icon' className='border rounded p-1' />
+                        <h3 className='text-[#22222F] font-semibold text-sm'>Log in with Google</h3>
                     </div>
 
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-                            {/* name input */}
+                        {/* name input */}
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">
                                 Name <span className='text-red-500'>*</span>
@@ -55,7 +59,7 @@ function SignUpForm() {
                                 <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
                             )}
                         </div>
-                            {/* email input */}
+                        {/* email input */}
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">
                                 Email <span className='text-red-500'>*</span>
@@ -71,7 +75,7 @@ function SignUpForm() {
                                 <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
                             )}
                         </div>
-                            {/* password input */}
+                        {/* password input */}
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">
                                 Password <span className='text-red-500'>*</span>
@@ -90,19 +94,19 @@ function SignUpForm() {
 
                         <button
                             type="submit"
-                            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+                            className="w-full bg-[#217AFC] text-sm font-semibold text-white py-2 rounded-md hover:bg-[#217AFC] transition cursor-pointer"
                         >
                             Sign Up
                         </button>
                         {/* redirect signup page  */}
                         <div className='text-center'>
-                            <span>Already have an account?</span> <Link href="/login" className='text-blue-500'>Log In</Link>
+                            <span>Already have an account?</span> <Link href="/login" className='text-[#217AFC] text-sm font-semibold'>Log In</Link>
                         </div>
                     </form>
                 </div>
             </div>
             {/* Right: Image */}
-                <AuthImage/>
+            <AuthImage />
         </div>
     )
 }
