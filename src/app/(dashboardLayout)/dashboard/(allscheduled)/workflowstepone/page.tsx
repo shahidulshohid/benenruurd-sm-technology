@@ -10,12 +10,6 @@ type Tab = "editor" | "runs";
 
 const WorkflowPage = () => {
     const [activeTab, setActiveTab] = useState<Tab>("editor");
-    const [showTrigger, setShowTrigger] = useState<boolean>(false);
-    const [showEditRuns, setShowEditRuns] = useState<boolean>(true);
-    const [searchQuery, setSearchQuery] = useState<string>("");
-
-    const normalizedQuery = searchQuery.trim().toLowerCase();
-    let currentTitle = "Add Trigger";
 
     return (
         <div>
@@ -92,7 +86,6 @@ const WorkflowPage = () => {
                     <button
                         onClick={() => {
                             setActiveTab("editor");
-                            setShowEditRuns(true);
                         }}
                         className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "editor"
                                 ? "bg-[#22222F] text-white"
@@ -104,7 +97,6 @@ const WorkflowPage = () => {
                     <button
                         onClick={() => {
                             setActiveTab("runs");
-                            setShowEditRuns(false);
                         }}
                         className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "runs"
                                 ? "bg-[#22222F] text-white"
