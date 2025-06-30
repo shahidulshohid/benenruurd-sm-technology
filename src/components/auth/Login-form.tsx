@@ -29,24 +29,24 @@ function LoginForm() {
         <div className="min-h-screen flex flex-col md:flex-row">
             {/* message icon  */}
             <div>
-                <Image src="/messageImg.png" width={40} height={40} alt='Message image' className='m-6'/>
+                <Image src="/messageImg.png" width={40} height={40} alt='Message image' className='m-6' />
             </div>
             {/* Left: Form */}
             <div className="flex-1 flex items-center justify-center p-8 bg-white">
                 <div className="w-full max-w-md space-y-6">
                     <div className="text-left">
-                        <h1 className="text-3xl font-bold text-gray-800 mb-2">Login</h1>
-                        <p className="text-sm text-gray-600">
-                            Welcome back! Log in with your email and <br/> password to continue.
+                        <h1 className="text-3xl font-bold text-[#22222F] mb-2">Login</h1>
+                        <p className="text-sm text-[#8588AB]">
+                            Welcome back! Log in with your email and <br /> password to continue.
                         </p>
                     </div>
-                    <div className='flex items-center justify-center gap-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 cursor-pointer p-2.5'>
-                        <Image src="/google.png" width={25} height={25} alt='google icon' className='border rounded p-1'/>
-                        <h3 className='text-[#22222F] font-semibold text-sm'>Log in with Google</h3>
-                    </div>
-
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-                            {/* email input */}
+                        {/* Login with google  */}
+                        <div className='flex items-center justify-center gap-2 border-2 hover:border-[#217AFC] rounded-md shadow-sm focus:outline-none focus:ring-2 cursor-pointer p-2.5'>
+                            <Image src="/google.png" width={25} height={25} alt='google icon' className='border rounded p-1' />
+                            <h3 className='text-[#22222F] font-semibold text-sm'>Log in with Google</h3>
+                        </div>
+                        {/* email input */}
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">
                                 Email <span className='text-red-500'>*</span>
@@ -62,7 +62,7 @@ function LoginForm() {
                                 <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
                             )}
                         </div>
-                            {/* password input */}
+                        {/* password input */}
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">
                                 Password <span className='text-red-500'>*</span>
@@ -81,7 +81,7 @@ function LoginForm() {
 
                         <button
                             type="submit"
-                            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition cursor-pointer"
+                            className="w-full bg-[#0D5AE8] text-white py-2 rounded-md hover:bg-[#0D5AE8] text-sm font-semibold transition cursor-pointer"
                         >
                             Log In
                         </button>
@@ -101,7 +101,7 @@ function LoginForm() {
                 </div>
             </div>
             {/* Right: Image */}
-                <AuthImage/>
+            <AuthImage />
         </div>
     )
 }

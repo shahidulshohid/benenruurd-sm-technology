@@ -36,6 +36,7 @@ export default function AppSidebar() {
               <SidebarMenu>
                 {/* Profile */}
                 <div className="flex justify-between items-center mb-3">
+                  <Link href="/">
                   <div className="flex items-center gap-2">
                     <Image
                       src="/dashboardIcons/profileImg.png"
@@ -49,6 +50,7 @@ export default function AppSidebar() {
                       <p className="text-xs text-[#D5D6E2]">Acme Inc.</p>
                     </div>
                   </div>
+                  </Link>
                   <div className="text-white text-xl">
                     <RiArrowDropDownLine />
                   </div>
@@ -57,15 +59,15 @@ export default function AppSidebar() {
                 <Separator className="bg-[#242432]" />
 
                 {/* New Workflow Button */}
-                <SidebarMenuItem>
-                  <SidebarMenuButton className="bg-blue-500 hover:bg-blue-500 flex justify-center mt-4">
+                <div>
+                  <div className="bg-blue-500 hover:bg-blue-500 flex justify-center mt-4 rounded-sm">
                     <Link href="/dashboard/workflow">
                       <button className="text-sm py-1 font-semibold rounded-sm text-white flex items-center gap-1 cursor-pointer">
                         <HiPlus /> New Workflow
                       </button>
                     </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
+                  </div>
+                </div>
 
                 {/* Overview */}
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Overview</p>

@@ -30,8 +30,8 @@ function ForgoPasswordForm() {
             <div className="flex-1 flex items-center justify-center p-8 bg-white">
                 <div className="w-full max-w-md space-y-6">
                     <div className="text-left">
-                        <h1 className="text-3xl font-bold text-gray-800 mb-2">Forgot your password</h1>
-                        <p className="text-sm text-gray-600">
+                        <h1 className="text-3xl font-bold text-[#22222F] mb-2">Forgot your password</h1>
+                        <p className="text-sm text-[#8588AB]">
                             Please enter the email address of your account below to reset <br/> your password.
                         </p>
                     </div>
@@ -56,13 +56,13 @@ function ForgoPasswordForm() {
 
                         <button
                             type="submit"
-                            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+                            className="w-full bg-[#0D5AE8] text-white py-2 rounded-md text-sm font-semibold cursor-pointer hover:bg-[#0D5AE8] transition"
                         >
                             Send email
                         </button>
                         {/* back to login  */}
                         <div className='text-center'>
-                            <Link href="/login" className='text-blue-500'>Back to log in</Link>
+                            <Link href="/login" className='text-[#0D5AE8] text-sm font-semibold'>Back to log in</Link>
                         </div>
                     </form>
                 </div>

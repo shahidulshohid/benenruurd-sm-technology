@@ -32,17 +32,18 @@ function SignUpForm() {
             <div className="flex-1 flex items-center justify-center p-8 bg-white">
                 <div className="w-full max-w-md space-y-6">
                     <div className="text-left">
-                        <h1 className="text-3xl font-bold text-gray-800 mb-2">Sign Up</h1>
-                        <p className="text-sm text-gray-600">
+                        <h1 className="text-3xl font-bold text-[#22222F] mb-2">Sign Up</h1>
+                        <p className="text-sm text-[#8588AB]">
                             Welcome back! Sign Up with your name, email and <br /> password to continue.
                         </p>
                     </div>
-                    <div className='flex items-center justify-center gap-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 cursor-pointer p-2.5'>
-                        <Image src="/google.png" width={25} height={25} alt='google icon' className='border rounded p-1' />
-                        <h3 className='text-[#22222F] font-semibold text-sm'>Log in with Google</h3>
-                    </div>
 
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+                        {/* login with google */}
+                        <div className='flex items-center justify-center gap-2 border-2 hover:border-[#217AFC] rounded-md shadow-sm focus:outline-none focus:ring-2 cursor-pointer p-2.5'>
+                            <Image src="/google.png" width={25} height={25} alt='google icon' className='border rounded p-1' />
+                            <h3 className='text-[#22222F] font-semibold text-sm'>Log in with Google</h3>
+                        </div>
                         {/* name input */}
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">
