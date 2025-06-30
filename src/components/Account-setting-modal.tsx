@@ -380,8 +380,8 @@ export function DialogCloseContentSetting() {
                     <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
                       Team Members
                     </h1>
-                    <button className="bg-blue-500 text-white px-4 py-1 rounded-sm mb-3">
-                      + Add knowledge
+                    <button className="bg-blue-500 text-white px-4 py-1 rounded-sm mb-3 cursor-pointer">
+                      + Invite team members
                     </button>
                     <div>
                       <div className="flex justify-between items-center mb-6">

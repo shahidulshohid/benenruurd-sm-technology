@@ -5,25 +5,9 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { SiGmail, SiSlack } from "react-icons/si";
 import { LuCalendarFold } from "react-icons/lu";
 import { Separator } from "@radix-ui/react-separator";
+import Link from "next/link";
 
 export default function AddTrigger() {
-    const triggers = [
-        {
-            icon: <FaBolt size={18} />,
-            title: "Integrations",
-            description: "Start runs based on actions in other integrations",
-        },
-        {
-            icon: <FaRegHandPaper size={18} />,
-            title: "Manual",
-            description: "Start runs on demand",
-        },
-        {
-            icon: <FaClock size={18} />,
-            title: "Scheduled",
-            description: "Start runs on schedule",
-        },
-    ];
 
     const connectedIntegrations = [
         { icon: <SiGmail size={18} />, name: "Gmail" },
@@ -34,25 +18,53 @@ export default function AddTrigger() {
     return (
         <div className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
             <div className="space-y-2">
-                {triggers.map((trigger) => (
-                    <div
-                        key={trigger.title}
-                        className="flex justify-between items-center p-3"
-                    >
+                {/* integrations */}
+                    <Link href="/dashboard/workflowstepone">
+                    <div className="flex justify-between items-center p-3" >
                         <div className="flex items-center gap-3">
                             <div className="border p-1 rounded">
-                                {trigger.icon}
+                                <FaBolt size={18} />
                             </div>
                             <div>
                                 <h3 className="text-sm font-medium text-gray-900">
-                                    {trigger.title}
+                                    Integrations
                                 </h3>
-                                <p className="text-xs text-gray-500">{trigger.description}</p>
+                                <p className="text-xs text-gray-500">Start runs based on actions in other integrations</p>
                             </div>
                         </div>
                         <MdKeyboardArrowRight className="text-gray-400" size={20} />
                     </div>
-                ))}
+                    </Link>
+                    {/* manual */}
+                     <div className="flex justify-between items-center p-3" >
+                        <div className="flex items-center gap-3">
+                            <div className="border p-1 rounded">
+                                <FaRegHandPaper size={18} />
+                            </div>
+                            <div>
+                                <h3 className="text-sm font-medium text-gray-900">
+                                    Manual
+                                </h3>
+                                <p className="text-xs text-gray-500">Start runs on demand</p>
+                            </div>
+                        </div>
+                        <MdKeyboardArrowRight className="text-gray-400" size={20} />
+                    </div>
+                    {/* scheduled  */}
+                    <div className="flex justify-between items-center p-3" >
+                        <div className="flex items-center gap-3">
+                            <div className="border p-1 rounded">
+                                <FaClock size={18} />
+                            </div>
+                            <div>
+                                <h3 className="text-sm font-medium text-gray-900">
+                                    Scheduled
+                                </h3>
+                                <p className="text-xs text-gray-500">Start runs on schedule</p>
+                            </div>
+                        </div>
+                        <MdKeyboardArrowRight className="text-gray-400" size={20} />
+                    </div>
             </div>
 
             {/* Separator */}

@@ -205,9 +205,13 @@ function Dashboard() {
 
       {/* Most recent workflows */}
       <div className="mb-24">
-        <h3 className="text-xl text-[#22222F] font-semibold mb-3">
-          Most recent workflows
-        </h3>
+        <div className="flex justify-between items-center mb-3">
+          <h3 className="text-xl text-[#22222F] font-semibold">
+            Most recent workflows
+          </h3>
+          <Link href="/dashboard/workflow">
+          <Button variant="outline" className="text-sm font-semibold cursor-pointer border rounded-md shadow-sm focus:ring-2">See all workflows</Button></Link>
+        </div>
         <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
           <table className="w-full table-auto min-w-[768px]">
             <thead className="border-b-2">
@@ -268,9 +272,13 @@ function Dashboard() {
 
       {/* Most recent runs */}
       <div className="mb-24">
-        <h3 className="text-xl text-[#22222F] font-semibold mb-3">
-          Most recent runs
-        </h3>
+        <div className="flex justify-between items-center mb-3">
+          <h3 className="text-xl text-[#22222F] font-semibold">
+            Most recent runs
+          </h3>
+          <Link href="/dashboard/runsoverview">
+          <Button variant="outline" className="text-sm font-semibold cursor-pointer border rounded-md shadow-sm focus:ring-2">See all runs</Button></Link>
+        </div>
         <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
           <table className="w-full table-auto min-w-[768px]">
             <thead className="border-b-2">

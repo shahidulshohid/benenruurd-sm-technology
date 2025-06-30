@@ -40,6 +40,10 @@ function LoginForm() {
                             Welcome back! Log in with your email and <br/> password to continue.
                         </p>
                     </div>
+                    <div className='flex items-center justify-center gap-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 cursor-pointer p-2.5'>
+                        <Image src="/google.png" width={25} height={25} alt='google icon' className='border rounded p-1'/>
+                        <h3 className='text-[#22222F] font-semibold text-sm'>Log in with Google</h3>
+                    </div>
 
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                             {/* email input */}
@@ -77,13 +81,13 @@ function LoginForm() {
 
                         <button
                             type="submit"
-                            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+                            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition cursor-pointer"
                         >
                             Log In
                         </button>
                         {/* forgot password  */}
                         <div className='text-center'>
-                            <Link href="/forgotpassword" className='text-blue-500'>Forgot your password?</Link>
+                            <Link href="/forgotpassword" className='text-[#217AFC] text-sm font-semibold'>Forgot your password?</Link>
                         </div>
                         {/* separator  */}
                         <div>
@@ -91,7 +95,7 @@ function LoginForm() {
                         </div>
                         {/* redirect signup page  */}
                         <div className='text-center'>
-                            <span>Don’t have an account?</span> <Link href="/signup" className='text-blue-500'>Sign Up</Link>
+                            <span>Don’t have an account?</span> <Link href="/signup" className='text-blue-500 text-sm font-semibold cursor-pointer'>Sign Up</Link>
                         </div>
                     </form>
                 </div>

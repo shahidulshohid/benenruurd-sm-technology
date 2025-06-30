@@ -11,7 +11,7 @@ import ManualComponent from "@/components/allworkflowcomponent/Manual";
 import ScheduledComponent from "@/components/allworkflowcomponent/Scheduled";
 import { CiStar } from "react-icons/ci";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import ScheduledSingComponent from "@/components/allscheduledcomponent/Scheduled-single-run"
+// import ScheduledSingComponent from "@/components/allscheduledcomponent/Scheduled-single-run"
 // import ScheduledBatchRun from "@/components/allscheduledcomponent/Scheduled-batch-run";
 // import WorkflowStepOne from "@/components/allscheduledcomponent/Workflow-step-one";
 // import WorkflowStepTwo from "@/components/allscheduledcomponent/Workflow-step-two";
@@ -155,7 +155,7 @@ const WorkflowPage = () => {
           <h1 className="text-xl font-semibold">Work in progress</h1>
         </div>
       )}
-      <div><ScheduledSingComponent/></div>
+      {/* <div><ScheduledSingComponent/></div> */}
       {/* <div><ScheduledBatchRun/></div> */}
       {/* <div><WorkflowStepOne/></div> */}
       {/* <div><WorkflowStepTwo/></div> */}

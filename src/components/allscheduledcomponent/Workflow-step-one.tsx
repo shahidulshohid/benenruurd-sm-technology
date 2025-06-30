@@ -12,8 +12,9 @@ import { CiSearch } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
 import { GoArrowLeft } from "react-icons/go";
 import Image from "next/image";
+import Link from "next/link";
 
-const ScheduledSingleRun = () => {
+const WorkflowStepOne = () => {
     const [showTrigger, setShowTrigger] = useState<boolean>(false);
 
     const connectedIntegrations = [
@@ -80,56 +81,57 @@ const ScheduledSingleRun = () => {
                                 </div>
                                 <Separator />
                                 <div className="space-y-2">
-                                        <div
-                                            className="flex justify-between items-center p-3"  >
-                                            <div className="flex items-center gap-3">
-                                                <div className="border p-1 rounded">
-                                                    <Image src="/integrations.svg" width={18} height={18} alt=""/>
-                                                </div>
-                                                <div>
-                                                    <h3 className="text-sm font-medium text-gray-900">
-                                                        Integrations
-                                                    </h3>
-                                                    <p className="text-xs text-gray-500">Automate actions in apps like Slack, Gmail and Linear</p>
-                                                </div>
+                                    <div
+                                        className="flex justify-between items-center p-3"  >
+                                        <div className="flex items-center gap-3">
+                                            <div className="border p-1 rounded">
+                                                <Image src="/integrations.svg" width={18} height={18} alt="" />
                                             </div>
-                                            <MdKeyboardArrowRight className="text-gray-400" size={20} />
-                                        </div>
-                                        <div
-                                            className="flex justify-between items-center p-3"  >
-                                            <div className="flex items-center gap-3">
-                                                <div className="border p-1 rounded">
-                                                    <Image src="/flowcontrol.svg" width={20} height={20} alt=""/>
-                                                </div>
-                                                <div>
-                                                    <h3 className="text-sm font-medium text-gray-900">
-                                                        Flow Control
-                                                    </h3>
-                                                    <p className="text-xs text-gray-500">Add logic like paths and waiting</p>
-                                                </div>
+                                            <div>
+                                                <h3 className="text-sm font-medium text-gray-900">
+                                                    Integrations
+                                                </h3>
+                                                <p className="text-xs text-gray-500">Automate actions in apps like Slack, Gmail and Linear</p>
                                             </div>
-                                            <MdKeyboardArrowRight className="text-gray-400" size={20} />
                                         </div>
-                                        <div
-                                            className="flex justify-between items-center p-3"  >
-                                            <div className="flex items-center gap-3">
-                                                <div className="border p-1 rounded">
-                                                    <Image src="/ai.svg" width={20} height={20} alt=""/>
-                                                </div>
-                                                <div>
-                                                    <h3 className="text-sm font-medium text-gray-900">
-                                                        AI
-                                                    </h3>
-                                                    <p className="text-xs text-gray-500">Use AI to make actions like summarizing</p>
-                                                </div>
+                                        <MdKeyboardArrowRight className="text-gray-400" size={20} />
+                                    </div>
+                                    <div
+                                        className="flex justify-between items-center p-3"  >
+                                        <div className="flex items-center gap-3">
+                                            <div className="border p-1 rounded">
+                                                <Image src="/flowcontrol.svg" width={20} height={20} alt="" />
                                             </div>
-                                            <MdKeyboardArrowRight className="text-gray-400" size={20} />
+                                            <div>
+                                                <h3 className="text-sm font-medium text-gray-900">
+                                                    Flow Control
+                                                </h3>
+                                                <p className="text-xs text-gray-500">Add logic like paths and waiting</p>
+                                            </div>
                                         </div>
+                                        <MdKeyboardArrowRight className="text-gray-400" size={20} />
+                                    </div>
+                                    <div
+                                        className="flex justify-between items-center p-3"  >
+                                        <div className="flex items-center gap-3">
+                                            <div className="border p-1 rounded">
+                                                <Image src="/ai.svg" width={20} height={20} alt="" />
+                                            </div>
+                                            <div>
+                                                <h3 className="text-sm font-medium text-gray-900">
+                                                    AI
+                                                </h3>
+                                                <p className="text-xs text-gray-500">Use AI to make actions like summarizing</p>
+                                            </div>
+                                        </div>
+                                        <MdKeyboardArrowRight className="text-gray-400" size={20} />
+                                    </div>
+                                    <Link href="/dashboard/workflowsteptwo">
                                         <div
                                             className="flex justify-between items-center p-3"  >
                                             <div className="flex items-center gap-3">
                                                 <div className="border p-1 rounded">
-                                                    <Image src="/human.svg" width={20} height={20} alt=""/>
+                                                    <Image src="/human.svg" width={20} height={20} alt="" />
                                                 </div>
                                                 <div>
                                                     <h3 className="text-sm font-medium text-gray-900">
@@ -140,6 +142,7 @@ const ScheduledSingleRun = () => {
                                             </div>
                                             <MdKeyboardArrowRight className="text-gray-400" size={20} />
                                         </div>
+                                    </Link>
                                 </div>
 
                                 {/* Separator */}
@@ -179,4 +182,4 @@ const ScheduledSingleRun = () => {
     );
 };
 
-export default ScheduledSingleRun;
+export default WorkflowStepOne;
