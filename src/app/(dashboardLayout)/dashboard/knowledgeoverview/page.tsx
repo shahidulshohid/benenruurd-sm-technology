@@ -160,16 +160,16 @@ const KnowledgePage = () => {
                     </thead>
                     <tbody>
                         {currentItems.map((item) => (
-                            <tr key={item.id} className="border-b border-gray-300">
-                                <td className="px-6 py-2 flex items-center gap-2 text-[#22222F] font-medium">
+                            <tr key={item.id} className="border-b hover:bg-gray-50 border-gray-300 cursor-pointer">
+                                <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                                     <Image
                                         src={item.icon}
-                                        width={20}
-                                        height={20}
+                                        width={24}
+                                        height={24}
                                         alt="icon"
-                                        className="border border-gray-300 rounded p-1"
+                                        className="border border-[#D5D6E2] p-1 rounded"
                                     />
-                                    {item.name}
+                                    <span className="text-[#22222F] text-sm">{item.name}</span>
                                 </td>
 
                                 <td className="px-6 py-2 text-[#707187]">{item.size}</td>
@@ -187,7 +187,7 @@ const KnowledgePage = () => {
                                     </span>
                                 </td>
                                 <td className="px-6 py-2">
-                                    <button className="text-red-500 hover:text-red-700">
+                                    <button className="text-red-500 hover:text-red-700 cursor-pointer">
                                         <MdOutlineDelete size={20} />
                                     </button>
                                 </td>
@@ -213,7 +213,7 @@ const KnowledgePage = () => {
                         <button
                             key={page}
                             onClick={() => handlePageChange(page)}
-                            className={`px-3 py-1 text-sm rounded-sm font-medium ${page === currentPage
+                            className={`px-3 py-1 text-sm rounded-sm font-medium cursor-pointer ${page === currentPage
                                 ? "border border-gray-300 text-[#22222F]"
                                 : "border border-transparent text-[#8588AB]"
                                 }`}
