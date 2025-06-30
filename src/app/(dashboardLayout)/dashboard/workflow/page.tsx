@@ -11,12 +11,6 @@ import ManualComponent from "@/components/allworkflowcomponent/Manual";
 import ScheduledComponent from "@/components/allworkflowcomponent/Scheduled";
 import { CiStar } from "react-icons/ci";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-// import ScheduledSingComponent from "@/components/allscheduledcomponent/Scheduled-single-run"
-// import ScheduledBatchRun from "@/components/allscheduledcomponent/Scheduled-batch-run";
-// import WorkflowStepOne from "@/components/allscheduledcomponent/Workflow-step-one";
-// import WorkflowStepTwo from "@/components/allscheduledcomponent/Workflow-step-two";
-// import WorkflowStepThree from "@/components/allscheduledcomponent/Workflow-step-three";
-// import WorkflowStepThreeError from "@/components/allscheduledcomponent/Workflow-step-three-error";
 
 type Tab = "editor" | "runs";
 
@@ -155,12 +149,6 @@ const WorkflowPage = () => {
           <h1 className="text-xl font-semibold">Work in progress</h1>
         </div>
       )}
-      {/* <div><ScheduledSingComponent/></div> */}
-      {/* <div><ScheduledBatchRun/></div> */}
-      {/* <div><WorkflowStepOne/></div> */}
-      {/* <div><WorkflowStepTwo/></div> */}
-      {/* <div><WorkflowStepThree/></div> */}
-      {/* <div><WorkflowStepThreeError/></div> */}
     </div>
   );
 };

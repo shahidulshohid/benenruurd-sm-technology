@@ -66,11 +66,11 @@ const WorkflowStepThreeError = () => {
               </div>
             </div>
 
-            <div className={`flex items-center justify-between px-4 py-3 border-2 rounded-lg ${
-              selectedOption === "Not Assigned"
-                      ? "border-red-500"
-                      : ""
-            }`}>
+            <div
+              className={`flex items-center justify-between px-4 py-3 border-2 rounded-lg ${
+                selectedOption === "Not Assigned" ? "border-red-500" : ""
+              }`}
+            >
               <div className="flex items-center gap-3">
                 <span className="text-sm text-gray-700">2</span>
                 <div className="border p-1 rounded text-gray-600">
@@ -80,14 +80,34 @@ const WorkflowStepThreeError = () => {
                   Get approval to continue
                 </span>
               </div>
-              <div className="flex items-center gap-3">
-                <Button
-                  variant="outline"
-                  className="flex items-center gap-2 text-sm -mr-1">
-                  No Assigned
-                </Button>
-                <BsThreeDotsVertical className="text-gray-400" />
-              </div>
+              {selectedOption === "Not Assigned" ? (
+                <div className="flex items-center gap-3">
+                  <Button
+                    variant="outline"
+                    className="flex items-center gap-2 text-sm -mr-1"
+                  >
+                    No Assigned
+                  </Button>
+                  <BsThreeDotsVertical className="text-gray-400" />
+                </div>
+              ) : (
+                <div className="flex items-center gap-3">
+                  <Button
+                    variant="outline"
+                    className="flex items-center gap-2 text-sm -mr-1"
+                  >
+                    <span>Run as</span>
+                    <Image
+                      src="/dashboardIcons/profileImg.png"
+                      width={20}
+                      height={20}
+                      alt="Profile"
+                      className="rounded-full"
+                    />
+                  </Button>
+                  <BsThreeDotsVertical className="text-gray-400" />
+                </div>
+              )}
             </div>
 
             <button
