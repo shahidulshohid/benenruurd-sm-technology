@@ -86,7 +86,7 @@ export default function AppSidebar() {
                 {/* Manage */}
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Manage</p>
                 {[
-                  { label: "Workflow", icon: "/dashboardIcons/workflow.png", href: "/dashboard/workflow" },
+                  { label: "Workflow", icon: "/dashboardIcons/workflow.svg", href: "/dashboard/workflow" },
                   { label: "Runs", icon: "/dashboardIcons/runs.png", href: "/dashboard/runsoverview" },
                   { label: "Integrations", icon: "/dashboardIcons/integration.png", href: "/dashboard/integration" },
                   { label: "Knowledge", icon: "/dashboardIcons/knowledge.png", href: "/dashboard/knowledgeoverview" },
