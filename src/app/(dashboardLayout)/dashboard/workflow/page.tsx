@@ -80,10 +80,10 @@ const WorkflowPage = () => {
           />
         </div>
         <div className="flex items-center gap-2">
-          <img src="/notifications.svg" alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
-          <img src="/share.svg" alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
-          <img src="/help.svg" alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
-          <img src="/dots.svg" alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
+          <Image src="/notifications.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
+          <Image src="/share.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
+          <Image src="/help.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
+          <Image src="/dots.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
         </div>
       </div>
 

@@ -136,7 +136,7 @@ const WorkflowStepThreeError = () => {
                       <option value="Not Assigned">Not Assigned</option>
                     </select>
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                      <FaChevronDown className="w-4 h-4" />
+                      <FaChevronDown className="w-3 h-3" />
                     </div>
                   </div>
                   {error && (
@@ -163,7 +163,7 @@ const WorkflowStepThreeError = () => {
                       </span>
                     </div>
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                      <FaChevronDown className="w-4 h-4" />
+                      <FaChevronDown className="w-3 h-3" />
                     </div>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ const WorkflowStepThreeError = () => {
                         minDate={new Date("2025-06-30T08:53:00+06:00")}
                         placeholderText="Select date"
                       />
-                      <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xs pointer-events-none" />
+                      <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-700 text-xs pointer-events-none" />
                     </div>
                   </div>
                   <div className="flex-1">
@@ -208,7 +208,7 @@ const WorkflowStepThreeError = () => {
                         <option>3 days after initial notification</option>
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <FaChevronDown className="w-4 h-4" />
+                        <FaChevronDown className="w-3 h-3" />
                       </div>
                     </div>
                   </div>
