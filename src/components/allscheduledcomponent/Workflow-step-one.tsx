@@ -6,7 +6,6 @@ import { MdKeyboardArrowRight, MdOutlineWatchLater } from "react-icons/md";
 import { Switch } from "@/components/ui/switch";
 import "react-datepicker/dist/react-datepicker.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { FaBolt, FaClock, FaRegHandPaper } from "react-icons/fa";
 import { SiGmail, SiSlack } from "react-icons/si";
 import { LuCalendarFold } from "react-icons/lu";
 import { CiSearch } from "react-icons/ci";
