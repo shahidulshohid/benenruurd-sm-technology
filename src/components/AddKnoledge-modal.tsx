@@ -43,8 +43,8 @@ export function DialogCloseContent() {
       <Separator />
 
       {/* Upload Files Option */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3 cursor-pointer p-2 rounded">
+      <div className="flex items-center justify-between cursor-pointer">
+        <div className="flex items-center gap-3 p-2 rounded">
           <div className="border border-gray-300 p-1.5 rounded text-gray-600">
             <FaRegFileAlt className="w-4 h-4" />
           </div>
@@ -54,8 +54,8 @@ export function DialogCloseContent() {
       </div>
 
       {/* Text Redirect Option */}
-      <div onClick={() => setChangeModal(!changeModal)} className="flex items-center justify-between">
-        <div className="flex items-center gap-3 cursor-pointer p-2 rounded">
+      <div onClick={() => setChangeModal(!changeModal)} className="flex items-center justify-between cursor-pointer">
+        <div className="flex items-center gap-3 p-2 rounded">
           <div className="border border-gray-300 p-1.5 rounded text-gray-600">
             <IoText className="w-4 h-4" />
           </div>
@@ -90,7 +90,7 @@ export function DialogCloseContent() {
         {/* <DialogFooter> */}
         <DialogClose asChild>
         <div className="text-right border-t">
-          <Button onClick={() => setChangeModal(true)} type="submit" className="bg-blue-500 mt-3">Add text</Button>
+          <Button onClick={() => setChangeModal(true)} type="submit" className="bg-[#0D5AE8] hover:bg-[#0D5AE8] mt-3 cursor-pointer">Add text</Button>
         </div>
         </DialogClose>
       </form>
