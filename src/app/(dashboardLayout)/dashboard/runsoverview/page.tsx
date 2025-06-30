@@ -64,7 +64,7 @@ const RunsTable = () => {
         <div className="flex gap-2 flex-wrap items-center">
           {/* Status Dropdown */}
           <div className="relative">
-            <select className="border border-gray-300 rounded-lg text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
+            <select className="border cursor-pointer border-gray-300 rounded-lg text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
               <option>Status</option>
             </select>
             <FiChevronDown size={20} className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
@@ -72,7 +72,7 @@ const RunsTable = () => {
 
           {/* Workflow Dropdown */}
           <div className="relative">
-            <select className="border border-gray-300 rounded-lg text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
+            <select className="border cursor-pointer border-gray-300 rounded-lg text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
               <option>Workflow</option>
             </select>
             <FiChevronDown size={20} className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
@@ -110,7 +110,7 @@ const RunsTable = () => {
           <tbody>
             {paginatedWorkflows.length ? (
               paginatedWorkflows.map((item, i) => (
-                <tr key={i} className="border-b hover:bg-gray-50">
+                <tr key={i} className="border-b hover:bg-gray-50 cursor-pointer">
                   <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                     <Image
                       src={item.icon}
@@ -123,7 +123,7 @@ const RunsTable = () => {
                   </td>
                   <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.runName}</td>
                   <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastUpdate}</td>
-                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.interactions}</td>
+                  <td className="px-6 py-2 text-[#217AFC] font-semibold text-sm">{item.interactions}</td>
                   <td className="px-6 py-2">
                     {item.status === "Completed" ? (
                       <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">
@@ -163,7 +163,7 @@ const RunsTable = () => {
             <button
               key={page}
               onClick={() => handlePageChange(page)}
-              className={`px-3 py-1 text-sm rounded-sm font-medium ${
+              className={`px-3 py-1 text-sm rounded-sm font-medium cursor-pointer ${
                 page === currentPage
                   ? "border border-gray-300 text-[#22222F]"
                   : "border border-transparent text-[#8588AB]"

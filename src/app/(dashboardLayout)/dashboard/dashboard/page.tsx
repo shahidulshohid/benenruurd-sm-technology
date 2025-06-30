@@ -352,7 +352,7 @@ function Dashboard() {
               key={index}
               className="flex items-start gap-3 rounded-xl border border-[#E4E4E7] bg-white p-5 shadow-sm transition hover:shadow-md"
             >
-              <div className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-md">
+              <div className="w-8 h-8 flex items-center justify-center border border-[#D5D6E2] rounded-md">
                 <Image
                   src={item.icon}
                   width={20}
@@ -362,10 +362,10 @@ function Dashboard() {
                 />
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-[#1A1A1A]">
+                <h3 className="text-lg font-semibold text-[#1A1A1A]">
                   {item.title}
                 </h3>
-                <p className="text-sm text-[#6B7280] mt-1">{item.description}</p>
+                <p className="text-sm text-[#8588AB] mt-1">{item.description}</p>
               </div>
             </div>
           ))}
