@@ -179,7 +179,7 @@ export function DialogCloseContentSetting() {
                       </div>
                       <Switch
                         id="email-notifications-1"
-                        className="mr-5 bg-transparent border border-[#D5D6E2] cursor-pointer"
+                        className="mr-5 cursor-pointer"
                       />
                     </div>
                   </div>
