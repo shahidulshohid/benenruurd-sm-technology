@@ -70,7 +70,7 @@ export function DialogCloseContentSetting() {
                         className={`flex items-center gap-2 w-full px-3 py-2 rounded text-left
                           ${isActive
                             ? "bg-[#D5D6E2] text-[#22222F] font-semibold"
-                            : "hover:bg-[#D5D6E2] text-sm font-semibold text-[#22222F]"
+                            : "hover:bg-[#D5D6E2] text-sm font-semibold text-[#22222F] cursor-pointer"
                           }`}
                       >
                         <Icon
@@ -97,7 +97,7 @@ export function DialogCloseContentSetting() {
                         className={`flex items-center gap-2 w-full px-3 py-2 rounded text-left
                           ${isActive
                             ? "bg-[#D5D6E2] text-[#22222F] font-semibold"
-                            : "hover:bg-[#D5D6E2] text-[#22222F] text-sm font-semibold"
+                            : "hover:bg-[#D5D6E2] text-[#22222F] text-sm font-semibold cursor-pointer"
                           }`}
                       >
                         <Icon
@@ -116,7 +116,7 @@ export function DialogCloseContentSetting() {
                 // Account Details
                 activeItem === "Account Details" ? (
                   <div className="pl-4">
-                    <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
+                    <h1 className="text-xl mb-6 font-semibold text-[#22222F]">
                       Account details
                     </h1>
                     <div className="flex justify-between items-center">
@@ -129,25 +129,25 @@ export function DialogCloseContentSetting() {
                           className="rounded-full"
                         />
                         <div>
-                          <h3 className="text-lg text-[#22222F]">Ruben Vaalt</h3>
-                          <p className="text-sm">Acme Inc.</p>
+                          <h3 className="text-sm font-semibold text-[#22222F]">Ruben Vaalt</h3>
+                          <p className="text-sm text-[#8588AB]">Acme Inc.</p>
                         </div>
                       </div>
-                      <Button variant="outline" className="mr-4">
+                      <Button variant="outline" className="mr-4 text-[#22222F] text-sm font-semibold cursor-pointer">
                         Sign out
                       </Button>
                     </div>
-                    <h4 className="text-sm font-semibold mt-3 text-[#22222F]">
+                    <h4 className="text-sm font-semibold mt-6 text-[#22222F]">
                       Delete my account
                     </h4>
                     <div className="flex justify-between items-center">
-                      <p>
+                      <p className="text-[#8588AB] text-[12px]">
                         Permanently delete this account and data. This action can’t be
                         undone!
                       </p>
                       <Button
                         variant="outline"
-                        className="text-red-500 hover:text-red-500 mr-3"
+                        className="text-[#D94F4F] hover:text-[#D94F4F] font-semibold text-sm mr-3 cursor-pointer"
                       >
                         Delete account
                       </Button>
@@ -160,21 +160,27 @@ export function DialogCloseContentSetting() {
                     </h1>
                     <div className="flex justify-between items-center mb-5">
                       <div>
-                        <h4 className="text-[#22222F] font-semibold">
+                        <h4 className="text-[#22222F] font-semibold text-sm">
                           Email notifications
                         </h4>
-                        <p>Receive workflow notifications on your email address</p>
+                        <p className="text-[#8588AB] text-[12px]">Receive workflow notifications on your email address</p>
                       </div>
-                      <Switch id="email-notifications-1" className="mr-5" />
+                      <Switch
+                        id="email-notifications-1"
+                        className="mr-5 data-[state=checked]:bg-blue-500 cursor-pointer"
+                      />
                     </div>
                     <div className="flex justify-between items-center">
                       <div>
-                        <h4 className="text-[#22222F] font-semibold">
+                        <h4 className="text-[#22222F] font-semibold text-sm">
                           Mobile notifications
                         </h4>
-                        <p>Receive workflow notifications on your mobile device</p>
+                        <p className="text-[#8588AB] text-[12px]">Receive workflow notifications on your mobile device</p>
                       </div>
-                      <Switch id="mobile-notifications-2" className="mr-5" />
+                      <Switch
+                        id="email-notifications-1"
+                        className="mr-5 bg-transparent border border-[#D5D6E2] cursor-pointer"
+                      />
                     </div>
                   </div>
                 ) : activeItem === "Integrations" ? (
