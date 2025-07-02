@@ -208,7 +208,7 @@ const KnowledgePage = () => {
             <div className="flex justify-between items-center mt-4">
                 <button
                     onClick={() => handlePageChange(currentPage - 1)}
-                    className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
+                    className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
                     disabled={currentPage === 1}
                 >
                     <FiChevronLeft />
@@ -232,7 +232,7 @@ const KnowledgePage = () => {
 
                 <button
                     onClick={() => handlePageChange(currentPage + 1)}
-                    className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
+                    className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
                     disabled={currentPage === totalPages}
                 >
                     Next

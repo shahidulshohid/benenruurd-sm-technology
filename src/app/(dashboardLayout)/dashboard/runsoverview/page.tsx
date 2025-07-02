@@ -59,27 +59,28 @@ const RunsTable = () => {
 
   return (
     <div className="w-full px-6 py-4">
-      <div className="flex justify-between mb-4 flex-wrap gap-2">
+      <div className="flex flex-col md:flex-row justify-between mb-4 gap-3">
         <h2 className="text-xl font-bold">Runs</h2>
-        <div className="flex gap-2 flex-wrap items-center">
+
+        <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 w-full md:w-auto">
           {/* Status Dropdown */}
-          <div className="relative">
-            <select className="border cursor-pointer border-gray-300 rounded-lg text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
+          <div className="relative w-full sm:w-auto">
+            <select className="w-full sm:w-auto border cursor-pointer border-gray-300 rounded-lg text-[#8588AB] px-3 py-2 text-sm outline-none bg-transparent pr-8 appearance-none">
               <option>Status</option>
             </select>
             <FiChevronDown size={20} className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
           </div>
 
           {/* Workflow Dropdown */}
-          <div className="relative">
-            <select className="border cursor-pointer border-gray-300 rounded-lg text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
+          <div className="relative w-full sm:w-auto">
+            <select className="w-full sm:w-auto border cursor-pointer border-gray-300 rounded-lg text-[#8588AB] px-3 py-2 text-sm outline-none bg-transparent pr-8 appearance-none">
               <option>Workflow</option>
             </select>
             <FiChevronDown size={20} className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
           </div>
 
           {/* Search Input */}
-          <div className="relative">
+          <div className="relative w-full sm:w-auto">
             <input
               type="text"
               placeholder="Search runs"
@@ -88,7 +89,7 @@ const RunsTable = () => {
                 setSearchTerm(e.target.value);
                 setCurrentPage(1); // reset to page 1 when searching
               }}
-              className="border border-gray-300 rounded-lg pl-10 pr-3 py-1 text-sm outline-none bg-transparent"
+              className="w-full sm:w-64 border border-gray-300 rounded-lg pl-10 pr-3 py-2 text-sm outline-none bg-transparent"
             />
             <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-base" />
           </div>
@@ -149,39 +150,41 @@ const RunsTable = () => {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-between items-center mt-4 flex-wrap gap-3">
+      <div className="flex justify-between items-center mt-4 overflow-x-auto gap-4 whitespace-nowrap">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
-          className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
+          className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
           disabled={currentPage === 1}
         >
           <FiChevronLeft />
           Previous
         </button>
+
         <div className="flex gap-2">
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
               key={page}
               onClick={() => handlePageChange(page)}
-              className={`px-3 py-1 text-sm rounded-sm font-medium cursor-pointer ${
-                page === currentPage
-                  ? "border border-gray-300 text-[#22222F]"
-                  : "border border-transparent text-[#8588AB]"
-              }`}
+              className={`px-3 py-1 text-sm rounded-sm font-medium cursor-pointer ${page === currentPage
+                ? "border border-gray-300 text-[#22222F]"
+                : "border border-transparent text-[#8588AB]"
+                }`}
             >
               {page}
             </button>
           ))}
         </div>
+
         <button
           onClick={() => handlePageChange(currentPage + 1)}
-          className="px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
+          className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
           disabled={currentPage === totalPages}
         >
           Next
           <FiChevronRight />
         </button>
       </div>
+                                                   
     </div>
   );
 };

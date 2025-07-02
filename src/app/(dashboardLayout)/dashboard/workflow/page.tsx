@@ -107,8 +107,8 @@ const WorkflowPage = () => {
       </div>
 
       {showEditRuns ? (
-        <div className="max-w-[896px] mx-auto flex justify-center gap-6 mt-6">
-          <div className="w-1/2 border-2 rounded-lg h-[100px]">
+        <div className="max-w-[896px] mx-auto md:flex justify-center gap-6 mt-6">
+          <div className="md:w-1/2 mx-auto border-2 rounded-lg h-[100px] mr-4 ml-4 lg:mr-0 lg:ml-0 mt-5 lg:mt-0">
             <h3 className="p-3">Trigger</h3>
             <div className="text-center text-blue-500 font-semibold p-4 border-t-2">
               <button onClick={() => setShowTrigger(true)}>+ Add a Trigger</button>
@@ -116,7 +116,7 @@ const WorkflowPage = () => {
           </div>
 
           {showTrigger && (
-            <div className="w-1/2 border-2 rounded-lg mb-6">
+            <div className="md:w-1/2 mx-auto border-2 rounded-lg mb-6 mr-4 ml-4 md:mr-0 md:ml-0 mt-5 md:mt-0">
               <div className="p-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <GoArrowLeft />
