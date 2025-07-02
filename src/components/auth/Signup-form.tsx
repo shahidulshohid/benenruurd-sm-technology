@@ -26,7 +26,7 @@ function SignUpForm() {
         <div className="min-h-screen flex flex-col md:flex-row">
             {/* message icon  */}
             <div>
-                <Image src="/messageImg.png" width={40} height={40} alt='Message image' className='m-6' />
+                <Image src="/messageImg.png" width={40} height={40} alt='Message image' className='m-6 cursor-pointer' />
             </div>
             {/* Left: Form */}
             <div className="flex-1 flex items-center justify-center p-8 bg-white">
@@ -40,68 +40,68 @@ function SignUpForm() {
 
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                         {/* login with google */}
-                        <div className='flex items-center justify-center gap-2 border-2 hover:border-[#217AFC] rounded-md shadow-sm focus:outline-none focus:ring-2 cursor-pointer p-2.5'>
+                        <div className='flex items-center justify-center gap-2 border-2 rounded-md shadow-sm focus:outline-none focus:ring-2 cursor-pointer p-1.5'>
                             <Image src="/google.png" width={25} height={25} alt='google icon' className='border rounded p-1' />
                             <h3 className='text-[#22222F] font-semibold text-sm'>Log in with Google</h3>
                         </div>
                         {/* name input */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">
-                                Name <span className='text-red-500'>*</span>
+                            <label className="block text-sm font-medium text-[#22222F] mb-2">
+                                Name <span className='text-[#D94F4F] text-sm font-semibold'>*</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="Name"
                                 {...register("name", { required: "Name is required" })}
-                                className={`w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.email ? "border-red-500 focus:ring-red-400" : "focus:ring-blue-400"
+                                className={`w-full px-4 py-2 text-sm font-semibold text-[#22222F] border rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.email ? "border-[#D94F4F] focus:ring-[#D94F4F]" : "focus:ring-[#217AFC]"
                                     }`}
                             />
                             {errors.email && (
-                                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                                <p className="text-[#D94F4F] text-sm font-semibold mt-1">{errors.email.message}</p>
                             )}
                         </div>
                         {/* email input */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">
-                                Email <span className='text-red-500'>*</span>
+                            <label className="block text-sm font-medium text-[#22222F] mb-1">
+                                Email <span className='text-[#D94F4F] text-sm font-semibold'>*</span>
                             </label>
                             <input
                                 type="email"
                                 placeholder="Email"
                                 {...register("email", { required: "Email is required" })}
-                                className={`w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.email ? "border-red-500 focus:ring-red-400" : "focus:ring-blue-400"
+                                className={`w-full px-4 py-2 text-sm font-semibold text-[#22222F] border rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.password ? "border-[#D94F4F] focus:ring-[#D94F4F]" : "focus:ring-[#217AFC]"
                                     }`}
                             />
                             {errors.email && (
-                                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                                <p className="text-[#D94F4F] text-sm mt-1">{errors.email.message}</p>
                             )}
                         </div>
                         {/* password input */}
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">
-                                Password <span className='text-red-500'>*</span>
+                                Password <span className='text-[#D94F4F]'>*</span>
                             </label>
                             <input
                                 type="password"
                                 placeholder="Password"
                                 {...register("password", { required: "Password is required" })}
-                                className={`w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.password ? "border-red-500 focus:ring-red-400" : "focus:ring-blue-400"
+                                className={`w-full px-4 py-2 text-sm font-semibold text-[#22222F] border rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.password ? "border-[#D94F4F] focus:ring-[#D94F4F]" : "focus:ring-[#217AFC]"
                                     }`}
                             />
                             {errors.password && (
-                                <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
+                                <p className="text-[#D94F4F] text-sm mt-1">{errors.password.message}</p>
                             )}
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full bg-[#217AFC] text-sm font-semibold text-white py-2 rounded-md hover:bg-[#217AFC] transition cursor-pointer"
+                            className="w-full bg-[#0D5AE8] text-white py-2 rounded-md hover:bg-[#0D5AE8] text-sm font-semibold transition cursor-pointer"
                         >
                             Sign Up
                         </button>
                         {/* redirect signup page  */}
                         <div className='text-center'>
-                            <span>Already have an account?</span> <Link href="/login" className='text-[#217AFC] text-sm font-semibold'>Log In</Link>
+                            <span className='text-[#8588AB] text-sm'>Already have an account?</span> <Link href="/login" className='text-[#217AFC] text-sm font-semibold cursor-pointer'>Log In</Link>
                         </div>
                     </form>
                 </div>

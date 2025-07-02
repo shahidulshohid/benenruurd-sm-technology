@@ -14,8 +14,8 @@ interface AuthImageProps {
 const AuthImage = ({
   src = "/authenticationImg.png",
   alt = "Login Illustration",
-  width = 400,
-  height = 400,
+  width = 563,
+  height = 922,
   containerClassName = "",
   imageClassName = "",
 }: AuthImageProps) => {

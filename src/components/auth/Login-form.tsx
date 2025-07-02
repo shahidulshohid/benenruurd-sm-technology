@@ -29,7 +29,7 @@ function LoginForm() {
         <div className="min-h-screen flex flex-col md:flex-row">
             {/* message icon  */}
             <div>
-                <Image src="/messageImg.png" width={40} height={40} alt='Message image' className='m-6' />
+                <Image src="/messageImg.png" width={40} height={40} alt='Message image' className='m-6 cursor-pointer' />
             </div>
             {/* Left: Form */}
             <div className="flex-1 flex items-center justify-center p-8 bg-white">
@@ -42,7 +42,7 @@ function LoginForm() {
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                         {/* Login with google  */}
-                        <div className='flex items-center justify-center gap-2 border-2 rounded-md shadow-sm focus:outline-none focus:ring-2 cursor-pointer p-2.5'>
+                        <div className='flex items-center justify-center gap-2 border-2 rounded-md shadow-sm focus:outline-none focus:ring-2 cursor-pointer p-1.5'>
                             <Image src="/google.png" width={25} height={25} alt='google icon' className='border rounded p-1' />
                             <h3 className='text-[#22222F] font-semibold text-sm'>Log in with Google</h3>
                         </div>
