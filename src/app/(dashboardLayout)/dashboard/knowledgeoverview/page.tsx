@@ -113,20 +113,26 @@ const KnowledgePage = () => {
     return (
         <div className="w-full px-6 py-4">
             {/* Header */}
-            <div className="flex justify-between items-center mb-4">
-                <h1 className="text-2xl font-bold">Knowledge</h1>
-                <div className="flex items-center gap-2">
-                    <button onClick={() => setOpen(true)} className="bg-blue-500 text-white px-4 py-1 rounded-lg cursor-pointer">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-3">
+                <h1 className="text-xl md:text-2xl font-bold">Knowledge</h1>
+
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full md:w-auto">
+                    <button
+                        onClick={() => setOpen(true)}
+                        className="bg-blue-500 text-white px-4 py-2 rounded-lg w-full sm:w-auto text-sm font-semibold"
+                    >
                         + Add knowledge
                     </button>
+
                     <Dialog open={open} onOpenChange={setOpen}>
                         <DialogCloseContent />
                     </Dialog>
-                    <div className="relative">
+
+                    <div className="relative w-full sm:w-64">
                         <input
                             type="text"
                             placeholder="Search knowledge"
-                            className="border border-gray-300 rounded-lg pl-10 pr-3 py-1 text-sm outline-none bg-transparent"
+                            className="w-full border border-gray-300 rounded-lg pl-10 pr-3 py-2 text-sm outline-none bg-transparent"
                             value={searchTerm}
                             onChange={handleSearch}
                         />
@@ -135,11 +141,12 @@ const KnowledgePage = () => {
                 </div>
             </div>
 
+
             {/* Table */}
             <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
                 <table className="w-full table-auto min-w-[768px]">
-                    <thead>
-                        <tr className="border-b-2">
+                    <thead className="border-b-2">
+                        <tr>
                             <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
                                 File name
                             </th>
