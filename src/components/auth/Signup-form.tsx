@@ -6,9 +6,9 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import AuthImage from './AuthImage'
 
 type Inputs = {
-    name: string;
     email: string;
     password: string;
+    repeatPassword: string;
 }
 
 function SignUpForm() {
@@ -44,22 +44,6 @@ function SignUpForm() {
                             <Image src="/google.png" width={25} height={25} alt='google icon' className='border rounded p-1' />
                             <h3 className='text-[#22222F] font-semibold text-sm'>Log in with Google</h3>
                         </div>
-                        {/* name input */}
-                        <div>
-                            <label className="block text-sm font-medium text-[#22222F] mb-2">
-                                Name <span className='text-[#D94F4F] text-sm font-semibold'>*</span>
-                            </label>
-                            <input
-                                type="text"
-                                placeholder="Name"
-                                {...register("name", { required: "Name is required" })}
-                                className={`w-full px-4 py-2 text-sm font-semibold text-[#22222F] border rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.email ? "border-[#D94F4F] focus:ring-[#D94F4F]" : "focus:ring-[#217AFC]"
-                                    }`}
-                            />
-                            {errors.email && (
-                                <p className="text-[#D94F4F] text-sm font-semibold mt-1">{errors.email.message}</p>
-                            )}
-                        </div>
                         {/* email input */}
                         <div>
                             <label className="block text-sm font-medium text-[#22222F] mb-1">
@@ -85,6 +69,22 @@ function SignUpForm() {
                                 type="password"
                                 placeholder="Password"
                                 {...register("password", { required: "Password is required" })}
+                                className={`w-full px-4 py-2 text-sm font-semibold text-[#22222F] border rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.password ? "border-[#D94F4F] focus:ring-[#D94F4F]" : "focus:ring-[#217AFC]"
+                                    }`}
+                            />
+                            {errors.password && (
+                                <p className="text-[#D94F4F] text-sm mt-1">{errors.password.message}</p>
+                            )}
+                        </div>
+                        {/* repeat password */}
+                        <div>
+                            <label className="block text-sm font-medium text-[#22222F] mb-1">
+                                Repeat password <span className='text-[#D94F4F] text-sm font-semibold'>*</span>
+                            </label>
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                {...register("repeatPassword", { required: "Password is required" })}
                                 className={`w-full px-4 py-2 text-sm font-semibold text-[#22222F] border rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.password ? "border-[#D94F4F] focus:ring-[#D94F4F]" : "focus:ring-[#217AFC]"
                                     }`}
                             />
