@@ -32,7 +32,7 @@ function SignUpForm() {
             <div className="flex-1 flex items-center justify-center p-8 bg-white">
                 <div className="w-full max-w-md space-y-6">
                     <div className="text-left">
-                        <h1 className="text-3xl font-bold text-[#22222F] mb-2">Sign Up</h1>
+                        <h1 className="text-2xl md:text-4xl font-semibold text-[#22222F] mb-2">Sign Up</h1>
                         <p className="text-sm text-[#8588AB]">
                             Welcome back! Sign Up with your name, email and <br /> password to continue.
                         </p>

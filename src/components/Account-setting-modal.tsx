@@ -179,7 +179,7 @@ export function DialogCloseContentSetting() {
                       </div>
                       <Switch
                         id="email-notifications-1"
-                        className="mr-5 cursor-pointer"
+                        className="mr-5 data-[state=checked]:bg-blue-500 cursor-pointer"
                       />
                     </div>
                   </div>
@@ -449,7 +449,7 @@ export function DialogCloseContentSetting() {
                 ) : null
               }
               {/* Footer only at the bottom of right side */}
-              <div className="flex justify-between items-center border-t py-3 px-5">
+              {/* <div className="flex justify-between items-center border-t py-3 px-5">
                 <div className="flex items-center gap-2">
                   <p>Need help? Mail</p>
                   <p className="text-blue-500">support@namehere.com</p>
@@ -458,7 +458,7 @@ export function DialogCloseContentSetting() {
                   <p>Privacy Policy</p>
                   <p>Terms of Use</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </DialogDescription>
