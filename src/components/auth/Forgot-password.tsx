@@ -24,7 +24,7 @@ function ForgoPasswordForm() {
         <div className="min-h-screen flex flex-col md:flex-row">
             {/* message icon  */}
             <div>
-                <Image src="/messageImg.png" width={40} height={40} alt='Message image' className='m-6'/>
+                <Image src="/messageImg.png" width={40} height={40} alt='Message image' className='m-6' />
             </div>
             {/* Left: Form */}
             <div className="flex-1 flex items-center justify-center p-8 bg-white">
@@ -32,7 +32,7 @@ function ForgoPasswordForm() {
                     <div className="text-left">
                         <h1 className="text-2xl lg:text-4xl font-semibold text-[#22222F] mb-2">Forgot your password</h1>
                         <p className="text-sm text-[#8588AB]">
-                            Please enter the email address of your account below to reset <br/> your password.
+                            Please enter the email address of your account below to reset <br /> your password.
                         </p>
                     </div>
 
@@ -54,12 +54,14 @@ function ForgoPasswordForm() {
                             )}
                         </div>
 
-                        <button
-                            type="submit"
-                            className="w-full bg-[#0D5AE8] text-white py-2 rounded-md hover:bg-[#0D5AE8] text-sm font-semibold transition cursor-pointer"
-                        >
-                            Send email
-                        </button>
+                        <Link href="/checkemail">
+                            <button
+                                type="submit"
+                                className="w-full bg-[#0D5AE8] text-white py-2 rounded-md hover:bg-[#0D5AE8] text-sm font-semibold transition cursor-pointer"
+                            >
+                                Send email
+                            </button>
+                        </Link>
                         {/* back to login  */}
                         <div className='text-center'>
                             <Link href="/login" className='text-[#217AFC] text-sm font-semibold'>Back to log in</Link>
@@ -69,7 +71,7 @@ function ForgoPasswordForm() {
             </div>
 
             {/* Right: Image */}
-            <AuthImage/>
+            <AuthImage />
         </div>
     )
 }

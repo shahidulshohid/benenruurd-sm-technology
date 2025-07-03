@@ -41,7 +41,7 @@ function SignUpForm() {
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                         {/* login with google */}
                         <div className='flex items-center justify-center gap-2 border-2 rounded-md shadow-sm focus:outline-none focus:ring-2 cursor-pointer p-1.5'>
-                            <Image src="/google.png" width={25} height={25} alt='google icon' className='border rounded p-1' />
+                            <Image src="/dashboardIcons/googleFormicon.svg" width={25} height={25} alt='google icon' className='border rounded p-1' />
                             <h3 className='text-[#22222F] font-semibold text-sm'>Log in with Google</h3>
                         </div>
                         {/* email input */}

@@ -15,7 +15,6 @@ import Image from "next/image";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Separator } from "@/components/ui/separator";
 import { HiPlus } from "react-icons/hi";
-import { CiHome } from "react-icons/ci";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -28,7 +27,7 @@ export default function AppSidebar() {
 
   return (
     <Sidebar>
-      <SidebarContent className="bg-[#0D0D17] flex flex-col justify-between h-full p-4">
+      <SidebarContent className="bg-[#0D0D17] flex flex-col justify-between min-h-full p-4">
         {/* Top Section */}
         <div>
           <SidebarGroup>
@@ -62,7 +61,7 @@ export default function AppSidebar() {
                 <div>
                   <div className="bg-blue-500 hover:bg-blue-500 flex justify-center mt-4 rounded-sm">
                     <Link href="/dashboard/workflow">
-                      <button className="text-sm py-1 font-semibold rounded-sm text-white flex items-center gap-1 cursor-pointer">
+                      <button className="text-sm py-1.5 font-semibold rounded-sm text-white flex items-center gap-1 cursor-pointer">
                         <HiPlus /> New Workflow
                       </button>
                     </Link>
@@ -73,13 +72,13 @@ export default function AppSidebar() {
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Overview</p>
                 <div>
                   <button
-                    className={`flex w-full items-center gap-2 rounded-sm px-2 py-1 transition-colors ${pathname === "/dashboard/dashboard"
+                    className={`flex w-full items-center gap-2 rounded-sm px-2 py-1.5 transition-colors ${pathname === "/dashboard/dashboard"
                       ? "bg-[#F7F7F81A] text-white"
                       : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
                       }`}
                   >
                     <Link href="/dashboard/dashboard" className="flex items-center gap-2 w-full">
-                      <CiHome size={15} />
+                      <Image src="/dashboardIcons/home.svg" width={20} height={20} alt=""/>
                       <span className="text-sm">Dashboard</span>
                     </Link>
                   </button>
@@ -95,9 +94,9 @@ export default function AppSidebar() {
                 ].map(({ label, icon, href }) => (
                   <div key={label}>
                     <button
-                      className={`flex items-center w-full gap-2 rounded-sm px-2 py-1 transition-colors ${pathname === href
+                      className={`flex items-center w-full gap-2 rounded-sm px-2 py-1.5 transition-colors ${pathname === href
                         ? "bg-[#F7F7F81A] text-white"
-                        : "text-[#D5D6E2] hover:bg-[#6565721a] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
+                        : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
                         }`}
                     >
                       <Link href={href} className="flex items-center gap-2 w-full">
@@ -116,7 +115,7 @@ export default function AppSidebar() {
                 ].map(({ label, icon, href }) => (
                   <SidebarMenuItem key={label}>
                     <SidebarMenuButton
-                      className={`flex items-center gap-2 rounded-sm px-2 py-1 transition-colors ${pathname === href
+                      className={`flex items-center gap-2 rounded-sm px-2 py-1.5 transition-colors ${pathname === href
                         ? "bg-[#F7F7F81A] text-white"
                         : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
                         }`}

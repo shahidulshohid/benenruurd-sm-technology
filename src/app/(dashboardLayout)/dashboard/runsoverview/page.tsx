@@ -112,7 +112,7 @@ const RunsTable = () => {
             {paginatedWorkflows.length ? (
               paginatedWorkflows.map((item, i) => (
                 <tr key={i} className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition">
-                  <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
+                  <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                     <Image
                       src={item.icon}
                       width={24}

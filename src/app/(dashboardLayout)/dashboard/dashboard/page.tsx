@@ -167,7 +167,7 @@ function Dashboard() {
                   key={i}
                   className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition"
                 >
-                  <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
+                  <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                     <Image
                       src={item.icon}
                       width={24}
@@ -236,7 +236,7 @@ function Dashboard() {
                   key={i}
                   className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition"
                 >
-                  <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
+                  <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                     <Image
                       src={item.icon}
                       width={24}
@@ -306,7 +306,7 @@ function Dashboard() {
                   key={i}
                   className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition"
                 >
-                  <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
+                  <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                     <Image
                       src={item.icon}
                       width={24}
@@ -350,15 +350,15 @@ function Dashboard() {
           {infoCards.map((item, index) => (
             <div
               key={index}
-              className="flex items-start gap-3 rounded-xl border border-[#E4E4E7] bg-white p-5 shadow-sm transition hover:shadow-md"
+              className="flex items-start gap-3 rounded-xl border border-[#E4E4E7] bg-white px-3 py-4 shadow-sm transition hover:shadow-md"
             >
               <div className="w-8 h-8 flex items-center justify-center border border-[#D5D6E2] rounded-md">
                 <Image
                   src={item.icon}
-                  width={20}
-                  height={20}
+                  width={14}
+                  height={14}
                   alt={item.title || "icon"}
-                  className="w-5 h-5 object-contain"
+                  className="w-3 h-3 md:w-4 md:h-4 object-contain"
                 />
               </div>
               <div>
