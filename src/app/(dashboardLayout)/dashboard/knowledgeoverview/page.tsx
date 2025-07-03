@@ -21,7 +21,7 @@ const KnowledgePage = () => {
     const knowledgeItems: KnowledgeItem[] = [
         {
             id: 1,
-            icon: "/google.png",
+            icon: "/dashboardIcons/knoledgeIcon1.svg",
             name: "Briefing_PDF_Document.pdf",
             size: "4.12 MB",
             usedIn: "3 workflows",
@@ -30,7 +30,7 @@ const KnowledgePage = () => {
         },
         {
             id: 2,
-            icon: "/google.png",
+            icon: "/dashboardIcons/knoledgeIcon2.svg",
             name: "Untitled text",
             size: "2.31 B",
             usedIn: "1 workflow",
@@ -39,7 +39,7 @@ const KnowledgePage = () => {
         },
         {
             id: 3,
-            icon: "/google.png",
+            icon: "/dashboardIcons/knoledgeIcon1.svg",
             name: "Briefing_PDF_Document.pdf",
             size: "11.32 MB",
             usedIn: "0 workflows",
@@ -48,7 +48,7 @@ const KnowledgePage = () => {
         },
         {
             id: 4,
-            icon: "/google.png",
+            icon: "/dashboardIcons/knoledgeIcon2.svg",
             name: "Sample_Doc.pdf",
             size: "5.67 MB",
             usedIn: "2 workflows",
@@ -57,7 +57,7 @@ const KnowledgePage = () => {
         },
         {
             id: 5,
-            icon: "/google.png",
+            icon: "/dashboardIcons/knoledgeIcon1.svg",
             name: "Note.txt",
             size: "1.23 KB",
             usedIn: "1 workflow",
@@ -66,7 +66,7 @@ const KnowledgePage = () => {
         },
         {
             id: 6,
-            icon: "/google.png",
+            icon: "/dashboardIcons/knoledgeIcon2.svg",
             name: "Report_Final.pdf",
             size: "7.45 MB",
             usedIn: "4 workflows",
@@ -75,7 +75,7 @@ const KnowledgePage = () => {
         },
         {
             id: 7,
-            icon: "/google.png",
+            icon: "/dashboardIcons/knoledgeIcon1.svg",
             name: "Summary.docx",
             size: "2.11 MB",
             usedIn: "2 workflows",
@@ -168,7 +168,7 @@ const KnowledgePage = () => {
                     <tbody>
                         {currentItems.map((item) => (
                             <tr key={item.id} className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition">
-                                <td className="px-6 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
+                                <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                                     <Image
                                         src={item.icon}
                                         width={24}
