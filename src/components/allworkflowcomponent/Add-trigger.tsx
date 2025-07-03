@@ -1,100 +1,105 @@
 "use client";
 
-import { FaBolt, FaClock, FaRegHandPaper } from "react-icons/fa";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { SiGmail, SiSlack } from "react-icons/si";
-import { LuCalendarFold } from "react-icons/lu";
 import { Separator } from "@radix-ui/react-separator";
-import Link from "next/link";
+import Image from "next/image";
 
 export default function AddTrigger() {
 
-    const connectedIntegrations = [
-        { icon: <SiGmail size={18} />, name: "Gmail" },
-        { icon: <LuCalendarFold size={18} />, name: "Google Calendar" },
-        { icon: <SiSlack size={18} />, name: "Slack" },
-    ];
-
     return (
-        <div className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
+        <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
             <div className="space-y-2">
-                {/* integrations */}
-                    <Link href="/dashboard/workflowstepone">
-                    <div className="flex justify-between items-center p-3" >
-                        <div className="flex items-center gap-3">
-                            <div className="border p-1 rounded">
-                                <FaBolt size={18} />
-                            </div>
-                            <div>
-                                <h3 className="text-sm font-medium text-gray-900">
-                                    Integrations
-                                </h3>
-                                <p className="text-xs text-gray-500">Start runs based on actions in other integrations</p>
-                            </div>
+                {/* Integrations */}
+                <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                    <div className="flex items-center gap-4">
+                        <div>
+                            <Image src="/dashboardIcons/integrations.svg" width={24} height={24} alt="Integrations image" />
                         </div>
-                        <MdKeyboardArrowRight className="text-gray-400" size={20} />
-                    </div>
-                    </Link>
-                    {/* manual */}
-                     <div className="flex justify-between items-center p-3" >
-                        <div className="flex items-center gap-3">
-                            <div className="border p-1 rounded">
-                                <FaRegHandPaper size={18} />
-                            </div>
-                            <div>
-                                <h3 className="text-sm font-medium text-gray-900">
-                                    Manual
-                                </h3>
-                                <p className="text-xs text-gray-500">Start runs on demand</p>
-                            </div>
+                        <div>
+                            <h3 className="text-sm font-semibold text-[#22222F]">
+                                Integrations
+                            </h3>
+                            <p className="text-xs text-[#8588AB]">Start runs based on actions in other integrations</p>
                         </div>
-                        <MdKeyboardArrowRight className="text-gray-400" size={20} />
                     </div>
-                    {/* scheduled  */}
-                    <div className="flex justify-between items-center p-3" >
-                        <div className="flex items-center gap-3">
-                            <div className="border p-1 rounded">
-                                <FaClock size={18} />
-                            </div>
-                            <div>
-                                <h3 className="text-sm font-medium text-gray-900">
-                                    Scheduled
-                                </h3>
-                                <p className="text-xs text-gray-500">Start runs on schedule</p>
-                            </div>
+                    <MdKeyboardArrowRight className="text-gray-400 hover:text-gray-600 transition duration-200" size={20} />
+                </div>
+
+                {/* Manual */}
+                <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                    <div className="flex items-center gap-4">
+                        <div>
+                            <Image src="/dashboardIcons/manual.svg" width={24} height={24} alt="Manual image" />
                         </div>
-                        <MdKeyboardArrowRight className="text-gray-400" size={20} />
+                        <div>
+                            <h3 className="text-sm font-semibold text-[#22222F]">
+                                Manual
+                            </h3>
+                            <p className="text-xs text-[#8588AB]">Start runs on demand</p>
+                        </div>
                     </div>
+                    <MdKeyboardArrowRight className="text-gray-400 hover:text-gray-600 transition duration-200" size={20} />
+                </div>
+
+                {/* Scheduled */}
+                <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                    <div className="flex items-center gap-4">
+                        <div className="border rounded p-1">
+                            <Image src="/dashboardIcons/scheduled.svg" width={14} height={14} alt="Scheduled image" />
+                        </div>
+                        <div>
+                            <h3 className="text-sm font-semibold text-[#22222F]">
+                                Scheduled
+                            </h3>
+                            <p className="text-xs text-[#8588AB]">Start runs on schedule</p>
+                        </div>
+                    </div>
+                    <MdKeyboardArrowRight className="text-gray-400 hover:text-gray-600 transition duration-200" size={20} />
+                </div>
             </div>
 
             {/* Separator */}
             <Separator className="w-full h-px bg-gray-200 my-2" />
-            <h4 className="text-xs font-semibold text-gray-500 mb-2 py-1 pl-4">
+            <h4 className="text-xs font-semibold text-[#8588AB] mb-2 py-2 pl-4">
                 Connected Integrations
             </h4>
             {/* Separator */}
             <Separator className="w-full h-px bg-gray-200 my-2" />
-            <div className="space-y-2">
-
-                <div className="p-3">
-                    {connectedIntegrations.map((integration) => (
-                        <div
-                            key={integration.name}
-                            className="flex justify-between items-center"
-                        >
-                            <div className="flex items-center gap-3 my-2">
-                                <div className="border p-1 rounded">
-                                    {integration.icon}
-                                </div>
-                                <h3 className="text-sm font-medium text-gray-900">
-                                    {integration.name}
-                                </h3>
-                            </div>
-                            <MdKeyboardArrowRight className="text-gray-400" size={20} />
+            <div>
+                <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                    <div className="flex items-center gap-3 my-3">
+                        <div className="border p-1 rounded">
+                            <Image src="/dashboardIcons/google.svg" width={16} height={12} alt="Google image" />
                         </div>
-                    ))}
+                        <h3 className="text-sm font-semibold text-[#22222F]">
+                            Gmail
+                        </h3>
+                    </div>
+                    <MdKeyboardArrowRight className="text-gray-400 hover:text-gray-600 transition duration-200" size={20} />
+                </div>
+                <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                    <div className="flex items-center gap-3 my-3">
+                        <div className="border p-1 rounded">
+                            <Image src="/dashboardIcons/googleCalendar.svg" width={16} height={12} alt="Google Calender image" />
+                        </div>
+                        <h3 className="text-sm font-semibold text-[#22222F]">
+                            Google Calender
+                        </h3>
+                    </div>
+                    <MdKeyboardArrowRight className="text-gray-400 hover:text-gray-600 transition duration-200" size={20} />
+                </div>
+                <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                    <div className="flex items-center gap-3 my-3">
+                        <div className="border p-1 rounded">
+                            <Image src="/dashboardIcons/slack.svg" width={16} height={12} alt="Google Calender image" />
+                        </div>
+                        <h3 className="text-sm font-semibold text-[#22222F]">
+                            Slack
+                        </h3>
+                    </div>
+                    <MdKeyboardArrowRight className="text-gray-400 hover:text-gray-600 transition duration-200" size={20} />
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

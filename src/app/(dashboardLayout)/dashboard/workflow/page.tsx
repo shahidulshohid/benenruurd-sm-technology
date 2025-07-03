@@ -9,8 +9,9 @@ import AddTrigger from "@/components/allworkflowcomponent/Add-trigger";
 import Integrations from "@/components/allworkflowcomponent/Integrations";
 import ManualComponent from "@/components/allworkflowcomponent/Manual";
 import ScheduledComponent from "@/components/allworkflowcomponent/Scheduled";
+import { HiOutlinePlusSm } from "react-icons/hi";
 import { CiStar } from "react-icons/ci";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowRight, MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 type Tab = "editor" | "runs";
 
@@ -22,69 +23,69 @@ const WorkflowPage = () => {
 
   const normalizedQuery = searchQuery.trim().toLowerCase();
 
-  let currentTitle = "Add Trigger";
+  let currentTitle = "Add a Trigger";
   let currentComponent = <AddTrigger />;
 
-  if (normalizedQuery.includes("manual")) {
-    currentTitle = "Manual";
-    currentComponent = <ManualComponent />;
-  } else if (normalizedQuery.includes("integration")) {
-    currentTitle = "Integrations";
-    currentComponent = <Integrations />;
-  } else if (normalizedQuery.includes("scheduled")) {
-    currentTitle = "Scheduled";
-    currentComponent = <ScheduledComponent />;
-  }
+  // if (normalizedQuery.includes("manual")) {
+  //   currentTitle = "Manual";
+  //   currentComponent = <ManualComponent />;
+  // } else if (normalizedQuery.includes("integration")) {
+  //   currentTitle = "Integrations";
+  //   currentComponent = <Integrations />;
+  // } else if (normalizedQuery.includes("scheduled")) {
+  //   currentTitle = "Scheduled";
+  //   currentComponent = <ScheduledComponent />;
+  // }
 
   const dynamicPlaceholder = `Search ${currentTitle}`;
 
   return (
     <div>
-    <div className="relative flex flex-wrap items-center justify-between px-4 md:px-8 py-2 md:py-0 h-auto md:h-[60px] gap-3">
-  {/* Center Section */}
-  <div className="w-full md:w-auto md:absolute md:left-1/2 md:transform md:-translate-x-1/2 flex justify-center">
-    <div className="flex items-center gap-2 p-2">
-      <Image
-        src="/google.png"
-        width={35}
-        height={35}
-        alt="Gmail icon"
-        className="border p-1 rounded-lg cusop"
-      />
-      <div className="flex flex-col">
-        <p className="text-sm font-semibold text-[#22222F]">Gmail - Email received</p>
+      <div className="relative flex flex-wrap items-center justify-between px-4 md:px-8 py-2 md:py-0 h-auto md:h-[60px] gap-3">
+        {/* Center Section */}
+        <div className="w-full md:w-auto md:absolute md:left-1/2 md:transform md:-translate-x-1/2 flex justify-center">
+          <div className="flex items-center gap-2 p-2">
+            <Image
+              src="/google.png"
+              width={35}
+              height={35}
+              alt="Gmail icon"
+              className="border p-1 rounded-lg cusop"
+            />
+            <div className="flex flex-col">
+              <p className="text-sm font-semibold text-[#22222F]">Gmail - Email received</p>
+            </div>
+            <CiStar className="text-[#8588AB]" />
+            <MdOutlineKeyboardArrowDown className="text-[#8588AB] cursor-pointer -ml-1" />
+          </div>
+        </div>
+
+        {/* Top Right Icons */}
+        <div className="flex items-center gap-3 w-full md:w-auto justify-center md:justify-end">
+          <Image
+            src="/messageImg.png"
+            width={20}
+            height={20}
+            alt="Message image"
+            className="cursor-pointer"
+          />
+          <Image
+            src="/dashboardIcons/vector.png"
+            width={20}
+            height={20}
+            alt="Vector image"
+            className="cursor-pointer"
+          />
+        </div>
+
+        {/* Bottom Right Icons */}
+        <div className="flex items-center gap-2 w-full md:w-auto justify-center md:justify-end">
+          <Image src="/notifications.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer" />
+          <Image src="/share.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer" />
+          <Image src="/help.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer" />
+          <Image src="/dots.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer" />
+        </div>
       </div>
-      <CiStar className="text-[#8588AB]" />
-      <MdOutlineKeyboardArrowDown className="text-[#8588AB] cursor-pointer -ml-1" />
-    </div>
-  </div>
-
-  {/* Top Right Icons */}
-  <div className="flex items-center gap-3 w-full md:w-auto justify-center md:justify-end">
-    <Image
-      src="/messageImg.png"
-      width={20}
-      height={20}
-      alt="Message image"
-      className="cursor-pointer"
-    />
-    <Image
-      src="/dashboardIcons/vector.png"
-      width={20}
-      height={20}
-      alt="Vector image"
-      className="cursor-pointer"
-    />
-  </div>
-
-  {/* Bottom Right Icons */}
-  <div className="flex items-center gap-2 w-full md:w-auto justify-center md:justify-end">
-    <Image src="/notifications.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
-    <Image src="/share.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
-    <Image src="/help.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
-    <Image src="/dots.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer"/>
-  </div>
-</div>
 
 
       <div className="text-center">
@@ -92,7 +93,7 @@ const WorkflowPage = () => {
         <div className="flex justify-center gap-5 border w-[235px] mx-auto py-1 rounded-lg">
           <button
             onClick={() => {
-              setActiveTab("editor");  
+              setActiveTab("editor");
               setShowEditRuns(true);
             }}
             className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "editor" ? "bg-[#22222F] text-white" : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"}`}
@@ -115,9 +116,10 @@ const WorkflowPage = () => {
       {showEditRuns ? (
         <div className="max-w-[896px] mx-auto md:flex justify-center gap-6 mt-6">
           <div className="md:w-1/2 mx-auto border-2 rounded-lg h-[100px] mr-4 ml-4 lg:mr-0 lg:ml-0 mt-5 lg:mt-0">
-            <h3 className="p-3">Trigger</h3>
-            <div className="text-center text-blue-500 font-semibold p-4 border-t-2">
-              <button onClick={() => setShowTrigger(true)}>+ Add a Trigger</button>
+            <h3 className="px-4 py-3 text-sm font-semibold text-[#22222F]">Trigger</h3>
+            <div className="text-center text-[#217AFC] font-semibold p-4 border-t-2 flex justify-center items-center">
+              <HiOutlinePlusSm />
+              <button className=" cursor-pointer" onClick={() => setShowTrigger(true)}><span>Add Trigger</span></button>
             </div>
           </div>
 
@@ -126,9 +128,9 @@ const WorkflowPage = () => {
               <div className="p-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <GoArrowLeft />
-                  <h3 className="text-sm font-semibold">{currentTitle}</h3>
+                  <h3 className="text-sm font-semibold text-[#22222F]">{currentTitle}</h3>
                 </div>
-                <button onClick={() => setShowTrigger(false)}>
+                <button className="cursor-pointer" onClick={() => setShowTrigger(false)}>
                   <RxCross2 />
                 </button>
               </div>
@@ -139,14 +141,14 @@ const WorkflowPage = () => {
                 <input
                   type="text"
                   placeholder={dynamicPlaceholder}
-                  className="w-full pl-10 pr-4 py-2 focus:outline-none"
+                  className="w-full pl-10 pr-4 py-2 focus:outline-none text-[#8588AB]"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
               <Separator />
-
-              {currentComponent}
+              {/* add trigger section  */}
+              <Integrations/>
             </div>
           )}
         </div>
