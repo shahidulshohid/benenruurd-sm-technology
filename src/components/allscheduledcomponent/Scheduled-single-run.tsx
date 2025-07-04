@@ -56,7 +56,7 @@ const ScheduledSingleRun = () => {
                   <span className="text-sm text-gray-700">Every 2 days</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Switch id="workflow-switch" className="data-[state=checked]:bg-blue-500" />
+                  <Switch id="workflow-switch" className="data-[state=checked]:bg-blue-500 cursor-pointer" />
 
                   <BsThreeDotsVertical className="text-gray-400" />
                 </div>

@@ -8,11 +8,14 @@ import "react-datepicker/dist/react-datepicker.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { HiChevronDown } from "react-icons/hi";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const ScheduledBatchRun = () => {
+  const router = useRouter()
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("flsfksld");
+    router.push("/dashboard/workflowstepone")
   };
 
   return (
@@ -38,7 +41,7 @@ const ScheduledBatchRun = () => {
                 <div className="flex items-center gap-2">
                   <Switch
                     id="workflow-switch"
-                    className="scale-125 bg-transparent data-[state=checked]:bg-transparent border border-gray-300 rounded-full cursor-pointer [&>span]:border [&>span]:border-gray-300"
+                    className="scale-125 bg-transparent data-[state=checked]:bg-transparent border border-gray-300 rounded-full cursor-pointer [&>span]:border [&>span]:border-gray-300 cup"
                   />
 
                   <BsThreeDotsVertical className="text-gray-400" />
