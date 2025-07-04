@@ -11,6 +11,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa";
+import Link from "next/link";
 
 const ScheduledSingleRun = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
@@ -95,9 +96,11 @@ const ScheduledSingleRun = () => {
                       className="rounded-full"
                     />
                   </Button>
+                  <Link href="/dashboard/workflow">
                   <button type="button">
-                    <RxCross2 className="text-gray-500" />
+                    <RxCross2 className="text-gray-500 cursor-pointer" />
                   </button>
+                  </Link>
                 </div>
               </div>
 
