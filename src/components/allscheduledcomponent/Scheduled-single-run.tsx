@@ -188,7 +188,7 @@ const ScheduledSingleRun = () => {
               <Separator />
 
               <div className="text-right p-4">
-                <Button type="submit" className="bg-blue-500 text-white px-4">
+                <Button type="submit" className="bg-blue-500 hover:bg-blue-500 text-white px-4 cursor-pointer">
                   Done
                 </Button>
               </div>

@@ -3,10 +3,6 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
-// import { CiSearch } from "react-icons/ci";
-// import AddTrigger from "@/components/allworkflowcomponent/Add-trigger";
-// import ManualComponent from "@/components/allworkflowcomponent/Manual";
-// import ScheduledComponent from "@/components/allworkflowcomponent/Scheduled";
 import { HiOutlinePlusSm } from "react-icons/hi";
 import { CiSearch, CiStar } from "react-icons/ci";
 import {
