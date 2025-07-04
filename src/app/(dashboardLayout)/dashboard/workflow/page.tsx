@@ -3,15 +3,17 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
-import { GoArrowLeft } from "react-icons/go";
-import { CiSearch } from "react-icons/ci";
-import AddTrigger from "@/components/allworkflowcomponent/Add-trigger";
-import Integrations from "@/components/allworkflowcomponent/Integrations";
-import ManualComponent from "@/components/allworkflowcomponent/Manual";
-import ScheduledComponent from "@/components/allworkflowcomponent/Scheduled";
+// import { CiSearch } from "react-icons/ci";
+// import AddTrigger from "@/components/allworkflowcomponent/Add-trigger";
+// import ManualComponent from "@/components/allworkflowcomponent/Manual";
+// import ScheduledComponent from "@/components/allworkflowcomponent/Scheduled";
 import { HiOutlinePlusSm } from "react-icons/hi";
-import { CiStar } from "react-icons/ci";
-import { MdKeyboardArrowRight, MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { CiSearch, CiStar } from "react-icons/ci";
+import {
+  MdKeyboardArrowRight,
+  MdOutlineKeyboardArrowDown,
+} from "react-icons/md";
+import { GoArrowLeft } from "react-icons/go";
 
 type Tab = "editor" | "runs";
 
@@ -19,25 +21,26 @@ const WorkflowPage = () => {
   const [activeTab, setActiveTab] = useState<Tab>("editor");
   const [showTrigger, setShowTrigger] = useState<boolean>(false);
   const [showEditRuns, setShowEditRuns] = useState<boolean>(true);
+
+  // add trigger section
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const normalizedQuery = searchQuery.trim().toLowerCase();
+  // Helper function to check if search matches a string
+  const matchSearch = (text: string) =>
+    text.toLowerCase().includes(searchQuery.toLowerCase());
 
-  let currentTitle = "Add a Trigger";
-  let currentComponent = <AddTrigger />;
-
-  // if (normalizedQuery.includes("manual")) {
-  //   currentTitle = "Manual";
-  //   currentComponent = <ManualComponent />;
-  // } else if (normalizedQuery.includes("integration")) {
-  //   currentTitle = "Integrations";
-  //   currentComponent = <Integrations />;
-  // } else if (normalizedQuery.includes("scheduled")) {
-  //   currentTitle = "Scheduled";
-  //   currentComponent = <ScheduledComponent />;
-  // }
-
-  const dynamicPlaceholder = `Search ${currentTitle}`;
+  // Check if any item matches
+  const hasTriggerMatch =
+    matchSearch("integrations") ||
+    matchSearch("manual") ||
+    matchSearch("scheduled");
+  const hasIntegrationMatch =
+    matchSearch("gmail") ||
+    matchSearch("google calendar") ||
+    matchSearch("slack");
+  const hasAnyMatch = hasTriggerMatch || hasIntegrationMatch;
+  // section hide and false
+  const [sectionShow, setSectionShow] = useState<string>("add-trigger");
 
   return (
     <div>
@@ -53,7 +56,9 @@ const WorkflowPage = () => {
               className="border p-1 rounded-lg cusop"
             />
             <div className="flex flex-col">
-              <p className="text-sm font-semibold text-[#22222F]">Gmail - Email received</p>
+              <p className="text-sm font-semibold text-[#22222F]">
+                Gmail - Email received
+              </p>
             </div>
             <CiStar className="text-[#8588AB]" />
             <MdOutlineKeyboardArrowDown className="text-[#8588AB] cursor-pointer -ml-1" />
@@ -80,13 +85,36 @@ const WorkflowPage = () => {
 
         {/* Bottom Right Icons */}
         <div className="flex items-center gap-2 w-full md:w-auto justify-center md:justify-end">
-          <Image src="/notifications.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer" />
-          <Image src="/share.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer" />
-          <Image src="/help.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer" />
-          <Image src="/dots.svg" width={30} height={30} alt="" className="border p-0.5 text-sm rounded-sm cursor-pointer" />
+          <Image
+            src="/notifications.svg"
+            width={30}
+            height={30}
+            alt=""
+            className="border p-0.5 text-sm rounded-sm cursor-pointer"
+          />
+          <Image
+            src="/share.svg"
+            width={30}
+            height={30}
+            alt=""
+            className="border p-0.5 text-sm rounded-sm cursor-pointer"
+          />
+          <Image
+            src="/help.svg"
+            width={30}
+            height={30}
+            alt=""
+            className="border p-0.5 text-sm rounded-sm cursor-pointer"
+          />
+          <Image
+            src="/dots.svg"
+            width={30}
+            height={30}
+            alt=""
+            className="border p-0.5 text-sm rounded-sm cursor-pointer"
+          />
         </div>
       </div>
-
 
       <div className="text-center">
         <Separator className="mb-2 bg-gray-200" />
@@ -96,7 +124,11 @@ const WorkflowPage = () => {
               setActiveTab("editor");
               setShowEditRuns(true);
             }}
-            className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "editor" ? "bg-[#22222F] text-white" : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"}`}
+            className={`px-8 py-1 cursor-pointer rounded-[7px] ${
+              activeTab === "editor"
+                ? "bg-[#22222F] text-white"
+                : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
+            }`}
           >
             Editor
           </button>
@@ -105,7 +137,11 @@ const WorkflowPage = () => {
               setActiveTab("runs");
               setShowEditRuns(false);
             }}
-            className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "runs" ? "bg-[#22222F] text-white" : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"}`}
+            className={`px-8 py-1 cursor-pointer rounded-[7px] ${
+              activeTab === "runs"
+                ? "bg-[#22222F] text-white"
+                : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
+            }`}
           >
             Runs
           </button>
@@ -116,43 +152,630 @@ const WorkflowPage = () => {
       {showEditRuns ? (
         <div className="max-w-[896px] mx-auto md:flex justify-center gap-6 mt-6">
           <div className="md:w-1/2 mx-auto border-2 rounded-lg h-[100px] mr-4 ml-4 lg:mr-0 lg:ml-0 mt-5 lg:mt-0">
-            <h3 className="px-4 py-3 text-sm font-semibold text-[#22222F]">Trigger</h3>
+            <h3 className="px-4 py-3 text-sm font-semibold text-[#22222F]">
+              Trigger
+            </h3>
             <div className="text-center text-[#217AFC] font-semibold p-4 border-t-2 flex justify-center items-center">
               <HiOutlinePlusSm />
-              <button className=" cursor-pointer" onClick={() => setShowTrigger(true)}><span>Add Trigger</span></button>
+              <button
+                className=" cursor-pointer"
+                onClick={() => setShowTrigger(true)}
+              >
+                <span>Add Trigger</span>
+              </button>
             </div>
           </div>
 
           {showTrigger && (
             <div className="md:w-1/2 mx-auto border-2 rounded-lg mb-6 mr-4 ml-4 md:mr-0 md:ml-0 mt-5 md:mt-0">
-              {/* <div className="p-3 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <GoArrowLeft />
-                  <h3 className="text-sm font-semibold text-[#22222F]">{currentTitle}</h3>
-                </div>
-                <button className="cursor-pointer" onClick={() => setShowTrigger(false)}>
-                  <RxCross2 />
-                </button>
-              </div>
-              <Separator />
+              {/* add trigger section  */}
+              {sectionShow === "add-trigger" ? (
+                <section>
+                  <div className="p-3 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      {/* <GoArrowLeft /> */}
+                      <h3 className="text-sm font-semibold text-[#22222F]">
+                        Add a Trigger
+                      </h3>
+                    </div>
+                    <button
+                      className="cursor-pointer"
+                      onClick={() => setShowTrigger(false)}
+                    >
+                      <RxCross2 />
+                    </button>
+                  </div>
+                  <Separator />
+                  <div className="relative w-full">
+                    <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <input
+                      type="text"
+                      placeholder="Search Triggers"
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      value={searchQuery}
+                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB] border-2 border-x-0"
+                    />
+                  </div>
 
-              <div className="relative w-full">
-                <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
-                <input
-                  type="text"
-                  placeholder={dynamicPlaceholder}
-                  className="w-full pl-10 pr-4 py-2 focus:outline-none text-[#8588AB]"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div> */}
-              <Separator />
-              {/* add section  */}
-              <AddTrigger/>
-              {/* <Integrations/> */}
-              {/* <ManualComponent/> */}
-              {/* <ScheduledComponent/> */}
+                  <div className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
+                    {hasAnyMatch ? (
+                      <>
+                        <div className="space-y-2">
+                          {/* Integrations */}
+                          {matchSearch("integrations") && (
+                            <div
+                              onClick={() => setSectionShow("integrations")}
+                              className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200"
+                            >
+                              <div className="flex items-center gap-4">
+                                <div>
+                                  <Image
+                                    src="/dashboardIcons/integrations.svg"
+                                    width={24}
+                                    height={24}
+                                    alt="Integrations image"
+                                  />
+                                </div>
+                                <div>
+                                  <h3 className="text-sm font-semibold text-[#22222F]">
+                                    Integrations
+                                  </h3>
+                                  <p className="text-xs text-[#8588AB]">
+                                    Start runs based on actions in other
+                                    integrations
+                                  </p>
+                                </div>
+                              </div>
+                              <MdKeyboardArrowRight
+                                className="text-gray-400 hover:text-gray-600 transition duration-200"
+                                size={20}
+                              />
+                            </div>
+                          )}
 
+                          {/* Manual */}
+                          {matchSearch("manual") && (
+                            <div
+                              onClick={() => setSectionShow("manual")}
+                              className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200"
+                            >
+                              <div className="flex items-center gap-4">
+                                <div>
+                                  <Image
+                                    src="/dashboardIcons/manual.svg"
+                                    width={24}
+                                    height={24}
+                                    alt="Manual image"
+                                  />
+                                </div>
+                                <div>
+                                  <h3 className="text-sm font-semibold text-[#22222F]">
+                                    Manual
+                                  </h3>
+                                  <p className="text-xs text-[#8588AB]">
+                                    Start runs on demand
+                                  </p>
+                                </div>
+                              </div>
+                              <MdKeyboardArrowRight
+                                className="text-gray-400 hover:text-gray-600 transition duration-200"
+                                size={20}
+                              />
+                            </div>
+                          )}
+
+                          {/* Scheduled */}
+                          {matchSearch("scheduled") && (
+                            <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                              <div
+                                onClick={() => setSectionShow("scheduled")}
+                                className="flex items-center gap-4"
+                              >
+                                <div className="border rounded p-1">
+                                  <Image
+                                    src="/dashboardIcons/scheduled.svg"
+                                    width={14}
+                                    height={14}
+                                    alt="Scheduled image"
+                                  />
+                                </div>
+                                <div>
+                                  <h3 className="text-sm font-semibold text-[#22222F]">
+                                    Scheduled
+                                  </h3>
+                                  <p className="text-xs text-[#8588AB]">
+                                    Start runs on schedule
+                                  </p>
+                                </div>
+                              </div>
+                              <MdKeyboardArrowRight
+                                className="text-gray-400 hover:text-gray-600 transition duration-200"
+                                size={20}
+                              />
+                            </div>
+                          )}
+                        </div>
+
+                        <Separator className="w-full h-0.5 bg-gray-200 my-2" />
+                        <h4 className="text-xs font-semibold text-[#8588AB] mb-2 py-2 pl-4">
+                          Connected Integrations
+                        </h4>
+                        <Separator className="w-full h-0.5 bg-gray-200 my-2" />
+
+                        <div>
+                          {/* Gmail */}
+                          {matchSearch("gmail") && (
+                            <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                              <div className="flex items-center gap-3 my-3">
+                                <div className="border p-1 rounded">
+                                  <Image
+                                    src="/dashboardIcons/google.svg"
+                                    width={16}
+                                    height={12}
+                                    alt="Gmail image"
+                                  />
+                                </div>
+                                <h3 className="text-sm font-semibold text-[#22222F]">
+                                  Gmail
+                                </h3>
+                              </div>
+                              <MdKeyboardArrowRight
+                                className="text-gray-400 hover:text-gray-600 transition duration-200"
+                                size={20}
+                              />
+                            </div>
+                          )}
+
+                          {/* Google Calendar */}
+                          {matchSearch("google calendar") && (
+                            <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                              <div className="flex items-center gap-3 my-3">
+                                <div className="border p-1 rounded">
+                                  <Image
+                                    src="/dashboardIcons/googleCalendar.svg"
+                                    width={16}
+                                    height={12}
+                                    alt="Google Calendar image"
+                                  />
+                                </div>
+                                <h3 className="text-sm font-semibold text-[#22222F]">
+                                  Google Calendar
+                                </h3>
+                              </div>
+                              <MdKeyboardArrowRight
+                                className="text-gray-400 hover:text-gray-600 transition duration-200"
+                                size={20}
+                              />
+                            </div>
+                          )}
+
+                          {/* Slack */}
+                          {matchSearch("slack") && (
+                            <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                              <div className="flex items-center gap-3 my-3">
+                                <div className="border p-1 rounded">
+                                  <Image
+                                    src="/dashboardIcons/slack.svg"
+                                    width={16}
+                                    height={12}
+                                    alt="Slack image"
+                                  />
+                                </div>
+                                <h3 className="text-sm font-semibold text-[#22222F]">
+                                  Slack
+                                </h3>
+                              </div>
+                              <MdKeyboardArrowRight
+                                className="text-gray-400 hover:text-gray-600 transition duration-200"
+                                size={20}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </>
+                    ) : (
+                      <div className="text-center py-8 text-sm text-gray-500">
+                        No trigger or integration found.
+                      </div>
+                    )}
+                  </div>
+                </section>
+              ) : sectionShow === "integrations" ? (
+                <section className="rounded-lg shadow w-full max-w-md border border-t-0">
+                  <div
+                    onClick={() => setSectionShow("add-trigger")}
+                    className="p-3 flex items-center justify-between cursor-pointer"
+                  >
+                    <div className="flex items-center gap-2">
+                      <GoArrowLeft />
+                      <h3 className="text-sm font-semibold text-[#22222F]">
+                        Integrations
+                      </h3>
+                    </div>
+                    <button
+                      className="cursor-pointer"
+                      onClick={() => setShowTrigger(false)}
+                    >
+                      <RxCross2 />
+                    </button>
+                  </div>
+
+                  <Separator />
+                  <div className="relative w-full">
+                    <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <input
+                      type="text"
+                      placeholder="Search Triggers"
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      value={searchQuery}
+                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB] border-2 border-x-0"
+                    />
+                  </div>
+
+                  {/* Communication */}
+                  {matchSearch("slack") && (
+                    <>
+                      <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-4">
+                        Communication
+                      </h4>
+                      <Separator className="w-full h-px bg-gray-200" />
+                      <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                        <div className="flex items-center gap-3 my-3">
+                          <div className="border p-1 rounded">
+                            <Image
+                              src="/dashboardIcons/slack.svg"
+                              width={14}
+                              height={12}
+                              alt="Slack image"
+                            />
+                          </div>
+                          <h3 className="text-sm font-semibold text-[#22222F]">
+                            Slack
+                          </h3>
+                        </div>
+                        <MdKeyboardArrowRight
+                          className="text-gray-400 hover:text-gray-600 transition duration-200"
+                          size={20}
+                        />
+                      </div>
+                    </>
+                  )}
+
+                  {/* E-mail */}
+                  {matchSearch("gmail") && (
+                    <>
+                      <Separator className="w-full h-px bg-gray-200" />
+                      <h4 className="text-xs font-semibold text-[#8588AB] py-3 pl-4">
+                        E-mail
+                      </h4>
+                      <Separator className="w-full h-px bg-gray-200" />
+                      <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                        <div className="flex items-center gap-3 my-3">
+                          <div className="border p-1 rounded">
+                            <Image
+                              src="/dashboardIcons/google.svg"
+                              width={16}
+                              height={12}
+                              alt="Gmail image"
+                            />
+                          </div>
+                          <h3 className="text-sm font-semibold text-[#22222F]">
+                            Gmail
+                          </h3>
+                        </div>
+                        <MdKeyboardArrowRight
+                          className="text-gray-400 hover:text-gray-600 transition duration-200"
+                          size={20}
+                        />
+                      </div>
+                    </>
+                  )}
+
+                  {/* Project Management */}
+                  {(matchSearch("notion") ||
+                    matchSearch("linear") ||
+                    matchSearch("asana")) && (
+                    <>
+                      <Separator className="w-full h-px bg-gray-200" />
+                      <h4 className="text-xs font-semibold text-[#8588AB] py-3 pl-4">
+                        Project Management
+                      </h4>
+                      <Separator className="w-full h-px bg-gray-200" />
+
+                      {matchSearch("notion") && (
+                        <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                          <div className="flex items-center gap-3 my-3">
+                            <div className="border p-1 rounded">
+                              <Image
+                                src="/dashboardIcons/notion.svg"
+                                width={16}
+                                height={12}
+                                alt="Notion image"
+                              />
+                            </div>
+                            <h3 className="text-sm font-semibold text-[#22222F]">
+                              Notion
+                            </h3>
+                          </div>
+                          <MdKeyboardArrowRight
+                            className="text-gray-400 hover:text-gray-600 transition duration-200"
+                            size={20}
+                          />
+                        </div>
+                      )}
+
+                      {matchSearch("linear") && (
+                        <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                          <div className="flex items-center gap-3 my-3">
+                            <div className="border p-1 rounded">
+                              <Image
+                                src="/dashboardIcons/linear.svg"
+                                width={16}
+                                height={12}
+                                alt="Linear image"
+                              />
+                            </div>
+                            <h3 className="text-sm font-semibold text-[#22222F]">
+                              Linear
+                            </h3>
+                          </div>
+                          <MdKeyboardArrowRight
+                            className="text-gray-400 hover:text-gray-600 transition duration-200"
+                            size={20}
+                          />
+                        </div>
+                      )}
+
+                      {matchSearch("asana") && (
+                        <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                          <div className="flex items-center gap-3 my-3">
+                            <div className="border p-1 rounded">
+                              <Image
+                                src="/dashboardIcons/asana.svg"
+                                width={16}
+                                height={12}
+                                alt="Asana image"
+                              />
+                            </div>
+                            <h3 className="text-sm font-semibold text-[#22222F]">
+                              Asana
+                            </h3>
+                          </div>
+                          <MdKeyboardArrowRight
+                            className="text-gray-400 hover:text-gray-600 transition duration-200"
+                            size={20}
+                          />
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  {/* File Storage */}
+                  {matchSearch("google drive") && (
+                    <>
+                      <Separator className="w-full h-px bg-gray-200" />
+                      <h4 className="text-xs font-semibold text-[#8588AB] py-3 pl-4">
+                        File Storage
+                      </h4>
+                      <Separator className="w-full h-px bg-gray-200" />
+                      <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                        <div className="flex items-center gap-3 my-3">
+                          <div className="border p-1 rounded">
+                            <Image
+                              src="/dashboardIcons/googleDrive.svg"
+                              width={16}
+                              height={12}
+                              alt="Google Drive image"
+                            />
+                          </div>
+                          <h3 className="text-sm font-semibold text-[#22222F]">
+                            Google Drive
+                          </h3>
+                        </div>
+                        <MdKeyboardArrowRight
+                          className="text-gray-400 hover:text-gray-600 transition duration-200"
+                          size={20}
+                        />
+                      </div>
+                    </>
+                  )}
+
+                  {/* Calendar */}
+                  {matchSearch("google calendar") && (
+                    <>
+                      <Separator className="w-full h-px bg-gray-200" />
+                      <h4 className="text-xs font-semibold text-[#8588AB] py-3 pl-4">
+                        Calendar
+                      </h4>
+                      <Separator className="w-full h-px bg-gray-200" />
+                      <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                        <div className="flex items-center gap-3 my-3">
+                          <div className="border p-1 rounded">
+                            <Image
+                              src="/dashboardIcons/googleCalendar.svg"
+                              width={16}
+                              height={12}
+                              alt="Google Calendar image"
+                            />
+                          </div>
+                          <h3 className="text-sm font-semibold text-[#22222F]">
+                            Google Calendar
+                          </h3>
+                        </div>
+                        <MdKeyboardArrowRight
+                          className="text-gray-400 hover:text-gray-600 transition duration-200"
+                          size={20}
+                        />
+                      </div>
+                    </>
+                  )}
+                </section>
+              ) : sectionShow === "manual" ? (
+                <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
+                  <div
+                    onClick={() => setSectionShow("add-trigger")}
+                    className="p-3 flex items-center justify-between cursor-pointer"
+                  >
+                    <div className="flex items-center gap-2">
+                      <GoArrowLeft />
+                      <h3 className="text-sm font-semibold text-[#22222F]">
+                        Manual
+                      </h3>
+                    </div>
+                    <button
+                      className="cursor-pointer"
+                      onClick={() => setShowTrigger(false)}
+                    >
+                      <RxCross2 />
+                    </button>
+                  </div>
+
+                  <Separator />
+                  <div className="relative w-full">
+                    <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <input
+                      type="text"
+                      placeholder="Search Manual"
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      value={searchQuery}
+                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB] border-2 border-x-0"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    {/* manual */}
+                    <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                      <div className="flex items-center gap-4">
+                        <div>
+                          <Image
+                            src="/dashboardIcons/manual.svg"
+                            width={24}
+                            height={24}
+                            alt="Integrations image"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-semibold text-[#22222F]">
+                            Start a single run
+                          </h3>
+                        </div>
+                      </div>
+                      <MdKeyboardArrowRight
+                        className="text-gray-400 hover:text-gray-600 transition duration-200"
+                        size={20}
+                      />
+                    </div>
+
+                    {/* batch */}
+                    <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                      <div className="flex items-center gap-4">
+                        <div className="border rounded p-1">
+                          <Image
+                            src="/dashboardIcons/batch.svg"
+                            width={14}
+                            height={14}
+                            alt="Integrations image"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-semibold text-[#22222F]">
+                            Start a batch of runs
+                          </h3>
+                        </div>
+                      </div>
+                      <MdKeyboardArrowRight
+                        className="text-gray-400 hover:text-gray-600 transition duration-200"
+                        size={20}
+                      />
+                    </div>
+                  </div>
+                </section>
+              ) : sectionShow === "scheduled" ? (
+                <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
+                  {/* Header */}
+                  <div
+                    onClick={() => setSectionShow("add-trigger")}
+                    className="p-3 flex items-center justify-between cursor-pointer"
+                  >
+                    <div className="flex items-center gap-2">
+                      <GoArrowLeft />
+                      <h3 className="text-sm font-semibold text-[#22222F]">
+                        Scheduled
+                      </h3>
+                    </div>
+                    <button
+                      className="cursor-pointer"
+                      onClick={() => setShowTrigger(false)}
+                    >
+                      <RxCross2 />
+                    </button>
+                  </div>
+
+                  <Separator />
+
+                  {/* Search */}
+                  <div className="relative w-full">
+                    <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <input
+                      type="text"
+                      placeholder="Search Scheduled"
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      value={searchQuery}
+                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB] border-2 border-x-0"
+                    />
+                  </div>
+
+                  {/* Scheduled */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                      <div className="flex items-center gap-4">
+                        <div className="border rounded p-1">
+                          <Image
+                            src="/dashboardIcons/scheduled.svg"
+                            width={14}
+                            height={14}
+                            alt="Scheduled image"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-semibold text-[#22222F]">
+                            Start a scheduled run
+                          </h3>
+                        </div>
+                      </div>
+                      <MdKeyboardArrowRight
+                        className="text-gray-400 hover:text-gray-600 transition duration-200"
+                        size={20}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Batch */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                      <div className="flex items-center gap-4">
+                        <div className="border rounded p-1">
+                          <Image
+                            src="/dashboardIcons/batch.svg"
+                            width={14}
+                            height={14}
+                            alt="Batch image"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-sm font-semibold text-[#22222F]">
+                            Start a batch of runs
+                          </h3>
+                        </div>
+                      </div>
+                      <MdKeyboardArrowRight
+                        className="text-gray-400 hover:text-gray-600 transition duration-200"
+                        size={20}
+                      />
+                    </div>
+                  </div>
+                </section>
+              ) : null}
             </div>
           )}
         </div>

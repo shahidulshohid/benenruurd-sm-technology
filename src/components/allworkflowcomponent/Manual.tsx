@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FaRegHandPaper } from "react-icons/fa";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { MdBatchPrediction } from "react-icons/md";
 
 export default function ManualComponent() {
     return (

@@ -5,7 +5,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 export default function ScheduledComponent() {
     return (
-        <div className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
+        <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
             <div className="space-y-2">
                 {/* shceduled */}
                 <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
@@ -38,6 +38,6 @@ export default function ScheduledComponent() {
                     <MdKeyboardArrowRight className="text-gray-400 hover:text-gray-600 transition duration-200" size={20} />
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
