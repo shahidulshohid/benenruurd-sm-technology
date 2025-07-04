@@ -89,7 +89,7 @@ export default function AppSidebar() {
                 {[
                   { label: "Workflow", icon: "/dashboardIcons/workflow.svg", href: "/dashboard/workflow" },
                   { label: "Runs", icon: "/dashboardIcons/runs.png", href: "/dashboard/runsoverview" },
-                  { label: "Integrations", icon: "/dashboardIcons/integration.png", href: "/dashboard/integration" },
+                  { label: "Integrations", icon: "/dashboardIcons/integrationsDash.png", href: "/dashboard/integration" },
                   { label: "Knowledge", icon: "/dashboardIcons/knowledge.png", href: "/dashboard/knowledgeoverview" },
                 ].map(({ label, icon, href }) => (
                   <div key={label}>
