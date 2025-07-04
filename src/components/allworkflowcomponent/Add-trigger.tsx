@@ -3,11 +3,36 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Separator } from "@radix-ui/react-separator";
 import Image from "next/image";
+import { GoArrowLeft } from "react-icons/go";
+import { RxCross2 } from "react-icons/rx";
+import { CiSearch } from "react-icons/ci";
 
 export default function AddTrigger() {
+    
 
     return (
-        <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
+        <section>
+            <div className="p-3 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <GoArrowLeft />
+                  <h3 className="text-sm font-semibold text-[#22222F]">Add a trigger</h3>
+                </div>
+                <button className="cursor-pointer">
+                  <RxCross2 />
+                </button>
+              </div>
+              <Separator />
+
+              <div className="relative w-full">
+                <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                <input
+                  type="text"
+                  placeholder="Search Triggers"
+                  className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB] border-2 border-x-0"
+                />
+              </div>
+            {/* add trigger section  */}
+            <div className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
             <div className="space-y-2">
                 {/* Integrations */}
                 <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
@@ -59,12 +84,12 @@ export default function AddTrigger() {
             </div>
 
             {/* Separator */}
-            <Separator className="w-full h-px bg-gray-200 my-2" />
+            <Separator className="w-full h-0.5 bg-gray-200 my-2" />
             <h4 className="text-xs font-semibold text-[#8588AB] mb-2 py-2 pl-4">
                 Connected Integrations
             </h4>
             {/* Separator */}
-            <Separator className="w-full h-px bg-gray-200 my-2" />
+            <Separator className="w-full h-0.5 bg-gray-200 my-2" />
             <div>
                 <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
                     <div className="flex items-center gap-3 my-3">
@@ -100,6 +125,7 @@ export default function AddTrigger() {
                     <MdKeyboardArrowRight className="text-gray-400 hover:text-gray-600 transition duration-200" size={20} />
                 </div>
             </div>
+        </div>
         </section>
     );
 }
