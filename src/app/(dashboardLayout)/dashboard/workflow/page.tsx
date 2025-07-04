@@ -147,8 +147,12 @@ const WorkflowPage = () => {
                 />
               </div>
               <Separator />
-              {/* add trigger section  */}
-              <Integrations/>
+              {/* add section  */}
+              {/* <AddTrigger/> */}
+              {/* <Integrations/> */}
+              {/* <ManualComponent/> */}
+              <ScheduledComponent/>
+
             </div>
           )}
         </div>
