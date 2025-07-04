@@ -14,6 +14,7 @@ import {
   MdOutlineKeyboardArrowDown,
 } from "react-icons/md";
 import { GoArrowLeft } from "react-icons/go";
+import Link from "next/link";
 
 type Tab = "editor" | "runs";
 
@@ -726,54 +727,58 @@ const WorkflowPage = () => {
                   </div>
 
                   {/* Scheduled */}
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
-                      <div className="flex items-center gap-4">
-                        <div className="border rounded p-1">
-                          <Image
-                            src="/dashboardIcons/scheduled.svg"
-                            width={14}
-                            height={14}
-                            alt="Scheduled image"
-                          />
+                  <Link href="/dashboard/singlesiduled">
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                        <div className="flex items-center gap-4">
+                          <div className="border rounded p-1">
+                            <Image
+                              src="/dashboardIcons/scheduled.svg"
+                              width={14}
+                              height={14}
+                              alt="Scheduled image"
+                            />
+                          </div>
+                          <div>
+                            <h3 className="text-sm font-semibold text-[#22222F]">
+                              Start a scheduled run
+                            </h3>
+                          </div>
                         </div>
-                        <div>
-                          <h3 className="text-sm font-semibold text-[#22222F]">
-                            Start a scheduled run
-                          </h3>
-                        </div>
+                        <MdKeyboardArrowRight
+                          className="text-gray-400 hover:text-gray-600 transition duration-200"
+                          size={20}
+                        />
                       </div>
-                      <MdKeyboardArrowRight
-                        className="text-gray-400 hover:text-gray-600 transition duration-200"
-                        size={20}
-                      />
                     </div>
-                  </div>
+                  </Link>
 
                   {/* Batch */}
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
-                      <div className="flex items-center gap-4">
-                        <div className="border rounded p-1">
-                          <Image
-                            src="/dashboardIcons/batch.svg"
-                            width={14}
-                            height={14}
-                            alt="Batch image"
-                          />
+                  <Link href="/dashboard/batchrunscheduled">
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                        <div className="flex items-center gap-4">
+                          <div className="border rounded p-1">
+                            <Image
+                              src="/dashboardIcons/batch.svg"
+                              width={14}
+                              height={14}
+                              alt="Batch image"
+                            />
+                          </div>
+                          <div>
+                            <h3 className="text-sm font-semibold text-[#22222F]">
+                              Start a batch of runs
+                            </h3>
+                          </div>
                         </div>
-                        <div>
-                          <h3 className="text-sm font-semibold text-[#22222F]">
-                            Start a batch of runs
-                          </h3>
-                        </div>
+                        <MdKeyboardArrowRight
+                          className="text-gray-400 hover:text-gray-600 transition duration-200"
+                          size={20}
+                        />
                       </div>
-                      <MdKeyboardArrowRight
-                        className="text-gray-400 hover:text-gray-600 transition duration-200"
-                        size={20}
-                      />
                     </div>
-                  </div>
+                  </Link>
                 </section>
               ) : null}
             </div>

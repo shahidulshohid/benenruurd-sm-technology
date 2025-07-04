@@ -13,7 +13,6 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa";
 
 const ScheduledSingleRun = () => {
-  const [showTrigger, setShowTrigger] = useState<boolean>(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [selectedTime, setSelectedTime] = useState<Date | null>(new Date());
   const [selectedRepeat, setSelectedRepeat] = useState<string>(
@@ -65,7 +64,6 @@ const ScheduledSingleRun = () => {
 
             <button
               type="button"
-              onClick={() => setShowTrigger(true)}
               className="w-full text-blue-600 font-semibold border-2 border-dotted border-blue-400 bg-blue-50 py-2 rounded-lg text-center hover:bg-blue-100 transition"
             >
               + Add Step
@@ -73,7 +71,6 @@ const ScheduledSingleRun = () => {
           </div>
 
           {/* Right Panel */}
-          {showTrigger && (
             <div className="w-full md:w-1/2 border rounded-lg bg-white shadow-sm">
               <div className="flex items-center justify-between p-4 border-b">
                 <div className="flex items-center gap-3">
@@ -98,7 +95,7 @@ const ScheduledSingleRun = () => {
                       className="rounded-full"
                     />
                   </Button>
-                  <button type="button" onClick={() => setShowTrigger(false)}>
+                  <button type="button">
                     <RxCross2 className="text-gray-500" />
                   </button>
                 </div>
@@ -193,7 +190,6 @@ const ScheduledSingleRun = () => {
                 </Button>
               </div>
             </div>
-          )}
         </div>
       </form>
     </div>

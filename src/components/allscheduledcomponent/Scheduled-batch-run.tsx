@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { Switch } from "@/components/ui/switch";
@@ -10,7 +9,6 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { HiChevronDown } from "react-icons/hi";
 
 const ScheduledBatchRun = () => {
-  const [showTrigger, setShowTrigger] = useState<boolean>(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,7 +45,6 @@ const ScheduledBatchRun = () => {
 
             <button
               type="button"
-              onClick={() => setShowTrigger(true)}
               className="w-full text-blue-600 font-semibold border-2 border-dotted border-blue-400 bg-blue-50 text-sm py-3 rounded-lg text-center hover:bg-blue-100 transition cursor-pointer"
             >
               + Add Step
@@ -55,7 +52,6 @@ const ScheduledBatchRun = () => {
           </div>
 
           {/* Right Panel */}
-          {showTrigger && (
             <div className="w-full md:w-1/2 border rounded-lg bg-white shadow-sm">
               <div className="flex items-center justify-between p-2 border-b">
                 <div className="flex items-center gap-3">
@@ -121,7 +117,6 @@ const ScheduledBatchRun = () => {
                 </div>
               </div>
             </div>
-          )}
         </div>
       </form>
     </div>
