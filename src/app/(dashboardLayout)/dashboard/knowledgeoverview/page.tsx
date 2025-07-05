@@ -195,7 +195,12 @@ const KnowledgePage = () => {
                                 </td>
                                 <td className="px-6 py-2">
                                     <button className="text-red-500 hover:text-red-700 cursor-pointer">
-                                        <MdOutlineDelete size={20} />
+                                        <Image
+                                            src="/dashboardIcons/delete.svg"
+                                            width={24}
+                                            height={24}
+                                            alt="icon"
+                                        />
                                     </button>
                                 </td>
                             </tr>

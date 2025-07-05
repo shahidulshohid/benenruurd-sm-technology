@@ -65,14 +65,14 @@ const WorkflowPage = () => {
         {/* Top Right Icons */}
         <div className="flex items-center gap-3 w-full md:w-auto justify-center md:justify-end">
           <Image
-            src="/messageImg.png"
+            src="/dashboardIcons/messageImg.svg"
             width={20}
             height={20}
             alt="Message image"
             className="cursor-pointer"
           />
           <Image
-            src="/dashboardIcons/vector.png"
+            src="/dashboardIcons/victor.svg"
             width={20}
             height={20}
             alt="Vector image"

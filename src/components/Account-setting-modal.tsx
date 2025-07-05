@@ -6,11 +6,8 @@ import {
   DialogDescription,
   DialogHeader,
 } from "@/components/ui/dialog";
-import { CiHome, CiSearch } from "react-icons/ci";
-import { IoMdNotificationsOutline } from "react-icons/io";
-import { GrIntegration } from "react-icons/gr";
-import { MdKeyboardArrowRight, MdOutlineCardMembership } from "react-icons/md";
-import { IoPlanetSharp } from "react-icons/io5";
+import { CiSearch } from "react-icons/ci";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
@@ -24,12 +21,12 @@ export function DialogCloseContentSetting() {
   const [activeItem, setActiveItem] = useState<string>("Account Details"); // Default active item
 
   const menuItems = [
-    { label: "Account Details", icon: CiHome, category: "General" },
-    { label: "Notifications", icon: IoMdNotificationsOutline, category: "General" },
-    { label: "Integrations", icon: GrIntegration, category: "General" },
-    { label: "General", icon: IoMdNotificationsOutline, category: "Team" },
-    { label: "Members", icon: MdOutlineCardMembership, category: "Team" },
-    { label: "Usages & Billing", icon: IoPlanetSharp, category: "Team" },
+    { label: "Account Details", icon: "/dashboardIcons/homeModal.svg", category: "General" },
+    { label: "Notifications", icon: "/dashboardIcons/notificationModal.svg", category: "General" },
+    { label: "Integrations", icon: "/dashboardIcons/integrationModal.svg", category: "General" },
+    { label: "General", icon: "/dashboardIcons/notificationModal.svg", category: "Team" },
+    { label: "Members", icon: "/dashboardIcons/memberModal.svg", category: "Team" },
+    { label: "Usages & Billing", icon: "/dashboardIcons/integrationModal.svg", category: "Team" },
   ];
 
   // dropdown of general
@@ -73,9 +70,11 @@ export function DialogCloseContentSetting() {
                             : "hover:bg-[#D5D6E2] text-sm font-semibold text-[#22222F] cursor-pointer"
                           }`}
                       >
-                        <Icon
-                          size={16}
-                          className={isActive ? "text-[#22222F] text-sm font-semibold" : "text-[#22222F]"}
+                        <Image
+                          src={item.icon}
+                          width={24}
+                          height={25}
+                          alt="icon"
                         />
                         <span>{item.label}</span>
                       </button>
@@ -100,9 +99,11 @@ export function DialogCloseContentSetting() {
                             : "hover:bg-[#D5D6E2] text-[#22222F] text-sm font-semibold cursor-pointer"
                           }`}
                       >
-                        <Icon
-                          size={16}
-                          className={isActive ? "text-[#22222F] text-sm font-semibold" : "text-[#22222F"}
+                        <Image
+                          src={item.icon}
+                          width={24}
+                          height={25}
+                          alt="icon"
                         />
                         <span>{item.label}</span>
                       </button>
@@ -122,7 +123,7 @@ export function DialogCloseContentSetting() {
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-2">
                         <Image
-                          src="/dashboardIcons/profileImg.png"
+                          src="/dashboardIcons/profileImage.jpg"
                           width={40}
                           height={40}
                           alt="Profile"
