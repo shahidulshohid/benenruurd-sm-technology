@@ -9,7 +9,7 @@ function CheckEmailForm() {
         <div className="min-h-screen flex flex-col md:flex-row">
             {/* message icon  */}
             <div>
-                <Image src="/messageImg.png" width={40} height={40} alt='Message image' className='m-6'/>
+                <Image src="/dashboardIcons/messageImg.svg" width={40} height={40} alt='Message image' className='m-6 cursor-pointer' />
             </div>
             {/* Left */}
             <div className="flex-1 flex items-center justify-center p-8 bg-white">

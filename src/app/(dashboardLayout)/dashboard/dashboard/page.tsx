@@ -103,8 +103,7 @@ function Dashboard() {
   const infoCards: InfoCardProps[] = [
     {
       title: "Documentation",
-      description:
-        "Learn about the best practices and check all functions of the platform.",
+      description: "Learn about the best practices and check all functions of the platform.",
       icon: "/dashboardIcons/documentation.svg",
     },
     {
@@ -113,9 +112,8 @@ function Dashboard() {
       icon: "/dashboardIcons/documentation.svg",
     },
     {
-      title: "Documentation",
-      description:
-        "Get support from other users and exchange ideas for functions.",
+      title: "Community",
+      description: "Get support from other users and exchange ideas for functions.",
       icon: "/dashboardIcons/documentation.svg",
     },
   ];
@@ -138,62 +136,35 @@ function Dashboard() {
         </Link>
       </div>
 
-      {/* Workflows that need attention */}
+      {/* ================= Workflows that need attention ================= */}
       <div className="mb-24">
-        <h3 className="text-xl text-[#22222F] font-semibold mb-3">
-          Workflows that need attention
-        </h3>
-        <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
+        <h3 className="text-xl text-[#22222F] font-semibold mb-3">Workflows that need attention</h3>
+        <div className="w-full overflow-x-auto rounded-xl border border-[#D8D8DF]">
           <table className="w-full table-auto min-w-[768px]">
-            <thead className="border-b-2">
+            <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
               <tr>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Workflow
-                </th>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Last run
-                </th>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Issue
-                </th>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Status
-                </th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Last run</th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Issue</th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Status</th>
               </tr>
             </thead>
             <tbody>
               {workflows.map((item, i) => (
-                <tr
-                  key={i}
-                  className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition"
-                >
+                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
                   <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
-                    <Image
-                      src={item.icon}
-                      width={24}
-                      height={24}
-                      alt="icon"
-                      className="border border-[#D5D6E2] p-1 rounded"
-                    />
-                    <span className="text-[#22222F] text-sm">{item.workflow}</span>
+                    <Image src={item.icon} width={24} height={24} alt="icon" className="border border-[#D5D6E2] p-1 rounded" />
+                    <span className="text-sm">{item.workflow}</span>
                   </td>
-                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">
-                    {item.lastRun}
-                  </td>
+                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastRun}</td>
                   <td className="px-6 py-2">
-                    <span className="bg-[#FEF2F2] text-[#D94F4F] font-semibold text-sm px-3 py-1 rounded-full">
-                      {item.issue}
-                    </span>
+                    <span className="bg-[#FEF2F2] text-[#D94F4F] font-semibold text-sm px-3 py-1 rounded-full">{item.issue}</span>
                   </td>
                   <td className="px-6 py-2">
                     {item.status === "Active" ? (
-                      <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">
-                        Active
-                      </span>
+                      <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">Active</span>
                     ) : (
-                      <span className="bg-[#EEEDF1] text-[#26252C] font-semibold text-sm px-3 py-1 rounded-full">
-                        Inactive
-                      </span>
+                      <span className="bg-[#EEEDF1] text-[#26252C] font-semibold text-sm px-3 py-1 rounded-full">Inactive</span>
                     )}
                   </td>
                 </tr>
@@ -203,64 +174,38 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* Most recent workflows */}
+      {/* ================= Most recent workflows ================= */}
       <div className="mb-24">
         <div className="flex justify-between items-center mb-3">
-          <h3 className="text-xl text-[#22222F] font-semibold">
-            Most recent workflows
-          </h3>
+          <h3 className="text-xl text-[#22222F] font-semibold">Most recent workflows</h3>
           <Link href="/dashboard/workflow">
-          <Button variant="outline" className="text-sm font-semibold cursor-pointer border rounded-md shadow-sm focus:ring-2">See all workflows</Button></Link>
+            <Button variant="outline" className="text-sm font-semibold cursor-pointer border rounded-md shadow-sm focus:ring-2">See all workflows</Button>
+          </Link>
         </div>
-        <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
+        <div className="w-full overflow-x-auto rounded-xl border border-[#D8D8DF]">
           <table className="w-full table-auto min-w-[768px]">
-            <thead className="border-b-2">
+            <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
               <tr>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Workflow
-                </th>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Last updated
-                </th>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Last run
-                </th>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Status
-                </th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Last updated</th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Last run</th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Status</th>
               </tr>
             </thead>
             <tbody>
               {mostRecentWorkflo.map((item, i) => (
-                <tr
-                  key={i}
-                  className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition"
-                >
+                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
                   <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
-                    <Image
-                      src={item.icon}
-                      width={24}
-                      height={24}
-                      alt="icon"
-                      className="border border-[#D5D6E2] p-1 rounded"
-                    />
-                    <span className="text-[#22222F] text-sm">{item.workflow}</span>
+                    <Image src={item.icon} width={24} height={24} alt="icon" className="border border-[#D5D6E2] p-1 rounded" />
+                    <span className="text-sm">{item.workflow}</span>
                   </td>
-                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">
-                    {item.lastUpdated}
-                  </td>
-                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">
-                    {item.lastRun}
-                  </td>
+                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastUpdated}</td>
+                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastRun}</td>
                   <td className="px-6 py-2">
                     {item.status === "Active" ? (
-                      <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">
-                        Active
-                      </span>
+                      <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">Active</span>
                     ) : (
-                      <span className="bg-[#EEEDF1] text-[#26252C] font-semibold text-sm px-3 py-1 rounded-full">
-                        Inactive
-                      </span>
+                      <span className="bg-[#EEEDF1] text-[#26252C] font-semibold text-sm px-3 py-1 rounded-full">Inactive</span>
                     )}
                   </td>
                 </tr>
@@ -270,70 +215,40 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* Most recent runs */}
+      {/* ================= Most recent runs ================= */}
       <div className="mb-24">
         <div className="flex justify-between items-center mb-3">
-          <h3 className="text-xl text-[#22222F] font-semibold">
-            Most recent runs
-          </h3>
+          <h3 className="text-xl text-[#22222F] font-semibold">Most recent runs</h3>
           <Link href="/dashboard/runsoverview">
-          <Button variant="outline" className="text-sm font-semibold cursor-pointer border rounded-md shadow-sm focus:ring-2">See all runs</Button></Link>
+            <Button variant="outline" className="text-sm font-semibold cursor-pointer border rounded-md shadow-sm focus:ring-2">See all runs</Button>
+          </Link>
         </div>
-        <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
+        <div className="w-full overflow-x-auto rounded-xl border border-[#D8D8DF]">
           <table className="w-full table-auto min-w-[768px]">
-            <thead className="border-b-2">
+            <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
               <tr>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Workflow
-                </th>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Run
-                </th>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Last update
-                </th>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Interactions used
-                </th>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
-                  Status
-                </th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Run</th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Last update</th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Interactions used</th>
+                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Status</th>
               </tr>
             </thead>
             <tbody>
               {mostWorkflowsRn.map((item, i) => (
-                <tr
-                  key={i}
-                  className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition"
-                >
+                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
                   <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
-                    <Image
-                      src={item.icon}
-                      width={24}
-                      height={24}
-                      alt="icon"
-                      className="border border-[#D5D6E2] p-1 rounded"
-                    />
-                    <span className="text-[#22222F] text-sm">{item.workflow}</span>
+                    <Image src={item.icon} width={24} height={24} alt="icon" className="border border-[#D5D6E2] p-1 rounded" />
+                    <span className="text-sm">{item.workflow}</span>
                   </td>
-                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">
-                    {item.run}
-                  </td>
-                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">
-                    {item.lastUpdate}
-                  </td>
-                  <td className="px-6 py-2 text-[#217AFC] font-semibold text-sm">
-                    {item.interactions}
-                  </td>
+                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.run}</td>
+                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastUpdate}</td>
+                  <td className="px-6 py-2 text-[#217AFC] font-semibold text-sm">{item.interactions}</td>
                   <td className="px-6 py-2">
                     {item.status === "Completed" ? (
-                      <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">
-                        Completed
-                      </span>
+                      <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">Completed</span>
                     ) : (
-                      <span className="bg-[#FEF2F2] text-[#D94F4F] font-semibold text-sm px-3 py-1 rounded-full">
-                        Not completed
-                      </span>
+                      <span className="bg-[#FEF2F2] text-[#D94F4F] font-semibold text-sm px-3 py-1 rounded-full">Not completed</span>
                     )}
                   </td>
                 </tr>
@@ -343,28 +258,17 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* Explore section */}
+      {/* ================= Explore Section ================= */}
       <div className="my-24">
         <h3 className="text-xl text-[#22222F] font-semibold mb-3">Explore</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {infoCards.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-start gap-3 rounded-xl border border-[#E4E4E7] bg-white px-3 py-4 shadow-sm transition hover:shadow-md"
-            >
+            <div key={index} className="flex items-start gap-3 rounded-xl border border-[#E4E4E7] bg-white px-3 py-4 shadow-sm transition hover:shadow-md">
               <div className="w-8 h-8 flex items-center justify-center border border-[#D5D6E2] rounded-md">
-                <Image
-                  src={item.icon}
-                  width={14}
-                  height={14}
-                  alt={item.title || "icon"}
-                  className="w-3 h-3 md:w-4 md:h-4 object-contain"
-                />
+                <Image src={item.icon} width={14} height={14} alt={item.title || "icon"} className="w-3 h-3 md:w-4 md:h-4 object-contain" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[#1A1A1A]">
-                  {item.title}
-                </h3>
+                <h3 className="text-lg font-semibold text-[#1A1A1A]">{item.title}</h3>
                 <p className="text-sm text-[#8588AB] mt-1">{item.description}</p>
               </div>
             </div>
