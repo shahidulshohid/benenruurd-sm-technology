@@ -110,17 +110,17 @@ export default function AppSidebar() {
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Explore</p>
                 {[
                   { label: "Templates", icon: "/dashboardIcons/templates.svg", href: "/dashboard/template" },
-                  { label: "Documentation", icon: "/dashboardIcons/documentation.svg", href: "/dashboard/documentation" },
+                  { label: "Documentation", icon: "/dashboardIcons/documentaionDash.svg", href: "/dashboard/documentation" },
                 ].map(({ label, icon, href }) => (
                   <SidebarMenuItem key={label}>
                     <SidebarMenuButton
-                      className={`flex items-center gap-2 rounded-sm px-2 py-1.5 transition-colors ${pathname === href
+                      className={`flex items-center gap-2 rounded-sm px-2 py-1.5 transition-color ${pathname === href
                         ? "bg-[#F7F7F81A] text-white"
                         : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
                         }`}
                     >
                       <Link href={href} className="flex items-center gap-2 w-full">
-                        <Image src={icon} width={20} height={20} alt={label} />
+                        <Image src={icon} width={20} height={20} alt={label}/>
                         <span className="text-sm">{label}</span>
                       </Link>
                     </SidebarMenuButton>

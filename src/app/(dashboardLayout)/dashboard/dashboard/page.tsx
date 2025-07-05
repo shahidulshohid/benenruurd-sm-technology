@@ -25,7 +25,7 @@ function Dashboard() {
   const workflows: WorkflowItem[] = [
     {
       workflow: "Gmail - Email Received",
-      icon: "/google.png",
+      icon: "/dashboardIcons/gmail.svg",
       lastRun: "23-06-2025 10:21",
       issue: "Missing connection",
       issueStatus: "error",
@@ -33,7 +33,7 @@ function Dashboard() {
     },
     {
       workflow: "Gmail - Email Received",
-      icon: "/google.png",
+      icon: "/dashboardIcons/gmail.svg",
       lastRun: "23-06-2025 10:21",
       issue: "Missing connection",
       issueStatus: "error",
@@ -41,7 +41,7 @@ function Dashboard() {
     },
     {
       workflow: "Gmail - Email Received",
-      icon: "/google.png",
+      icon: "/dashboardIcons/gmail.svg",
       lastRun: "23-06-2025 10:21",
       issue: "Missing connection",
       issueStatus: "error",
@@ -51,21 +51,21 @@ function Dashboard() {
 
   const mostRecentWorkflo = [
     {
-      icon: "/google.png",
+      icon: "/dashboardIcons/gmail.svg",
       workflow: "Gmail - Email Received",
       lastUpdated: "23-06-2025 10:21",
       lastRun: "23-06-2025 10:21",
       status: "Active",
     },
     {
-      icon: "/google.png",
+      icon: "/dashboardIcons/gmail.svg",
       workflow: "Gmail - Email Received",
       lastUpdated: "23-06-2025 10:21",
       lastRun: "23-06-2025 10:21",
       status: "Inactive",
     },
     {
-      icon: "/google.png",
+      icon: "/dashboardIcons/gmail.svg",
       workflow: "Gmail - Email Received",
       lastUpdated: "23-06-2025 10:21",
       lastRun: "23-06-2025 10:21",
@@ -75,7 +75,7 @@ function Dashboard() {
 
   const mostWorkflowsRn = [
     {
-      icon: "/google.png",
+      icon: "/dashboardIcons/gmail.svg",
       workflow: "Gmail - Email Received",
       run: "Name of the run here",
       lastUpdate: "23-06-2025 10:21",
@@ -83,7 +83,7 @@ function Dashboard() {
       status: "Completed",
     },
     {
-      icon: "/google.png",
+      icon: "/dashboardIcons/gmail.svg",
       workflow: "Gmail - Email Received",
       run: "Name of the run here",
       lastUpdate: "23-06-2025 10:21",
@@ -91,7 +91,7 @@ function Dashboard() {
       status: "Not completed",
     },
     {
-      icon: "/google.png",
+      icon: "/dashboardIcons/gmail.svg",
       workflow: "Gmail - Email Received",
       run: "Name of the run here",
       lastUpdate: "23-06-2025 10:21",
@@ -105,18 +105,18 @@ function Dashboard() {
       title: "Documentation",
       description:
         "Learn about the best practices and check all functions of the platform.",
-      icon: "/dashboardIcons/explore1.png",
+      icon: "/dashboardIcons/documentation.svg",
     },
     {
       title: "Templates",
       description: "Explore pre-built workflows for common use cases.",
-      icon: "/dashboardIcons/explore1.png",
+      icon: "/dashboardIcons/documentation.svg",
     },
     {
       title: "Documentation",
       description:
         "Get support from other users and exchange ideas for functions.",
-      icon: "/dashboardIcons/explore1.png",
+      icon: "/dashboardIcons/documentation.svg",
     },
   ];
 
@@ -125,7 +125,7 @@ function Dashboard() {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <Image
-          src="/messageImg.png"
+          src="/dashboardIcons/messageImg.svg"
           width={40}
           height={40}
           alt="Message"
