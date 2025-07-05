@@ -59,7 +59,6 @@ export function DialogCloseContentSetting() {
                   .filter((item) => item.category === "General")
                   .map((item) => {
                     const isActive = activeItem === item.label;
-                    const Icon = item.icon;
                     return (
                       <button
                         key={item.label}
@@ -88,7 +87,6 @@ export function DialogCloseContentSetting() {
                   .filter((item) => item.category === "Team")
                   .map((item) => {
                     const isActive = activeItem === item.label;
-                    const Icon = item.icon;
                     return (
                       <button
                         key={item.label}
@@ -381,7 +379,7 @@ export function DialogCloseContentSetting() {
                       <div className="flex justify-between items-center mb-6">
                         <div className="flex items-center gap-2">
                           <Image
-                            src="/dashboardIcons/profileImg.png"
+                            src="/dashboardIcons/profileImg.jpg"
                             width={40}
                             height={40}
                             alt="Profile"

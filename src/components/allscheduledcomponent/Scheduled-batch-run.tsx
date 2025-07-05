@@ -77,7 +77,7 @@ const ScheduledBatchRun = () => {
                 <button className="flex items-center gap-2 text-sm border-2 px-2 p-0.5 rounded-lg">
                   <span className="text-sm font-semibold">Run as</span>
                   <Image
-                    src="/dashboardIcons/profileImg.png"
+                    src="/dashboardIcons/profileImg.jpg"
                     width={16}
                     height={16}
                     alt="Profile"
