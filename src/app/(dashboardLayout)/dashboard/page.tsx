@@ -10,7 +10,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Settings } from "lucide-react";
 import Image from "next/image";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Separator } from "@/components/ui/separator";
@@ -38,7 +37,7 @@ export default function AppSidebar() {
                   <Link href="/">
                   <div className="flex items-center gap-2">
                     <Image
-                      src="/dashboardIcons/profileImg.png"
+                      src="/dashboardIcons/profileImage.jpg"
                       width={40}
                       height={40}
                       alt="Profile"
@@ -88,9 +87,9 @@ export default function AppSidebar() {
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Manage</p>
                 {[
                   { label: "Workflow", icon: "/dashboardIcons/workflow.svg", href: "/dashboard/workflow" },
-                  { label: "Runs", icon: "/dashboardIcons/runs.png", href: "/dashboard/runsoverview" },
-                  { label: "Integrations", icon: "/dashboardIcons/integrationsDash.png", href: "/dashboard/integration" },
-                  { label: "Knowledge", icon: "/dashboardIcons/knowledge.png", href: "/dashboard/knowledgeoverview" },
+                  { label: "Runs", icon: "/dashboardIcons/runs.svg", href: "/dashboard/runsoverview" },
+                  { label: "Integrations", icon: "/dashboardIcons/integrations.svg", href: "/dashboard/integration" },
+                  { label: "Knowledge", icon: "/dashboardIcons/knowledge.svg", href: "/dashboard/knowledgeoverview" },
                 ].map(({ label, icon, href }) => (
                   <div key={label}>
                     <button
@@ -110,8 +109,8 @@ export default function AppSidebar() {
                 {/* Explore */}
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Explore</p>
                 {[
-                  { label: "Templates", icon: "/dashboardIcons/templates.png", href: "/dashboard/template" },
-                  { label: "Documentation", icon: "/dashboardIcons/documentation.png", href: "/dashboard/documentation" },
+                  { label: "Templates", icon: "/dashboardIcons/templates.svg", href: "/dashboard/template" },
+                  { label: "Documentation", icon: "/dashboardIcons/documentation.svg", href: "/dashboard/documentation" },
                 ].map(({ label, icon, href }) => (
                   <SidebarMenuItem key={label}>
                     <SidebarMenuButton
@@ -139,7 +138,9 @@ export default function AppSidebar() {
             {/* Professional and Settings */}
             <div className="flex justify-between items-center text-white mb-2">
               <span className="text-sm font-semibold">Professional</span>
-              <Settings onClick={() => setOpen(true)} size={18} className="cursor-pointer"/>
+                <button onClick={() => setOpen(true)} className="cursor-pointer">
+                  <Image src="/dashboardIcons/settings.svg" width={20} height={20}  alt="Setting icon" />
+                </button>
               <Dialog open={open} onOpenChange={setOpen}>
                 <DialogCloseContentSetting />
               </Dialog>
