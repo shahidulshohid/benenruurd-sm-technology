@@ -55,14 +55,20 @@ function LoginForm() {
                                 type="email"
                                 placeholder="Email"
                                 {...register("email", { required: "Email is required" })}
-                                className={`w-full px-4 py-2 text-sm font-semibold text-[#22222F] border rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.email ? "border-[#D94F4F] focus:ring-[#D94F4F]" : "focus:ring-[#217AFC]"
-                                    }`}
+                                className={`
+                                   w-full px-4 py-2 text-sm font-semibold text-[#22222F]
+                                   border rounded-md
+                                   focus:outline-[1px] focus:outline-[#0D5AE8]
+                                   focus:shadow-[0px_0px_0px_2px_#B5E6FF]
+                                   ${errors.email ? "border-[#D94F4F]" : ""}
+                                 `}
                             />
+
                             {errors.email && (
                                 <p className="text-[#D94F4F] text-sm font-semibold mt-1">{errors.email.message}</p>
                             )}
                         </div>
-                        {/* password input */} 
+                        {/* password input */}
                         <div>
                             <label className="block text-sm font-medium text-[#22222F] mb-1">
                                 Password <span className='text-[#D94F4F] text-sm font-semibold'>*</span>
@@ -71,7 +77,10 @@ function LoginForm() {
                                 type="password"
                                 placeholder="Password"
                                 {...register("password", { required: "Password is required" })}
-                                className={`w-full px-4 py-2 text-sm font-semibold text-[#22222F] border rounded-md shadow-sm focus:outline-none focus:ring-2 ${errors.password ? "border-[#D94F4F] focus:ring-[#D94F4F]" : "focus:ring-[#217AFC]"
+                                className={`w-full px-4 py-2 text-sm font-semibold text-[#22222F]
+                                   border rounded-md
+                                   focus:outline-[1px] focus:outline-[#0D5AE8]
+                                   focus:shadow-[0px_0px_0px_2px_#B5E6FF] ${errors.password ? "border-[#D94F4F] focus:ring-[#D94F4F]" : "focus:ring-[#217AFC]"
                                     }`}
                             />
                             {errors.password && (
