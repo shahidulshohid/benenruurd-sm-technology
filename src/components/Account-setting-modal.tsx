@@ -6,7 +6,6 @@ import {
   DialogDescription,
   DialogHeader,
 } from "@/components/ui/dialog";
-import { CiSearch } from "react-icons/ci";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useState } from "react";
 import Image from "next/image";
