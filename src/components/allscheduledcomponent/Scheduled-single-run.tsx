@@ -3,7 +3,6 @@
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
-import { MdOutlineWatchLater } from "react-icons/md";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "../ui/button";
 import Image from "next/image";

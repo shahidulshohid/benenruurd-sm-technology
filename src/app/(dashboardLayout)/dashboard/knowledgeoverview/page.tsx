@@ -118,7 +118,7 @@ const KnowledgePage = () => {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full md:w-auto">
                     <button
                         onClick={() => setOpen(true)}
-                        className="bg-blue-500 text-white px-4 py-1 rounded-lg w-full sm:w-auto text-sm font-semibold"
+                        className="bg-blue-500 text-white px-4 py-1 rounded-lg w-full sm:w-auto text-sm font-semibold cursor-pointer"
                     >
                         + Add knowledge
                     </button>

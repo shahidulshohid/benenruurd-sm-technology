@@ -26,7 +26,7 @@ export function DialogCloseContentSetting() {
     { label: "Integrations", icon: "/dashboardIcons/integrationModal.svg", category: "General" },
     { label: "General", icon: "/dashboardIcons/notificationModal.svg", category: "Team" },
     { label: "Members", icon: "/dashboardIcons/memberModal.svg", category: "Team" },
-    { label: "Usages & Billing", icon: "/dashboardIcons/integrationModal.svg", category: "Team" },
+    { label: "Plan & Billing", icon: "/dashboardIcons/integrationModal.svg", category: "Team" },
   ];
 
   // dropdown of general
@@ -63,10 +63,10 @@ export function DialogCloseContentSetting() {
                       <button
                         key={item.label}
                         onClick={() => setActiveItem(item.label)}
-                        className={`flex items-center gap-2 w-full pl-1 pr-2 pb-1 mb-2 rounded-sm text-left
+                        className={`flex items-center gap-2 w-full pl-1 pr-2 py-1 mb-2 rounded-lg text-left
                           ${isActive
                             ? "bg-[#D5D6E2] text-[#22222F] text-sm font-semibold"
-                            : "hover:bg-[#D5D6E2] text-sm font-semibold text-[#22222F] cursor-pointer"
+                            : "hover:bg-[#D5D6E2] text-sm font-medium text-[#22222F] cursor-pointer"
                           }`}
                       >
                         <Image
@@ -81,8 +81,8 @@ export function DialogCloseContentSetting() {
                   })}
               </div>
 
-              <span className="text-sm font-semibold text-[#8588AB] pb-2">Team</span>
-              <div className="flex flex-col gap-2">
+              <span className="text-sm font-semibold text-[#8588AB] pt-4 mb-2">Team</span>
+              <div className="flex flex-col">
                 {menuItems
                   .filter((item) => item.category === "Team")
                   .map((item) => {
@@ -91,16 +91,16 @@ export function DialogCloseContentSetting() {
                       <button
                         key={item.label}
                         onClick={() => setActiveItem(item.label)}
-                        className={`flex items-center gap-2 w-full px-3 py-2 rounded text-left
+                        className={`flex items-center gap-2 w-full pl-1 pr-2 py-1 mb-2 rounded-lg text-left
                           ${isActive
-                            ? "bg-[#D5D6E2] text-[#22222F] font-semibold"
-                            : "hover:bg-[#D5D6E2] text-[#22222F] text-sm font-semibold cursor-pointer"
+                            ? "bg-[#D5D6E2] text-[#22222F] text-sm font-semibold"
+                            : "hover:bg-[#D5D6E2] text-sm font-medium text-[#22222F] cursor-pointer"
                           }`}
                       >
                         <Image
                           src={item.icon}
-                          width={24}
-                          height={25}
+                          width={20}
+                          height={20}
                           alt="icon"
                         />
                         <span>{item.label}</span>
@@ -132,9 +132,16 @@ export function DialogCloseContentSetting() {
                           <p className="text-sm text-[#8588AB]">Acme Inc.</p>
                         </div>
                       </div>
-                      <Button variant="outline" className="mr-4 text-[#22222F] text-sm font-semibold cursor-pointer">
+                      <button
+                        className="mr-4 text-[#22222F] text-sm font-semibold hover:bg-transparent cursor-pointer border border-[#D5D6E2] px-3 py-1.5 rounded-lg"
+                        style={{
+                          boxShadow:
+                            "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
+                        }}
+                      >
                         Sign out
-                      </Button>
+                      </button>
+
                     </div>
                     <h4 className="text-sm font-semibold mt-6 text-[#22222F]">
                       Delete my account
@@ -144,17 +151,17 @@ export function DialogCloseContentSetting() {
                         Permanently delete this account and data. This action can’t be
                         undone!
                       </p>
-                      <Button
-                        variant="outline"
-                        className="text-[#D94F4F] hover:text-[#D94F4F] font-semibold text-sm mr-3 cursor-pointer"
+                      <button
+                        className="text-[#D94F4F] hover:text-[#D94F4F] hover:bg-transparent font-semibold text-sm mr-3 cursor-pointer border border-[#D5D6E2] px-3 py-1.5 rounded-lg"
                       >
                         Delete account
-                      </Button>
+                      </button>
+
                     </div>
                   </div>
                 ) : activeItem === "Notifications" ? (
                   <div className="pl-5">
-                    <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
+                    <h1 className="text-xl mb-6 font-semibold text-[#22222F]">
                       Notifications
                     </h1>
                     <div className="flex justify-between items-center mb-5">
@@ -166,7 +173,7 @@ export function DialogCloseContentSetting() {
                       </div>
                       <Switch
                         id="email-notifications-1"
-                        className="mr-5 data-[state=checked]:bg-blue-500 cursor-pointer"
+                        className="scale-125 mr-5 data-[state=checked]:bg-[#217AFC] cursor-pointer"
                       />
                     </div>
                     <div className="flex justify-between items-center">
@@ -177,8 +184,8 @@ export function DialogCloseContentSetting() {
                         <p className="text-[#8588AB] text-[12px]">Receive workflow notifications on your mobile device</p>
                       </div>
                       <Switch
-                        id="email-notifications-1"
-                        className="mr-5 data-[state=checked]:bg-blue-500 cursor-pointer"
+                        id="workflow-switch"
+                        className="scale-125 bg-transparent data-[state=checked]:bg-transparent border border-gray-300 rounded-full cursor-pointer [&>span]:border [&>span]:border-gray-300 cup mr-5"
                       />
                     </div>
                   </div>
@@ -189,14 +196,21 @@ export function DialogCloseContentSetting() {
                     </h1>
                     <div>
                       {/* Search */}
-                      <div className="relative w-full pl-5">
-                        <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                      <div className="relative w-full pl-7">
+                        <Image
+                          src="/dashboardIcons/search.svg"
+                          width={20}
+                          height={20}
+                          alt="search icon"
+                          className="w-6 h-6 text-[#8588AB] absolute left-3 top-1/2 transform -translate-y-1/2"
+                        />
                         <input
                           type="text"
                           placeholder="Search Integrations"
-                          className="w-full pl-10 pr-4 py-2 focus:outline-none"
+                          className="w-full pl-10 pr-4 py-2 -ml-7 focus:outline-none"
                         />
                       </div>
+
                       {/* communication */}
                       <div className="border-t border-b">
                         <h1 className="text-[#8588AB] pl-5 my-2 px-2 font-semibold">
@@ -205,14 +219,13 @@ export function DialogCloseContentSetting() {
                       </div>
                       <div className="flex justify-between items-center pl-3">
                         <div className="flex items-center gap-3 py-3 px-2">
-                          <PiSlackLogoLight
-                            size={25}
-                            className="text-black border rounded p-1"
+                          <Image src="/dashboardIcons/slack.svg" width={24} height={24} alt="slack icon"
+                            className="border rounded p-1"
                           />
-                          <h3 className="font-semibold">Slack</h3>
+                          <h3 className="font-semibold text-[#22222F] text-sm">Slack</h3>
                         </div>
                         <div>
-                          <MdKeyboardArrowRight size={30} className="pr-3" />
+                          <MdKeyboardArrowRight size={30} className="pr-3 cursor-pointer" />
                         </div>
                       </div>
                       {/* Email */}
@@ -223,16 +236,23 @@ export function DialogCloseContentSetting() {
                       </div>
                       <div className="flex justify-between items-center pl-3">
                         <div className="flex items-center gap-3 py-3 px-2">
-                          <SiGmail
-                            size={25}
-                            className="text-black border rounded p-1"
+                          <Image src="/dashboardIcons/gmail.svg" width={24} height={24} alt="gmail icon"
+                            className="border rounded p-1"
                           />
-                          <h3 className="font-semibold">Gmail</h3>
+                          <h3 className="font-semibold text-[#22222F] text-sm">Gmail</h3>
                         </div>
                         <div>
-                          <Button variant="outline" className="mr-5">
+                          <button
+                            className="mr-4 px-3 py-1.5 rounded-lg border font-semibold text-sm text-[#22222F] cursor-pointer"
+                            style={{
+                              boxShadow:
+                                "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
+                              borderColor: "#D5D6E2",
+                            }}
+                          >
                             Connect
-                          </Button>
+                          </button>
+
                         </div>
                       </div>
                       {/* project management */}
@@ -243,42 +263,50 @@ export function DialogCloseContentSetting() {
                       </div>
                       <div className="flex justify-between items-center pl-3">
                         <div className="flex items-center gap-3 py-3 px-2">
-                          <SiNationalrail
-                            size={25}
-                            className="text-black border rounded p-1"
+                          <Image src="/dashboardIcons/notion.svg" width={24} height={24} alt="nation icon" className="border rounded p-1"
                           />
-                          <h3 className="font-semibold">Nation</h3>
+                          <h3 className="font-semibold text-[#22222F] text-sm">Nation</h3>
                         </div>
                         <div>
-                          <Button variant="outline" className="mr-5">
+                          <button
+                            className="mr-4 px-3 py-1.5 rounded-lg border font-semibold text-sm text-[#22222F] cursor-pointer"
+                            style={{
+                              boxShadow:
+                                "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
+                              borderColor: "#D5D6E2",
+                            }}
+                          >
                             Connect
-                          </Button>
+                          </button>
                         </div>
                       </div>
                       <div className="flex justify-between items-center pl-3">
                         <div className="flex items-center gap-3 py-3 px-2">
-                          <SiLinear
-                            size={25}
-                            className="text-black border rounded p-1"
+                          <Image src="/dashboardIcons/linear.svg" width={24} height={24} alt="linear icon" className="border rounded p-1"
                           />
-                          <h3 className="font-semibold">Linear</h3>
+                          <h3 className="font-semibold text-[#22222F] text-sm">Linear</h3>
                         </div>
                         <div>
-                          <Button variant="outline" className="mr-5">
+                          <button
+                            className="mr-4 px-3 py-1.5 rounded-lg border font-semibold text-sm text-[#22222F] cursor-pointer"
+                            style={{
+                              boxShadow:
+                                "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
+                              borderColor: "#D5D6E2",
+                            }}
+                          >
                             Connect
-                          </Button>
+                          </button>
                         </div>
                       </div>
                       <div className="flex justify-between items-center pl-3">
                         <div className="flex items-center gap-3 py-3 px-2">
-                          <SiAsana
-                            size={25}
-                            className="text-black border rounded p-1"
+                          <Image src="/dashboardIcons/asana.svg" width={24} height={24} alt="asana icon" className="border rounded p-1"
                           />
-                          <h3 className="font-semibold">Asana</h3>
+                          <h3 className="font-semibold text-[#22222F] text-sm">Asana</h3>
                         </div>
                         <div>
-                          <MdKeyboardArrowRight size={30} className="pr-3" />
+                          <MdKeyboardArrowRight size={30} className="pr-3 cursor-pointer" />
                         </div>
                       </div>
                       {/* file store */}
@@ -289,16 +317,21 @@ export function DialogCloseContentSetting() {
                       </div>
                       <div className="flex justify-between items-center pl-3">
                         <div className="flex items-center gap-3 py-3 px-2">
-                          <FaGoogleDrive
-                            size={25}
-                            className="text-black border rounded p-1"
+                          <Image src="/dashboardIcons/googleDrive.svg" width={24} height={24} alt="asana icon" className="border rounded p-1"
                           />
-                          <h3 className="font-semibold">Google Drive</h3>
+                          <h3 className="font-semibold text-[#22222F] text-sm">Google Drive</h3>
                         </div>
                         <div>
-                          <Button variant="outline" className="mr-5">
+                          <button
+                            className="mr-4 px-3 py-1.5 rounded-lg border font-semibold text-sm text-[#22222F] cursor-pointer"
+                            style={{
+                              boxShadow:
+                                "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
+                              borderColor: "#D5D6E2",
+                            }}
+                          >
                             Connect
-                          </Button>
+                          </button>
                         </div>
                       </div>
                       {/* calendar */}
@@ -309,16 +342,21 @@ export function DialogCloseContentSetting() {
                       </div>
                       <div className="flex justify-between items-center pl-3 mb-4">
                         <div className="flex items-center gap-3 py-3 px-2">
-                          <LuCalendarFold
-                            size={25}
-                            className="text-black border rounded p-1"
+                          <Image src="/dashboardIcons/googleDrive.svg" width={24} height={24} alt="asana icon" className="border rounded p-1"
                           />
-                          <h3 className="font-semibold">Google Calendar</h3>
+                          <h3 className="font-semibold text-[#22222F] text-sm">Google Calendar</h3>
                         </div>
                         <div>
-                          <Button variant="outline" className="mr-5">
+                          <button
+                            className="mr-4 px-3 py-1.5 rounded-lg border font-semibold text-sm text-[#22222F] cursor-pointer"
+                            style={{
+                              boxShadow:
+                                "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
+                              borderColor: "#D5D6E2",
+                            }}
+                          >
                             Connect
-                          </Button>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -334,7 +372,7 @@ export function DialogCloseContentSetting() {
                           <h3 className="text-[#22222F] text-sm font-semibold">
                             Workspace name
                           </h3>
-                          <p>The name of your workspace</p>
+                          <p className="text-xs text-[#8588AB]">The name of your workspace</p>
                         </div>
                         <div>
                           <input
@@ -349,13 +387,13 @@ export function DialogCloseContentSetting() {
                           <h3 className="text-[#22222F] text-sm font-semibold">
                             Workspace time zone
                           </h3>
-                          <p>The timezone of your workspace</p>
+                          <p className="text-xs text-[#8588AB]">The timezone of your workspace</p>
                         </div>
                         <div className="inline-block">
                           <select
                             value={selectedTimezone}
                             onChange={(e) => setSelectedTimezone(e.target.value)}
-                            className="border border-gray-200 rounded-md px-3 pb-1 text-sm focus:outline-none focus:ring-2 focus:ring-gray-200"
+                            className="border border-[#D5D6E2] rounded-md px-3 pb-1 text-sm focus:outline-none focus:ring-1 focus:ring-gray-200"
                           >
                             {timezones.map((tz, idx) => (
                               <option key={idx} value={tz}>
@@ -369,10 +407,10 @@ export function DialogCloseContentSetting() {
                   </div>
                 ) : activeItem === "Members" ? (
                   <div className="pl-5">
-                    <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
+                    <h1 className="text-xl mb-6 font-semibold text-[#22222F]">
                       Team Members
                     </h1>
-                    <button className="bg-blue-500 text-white px-4 py-1 rounded-sm mb-3 cursor-pointer">
+                    <button className="bg-[#217AFC] px-3 py-1.5 rounded-sm mb-6 cursor-pointer text-[#FFFFFF]">
                       + Invite team members
                     </button>
                     <div>
@@ -387,14 +425,14 @@ export function DialogCloseContentSetting() {
                           />
                           <div>
                             <h3 className="text-lg text-[#22222F]">Ruben Vaalt</h3>
-                            <p className="text-sm">Acme Inc.</p>
+                            <p className="text-sm text-[#8588AB]">Acme Inc.</p>
                           </div>
                         </div>
-                        <div className="flex items-center border border-gray-300 rounded-md px-2 pb-1 mr-5">
+                        <div className="flex items-center border border-[#D5D6E2] rounded-md px-2 pb-1 mr-5">
                           <select
                             value={selectedRole}
                             onChange={(e) => setSelectedRole(e.target.value)}
-                            className="text-sm focus:outline-none"
+                            className="text-sm font-medium text-[#22222F] focus:outline-none cursor-pointer"
                           >
                             {roles.map((role, idx) => (
                               <option key={idx} value={role}>
@@ -406,23 +444,23 @@ export function DialogCloseContentSetting() {
                       </div>
                       <div className="flex justify-between items-center">
                         <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-full bg-gray-300 flex justify-center items-center text-gray-700 font-semibold">
+                          <div className="w-10 h-10 rounded-full bg-gray-300 flex justify-center items-center text-sm text-[#22222F] font-semibold">
                             R
                           </div>
                           <div className="flex items-center gap-2">
-                            <h3 className="text-sm text-[#22222F]">
+                            <h3 className="text-sm text-[#22222F] font-semibold">
                               rubenvaalt@live.nl
                             </h3>
-                            <p className="text-sm text-blue-500 bg-[#D8EEFF] px-2 pb-1 rounded-full">
+                            <p className="text-sm text-[#217AFC] font-semibold bg-[#D8EEFF] px-3 py-1 rounded-full">
                               Invite sent
                             </p>
                           </div>
                         </div>
-                        <div className="flex items-center border border-gray-300 rounded-md px-2 pb-1 mr-5">
+                        <div className="flex items-center border border-[#D5D6E2] rounded-md px-2 pb-1 mr-5">
                           <select
                             value={selectedRole1}
                             onChange={(e) => setSelectedRole1(e.target.value)}
-                            className="text-sm focus:outline-none"
+                            className="text-sm font-medium text-[#22222F] focus:outline-none cursor-pointer"
                           >
                             {roles1.map((role, idx) => (
                               <option key={idx} value={role}>
@@ -434,7 +472,7 @@ export function DialogCloseContentSetting() {
                       </div>
                     </div>
                   </div>
-                ) : activeItem === "Usages & Billing" ? (
+                ) : activeItem === "Plan & Billing" ? (
                   <div className="pl-5">
                     <h1 className="text-xl mb-4 font-semibold text-[#22222F]">
                       Usage & Billing
