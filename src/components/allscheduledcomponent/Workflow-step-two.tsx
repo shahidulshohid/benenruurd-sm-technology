@@ -28,7 +28,7 @@ const WorkflowStepTwo = () => {
                   <div className="border p-1 rounded text-gray-600">
                     <MdOutlineWatchLater />
                   </div>
-                  <span className="text-sm text-gray-700">Every 2 days</span>
+                  <span className="text-sm text-[#22222F] font-semibold">Every 2 days</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Switch

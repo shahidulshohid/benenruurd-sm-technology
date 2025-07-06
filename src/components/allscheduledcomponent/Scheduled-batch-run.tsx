@@ -1,7 +1,6 @@
 "use client";
 
 import { RxCross2 } from "react-icons/rx";
-import { MdOutlineWatchLater } from "react-icons/md";
 import { Switch } from "@/components/ui/switch";
 import Image from "next/image";
 import "react-datepicker/dist/react-datepicker.css";
@@ -30,9 +29,9 @@ const ScheduledBatchRun = () => {
               </h3>
               <div className="flex items-center justify-between px-4 py-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-sm text-gray-700">1</span>
-                  <div className="border p-1 rounded text-gray-600">
-                    <MdOutlineWatchLater />
+                  <span className="text-sm text-[#8588AB] font-semibold">1</span>
+                  <div className="border p-1 rounded">
+                    <Image src="/dashboardIcons/scheduled.svg" width={16} height={16} alt=""/>
                   </div>
                   <span className="text-sm text-[#22222F] font-semibold">
                     Every 2 days
@@ -44,7 +43,7 @@ const ScheduledBatchRun = () => {
                     className="scale-125 bg-transparent data-[state=checked]:bg-transparent border border-gray-300 rounded-full cursor-pointer [&>span]:border [&>span]:border-gray-300 cup"
                   />
 
-                  <BsThreeDotsVertical className="text-gray-400" />
+                  <BsThreeDotsVertical className="text-[#8588AB]" />
                 </div>
               </div>
             </div>
@@ -64,8 +63,8 @@ const ScheduledBatchRun = () => {
                 <div className="border p-1 rounded text-gray-600">
                   <Image
                     src="/dashboardIcons/batch.svg"
-                    width={20}
-                    height={20}
+                    width={16}
+                    height={16}
                     alt=""
                   />
                 </div>

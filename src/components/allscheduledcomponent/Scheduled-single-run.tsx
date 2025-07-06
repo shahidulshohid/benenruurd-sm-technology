@@ -44,28 +44,28 @@ const ScheduledSingleRun = () => {
           {/* Left Panel */}
           <div className="w-full md:w-1/2 space-y-4">
             <div className="border rounded-lg bg-white shadow-sm">
-              <h3 className="p-4 text-gray-800 font-medium border-b">
+              <h3 className="p-4 text-[#22222F] text-sm font-semibold border-b">
                 Workflow Steps
               </h3>
               <div className="flex items-center justify-between px-4 py-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-sm text-gray-700">1</span>
-                  <div className="border p-1 rounded text-gray-600">
-                    <MdOutlineWatchLater />
+                  <span className="text-sm text-[#8588AB] font-semibold">1</span>
+                  <div className="border p-1 rounded text-[#22222F]">
+                    <Image src="/dashboardIcons/scheduled.svg" width={16} height={16} alt=""/>
                   </div>
-                  <span className="text-sm text-gray-700">Every 2 days</span>
+                  <span className="text-sm text-[#22222F] font-semibold">Every 2 days</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Switch id="workflow-switch" className="data-[state=checked]:bg-blue-500 cursor-pointer" />
+                  <Switch id="workflow-switch" className="data-[state=checked]:bg-[#217AFC] cursor-pointer" />
 
-                  <BsThreeDotsVertical className="text-gray-400" />
+                  <BsThreeDotsVertical className="text-[#8588AB]" />
                 </div>
               </div>
             </div>
 
             <button
               type="button"
-              className="w-full text-blue-600 font-semibold border-2 border-dotted border-blue-400 bg-blue-50 py-2 rounded-lg text-center hover:bg-blue-100 transition"
+              className="w-full text-[#217AFC] font-semibold border-2 border-dotted border-[#217AFC] bg-blue-50 py-2 rounded-lg text-center hover:bg-blue-100 transition"
             >
               + Add Step
             </button>
@@ -75,8 +75,8 @@ const ScheduledSingleRun = () => {
             <div className="w-full md:w-1/2 border rounded-lg bg-white shadow-sm">
               <div className="flex items-center justify-between p-4 border-b">
                 <div className="flex items-center gap-3">
-                  <div className="border p-1 rounded text-gray-600">
-                    <MdOutlineWatchLater />
+                  <div className="border p-1 rounded">
+                    <Image src="/dashboardIcons/scheduled.svg" width={16} height={16} alt=""/>
                   </div>
                   <span className="text-gray-800 font-medium">
                     Start run on a schedule
