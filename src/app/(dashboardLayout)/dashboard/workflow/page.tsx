@@ -121,11 +121,10 @@ const WorkflowPage = () => {
               setActiveTab("editor");
               setShowEditRuns(true);
             }}
-            className={`px-8 py-1 cursor-pointer rounded-[7px] ${
-              activeTab === "editor"
+            className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "editor"
                 ? "bg-[#22222F] text-white"
                 : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
-            }`}
+              }`}
           >
             Editor
           </button>
@@ -134,11 +133,10 @@ const WorkflowPage = () => {
               setActiveTab("runs");
               setShowEditRuns(false);
             }}
-            className={`px-8 py-1 cursor-pointer rounded-[7px] ${
-              activeTab === "runs"
+            className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "runs"
                 ? "bg-[#22222F] text-white"
                 : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
-            }`}
+              }`}
           >
             Runs
           </button>
@@ -207,10 +205,10 @@ const WorkflowPage = () => {
                               <div className="flex items-center gap-4">
                                 <div>
                                   <Image
-                                    src="/dashboardIcons/integrations.svg"
+                                    src="/dashboardIcons/integrations3.svg"
                                     width={24}
                                     height={24}
-                                    alt="Integrations image"
+                                    alt="Manual image"
                                   />
                                 </div>
                                 <div>
@@ -472,80 +470,80 @@ const WorkflowPage = () => {
                   {(matchSearch("notion") ||
                     matchSearch("linear") ||
                     matchSearch("asana")) && (
-                    <>
-                      <Separator className="w-full h-px bg-gray-200" />
-                      <h4 className="text-xs font-semibold text-[#8588AB] py-3 pl-4">
-                        Project Management
-                      </h4>
-                      <Separator className="w-full h-px bg-gray-200" />
+                      <>
+                        <Separator className="w-full h-px bg-gray-200" />
+                        <h4 className="text-xs font-semibold text-[#8588AB] py-3 pl-4">
+                          Project Management
+                        </h4>
+                        <Separator className="w-full h-px bg-gray-200" />
 
-                      {matchSearch("notion") && (
-                        <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
-                          <div className="flex items-center gap-3 my-3">
-                            <div className="border p-1 rounded">
-                              <Image
-                                src="/dashboardIcons/notion.svg"
-                                width={16}
-                                height={12}
-                                alt="Notion image"
-                              />
+                        {matchSearch("notion") && (
+                          <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                            <div className="flex items-center gap-3 my-3">
+                              <div className="border p-1 rounded">
+                                <Image
+                                  src="/dashboardIcons/notion.svg"
+                                  width={16}
+                                  height={12}
+                                  alt="Notion image"
+                                />
+                              </div>
+                              <h3 className="text-sm font-semibold text-[#22222F]">
+                                Notion
+                              </h3>
                             </div>
-                            <h3 className="text-sm font-semibold text-[#22222F]">
-                              Notion
-                            </h3>
+                            <MdKeyboardArrowRight
+                              className="text-gray-400 hover:text-gray-600 transition duration-200"
+                              size={20}
+                            />
                           </div>
-                          <MdKeyboardArrowRight
-                            className="text-gray-400 hover:text-gray-600 transition duration-200"
-                            size={20}
-                          />
-                        </div>
-                      )}
+                        )}
 
-                      {matchSearch("linear") && (
-                        <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
-                          <div className="flex items-center gap-3 my-3">
-                            <div className="border p-1 rounded">
-                              <Image
-                                src="/dashboardIcons/linear.svg"
-                                width={16}
-                                height={12}
-                                alt="Linear image"
-                              />
+                        {matchSearch("linear") && (
+                          <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                            <div className="flex items-center gap-3 my-3">
+                              <div className="border p-1 rounded">
+                                <Image
+                                  src="/dashboardIcons/linear.svg"
+                                  width={16}
+                                  height={12}
+                                  alt="Linear image"
+                                />
+                              </div>
+                              <h3 className="text-sm font-semibold text-[#22222F]">
+                                Linear
+                              </h3>
                             </div>
-                            <h3 className="text-sm font-semibold text-[#22222F]">
-                              Linear
-                            </h3>
+                            <MdKeyboardArrowRight
+                              className="text-gray-400 hover:text-gray-600 transition duration-200"
+                              size={20}
+                            />
                           </div>
-                          <MdKeyboardArrowRight
-                            className="text-gray-400 hover:text-gray-600 transition duration-200"
-                            size={20}
-                          />
-                        </div>
-                      )}
+                        )}
 
-                      {matchSearch("asana") && (
-                        <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
-                          <div className="flex items-center gap-3 my-3">
-                            <div className="border p-1 rounded">
-                              <Image
-                                src="/dashboardIcons/asana.svg"
-                                width={16}
-                                height={12}
-                                alt="Asana image"
-                              />
+                        {matchSearch("asana") && (
+                          <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                            <div className="flex items-center gap-3 my-3">
+                              <div className="border p-1 rounded">
+                                <Image
+                                  src="/dashboardIcons/asana.svg"
+                                  width={16}
+                                  height={12}
+                                  alt="Asana image"
+                                />
+                              </div>
+                              <h3 className="text-sm font-semibold text-[#22222F]">
+                                Asana
+                              </h3>
                             </div>
-                            <h3 className="text-sm font-semibold text-[#22222F]">
-                              Asana
-                            </h3>
+                            <MdKeyboardArrowRight
+                              className="text-gray-400 hover:text-gray-600 transition duration-200"
+                              size={20}
+                            />
                           </div>
-                          <MdKeyboardArrowRight
-                            className="text-gray-400 hover:text-gray-600 transition duration-200"
-                            size={20}
-                          />
-                        </div>
-                      )}
-                    </>
-                  )}
+                        )}
+                      </>
+                    )}
 
                   {/* File Storage */}
                   {matchSearch("google drive") && (

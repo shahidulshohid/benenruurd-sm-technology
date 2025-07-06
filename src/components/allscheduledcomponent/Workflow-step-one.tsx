@@ -78,8 +78,8 @@ const WorkflowStepOne = () => {
               <div className="space-y-2">
                 <div className="flex justify-between items-center p-3 hover:bg-gray-50 cursor-pointer transition rounded">
                   <div className="flex items-center gap-3">
-                    <div className="border p-0.5 rounded">
-                      <Image src="/integrations.svg" width={16} height={10} alt="" />
+                    <div>
+                      <Image src="/dashboardIcons/integrations3.svg" width={24} height={24} alt="" />
                     </div>
                     <div>
                       <h3 className="text-sm font-semibold text-[#22222F]">Integrations</h3>
