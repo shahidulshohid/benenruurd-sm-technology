@@ -15,7 +15,7 @@ import Link from "next/link";
 
 const WorkflowStepOne = () => {
   const connectedIntegrations = [
-    { icon: <SiGmail size={18} />, name: "Gmail" },
+    { icon: "/dashboardIcons/gamil.svg", name: "Gmail" },
     { icon: <LuCalendarFold size={18} />, name: "Google Calendar" },
     { icon: <SiSlack size={18} />, name: "Slack" },
   ];
@@ -86,11 +86,11 @@ const WorkflowStepOne = () => {
               <div className="space-y-2">
                 <div className="flex justify-between items-center p-3">
                   <div className="flex items-center gap-3">
-                    <div className="border p-1 rounded">
+                    <div className="border p-0.5 rounded">
                       <Image
                         src="/integrations.svg"
-                        width={18}
-                        height={18}
+                        width={16}
+                        height={10}
                         alt=""
                       />
                     </div>
@@ -107,11 +107,11 @@ const WorkflowStepOne = () => {
                 </div>
                 <div className="flex justify-between items-center p-3">
                   <div className="flex items-center gap-3">
-                    <div className="border p-1 rounded">
+                    <div>
                       <Image
                         src="/flowcontrol.svg"
-                        width={20}
-                        height={20}
+                        width={24}
+                        height={24}
                         alt=""
                       />
                     </div>
@@ -129,7 +129,7 @@ const WorkflowStepOne = () => {
                 <div className="flex justify-between items-center p-3">
                   <div className="flex items-center gap-3">
                     <div className="border p-1 rounded">
-                      <Image src="/ai.svg" width={20} height={20} alt="" />
+                      <Image src="/ai.svg" width={16} height={16} alt="" />
                     </div>
                     <div>
                       <h3 className="text-sm font-medium text-gray-900">AI</h3>
@@ -144,7 +144,7 @@ const WorkflowStepOne = () => {
                   <div className="flex justify-between items-center p-3">
                     <div className="flex items-center gap-3">
                       <div className="border p-1 rounded">
-                        <Image src="/human.svg" width={20} height={20} alt="" />
+                        <Image src="/human.svg" width={14} height={14} alt="" />
                       </div>
                       <div>
                         <h3 className="text-sm font-medium text-gray-900">
@@ -169,17 +169,13 @@ const WorkflowStepOne = () => {
               <Separator className="w-full h-px bg-gray-200 my-2" />
               <div className="space-y-2">
                 <div className="p-3">
-                  {connectedIntegrations.map((integration) => (
-                    <div
-                      key={integration.name}
-                      className="flex justify-between items-center"
-                    >
+                    <div className="flex justify-between items-center">
                       <div className="flex items-center gap-3 my-2">
                         <div className="border p-1 rounded">
-                          {integration.icon}
+                          <Image src="/dashboardIcons/gmail.svg" width={16} height={16} alt="Gmail image"/>
                         </div>
                         <h3 className="text-sm font-medium text-gray-900">
-                          {integration.name}
+                          Gmail
                         </h3>
                       </div>
                       <MdKeyboardArrowRight
@@ -187,7 +183,6 @@ const WorkflowStepOne = () => {
                         size={20}
                       />
                     </div>
-                  ))}
                 </div>
               </div>
             </div>
