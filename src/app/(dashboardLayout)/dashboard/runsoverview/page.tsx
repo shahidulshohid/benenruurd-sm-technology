@@ -102,10 +102,10 @@ const RunsTable = () => {
             <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
             <tr>
               <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
-              <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Run</th>
-              <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Last update</th>
-              <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Interactions used</th>
-              <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Status</th>
+              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Run</th>
+              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Last update</th>
+              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Interactions used</th>
+              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Status</th>
             </tr>
           </thead>
           <tbody>

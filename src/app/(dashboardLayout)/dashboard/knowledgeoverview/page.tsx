@@ -118,7 +118,7 @@ const KnowledgePage = () => {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full md:w-auto">
                     <button
                         onClick={() => setOpen(true)}
-                        className="bg-blue-500 text-white px-4 py-2 rounded-lg w-full sm:w-auto text-sm font-semibold"
+                        className="bg-blue-500 text-white px-4 py-1 rounded-lg w-full sm:w-auto text-sm font-semibold"
                     >
                         + Add knowledge
                     </button>
@@ -131,7 +131,7 @@ const KnowledgePage = () => {
                         <input
                             type="text"
                             placeholder="Search knowledge"
-                            className="w-full border border-gray-300 rounded-lg pl-10 pr-3 py-2 text-sm outline-none bg-transparent"
+                            className="w-full border border-gray-300 rounded-lg pl-10 pr-3 py-1 text-sm outline-none bg-transparent"
                             value={searchTerm}
                             onChange={handleSearch}
                         />
@@ -142,23 +142,23 @@ const KnowledgePage = () => {
 
 
             {/* Table */}
-            <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
+            <div className="w-full overflow-x-auto rounded-xl border border-[#D8D8DF]">
                 <table className="w-full table-auto min-w-[768px]">
-                    <thead className="border-b-2">
+                    <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
                         <tr>
-                            <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                            <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                 File name
                             </th>
-                            <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                            <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                 File size
                             </th>
-                            <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                            <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                 Used in
                             </th>
-                            <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                            <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                 Last synced
                             </th>
-                            <th className="px-6 py-2 text-left text-[#8588AB] font-medium">
+                            <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                 Status
                             </th>
                             <th className="px-6 py-2"></th>
@@ -166,7 +166,7 @@ const KnowledgePage = () => {
                     </thead>
                     <tbody>
                         {currentItems.map((item) => (
-                            <tr key={item.id} className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition">
+                            <tr key={item.id} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
                                 <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                                     <Image
                                         src={item.icon}
@@ -212,7 +212,7 @@ const KnowledgePage = () => {
             <div className="flex justify-between items-center mt-4">
                 <button
                     onClick={() => handlePageChange(currentPage - 1)}
-                    className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
+                    className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
                     disabled={currentPage === 1}
                 >
                     <FiChevronLeft />
@@ -236,7 +236,7 @@ const KnowledgePage = () => {
 
                 <button
                     onClick={() => handlePageChange(currentPage + 1)}
-                    className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
+                    className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
                     disabled={currentPage === totalPages}
                 >
                     Next
