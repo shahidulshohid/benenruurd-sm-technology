@@ -65,7 +65,7 @@ const RunsTable = () => {
         <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 w-full md:w-auto">
           {/* Status Dropdown */}
           <div className="relative w-full sm:w-auto">
-            <select className="w-full sm:w-auto border cursor-pointer border-gray-300 rounded-lg text-[#8588AB] px-3 py-2 text-sm outline-none bg-transparent pr-8 appearance-none">
+            <select className="w-full sm:w-auto border cursor-pointer border-[#D5D6E2] rounded-lg text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
               <option>Status</option>
             </select>
             <FiChevronDown size={20} className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
@@ -73,7 +73,7 @@ const RunsTable = () => {
 
           {/* Workflow Dropdown */}
           <div className="relative w-full sm:w-auto">
-            <select className="w-full sm:w-auto border cursor-pointer border-gray-300 rounded-lg text-[#8588AB] px-3 py-2 text-sm outline-none bg-transparent pr-8 appearance-none">
+            <select className="w-full sm:w-auto border cursor-pointer border-[#D5D6E2] rounded-lg text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
               <option>Workflow</option>
             </select>
             <FiChevronDown size={20} className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
@@ -89,7 +89,7 @@ const RunsTable = () => {
                 setSearchTerm(e.target.value);
                 setCurrentPage(1); // reset to page 1 when searching
               }}
-              className="w-full sm:w-64 border border-gray-300 rounded-lg pl-10 pr-3 py-2 text-sm outline-none bg-transparent"
+              className="w-full sm:w-64 border border-gray-300 rounded-lg pl-10 pr-3 py-1 text-sm outline-none bg-transparent"
             />
             <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-base" />
           </div>
@@ -97,28 +97,28 @@ const RunsTable = () => {
       </div>
 
       {/* Table */}
-      <div className="w-full overflow-x-auto md:overflow-visible rounded-xl border-2 border-b-0 border-gray-200">
-        <table className="w-full table-auto min-w-[768px]">
-          <thead className="border-b-2">
+      <div className="w-full overflow-x-auto rounded-xl border border-[#D8D8DF]">
+          <table className="w-full table-auto min-w-[768px]">
+            <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
             <tr>
-              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
-              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Run</th>
-              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Last update</th>
-              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Interactions used</th>
-              <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Status</th>
+              <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
+              <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Run</th>
+              <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Last update</th>
+              <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Interactions used</th>
+              <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Status</th>
             </tr>
           </thead>
           <tbody>
             {paginatedWorkflows.length ? (
               paginatedWorkflows.map((item, i) => (
-                <tr key={i} className="border-b-2 rounded-xl hover:bg-[#FAFAFA] cursor-pointer transition">
+                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
                   <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                     <Image
                       src={item.icon}
                       width={24}
                       height={24}
                       alt="icon"
-                      className="border border-[#D5D6E2] p-1 rounded"
+                       className="border border-[#D5D6E2] p-1 rounded" 
                     />
                     <span className="text-[#22222F] text-sm">{item.workflow}</span>
                   </td>
@@ -153,7 +153,7 @@ const RunsTable = () => {
       <div className="flex justify-between items-center mt-4 overflow-x-auto gap-4 whitespace-nowrap">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
-          className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
+          className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
           disabled={currentPage === 1}
         >
           <FiChevronLeft />
@@ -177,7 +177,7 @@ const RunsTable = () => {
 
         <button
           onClick={() => handlePageChange(currentPage + 1)}
-          className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none focus:ring-2"
+          className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
           disabled={currentPage === totalPages}
         >
           Next
