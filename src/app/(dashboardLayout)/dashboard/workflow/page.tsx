@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
-import { HiOutlinePlusSm } from "react-icons/hi";
 import { CiSearch, CiStar } from "react-icons/ci";
 import {
   MdKeyboardArrowRight,
@@ -122,8 +121,8 @@ const WorkflowPage = () => {
               setShowEditRuns(true);
             }}
             className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "editor"
-                ? "bg-[#22222F] text-white"
-                : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
+              ? "bg-[#22222F] text-white"
+              : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
               }`}
           >
             Editor
@@ -134,8 +133,8 @@ const WorkflowPage = () => {
               setShowEditRuns(false);
             }}
             className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "runs"
-                ? "bg-[#22222F] text-white"
-                : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
+              ? "bg-[#22222F] text-white"
+              : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
               }`}
           >
             Runs
@@ -146,20 +145,18 @@ const WorkflowPage = () => {
 
       {showEditRuns ? (
         <div className="max-w-[896px] mx-auto md:flex justify-center gap-6 mt-6">
-          <div className="md:w-1/2 mx-auto border-2 rounded-lg h-[100px] mr-4 ml-4 lg:mr-0 lg:ml-0 mt-5 lg:mt-0">
-            <h3 className="px-4 py-3 text-sm font-semibold text-[#22222F]">
+          <div className="md:w-1/2 mx-auto rounded-lg h-[100px] mr-4 ml-4 lg:mr-0 lg:ml-0 mt-5 lg:mt-0 border border-[#D5D6E2] shadow-sm">
+            <h3 className="px-4 py-3 text-sm font-semibold text-[#22222F] border-b border-[#D5D6E2]">
               Trigger
             </h3>
-            <div className="text-center text-[#217AFC] font-semibold p-4 border-t-2 flex justify-center items-center">
-              <HiOutlinePlusSm />
-              <button
-                className=" cursor-pointer"
-                onClick={() => setShowTrigger(true)}
-              >
-                <span>Add Trigger</span>
+            <div className="text-center text-[#217AFC] text-sm font-semibold p-4 flex justify-center items-center cursor-pointer">
+              <Image src="/dashboardIcons/plus.svg" width={20} height={20} alt="plus icon" />
+              <button onClick={() => setShowTrigger(true)} className=" cursor-pointer">
+                Add trigger
               </button>
             </div>
           </div>
+
 
           {showTrigger && (
             <div className="md:w-1/2 mx-auto border-2 rounded-lg mb-6 mr-4 ml-4 md:mr-0 md:ml-0 mt-5 md:mt-0">
@@ -188,11 +185,11 @@ const WorkflowPage = () => {
                       placeholder="Search Triggers"
                       onChange={(e) => setSearchQuery(e.target.value)}
                       value={searchQuery}
-                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB] border-2 border-x-0"
+                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB] border-2 border-x-0 border-[#D5D6E2]"
                     />
                   </div>
 
-                  <div className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
+                  <div className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0 border-[#D5D6E2]">
                     {hasAnyMatch ? (
                       <>
                         <div className="space-y-2">
@@ -216,8 +213,7 @@ const WorkflowPage = () => {
                                     Integrations
                                   </h3>
                                   <p className="text-xs text-[#8588AB]">
-                                    Start runs based on actions in other
-                                    integrations
+                                    Start runs based on actions in other integrations
                                   </p>
                                 </div>
                               </div>
@@ -266,7 +262,7 @@ const WorkflowPage = () => {
                                 onClick={() => setSectionShow("scheduled")}
                                 className="flex items-center gap-4"
                               >
-                                <div className="border rounded p-1">
+                                <div className="border rounded p-1 border-[#D5D6E2]">
                                   <Image
                                     src="/dashboardIcons/scheduled.svg"
                                     width={14}
@@ -302,7 +298,7 @@ const WorkflowPage = () => {
                           {matchSearch("gmail") && (
                             <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
                               <div className="flex items-center gap-3 my-3">
-                                <div className="border p-1 rounded">
+                                <div className="border p-1 rounded border-[#D5D6E2]">
                                   <Image
                                     src="/dashboardIcons/google.svg"
                                     width={16}
@@ -325,7 +321,7 @@ const WorkflowPage = () => {
                           {matchSearch("google calendar") && (
                             <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
                               <div className="flex items-center gap-3 my-3">
-                                <div className="border p-1 rounded">
+                                <div className="border p-1 rounded border-[#D5D6E2]">
                                   <Image
                                     src="/dashboardIcons/googleCalendar.svg"
                                     width={16}
@@ -348,7 +344,7 @@ const WorkflowPage = () => {
                           {matchSearch("slack") && (
                             <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
                               <div className="flex items-center gap-3 my-3">
-                                <div className="border p-1 rounded">
+                                <div className="border p-1 rounded border-[#D5D6E2]">
                                   <Image
                                     src="/dashboardIcons/slack.svg"
                                     width={16}
