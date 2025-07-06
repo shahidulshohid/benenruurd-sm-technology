@@ -10,11 +10,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const ScheduledBatchRun = () => {
-  const router = useRouter()
+  const router = useRouter();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("flsfksld");
-    router.push("/dashboard/workflowstepone")
+    router.push("/dashboard/workflowstepone");
   };
 
   return (
@@ -29,9 +29,16 @@ const ScheduledBatchRun = () => {
               </h3>
               <div className="flex items-center justify-between px-4 py-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-sm text-[#8588AB] font-semibold">1</span>
+                  <span className="text-sm text-[#8588AB] font-semibold">
+                    1
+                  </span>
                   <div className="border p-1 rounded">
-                    <Image src="/dashboardIcons/scheduled.svg" width={16} height={16} alt=""/>
+                    <Image
+                      src="/dashboardIcons/scheduled.svg"
+                      width={16}
+                      height={16}
+                      alt=""
+                    />
                   </div>
                   <span className="text-sm text-[#22222F] font-semibold">
                     Every 2 days
@@ -39,8 +46,8 @@ const ScheduledBatchRun = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Switch
-                    id="workflow-switch"
-                    className="scale-125 bg-transparent data-[state=checked]:bg-transparent border border-gray-300 rounded-full cursor-pointer [&>span]:border [&>span]:border-gray-300 cup"
+                    id="email-notifications-1"
+                    className="scale-125 mr-5 data-[state=checked]:bg-[#217AFC] cursor-pointer"
                   />
 
                   <BsThreeDotsVertical className="text-[#8588AB]" />
