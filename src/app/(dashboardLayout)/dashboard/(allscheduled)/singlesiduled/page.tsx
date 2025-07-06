@@ -15,13 +15,13 @@ const WorkflowPage = () => {
     <div>
       <div className="relative flex items-center justify-between px-8 h-[60px]">
         <div className="absolute left-1/2 transform -translate-x-1/2">
-          <div className="flex items-center gap-2 p-2">
+          <div className="flex items-center gap-2">
             <Image
-              src="/google.png"
-              width={35}
-              height={35}
+              src="/dashboardIcons/gmail.svg"
+              width={24}
+              height={24}
               alt="Gmail icon"
-              className="border p-1 rounded-lg cusop"
+              className="border p-1 rounded"
             />
             <div className="flex flex-col">
               <p className="text-sm font-semibold text-[#22222F]">
@@ -34,14 +34,14 @@ const WorkflowPage = () => {
         </div>
         <div className="flex items-center gap-3">
           <Image
-            src="/messageImg.png"
+            src="/dashboardIcons/messageImg.svg"
             width={20}
             height={20}
             alt="Message image"
             className="cursor-pointer"
           />
           <Image
-            src="/dashboardIcons/vector.png"
+            src="/dashboardIcons/victor.svg"
             width={20}
             height={20}
             alt="Vector image"
@@ -85,21 +85,19 @@ const WorkflowPage = () => {
         <div className="flex justify-center gap-5 border w-[235px] mx-auto py-1 rounded-lg">
           <button
             onClick={() => setActiveTab("editor")}
-            className={`px-8 py-1 cursor-pointer rounded-[7px] ${
-              activeTab === "editor"
+            className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "editor"
                 ? "bg-[#22222F] text-white"
                 : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
-            }`}
+              }`}
           >
             Editor
           </button>
           <button
             onClick={() => setActiveTab("runs")}
-            className={`px-8 py-1 cursor-pointer rounded-[7px] ${
-              activeTab === "runs"
+            className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "runs"
                 ? "bg-[#22222F] text-white"
                 : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
-            }`}
+              }`}
           >
             Runs
           </button>
