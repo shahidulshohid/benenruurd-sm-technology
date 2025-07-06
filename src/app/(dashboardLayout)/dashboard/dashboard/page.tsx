@@ -130,9 +130,9 @@ function Dashboard() {
           className="cursor-pointer"
         />
         <Link href="/dashboard/dashboard">
-          <Button className="bg-[#0D5AE8] hover:bg-[#0D5AE8] flex items-center gap-2 font-semibold text-sm cursor-pointer">
+          <button className="bg-[#0D5AE8] hover:bg-[#0D5AE8] flex items-center gap-2 font-semibold text-sm cursor-pointer text-[#FFFFFF] px-3 py-1.5 rounded-lg">
             <HiPlus /> New Workflow
-          </Button>
+          </button>
         </Link>
       </div>
 
@@ -143,7 +143,7 @@ function Dashboard() {
           <table className="w-full table-auto min-w-[768px]">
             <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
               <tr>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
+                <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
                 <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Last run</th>
                 <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Issue</th>
                 <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Status</th>
@@ -179,14 +179,25 @@ function Dashboard() {
         <div className="flex justify-between items-center mb-3">
           <h3 className="text-xl text-[#22222F] font-semibold">Most recent workflows</h3>
           <Link href="/dashboard/workflow">
-            <Button variant="outline" className="text-sm font-semibold cursor-pointer border rounded-md shadow-sm focus:ring-2">See all workflows</Button>
+            <Button
+              variant="outline"
+              className="text-sm font-semibold cursor-pointer border rounded-md hover:bg-transparent hover:text-inherit"
+              style={{
+                boxShadow:
+                  "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
+              }}
+            >
+              See all workflows
+            </Button>
+
+
           </Link>
         </div>
         <div className="w-full overflow-x-auto rounded-xl border border-[#D8D8DF]">
           <table className="w-full table-auto min-w-[768px]">
             <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
               <tr>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
+                <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
                 <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Last updated</th>
                 <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Last run</th>
                 <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Status</th>
@@ -220,14 +231,24 @@ function Dashboard() {
         <div className="flex justify-between items-center mb-3">
           <h3 className="text-xl text-[#22222F] font-semibold">Most recent runs</h3>
           <Link href="/dashboard/runsoverview">
-            <Button variant="outline" className="text-sm font-semibold cursor-pointer border rounded-md shadow-sm focus:ring-2">See all runs</Button>
+            <Button
+              variant="outline"
+              className="text-sm font-semibold cursor-pointer border rounded-md hover:bg-transparent hover:text-inherit"
+              style={{
+                boxShadow:
+                  "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
+              }}
+            >
+              See all runs
+            </Button>
+
           </Link>
         </div>
         <div className="w-full overflow-x-auto rounded-xl border border-[#D8D8DF]">
           <table className="w-full table-auto min-w-[768px]">
             <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
               <tr>
-                <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
+                <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
                 <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Run</th>
                 <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Last update</th>
                 <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Interactions used</th>
