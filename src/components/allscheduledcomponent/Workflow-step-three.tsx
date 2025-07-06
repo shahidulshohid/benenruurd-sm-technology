@@ -101,7 +101,7 @@ const WorkflowStepThreeError = () => {
                   >
                     <span>Run as</span>
                     <Image
-                      src="/dashboardIcons/profileImg.jpg"
+                      src="/dashboardIcons/profileImage.jpg"
                       width={20}
                       height={20}
                       alt="Profile"
@@ -173,7 +173,7 @@ const WorkflowStepThreeError = () => {
                 <div className="relative">
                   <div className="w-full p-2 border-2 rounded-lg text-sm bg-white pr-10 flex items-center gap-2 cursor-pointer">
                     <Image
-                      src="/dashboardIcons/profileImg.jpg"
+                      src="/dashboardIcons/profileImage.jpg"
                       width={15}
                       height={15}
                       alt="Profile"

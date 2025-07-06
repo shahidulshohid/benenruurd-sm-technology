@@ -89,7 +89,7 @@ const ScheduledSingleRun = () => {
                   >
                     <span>Run as</span>
                     <Image
-                      src="/dashboardIcons/profileImg.jpg"
+                      src="/dashboardIcons/profileImage.jpg"
                       width={20}
                       height={20}
                       alt="Profile"

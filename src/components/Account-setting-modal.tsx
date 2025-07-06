@@ -47,14 +47,14 @@ export function DialogCloseContentSetting() {
   const roles1 = ["Admin", "User", "Moderator", "Guest"];
 
   return (
-    <DialogContent className="px-0 py-0 h-[612px] min-w-[840px]">
+    <DialogContent className="px-0 py-0 h-[612px] min-w-[880px]">
       <DialogHeader className="h-full">
         <DialogDescription className="h-full rounded-xl">
           <div className="flex justify-between h-full rounded-lg">
             {/* Sidebar */}
-            <div className="bg-[#ECECF2] w-1/4 p-6 flex flex-col gap-4 h-full">
-              <span className="text-sm font-semibold text-gray-600">General</span>
-              <div className="flex flex-col gap-2">
+            <div className="bg-[#ECECF2] w-[240px] flex flex-col h-full p-4">
+              <span className="text-sm font-semibold text-[#8588AB] pb-2">General</span>
+              <div className="flex flex-col">
                 {menuItems
                   .filter((item) => item.category === "General")
                   .map((item) => {
@@ -63,16 +63,16 @@ export function DialogCloseContentSetting() {
                       <button
                         key={item.label}
                         onClick={() => setActiveItem(item.label)}
-                        className={`flex items-center gap-2 w-full px-3 py-2 rounded text-left
+                        className={`flex items-center gap-2 w-full pl-1 pr-2 pb-1 mb-2 rounded-sm text-left
                           ${isActive
-                            ? "bg-[#D5D6E2] text-[#22222F] font-semibold"
+                            ? "bg-[#D5D6E2] text-[#22222F] text-sm font-semibold"
                             : "hover:bg-[#D5D6E2] text-sm font-semibold text-[#22222F] cursor-pointer"
                           }`}
                       >
                         <Image
                           src={item.icon}
-                          width={24}
-                          height={25}
+                          width={20}
+                          height={20}
                           alt="icon"
                         />
                         <span>{item.label}</span>
@@ -81,7 +81,7 @@ export function DialogCloseContentSetting() {
                   })}
               </div>
 
-              <span className="text-sm font-semibold text-gray-600 mt-4">Team</span>
+              <span className="text-sm font-semibold text-[#8588AB] pb-2">Team</span>
               <div className="flex flex-col gap-2">
                 {menuItems
                   .filter((item) => item.category === "Team")
@@ -379,7 +379,7 @@ export function DialogCloseContentSetting() {
                       <div className="flex justify-between items-center mb-6">
                         <div className="flex items-center gap-2">
                           <Image
-                            src="/dashboardIcons/profileImg.jpg"
+                            src="/dashboardIcons/profileImage.jpg"
                             width={40}
                             height={40}
                             alt="Profile"
