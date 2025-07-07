@@ -35,19 +35,19 @@ export default function AppSidebar() {
                 {/* Profile */}
                 <div className="flex justify-between items-center mb-3">
                   <Link href="/">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src="/dashboardIcons/profileImage.jpg"
-                      width={40}
-                      height={40}
-                      alt="Profile"
-                      className="rounded-full"
-                    />
-                    <div className="text-white">
-                      <h3 className="text-sm font-semibold">Ruben Vaalt</h3>
-                      <p className="text-xs text-[#D5D6E2]">Acme Inc.</p>
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src="/dashboardIcons/profileImage.jpg"
+                        width={40}
+                        height={40}
+                        alt="Profile"
+                        className="rounded-full"
+                      />
+                      <div className="text-white">
+                        <h3 className="text-sm font-semibold">Ruben Vaalt</h3>
+                        <p className="text-xs text-[#D5D6E2]">Acme Inc.</p>
+                      </div>
                     </div>
-                  </div>
                   </Link>
                   <div className="text-white text-xl">
                     <RiArrowDropDownLine />
@@ -57,15 +57,20 @@ export default function AppSidebar() {
                 <Separator className="bg-[#242432]" />
 
                 {/* New Workflow Button */}
-                <div>
-                  <div className="bg-blue-500 hover:bg-blue-500 flex justify-center mt-4 rounded-sm">
-                    <Link href="/dashboard/workflow">
-                      <button className="text-sm py-1.5 font-semibold rounded-sm text-white flex items-center gap-1 cursor-pointer">
-                        <HiPlus /> New Workflow
-                      </button>
-                    </Link>
-                  </div>
+                <div
+                  className="bg-[#217AFC] hover:bg-[#217AFC] border border-blue-700 flex justify-center mt-4 rounded-lg"
+                  style={{
+                    boxShadow:
+                      "0px 1px 1px 0px rgba(100, 102, 241, 0.12), 0px 2px 2px 0px rgba(100, 102, 241, 0.12)",
+                  }}
+                >
+                  <Link href="/dashboard/workflow">
+                    <button className="text-sm py-1.5 font-semibold text-[#FFFFFF] flex items-center gap-2 cursor-pointer">
+                      <HiPlus /> New Workflow
+                    </button>
+                  </Link>
                 </div>
+
 
                 {/* Overview */}
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Overview</p>
@@ -77,7 +82,7 @@ export default function AppSidebar() {
                       }`}
                   >
                     <Link href="/dashboard/dashboard" className="flex items-center gap-2 w-full">
-                      <Image src="/dashboardIcons/home.svg" width={20} height={20} alt=""/>
+                      <Image src="/dashboardIcons/home.svg" width={20} height={20} alt="" />
                       <span className="text-sm">Dashboard</span>
                     </Link>
                   </button>
@@ -120,7 +125,7 @@ export default function AppSidebar() {
                         }`}
                     >
                       <Link href={href} className="flex items-center gap-2 w-full">
-                        <Image src={icon} width={20} height={20} alt={label}/>
+                        <Image src={icon} width={20} height={20} alt={label} />
                         <span className="text-sm">{label}</span>
                       </Link>
                     </SidebarMenuButton>
@@ -138,9 +143,9 @@ export default function AppSidebar() {
             {/* Professional and Settings */}
             <div className="flex justify-between items-center text-white mb-2">
               <span className="text-sm font-semibold">Professional</span>
-                <button onClick={() => setOpen(true)} className="cursor-pointer">
-                  <Image src="/dashboardIcons/settings.svg" width={20} height={20}  alt="Setting icon" />
-                </button>
+              <button onClick={() => setOpen(true)} className="cursor-pointer">
+                <Image src="/dashboardIcons/settings.svg" width={20} height={20} alt="Setting icon" />
+              </button>
               <Dialog open={open} onOpenChange={setOpen}>
                 <DialogCloseContentSetting />
               </Dialog>
