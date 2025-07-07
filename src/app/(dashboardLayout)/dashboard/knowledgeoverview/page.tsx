@@ -118,7 +118,7 @@ const KnowledgePage = () => {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full md:w-auto">
                     <button
                         onClick={() => setOpen(true)}
-                        className="bg-blue-500 text-white px-4 py-1 rounded-lg w-full sm:w-auto text-sm font-semibold cursor-pointer"
+                        className="bg-[#217AFC] text-[#FFFFFF] px-3 py-1.5 rounded-lg w-full sm:w-auto text-sm font-semibold cursor-pointer"
                     >
                         + Add knowledge
                     </button>
@@ -127,15 +127,15 @@ const KnowledgePage = () => {
                         <DialogCloseContent />
                     </Dialog>
 
-                    <div className="relative w-full sm:w-64">
+                    <div className="relative sm:w-64 py-1.5">
                         <input
                             type="text"
                             placeholder="Search knowledge"
-                            className="w-full border border-gray-300 rounded-lg pl-10 pr-3 py-1 text-sm outline-none bg-transparent"
+                            className="w-full border border-[#D5D6E2] text-[#8588AB] font-medium rounded-lg pl-10 pr-3 py-1.5 text-sm outline-none bg-transparent"
                             value={searchTerm}
                             onChange={handleSearch}
                         />
-                        <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-base" />
+                        <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-base"/>
                     </div>
                 </div>
             </div>
@@ -167,7 +167,7 @@ const KnowledgePage = () => {
                     <tbody>
                         {currentItems.map((item) => (
                             <tr key={item.id} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D5D6E2)" }}>
-                                <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
+                                <td className="px-3 py-3 -pb-1 flex items-center gap-2 font-semibold text-[#22222F]">
                                     <Image
                                         src={item.icon}
                                         width={24}
@@ -175,13 +175,13 @@ const KnowledgePage = () => {
                                         alt="icon"
                                         className="border border-[#D5D6E2] p-1 rounded-[3px]"
                                     />
-                                    <span className="text-[#22222F] text-sm">{item.name}</span>
+                                    <span className="text-[#22222F] text-sm font-medium">{item.name}</span>
                                 </td>
 
-                                <td className="px-6 py-2 text-[#707187]">{item.size}</td>
-                                <td className="px-6 py-2 text-[#707187]">{item.usedIn}</td>
-                                <td className="px-6 py-2 text-[#707187]">{item.lastSynced}</td>
-                                <td className="px-6 py-2 text-[#707187]">
+                                <td className="px-6 py-2 text-[#707187] font-medium">{item.size}</td>
+                                <td className="px-6 py-2 text-[#707187] font-medium">{item.usedIn}</td>
+                                <td className="px-6 py-2 text-[#707187] font-medium">{item.lastSynced}</td>
+                                <td className="px-6 py-2 text-[#707187] font-medium">
                                     <span
                                         className={
                                             item.status === "Syncing"
