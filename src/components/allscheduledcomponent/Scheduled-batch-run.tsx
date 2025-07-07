@@ -11,7 +11,6 @@ import { useState } from "react";
 
 const ScheduledBatchRun = () => {
   // switch button 
-  const [enabled, setEnabled] = useState(false);
   const router = useRouter();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -19,6 +18,7 @@ const ScheduledBatchRun = () => {
     router.push("/dashboard/workflowstepone");
   };
 
+  const [enabled, setEnabled] = useState<boolean>(false);
   return (
     <div className="min-h-screen py-8">
       <form onSubmit={handleSubmit} className="max-w-4xl mx-auto px-4">
@@ -47,7 +47,7 @@ const ScheduledBatchRun = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                 <button
+                  <button
                     onClick={() => setEnabled(!enabled)}
                     className={`w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
                       }`}

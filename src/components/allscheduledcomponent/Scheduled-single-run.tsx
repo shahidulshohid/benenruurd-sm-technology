@@ -14,13 +14,13 @@ import Link from "next/link";
 const ScheduledSingleRun = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [selectedTime, setSelectedTime] = useState<Date | null>(new Date());
+  // switch button 
+  const [enabled, setEnabled] = useState<boolean>(false);
   const [selectedRepeat, setSelectedRepeat] = useState<string>(
     "Custom (every 2 days)"
   );
   const [customNumber, setCustomNumber] = useState<string>("2");
   const [customUnit, setCustomUnit] = useState<string>("days");
-  // switch button 
-  const [enabled, setEnabled] = useState(false);
 
   const repeatOptions = ["Custom (every 2 days)", "Daily", "Weekly", "Monthly"];
 
