@@ -1,15 +1,17 @@
 "use client";
 
 import { RxCross2 } from "react-icons/rx";
-import { Switch } from "@/components/ui/switch";
 import Image from "next/image";
 import "react-datepicker/dist/react-datepicker.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { HiChevronDown } from "react-icons/hi";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const ScheduledBatchRun = () => {
+  // switch button 
+  const [enabled, setEnabled] = useState(false);
   const router = useRouter();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ const ScheduledBatchRun = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen py-8">
       <form onSubmit={handleSubmit} className="max-w-4xl mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left Panel */}
@@ -45,10 +47,15 @@ const ScheduledBatchRun = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Switch
-                    id="email-notifications-1"
-                    className="scale-125 mr-5 data-[state=checked]:bg-[#217AFC] cursor-pointer"
-                  />
+                 <button
+                    onClick={() => setEnabled(!enabled)}
+                    className={`w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
+                      }`}
+                  >
+                    <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
+                      <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
+                    </div>
+                  </button>
 
                   <BsThreeDotsVertical className="text-[#8588AB]" />
                 </div>

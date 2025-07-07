@@ -8,9 +8,11 @@ import {
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useState } from "react";
 import Image from "next/image";
-import { Switch } from "@/components/ui/switch";
 
 export function DialogCloseContentSetting() {
+  // switch button 
+  const [enabled, setEnabled] = useState(false);
+  const [enabled2, setEnabled2] = useState(false);
   const [activeItem, setActiveItem] = useState<string>("Account Details"); // Default active item
 
   const menuItems = [
@@ -199,10 +201,15 @@ export function DialogCloseContentSetting() {
                               address
                             </p>
                           </div>
-                          <Switch
-                            id="email-notifications-1"
-                            className="scale-125 mr-5 data-[state=checked]:bg-[#217AFC] cursor-pointer"
-                          />
+                          <button
+                    onClick={() => setEnabled(!enabled)}
+                    className={`mr-5 w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
+                      }`}
+                  >
+                    <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
+                      <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
+                    </div>
+                  </button>
                         </div>
                         <div className="flex justify-between items-center">
                           <div>
@@ -214,10 +221,15 @@ export function DialogCloseContentSetting() {
                               device
                             </p>
                           </div>
-                          <Switch
-                            id="email-notifications-1"
-                            className="scale-125 mr-5 data-[state=checked]:bg-[#217AFC] cursor-pointer"
-                          />
+                          <button
+                    onClick={() => setEnabled2(!enabled2)}
+                    className={`mr-5 w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled2 ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
+                      }`}
+                  >
+                    <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
+                      <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
+                    </div>
+                  </button>
                         </div>
                       </div>
                     ) : activeItem === "Integrations" ? (

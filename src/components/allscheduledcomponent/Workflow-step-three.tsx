@@ -40,7 +40,7 @@ const WorkflowStepThreeError = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen py-8">
       <form className="max-w-4xl mx-auto px-4" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left Panel */}
