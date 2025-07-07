@@ -48,14 +48,26 @@ const ScheduledSingleRun = () => {
               </h3>
               <div className="flex items-center justify-between px-4 py-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-sm text-[#8588AB] font-semibold">1</span>
+                  <span className="text-sm text-[#8588AB] font-semibold">
+                    1
+                  </span>
                   <div className="border p-1 rounded text-[#22222F]">
-                    <Image src="/dashboardIcons/scheduled.svg" width={16} height={16} alt=""/>
+                    <Image
+                      src="/dashboardIcons/scheduled.svg"
+                      width={16}
+                      height={16}
+                      alt=""
+                    />
                   </div>
-                  <span className="text-sm text-[#22222F] font-semibold">Every 2 days</span>
+                  <span className="text-sm text-[#22222F] font-semibold">
+                    Every 2 days
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Switch id="workflow-switch" className="data-[state=checked]:bg-[#217AFC] cursor-pointer" />
+                  <Switch
+                    id="workflow-id"
+                    className="scale-125 mr-5 data-[state=checked]:bg-[#217AFC] cursor-pointer"
+                  />
 
                   <BsThreeDotsVertical className="text-[#8588AB]" />
                 </div>
@@ -71,127 +83,135 @@ const ScheduledSingleRun = () => {
           </div>
 
           {/* Right Panel */}
-            <div className="w-full md:w-1/2 border rounded-lg bg-white shadow-sm">
-              <div className="flex items-center justify-between p-4 border-b">
-                <div className="flex items-center gap-3">
-                  <div className="border p-1 rounded">
-                    <Image src="/dashboardIcons/scheduled.svg" width={16} height={16} alt=""/>
-                  </div>
-                  <span className="text-gray-800 font-medium">
-                    Start run on a schedule
-                  </span>
+          <div className="w-full md:w-1/2 border rounded-lg bg-white shadow-sm">
+            <div className="flex items-center justify-between p-4 border-b">
+              <div className="flex items-center gap-3">
+                <div className="border p-1 rounded">
+                  <Image
+                    src="/dashboardIcons/scheduled.svg"
+                    width={16}
+                    height={16}
+                    alt=""
+                  />
                 </div>
-                <div className="flex items-center gap-3">
-                  <Button
-                    variant="outline"
-                    className="flex items-center gap-2 text-sm"
-                  >
-                    <span>Run as</span>
-                    <Image
-                      src="/dashboardIcons/profileImage.jpg"
-                      width={20}
-                      height={20}
-                      alt="Profile"
-                      className="rounded-full"
-                    />
-                  </Button>
-                  <Link href="/dashboard/workflow">
+                <span className="text-gray-800 font-medium">
+                  Start run on a schedule
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Button
+                  variant="outline"
+                  className="flex items-center gap-2 text-sm"
+                >
+                  <span>Run as</span>
+                  <Image
+                    src="/dashboardIcons/profileImage.jpg"
+                    width={20}
+                    height={20}
+                    alt="Profile"
+                    className="rounded-full"
+                  />
+                </Button>
+                <Link href="/dashboard/workflow">
                   <button type="button">
                     <RxCross2 className="text-gray-500 cursor-pointer" />
                   </button>
-                  </Link>
-                </div>
+                </Link>
               </div>
+            </div>
 
-              <div className="p-4 space-y-4">
-                {/* First Instance */}
-                <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">
-                    First Instance
-                  </label>
-                  <div className="flex gap-2">
-                    {/* Date Picker */}
-                    <div className="w-1/2 relative">
-                      <DatePicker
-                        selected={selectedDate}
-                        onChange={(date) => setSelectedDate(date)}
-                        className="w-full p-1 pr-8 border border-gray-300 rounded text-sm focus:outline-none"
-                        dateFormat="dd MMM yyyy"
-                        placeholderText="Select date"
-                      />
-                      <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xs pointer-events-none" />
-                    </div>
-
-                    {/* Time Picker */}
-                    <div className="w-1/2 relative">
-                      <DatePicker
-                        selected={selectedTime}
-                        onChange={(date) => setSelectedTime(date)}
-                        className="w-full p-1 pr-8 border border-gray-300 rounded text-sm focus:outline-none"
-                        showTimeSelect
-                        showTimeSelectOnly
-                        timeIntervals={30}
-                        timeCaption="Time"
-                        dateFormat="h:mm aa"
-                        placeholderText="Select time"
-                      />
-                      <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xs pointer-events-none" />
-                    </div>
+            <div className="p-4 space-y-4">
+              {/* First Instance */}
+              <div>
+                <label className="block text-xs font-medium text-gray-700 mb-1">
+                  First Instance
+                </label>
+                <div className="flex gap-2">
+                  {/* Date Picker */}
+                  <div className="w-1/2 relative">
+                    <DatePicker
+                      selected={selectedDate}
+                      onChange={(date) => setSelectedDate(date)}
+                      className="w-full p-1 pr-8 border border-gray-300 rounded text-sm focus:outline-none"
+                      dateFormat="dd MMM yyyy"
+                      placeholderText="Select date"
+                    />
+                    <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xs pointer-events-none" />
                   </div>
-                </div>
 
-                {/* Repeats */}
-                <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">
-                    Repeats
-                  </label>
-                  <div className="relative">
-                    <select
-                      value={selectedRepeat}
-                      onChange={(e) => setSelectedRepeat(e.target.value)}
-                      className="w-full p-1 border rounded text-sm focus:outline-none appearance-none bg-white"
-                    >
-                      {repeatOptions.map((option) => (
-                        <option key={option} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
+                  {/* Time Picker */}
+                  <div className="w-1/2 relative">
+                    <DatePicker
+                      selected={selectedTime}
+                      onChange={(date) => setSelectedTime(date)}
+                      className="w-full p-1 pr-8 border border-gray-300 rounded text-sm focus:outline-none"
+                      showTimeSelect
+                      showTimeSelectOnly
+                      timeIntervals={30}
+                      timeCaption="Time"
+                      dateFormat="h:mm aa"
+                      placeholderText="Select time"
+                    />
                     <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xs pointer-events-none" />
                   </div>
                 </div>
-
-                {/* Conditional Inputs */}
-                {selectedRepeat === "Custom (every 2 days)" && (
-                  <div className="flex gap-2">
-                    <input
-                      type="text"
-                      placeholder="2"
-                      readOnly
-                      value={customNumber}
-                      onChange={(e) => setCustomNumber(e.target.value)}
-                      className="w-1/2 border rounded pl-2 py-1 text-sm focus:outline-none"
-                    />
-                    <input
-                      type="text"
-                      placeholder="days"
-                      readOnly
-                      value={customUnit}
-                      onChange={(e) => setCustomUnit(e.target.value)}
-                      className="w-1/2 border rounded pl-2 py-1 text-sm focus:outline-none"
-                    />
-                  </div>
-                )}
               </div>
 
-              <Separator />
-
-              <div className="text-right p-4">
-                <Button type="submit" className="bg-blue-500 hover:bg-blue-500 text-white px-4 cursor-pointer">
-                  Done
-                </Button>
+              {/* Repeats */}
+              <div>
+                <label className="block text-xs font-medium text-gray-700 mb-1">
+                  Repeats
+                </label>
+                <div className="relative">
+                  <select
+                    value={selectedRepeat}
+                    onChange={(e) => setSelectedRepeat(e.target.value)}
+                    className="w-full p-1 border rounded text-sm focus:outline-none appearance-none bg-white"
+                  >
+                    {repeatOptions.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                  <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xs pointer-events-none" />
+                </div>
               </div>
+
+              {/* Conditional Inputs */}
+              {selectedRepeat === "Custom (every 2 days)" && (
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="2"
+                    readOnly
+                    value={customNumber}
+                    onChange={(e) => setCustomNumber(e.target.value)}
+                    className="w-1/2 border rounded pl-2 py-1 text-sm focus:outline-none"
+                  />
+                  <input
+                    type="text"
+                    placeholder="days"
+                    readOnly
+                    value={customUnit}
+                    onChange={(e) => setCustomUnit(e.target.value)}
+                    className="w-1/2 border rounded pl-2 py-1 text-sm focus:outline-none"
+                  />
+                </div>
+              )}
             </div>
+
+            <Separator />
+
+            <div className="text-right p-4">
+              <Button
+                type="submit"
+                className="bg-blue-500 hover:bg-blue-500 text-white px-4 cursor-pointer"
+              >
+                Done
+              </Button>
+            </div>
+          </div>
         </div>
       </form>
     </div>

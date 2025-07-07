@@ -1,7 +1,7 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
-import { MdKeyboardArrowRight} from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import { Switch } from "@/components/ui/switch";
 import "react-datepicker/dist/react-datepicker.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -11,7 +11,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const WorkflowStepOne = () => {
-
   return (
     <div className="min-h-screen py-8">
       <form className="max-w-4xl mx-auto px-4">
@@ -24,16 +23,25 @@ const WorkflowStepOne = () => {
               </h3>
               <div className="flex items-center justify-between px-4 py-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-sm font-semibold  text-[#8588AB]">1</span>
+                  <span className="text-sm font-semibold  text-[#8588AB]">
+                    1
+                  </span>
                   <div className="border p-1 rounded text-[#000000]">
-                    <Image src="/dashboardIcons/scheduled.svg" width={16} height={16} alt="Scheduled image" />
+                    <Image
+                      src="/dashboardIcons/scheduled.svg"
+                      width={16}
+                      height={16}
+                      alt="Scheduled image"
+                    />
                   </div>
-                  <span className="text-sm text-[#22222F] font-semibold">Every 2 days</span>
+                  <span className="text-sm text-[#22222F] font-semibold">
+                    Every 2 days
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Switch
-                    id="workflow-switch"
-                    className="scale-125 bg-transparent data-[state=checked]:bg-transparent border border-[#D5D6E2] rounded-full cursor-pointer [&>span]:border [&>span]:border-gray-300 cup"
+                    id="email-notifications-1"
+                    className="scale-125 mr-5 data-[state=checked]:bg-[#217AFC] cursor-pointer"
                   />
                   <BsThreeDotsVertical className="text-gray-400" />
                 </div>
@@ -79,11 +87,20 @@ const WorkflowStepOne = () => {
                 <div className="flex justify-between items-center p-3 hover:bg-gray-50 cursor-pointer transition rounded">
                   <div className="flex items-center gap-3">
                     <div>
-                      <Image src="/dashboardIcons/integrations3.svg" width={24} height={24} alt="" />
+                      <Image
+                        src="/dashboardIcons/integrations3.svg"
+                        width={24}
+                        height={24}
+                        alt=""
+                      />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-[#22222F]">Integrations</h3>
-                      <p className="text-xs text-[#8588AB]">Automate actions in apps like Slack, Gmail and Linear</p>
+                      <h3 className="text-sm font-semibold text-[#22222F]">
+                        Integrations
+                      </h3>
+                      <p className="text-xs text-[#8588AB]">
+                        Automate actions in apps like Slack, Gmail and Linear
+                      </p>
                     </div>
                   </div>
                   <MdKeyboardArrowRight className="text-[#8588AB]" size={20} />
@@ -92,11 +109,20 @@ const WorkflowStepOne = () => {
                 <div className="flex justify-between items-center p-3 hover:bg-gray-50 cursor-pointer transition rounded">
                   <div className="flex items-center gap-3">
                     <div>
-                      <Image src="/flowcontrol.svg" width={24} height={24} alt="" />
+                      <Image
+                        src="/flowcontrol.svg"
+                        width={24}
+                        height={24}
+                        alt=""
+                      />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-[#22222F]">Flow Control</h3>
-                      <p className="text-xs text-[#8588AB]">Add logic like paths and waiting</p>
+                      <h3 className="text-sm font-semibold text-[#22222F]">
+                        Flow Control
+                      </h3>
+                      <p className="text-xs text-[#8588AB]">
+                        Add logic like paths and waiting
+                      </p>
                     </div>
                   </div>
                   <MdKeyboardArrowRight className="text-[#8588AB]" size={20} />
@@ -108,8 +134,12 @@ const WorkflowStepOne = () => {
                       <Image src="/ai.svg" width={16} height={16} alt="" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-[#22222F]">AI</h3>
-                      <p className="text-xs text-[#8588AB]">Use AI to make actions like summarizing</p>
+                      <h3 className="text-sm font-semibold text-[#22222F]">
+                        AI
+                      </h3>
+                      <p className="text-xs text-[#8588AB]">
+                        Use AI to make actions like summarizing
+                      </p>
                     </div>
                   </div>
                   <MdKeyboardArrowRight className="text-[#8588AB]" size={20} />
@@ -122,11 +152,18 @@ const WorkflowStepOne = () => {
                         <Image src="/human.svg" width={14} height={14} alt="" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-semibold text-[#22222F]">Human Steps</h3>
-                        <p className="text-xs text-[#8588AB]">Wait for someone to do something</p>
+                        <h3 className="text-sm font-semibold text-[#22222F]">
+                          Human Steps
+                        </h3>
+                        <p className="text-xs text-[#8588AB]">
+                          Wait for someone to do something
+                        </p>
                       </div>
                     </div>
-                    <MdKeyboardArrowRight className="text-[#8588AB]" size={20} />
+                    <MdKeyboardArrowRight
+                      className="text-[#8588AB]"
+                      size={20}
+                    />
                   </div>
                 </Link>
               </div>
@@ -142,11 +179,21 @@ const WorkflowStepOne = () => {
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-3">
                       <div className="border p-1 rounded">
-                        <Image src="/dashboardIcons/gmail.svg" width={16} height={16} alt="Gmail image" />
+                        <Image
+                          src="/dashboardIcons/gmail.svg"
+                          width={16}
+                          height={16}
+                          alt="Gmail image"
+                        />
                       </div>
-                      <h3 className="text-sm font-medium text-gray-900">Gmail</h3>
+                      <h3 className="text-sm font-medium text-gray-900">
+                        Gmail
+                      </h3>
                     </div>
-                    <MdKeyboardArrowRight className="text-[#8588AB]" size={20} />
+                    <MdKeyboardArrowRight
+                      className="text-[#8588AB]"
+                      size={20}
+                    />
                   </div>
                 </div>
 
@@ -154,11 +201,21 @@ const WorkflowStepOne = () => {
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-3">
                       <div className="border p-1 rounded">
-                        <Image src="/dashboardIcons/googleCalendar.svg" width={16} height={16} alt="Gmail image" />
+                        <Image
+                          src="/dashboardIcons/googleCalendar.svg"
+                          width={16}
+                          height={16}
+                          alt="Gmail image"
+                        />
                       </div>
-                      <h3 className="text-sm font-medium text-gray-900">Google Calendar</h3>
+                      <h3 className="text-sm font-medium text-gray-900">
+                        Google Calendar
+                      </h3>
                     </div>
-                    <MdKeyboardArrowRight className="text-[#8588AB]" size={20} />
+                    <MdKeyboardArrowRight
+                      className="text-[#8588AB]"
+                      size={20}
+                    />
                   </div>
                 </div>
 
@@ -166,11 +223,21 @@ const WorkflowStepOne = () => {
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-3">
                       <div className="border p-1 rounded">
-                        <Image src="/dashboardIcons/slack.svg" width={16} height={16} alt="Gmail image" />
+                        <Image
+                          src="/dashboardIcons/slack.svg"
+                          width={16}
+                          height={16}
+                          alt="Gmail image"
+                        />
                       </div>
-                      <h3 className="text-sm font-medium text-gray-900">Slack</h3>
+                      <h3 className="text-sm font-medium text-gray-900">
+                        Slack
+                      </h3>
                     </div>
-                    <MdKeyboardArrowRight className="text-[#8588AB]" size={20} />
+                    <MdKeyboardArrowRight
+                      className="text-[#8588AB]"
+                      size={20}
+                    />
                   </div>
                 </div>
               </div>
@@ -179,7 +246,6 @@ const WorkflowStepOne = () => {
         </div>
       </form>
     </div>
-
   );
 };
 

@@ -61,8 +61,8 @@ const WorkflowStepThreeError = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Switch
-                    id="workflow-switch"
-                    className="scale-125 bg-transparent data-[state=checked]:bg-transparent border border-gray-300 rounded-full cursor-pointer [&>span]:border [&>span]:border-gray-300 cup"
+                    id="email-notifications-1"
+                    className="scale-125 mr-5 data-[state=checked]:bg-[#217AFC] cursor-pointer"
                   />
                   <BsThreeDotsVertical className="text-gray-400" />
                 </div>
