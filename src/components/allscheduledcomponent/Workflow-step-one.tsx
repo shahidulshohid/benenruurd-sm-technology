@@ -43,7 +43,7 @@ const WorkflowStepOne = () => {
                 <div className="flex items-center gap-2">
                     <div
                     onClick={() => setEnabled(!enabled)}
-                    className={`mr-5 w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
+                    className={`cursor-pointer mr-5 w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
                       }`}
                   >
                     <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">

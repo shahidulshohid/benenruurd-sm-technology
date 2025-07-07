@@ -4,7 +4,6 @@ import { Separator } from "@/components/ui/separator";
 import { MdKeyboardArrowRight, MdOutlineWatchLater } from "react-icons/md";
 import "react-datepicker/dist/react-datepicker.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { CiSearch } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
 import { GoArrowLeft } from "react-icons/go";
 import Image from "next/image";
@@ -34,15 +33,15 @@ const WorkflowStepTwo = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                   <button
+                   <div
                     onClick={() => setEnabled(!enabled)}
-                    className={`mr-5 w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
+                    className={`mr-5 w-12 h-7 rounded-full p-1 flex items-center cursor-pointer transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
                       }`}
                   >
                     <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
                       <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
                     </div>
-                  </button>
+                  </div>
                   <BsThreeDotsVertical className="text-gray-400" />
                 </div>
               </div>
@@ -50,7 +49,7 @@ const WorkflowStepTwo = () => {
 
             <button
               type="button"
-              className="w-full text-blue-600 font-semibold border-2 border-dotted border-blue-400 bg-blue-50 py-2 rounded-lg text-center hover:bg-blue-100 transition cursor-pointer"
+              className="w-full text-[#217AFC] font-semibold border-2 border-dotted border-blue-400 bg-blue-50 py-2 rounded-lg text-center hover:bg-blue-100 transition cursor-pointer"
             >
               + Add Step
             </button>
@@ -58,9 +57,9 @@ const WorkflowStepTwo = () => {
 
           {/* Right Panel */}
           <div className="w-full md:w-1/2">
-            <div className="rounded-br-lg rounded-lg shadow w-full p-0 border border-t-0">
+            <div className="rounded-br-lg rounded-lg shadow w-full p-0 border border-[#D5D6E2]">
               <Link href="/dashboard/workflowstepone">
-                <div className="p-3 flex items-center justify-between border rounded-t-lg">
+                <div className="p-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <GoArrowLeft />
                     <h3 className="text-sm font-semibold text-[#22222F]">
@@ -72,34 +71,33 @@ const WorkflowStepTwo = () => {
                   </button>
                 </div>
               </Link>
-              <Separator />
-
+              <Separator className="bg-[#D5D6E2] h-px w-full" />
               <div className="relative w-full">
-                <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className=" text-[#8588AB] absolute left-3 top-1/2 transform -translate-y-1/2"/>
                 <input
                   type="text"
                   placeholder="Search Human Steps"
                   className="w-full pl-10 pr-4 py-2 focus:outline-none text-[#8588AB]"
                 />
               </div>
-              <Separator />
+              <Separator className="bg-[#D5D6E2] h-px w-full" />
               <div className="space-y-2">
                 <Link href="/dashboard/workflowstepthree">
                   <div className="flex justify-between items-center p-3 cursor-pointer">
                     <div className="flex items-center gap-3">
-                      <div className="border p-1 rounded">
+                      <div>
                         <Image
-                          src="/integrations.svg"
-                          width={18}
-                          height={18}
+                          src="/dashboardIcons/integrations3.svg"
+                          width={24}
+                          height={24}
                           alt=""
                         />
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-gray-900">
+                        <h3 className="text-sm font-medium text-[#22222F]">
                           Get approval to continue
                         </h3>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-[#8588AB]">
                           Request approval from the assignee to continue
                         </p>
                       </div>
@@ -111,17 +109,17 @@ const WorkflowStepTwo = () => {
                   <div className="flex items-center gap-3">
                     <div className="border p-1 rounded">
                       <Image
-                        src="/flowcontrol.svg"
-                        width={20}
-                        height={20}
+                        src="/dashboardIcons/flowcontrol.svg"
+                        width={14}
+                        height={14}
                         alt=""
                       />
                     </div>
                     <div>
-                      <h3 className="text-sm font-medium text-gray-900">
+                      <h3 className="text-sm font-medium text-[#22222F]">
                         Get data input
                       </h3>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-[#8588AB]">
                         Request data from the assignee to continue
                       </p>
                     </div>
@@ -131,13 +129,13 @@ const WorkflowStepTwo = () => {
                 <div className="flex justify-between items-center p-3 cursor-pointer">
                   <div className="flex items-center gap-3">
                     <div className="border p-1 rounded">
-                      <Image src="/ai.svg" width={20} height={20} alt="" />
+                      <Image src="/ai.svg" width={14} height={14} alt="" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-medium text-gray-900">
+                      <h3 className="text-sm font-medium text-[#22222F]">
                         Complete a task
                       </h3>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-[#8588AB]">
                         Use AI to make actions like summarizing
                       </p>
                     </div>
