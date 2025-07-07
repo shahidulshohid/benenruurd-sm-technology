@@ -154,7 +154,7 @@ const WorkflowPage = () => {
 
 
           {showTrigger && (
-            <div className="md:w-1/2 mx-auto border-2 rounded-lg mb-6 mr-4 ml-4 md:mr-0 md:ml-0 mt-5 md:mt-0">
+            <div className="md:w-1/2 mx-auto border border-[#D5D6E2] shadow-sm rounded-lg mb-6 mr-4 ml-4 md:mr-0 md:ml-0 mt-5 md:mt-0">
               {/* add trigger section  */}
               {sectionShow === "add-trigger" ? (
                 <section>
@@ -172,7 +172,7 @@ const WorkflowPage = () => {
                       <RxCross2 />
                     </button>
                   </div>
-                  <Separator />
+                  <Separator className="bg-[#D5D6E2]" />
                   <div className="relative w-full">
                     <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
@@ -180,11 +180,11 @@ const WorkflowPage = () => {
                       placeholder="Search Triggers"
                       onChange={(e) => setSearchQuery(e.target.value)}
                       value={searchQuery}
-                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB] border-2 border-x-0 border-[#D5D6E2]"
+                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB]"
                     />
                   </div>
-
-                  <div className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0 border-[#D5D6E2]">
+                  <Separator className="bg-[#D5D6E2]" />
+                  <div className="rounded-br-lg rounded-bl-lg shadow w-full p-0">
                     {hasAnyMatch ? (
                       <>
                         <div className="space-y-2">
@@ -282,11 +282,11 @@ const WorkflowPage = () => {
                           )}
                         </div>
 
-                        <Separator className="w-full h-0.5 bg-gray-200 my-2" />
-                        <h4 className="text-xs font-semibold text-[#8588AB] mb-2 py-2 pl-4">
+                        <Separator className="bg-[#D5D6E2]" />
+                        <h4 className="text-xs font-semibold text-[#8588AB] bg-[#FCFCFD] mb-2 py-2 pl-4">
                           Connected Integrations
                         </h4>
-                        <Separator className="w-full h-0.5 bg-gray-200 my-2" />
+                        <Separator className="bg-[#D5D6E2]" />
 
                         <div>
                           {/* Gmail */}
@@ -388,7 +388,7 @@ const WorkflowPage = () => {
 
                   <Separator />
                   <div className="relative w-full">
-                    <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
                       type="text"
                       placeholder="Search Triggers"
