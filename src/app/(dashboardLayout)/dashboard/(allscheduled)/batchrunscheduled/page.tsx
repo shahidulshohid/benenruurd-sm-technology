@@ -17,18 +17,18 @@ const WorkflowPage = () => {
                 <div className="absolute left-1/2 transform -translate-x-1/2">
                     <div className="flex items-center gap-2 p-2">
                         <Image
-                            src="/google.png"
-                            width={35}
-                            height={35}
+                            src="/dashboardIcons/gmail.svg"
+                            width={30}
+                            height={30}
                             alt="Gmail icon"
-                            className="border p-1 rounded-lg cusop"
+                            className="border p-1 rounded-[3px]"
                         />
                         <div className="flex flex-col">
                             <p className="text-sm font-semibold text-[#22222F]">
                                 Gmail - Email received
                             </p>
                         </div>
-                        <CiStar className="text-[#8588AB]" />
+                        <Image src="/dashboardIcons/star.svg" width={20} height={20} alt="star icon" className="text-[#8588AB]" />
                         <MdOutlineKeyboardArrowDown className="text-[#8588AB] cursor-pointer -ml-1" />
                     </div>
                 </div>
@@ -88,8 +88,8 @@ const WorkflowPage = () => {
                             setActiveTab("editor");
                         }}
                         className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "editor"
-                                ? "bg-[#22222F] text-white"
-                                : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
+                            ? "bg-[#22222F] text-white"
+                            : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
                             }`}
                     >
                         Editor
@@ -99,8 +99,8 @@ const WorkflowPage = () => {
                             setActiveTab("runs");
                         }}
                         className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "runs"
-                                ? "bg-[#22222F] text-white"
-                                : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
+                            ? "bg-[#22222F] text-white"
+                            : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
                             }`}
                     >
                         Runs

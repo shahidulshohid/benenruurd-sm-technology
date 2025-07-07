@@ -15,20 +15,20 @@ const WorkflowPage = () => {
         <div>
             <div className="relative flex items-center justify-between px-8 h-[60px]">
                 <div className="absolute left-1/2 transform -translate-x-1/2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 p-2">
                         <Image
                             src="/dashboardIcons/gmail.svg"
-                            width={24}
-                            height={24}
+                            width={30}
+                            height={30}
                             alt="Gmail icon"
-                            className="border p-1 rounded"
+                            className="border p-1 rounded-[3px]"
                         />
                         <div className="flex flex-col">
                             <p className="text-sm font-semibold text-[#22222F]">
                                 Gmail - Email received
                             </p>
                         </div>
-                        <CiStar className="text-[#8588AB]" />
+                        <Image src="/dashboardIcons/star.svg" width={20} height={20} alt="star icon" className="text-[#8588AB]" />
                         <MdOutlineKeyboardArrowDown className="text-[#8588AB] cursor-pointer -ml-1" />
                     </div>
                 </div>
