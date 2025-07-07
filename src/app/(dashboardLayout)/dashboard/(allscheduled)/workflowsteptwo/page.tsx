@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
-import { CiStar } from "react-icons/ci";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import WorkflowStepTwo from "@/components/allscheduledcomponent/Workflow-step-two";
 

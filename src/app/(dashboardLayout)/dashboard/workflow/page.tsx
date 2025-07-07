@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
-import { CiSearch } from "react-icons/ci";
 import {
   MdKeyboardArrowRight,
   MdOutlineKeyboardArrowDown,
@@ -56,7 +55,7 @@ const WorkflowPage = () => {
                 Gmail - Email received
               </p>
             </div>
-            <Image src="/dashboardIcons/star.svg" width={20} height={20} alt="star icon" className="text-[#8588AB]"/>
+            <Image src="/dashboardIcons/star.svg" width={20} height={20} alt="star icon" className="text-[#8588AB]" />
             <MdOutlineKeyboardArrowDown className="text-[#8588AB] cursor-pointer -ml-1" />
           </div>
         </div>
@@ -179,7 +178,7 @@ const WorkflowPage = () => {
                   </div>
                   <Separator />
                   <div className="relative w-full">
-                    <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
                       type="text"
                       placeholder="Search Triggers"
@@ -393,7 +392,7 @@ const WorkflowPage = () => {
 
                   <Separator />
                   <div className="relative w-full">
-                    <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
                       type="text"
                       placeholder="Search Triggers"
@@ -623,7 +622,7 @@ const WorkflowPage = () => {
 
                   <Separator />
                   <div className="relative w-full">
-                    <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
                       type="text"
                       placeholder="Search Manual"
@@ -706,7 +705,7 @@ const WorkflowPage = () => {
 
                   {/* Search */}
                   <div className="relative w-full">
-                    <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
                       type="text"
                       placeholder="Search Scheduled"
