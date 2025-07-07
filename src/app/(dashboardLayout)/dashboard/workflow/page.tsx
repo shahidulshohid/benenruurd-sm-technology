@@ -9,6 +9,7 @@ import {
 } from "react-icons/md";
 import { GoArrowLeft } from "react-icons/go";
 import Link from "next/link";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 type Tab = "editor" | "runs";
 
@@ -69,13 +70,8 @@ const WorkflowPage = () => {
             alt="Message image"
             className="cursor-pointer"
           />
-          <Image
-            src="/dashboardIcons/victor.svg"
-            width={20}
-            height={20}
-            alt="Vector image"
-            className="cursor-pointer"
-          />
+          {/* "trigger icon" */}
+          <SidebarTrigger className="text-[#8588AB] hover:text-[#8588AB] cursor-pointer"/>
         </div>
 
         {/* Bottom Right Icons */}

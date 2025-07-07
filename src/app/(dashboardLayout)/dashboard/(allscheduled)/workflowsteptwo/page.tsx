@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import WorkflowStepTwo from "@/components/allscheduledcomponent/Workflow-step-two";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 type Tab = "editor" | "runs";
 
@@ -39,13 +40,8 @@ const WorkflowPage = () => {
                         alt="Message image"
                         className="cursor-pointer"
                     />
-                    <Image
-                        src="/dashboardIcons/victor.svg"
-                        width={20}
-                        height={20}
-                        alt="Vector image"
-                        className="cursor-pointer"
-                    />
+                    {/* "trigger icon" */}
+                    <SidebarTrigger className="text-[#8588AB] hover:text-[#8588AB] cursor-pointer" />
                 </div>
                 <div className="flex items-center gap-2">
                     <Image
