@@ -60,7 +60,7 @@ function ForgoPasswordForm() {
                         <Link href="/checkemail">
                             <button
                                 type="submit"
-                                className="w-full bg-[#0D5AE8] text-white py-2 rounded-md hover:bg-[#0D5AE8] text-sm font-semibold transition cursor-pointer"
+                                className="w-full bg-[#0D5AE8] text-white py-2 rounded-md hover:bg-[#0D5AE8] text-sm font-semibold transition cursor-pointer mb-4"
                             >
                                 Send email
                             </button>
