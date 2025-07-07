@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
-import { CiSearch, CiStar } from "react-icons/ci";
+import { CiSearch } from "react-icons/ci";
 import {
   MdKeyboardArrowRight,
   MdOutlineKeyboardArrowDown,
@@ -56,7 +56,7 @@ const WorkflowPage = () => {
                 Gmail - Email received
               </p>
             </div>
-            <CiStar className="text-[#8588AB]" />
+            <Image src="/dashboardIcons/star.svg" width={20} height={20} alt="star icon" className="text-[#8588AB]"/>
             <MdOutlineKeyboardArrowDown className="text-[#8588AB] cursor-pointer -ml-1" />
           </div>
         </div>
