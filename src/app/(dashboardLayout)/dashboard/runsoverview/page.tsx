@@ -3,7 +3,6 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import {
-  FiSearch,
   FiChevronLeft,
   FiChevronRight,
   FiChevronDown,
@@ -65,16 +64,24 @@ const RunsTable = () => {
         <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 w-full md:w-auto">
           {/* Status Dropdown */}
           <div className="relative w-full sm:w-auto">
-            <select className="w-full sm:w-auto border cursor-pointer border-[#D5D6E2] rounded-lg text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
+            <select className="w-full sm:w-auto border text-medium cursor-pointer border-[#D5D6E2] rounded-lg text-[#8588AB] text-medium px-3 py-1.5 text-sm outline-none bg-transparent pr-8 appearance-none">
               <option>Status</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
             </select>
             <FiChevronDown size={20} className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
           </div>
 
           {/* Workflow Dropdown */}
           <div className="relative w-full sm:w-auto">
-            <select className="w-full sm:w-auto border cursor-pointer border-[#D5D6E2] rounded-lg text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
-              <option>Workflow</option>
+            <select className="w-full sm:w-auto border cursor-pointer border-[#D5D6E2] text-medium rounded-lg text-[#8588AB] px-3 py-1.5 text-sm outline-none bg-transparent pr-8 appearance-none">
+              <option>Status</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
             </select>
             <FiChevronDown size={20} className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
           </div>
@@ -89,17 +96,17 @@ const RunsTable = () => {
                 setSearchTerm(e.target.value);
                 setCurrentPage(1); // reset to page 1 when searching
               }}
-              className="w-full sm:w-64 border border-gray-300 rounded-lg pl-10 pr-3 py-1 text-sm outline-none bg-transparent"
+              className="w-full sm:w-64 border border-[#D5D6E2] text-medium text-[#8588AB] rounded-lg pl-10 pr-3 py-1.5 text-sm outline-none bg-transparent"
             />
-            <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-base" />
+            <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#8588AB]" />
           </div>
         </div>
       </div>
 
       {/* Table */}
       <div className="w-full overflow-x-auto rounded-xl border border-[#D8D8DF]">
-          <table className="w-full table-auto min-w-[768px]">
-            <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
+        <table className="w-full table-auto min-w-[768px]">
+          <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
             <tr>
               <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">Workflow</th>
               <th className="px-6 py-2 text-left text-[#8588AB] font-semibold text-sm">Run</th>
@@ -118,13 +125,13 @@ const RunsTable = () => {
                       width={24}
                       height={24}
                       alt="icon"
-                       className="border border-[#D5D6E2] p-1 rounded-[3px]" 
+                      className="border border-[#D5D6E2] p-1 rounded-[3px]"
                     />
                     <span className="text-[#22222F] text-sm">{item.workflow}</span>
                   </td>
-                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.runName}</td>
-                  <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastUpdate}</td>
-                  <td className="px-6 py-2 text-[#217AFC] font-semibold text-sm">{item.interactions}</td>
+                  <td className="px-6 py-2 text-[#707187] font-medium text-sm">{item.runName}</td>
+                  <td className="px-6 py-2 text-[#707187] font-medium text-sm">{item.lastUpdate}</td>
+                  <td className="px-6 py-2 text-[#217AFC] font-medium text-sm">{item.interactions}</td>
                   <td className="px-6 py-2">
                     {item.status === "Completed" ? (
                       <span className="bg-[#D1FAE5] text-[#059669] font-semibold text-sm px-3 py-1 rounded-full">
@@ -184,7 +191,7 @@ const RunsTable = () => {
           <FiChevronRight />
         </button>
       </div>
-                                                   
+
     </div>
   );
 };
