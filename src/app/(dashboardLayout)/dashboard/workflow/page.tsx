@@ -45,11 +45,11 @@ const WorkflowPage = () => {
         <div className="w-full md:w-auto md:absolute md:left-1/2 md:transform md:-translate-x-1/2 flex justify-center">
           <div className="flex items-center gap-2 p-2">
             <Image
-              src="/google.png"
-              width={35}
-              height={35}
+              src="/dashboardIcons/gmail.svg"
+              width={30}
+              height={30}
               alt="Gmail icon"
-              className="border p-1 rounded-lg cusop"
+              className="border p-1 rounded-[3px]"
             />
             <div className="flex flex-col">
               <p className="text-sm font-semibold text-[#22222F]">

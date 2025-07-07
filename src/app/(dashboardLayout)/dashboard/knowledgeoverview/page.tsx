@@ -166,14 +166,14 @@ const KnowledgePage = () => {
                     </thead>
                     <tbody>
                         {currentItems.map((item) => (
-                            <tr key={item.id} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
+                            <tr key={item.id} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D5D6E2)" }}>
                                 <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                                     <Image
                                         src={item.icon}
                                         width={24}
                                         height={24}
                                         alt="icon"
-                                        className="border border-[#D5D6E2] p-1 rounded"
+                                        className="border border-[#D5D6E2] p-1 rounded-[3px]"
                                     />
                                     <span className="text-[#22222F] text-sm">{item.name}</span>
                                 </td>

@@ -151,9 +151,9 @@ function Dashboard() {
             </thead>
             <tbody>
               {workflows.map((item, i) => (
-                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
+                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D5D6E2)" }}>
                   <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
-                    <Image src={item.icon} width={24} height={24} alt="icon" className="border border-[#D5D6E2] p-1 rounded" />
+                    <Image src={item.icon} width={24} height={24} alt="icon" className="border border-[#D5D6E2] p-1 rounded-[3px]" />
                     <span className="text-sm">{item.workflow}</span>
                   </td>
                   <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastRun}</td>
@@ -205,9 +205,9 @@ function Dashboard() {
             </thead>
             <tbody>
               {mostRecentWorkflo.map((item, i) => (
-                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
+                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D5D6E2)" }}>
                   <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
-                    <Image src={item.icon} width={24} height={24} alt="icon" className="border border-[#D5D6E2] p-1 rounded" />
+                    <Image src={item.icon} width={24} height={24} alt="icon" className="border border-[#D5D6E2] p-1 rounded-[3px]" />
                     <span className="text-sm">{item.workflow}</span>
                   </td>
                   <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.lastUpdated}</td>
@@ -257,9 +257,9 @@ function Dashboard() {
             </thead>
             <tbody>
               {mostWorkflowsRn.map((item, i) => (
-                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
+                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D5D6E2)" }}>
                   <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
-                    <Image src={item.icon} width={24} height={24} alt="icon" className="border border-[#D5D6E2] p-1 rounded" />
+                    <Image src={item.icon} width={24} height={24} alt="icon" className="border border-[#D5D6E2] p-1 rounded-[3px]" />
                     <span className="text-sm">{item.workflow}</span>
                   </td>
                   <td className="px-6 py-2 text-[#707187] font-semibold text-sm">{item.run}</td>
@@ -286,7 +286,7 @@ function Dashboard() {
           {infoCards.map((item, index) => (
             <div key={index} className="flex items-start gap-3 rounded-xl border border-[#E4E4E7] bg-white px-3 py-4 shadow-sm transition hover:shadow-md">
               <div className="w-8 h-8 flex items-center justify-center border border-[#D5D6E2] rounded-md">
-                <Image src={item.icon} width={14} height={14} alt={item.title || "icon"} className="w-3 h-3 md:w-4 md:h-4 object-contain" />
+                <Image src={item.icon} width={24} height={24} alt={item.title || "icon"} className="w-3 h-3 md:w-4 md:h-4 object-contain" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-[#1A1A1A]">{item.title}</h3>
