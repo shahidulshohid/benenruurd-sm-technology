@@ -82,13 +82,13 @@ const WorkflowPage = () => {
 
             <div className="text-center">
                 <Separator className="mb-2 bg-gray-200" />
-                <div className="flex justify-center gap-5 border w-[235px] mx-auto py-1 rounded-lg">
+                <div className="flex justify-center gap-4 border w-[235px] mx-auto py-1 rounded-lg">
                     <button
                         onClick={() => {
                             setActiveTab("editor");
                         }}
-                        className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "editor"
-                            ? "bg-[#22222F] text-white"
+                        className={`px-8.5 py-0.5 cursor-pointer rounded-[7px] ${activeTab === "editor"
+                            ? "bg-[#22222F]  text-sm font-medium text-[#FFFFFF]"
                             : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
                             }`}
                     >
@@ -98,8 +98,8 @@ const WorkflowPage = () => {
                         onClick={() => {
                             setActiveTab("runs");
                         }}
-                        className={`px-8 py-1 cursor-pointer rounded-[7px] ${activeTab === "runs"
-                            ? "bg-[#22222F] text-white"
+                        className={`px-8.5 py-0.5 cursor-pointer rounded-[7px] ${activeTab === "runs"
+                            ? "bg-[#22222F]  text-sm font-medium text-[#FFFFFF]"
                             : "bg-[#FCFCFD] text-[#8588AB] hover:bg-[#FCFCFD]"
                             }`}
                     >
