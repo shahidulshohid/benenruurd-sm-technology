@@ -178,8 +178,7 @@ const WorkflowStepOne = () => {
               <h4 className="text-xs font-semibold text-[#8588AB] px-4 py-3 pl-4 bg-[#FCFCFD]">
                 Connected Integrations
               </h4>
-              <Separator className="bg-[#D5D6E2]" />
-
+              <Separator className="bg-[#D5D6E2] mb-1" />
               <div>
                 <div className="p-3 hover:bg-gray-50 cursor-pointer transition rounded">
                   <div className="flex justify-between items-center">
