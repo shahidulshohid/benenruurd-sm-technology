@@ -7,8 +7,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
-import { FaRegFileAlt } from "react-icons/fa";
-import { IoText } from "react-icons/io5";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useState } from "react";
 import { DialogClose, DialogTrigger } from "@radix-ui/react-dialog";

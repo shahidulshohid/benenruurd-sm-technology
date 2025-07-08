@@ -41,7 +41,7 @@ const RunsTable = () => {
       item.runName.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.status.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }, [searchTerm, workflows]);
+  }, []);
 
   const totalPages = Math.ceil(filteredWorkflows.length / itemsPerPage);
 
