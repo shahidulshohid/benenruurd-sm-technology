@@ -47,15 +47,15 @@ const ScheduledBatchRun = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <button
+                  <div
                     onClick={() => setEnabled(!enabled)}
-                    className={`w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
+                    className={`cursor-pointer w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
                       }`}
                   >
                     <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
                       <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
                     </div>
-                  </button>
+                  </div>
 
                   <BsThreeDotsVertical className="text-[#8588AB]" />
                 </div>
@@ -64,7 +64,7 @@ const ScheduledBatchRun = () => {
 
             <button
               type="button"
-              className="w-full text-blue-600 font-semibold border-2 border-dotted border-blue-400 bg-blue-50 text-sm py-3 rounded-lg text-center hover:bg-blue-100 transition cursor-pointer"
+              className="w-full text-blue-700 font-semibold border-2 border-dotted border-blue-400 bg-blue-50 text-sm py-3 rounded-lg text-center hover:bg-blue-100 transition cursor-pointer"
             >
               + Add Step
             </button>
@@ -74,7 +74,7 @@ const ScheduledBatchRun = () => {
           <div className="w-full md:w-1/2 border border-[#D5D6E2] rounded-lg bg-white shadow-sm">
             <div className="flex items-center justify-between p-2 border-b">
               <div className="flex items-center gap-3">
-                <div className="border border-[#D5D6E2] p-1 rounded text-gray-600">
+                <div className="border border-[#D5D6E2] p-1 rounded">
                   <Image
                     src="/dashboardIcons/batch.svg"
                     width={16}
@@ -87,7 +87,7 @@ const ScheduledBatchRun = () => {
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <button className="flex items-center gap-2 text-sm border border-[#D5D6E2] px-2 py-1 rounded-lg">
+                <div className="flex items-center gap-2 text-sm border border-[#D5D6E2] px-2 py-1 rounded-lg">
                   <span className="text-xs font-semibold">Run as</span>
                   <Image
                     src="/dashboardIcons/profileImage.jpg"
@@ -96,10 +96,10 @@ const ScheduledBatchRun = () => {
                     alt="Profile"
                     className="rounded-full"
                   />
-                </button>
+                </div>
                 <Link href="/dashboard/workflow">
                   <button type="button">
-                    <RxCross2 className="text-gray-500 cursor-pointer" />
+                    <RxCross2 className="text-[#8588AB] w-4 h-4 cursor-pointer" />
                   </button>
                 </Link>
               </div>
@@ -161,7 +161,12 @@ const ScheduledBatchRun = () => {
 
               {/* Done button */}
               <div className="flex justify-end">
-                <button className="bg-blue-600 py-[5px] hover:bg-blue-700 text-white text-sm font-semibold px-3 rounded-lg cursor-pointer">
+                <button
+                  className="bg-[#217AFC] py-[5px] border border-[#0D5AE8] text-[#FFFFFF] text-sm font-semibold px-3 rounded-lg cursor-pointer"
+                  style={{
+                    boxShadow: "0px 1px 1px 0px rgba(100, 102, 241, 0.12), 0px 2px 2px 0px rgba(100, 102, 241, 0.12)"
+                  }}
+                >
                   Done
                 </button>
               </div>

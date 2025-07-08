@@ -33,7 +33,7 @@ const WorkflowStepTwo = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                   <div
+                  <div
                     onClick={() => setEnabled(!enabled)}
                     className={`mr-5 w-12 h-7 rounded-full p-1 flex items-center cursor-pointer transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
                       }`}
@@ -67,20 +67,20 @@ const WorkflowStepTwo = () => {
                     </h3>
                   </div>
                   <button>
-                    <RxCross2 className="cursor-pointer" />
+                    <RxCross2 className="w-4 h-4 cursor-pointer text-[#8588AB]" />
                   </button>
                 </div>
               </Link>
-              <Separator className="bg-[#D5D6E2] h-px w-full" />
+              <Separator className="bg-[#D5D6E2]" />
               <div className="relative w-full">
-                <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className=" text-[#8588AB] absolute left-3 top-1/2 transform -translate-y-1/2"/>
+                <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className=" text-[#8588AB] absolute left-3 top-1/2 transform -translate-y-1/2" />
                 <input
                   type="text"
                   placeholder="Search Human Steps"
                   className="w-full pl-10 pr-4 py-2 focus:outline-none text-[#8588AB]"
                 />
               </div>
-              <Separator className="bg-[#D5D6E2] h-px w-full" />
+              <Separator className="bg-[#D5D6E2]" />
               <div className="space-y-2">
                 <Link href="/dashboard/workflowstepthree">
                   <div className="flex justify-between items-center p-3 cursor-pointer">

@@ -4,7 +4,6 @@ import { Separator } from "@/components/ui/separator";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import "react-datepicker/dist/react-datepicker.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { CiSearch } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 import Link from "next/link";
@@ -65,30 +64,30 @@ const WorkflowStepOne = () => {
 
           {/* Right Panel */}
           <div className="w-full md:w-1/2">
-            <div className="rounded-br-lg rounded-lg shadow w-full p-0 border border-t-0">
+            <div className="rounded-br-lg rounded-lg shadow w-full p-0 border">
               <Link href="/dashboard/batchrunscheduled">
-                <div className="p-3 flex items-center justify-between border rounded-t-lg">
-                  <div>
+                <div className="p-3 flex items-center justify-between">
+                  <div className="bg-[#FCFCFD]">
                     <h3 className="text-sm font-semibold text-[#22222F]">
                       Add a step
                     </h3>
                   </div>
                   <button>
-                    <RxCross2 className="cursor-pointer" />
+                    <RxCross2 className="w-4 h-4 cursor-pointer text-[#8588AB]" />
                   </button>
                 </div>
               </Link>
-              <Separator />
+              <Separator className="bg-[#D5D6E2]" />
 
               <div className="relative w-full">
-                <CiSearch className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className=" text-[#8588AB] absolute left-3 top-1/2 transform -translate-y-1/2"/>
                 <input
                   type="text"
                   placeholder="Search integrations and actions"
-                  className="w-full pl-10 pr-4 py-2 focus:outline-none text-[#8588AB] text-sm"
+                  className="w-full pl-10 pr-4 px-4 py-3 focus:outline-none text-[#8588AB] text-sm"
                 />
               </div>
-              <Separator />
+              <Separator className="bg-[#D5D6E2]" />
 
               <div className="space-y-2">
                 <div className="flex justify-between items-center p-3 hover:bg-gray-50 cursor-pointer transition rounded">
@@ -175,11 +174,11 @@ const WorkflowStepOne = () => {
                 </Link>
               </div>
 
-              <Separator className="w-full h-px bg-gray-200 my-2" />
-              <h4 className="text-xs font-semibold text-[#8588AB] py-1 pl-4 bg-[#FCFCFD)]">
+              <Separator className="bg-[#D5D6E2]" />
+              <h4 className="text-xs font-semibold text-[#8588AB] px-4 py-3 pl-4 bg-[#FCFCFD]">
                 Connected Integrations
               </h4>
-              <Separator className="w-full h-px bg-gray-200 my-2" />
+              <Separator className="bg-[#D5D6E2]" />
 
               <div>
                 <div className="p-3 hover:bg-gray-50 cursor-pointer transition rounded">
