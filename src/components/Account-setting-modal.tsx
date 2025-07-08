@@ -473,7 +473,7 @@ export function DialogCloseContentSetting() {
                               <input
                                 type="text"
                                 placeholder="Acme Inc."
-                                className="border px-3 pb-1 rounded-sm pr-46 text-[#22222F] "
+                                className="border px-3 pb-1 border-[#D5D6E2] rounded-[8px] pr-46 placeholder:text-[#22222F] placeholder:text-sm placeholder:font-medium"
                               />
                             </div>
                           </div>
@@ -486,13 +486,11 @@ export function DialogCloseContentSetting() {
                                 The timezone of your workspace
                               </p>
                             </div>
-                            <div className="inline-block">
+                            <div>
                               <select
                                 value={selectedTimezone}
-                                onChange={(e) =>
-                                  setSelectedTimezone(e.target.value)
-                                }
-                                className="border border-[#D5D6E2] rounded-md px-3 pb-1 text-sm focus:outline-none focus:ring-1 focus:ring-gray-200"
+                                onChange={(e) => setSelectedTimezone(e.target.value)}
+                                className="border border-[#D5D6E2] rounded-md px-3 pb-1 text-sm text-[#22222F] font-medium"
                               >
                                 {timezones.map((tz, idx) => (
                                   <option key={idx} value={tz}>
@@ -500,6 +498,7 @@ export function DialogCloseContentSetting() {
                                   </option>
                                 ))}
                               </select>
+
                             </div>
                           </div>
                         </div>
