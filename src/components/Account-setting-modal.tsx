@@ -66,12 +66,12 @@ export function DialogCloseContentSetting() {
   const roles1 = ["Admin", "User", "Moderator", "Guest"];
 
   return (
-    <DialogContent className="px-0 py-0 h-[612px] min-w-[880px]">
+    <DialogContent className="px-0 py-0 h-[612px] min-w-[880px] min-h-[812px] rounded-l-lg">
       <DialogHeader className="h-full">
-        <DialogDescription className="h-full rounded-xl">
+        <DialogDescription className="h-full">
           <div className="flex justify-between h-full rounded-lg">
             {/* Sidebar */}
-            <div className="bg-[#ECECF2] w-[240px] flex flex-col h-full p-4">
+            <div className="bg-[#ECECF2] w-[240px] flex flex-col h-full p-4 rounded-tl-lg rounded-bl-lg">
               <span className="text-sm font-semibold text-[#8588AB] pb-2">
                 General
               </span>
@@ -85,10 +85,9 @@ export function DialogCloseContentSetting() {
                         key={item.label}
                         onClick={() => setActiveItem(item.label)}
                         className={`flex items-center gap-2 w-full pl-1 pr-2 py-1 mb-2 rounded-lg text-left
-                          ${
-                            isActive
-                              ? "bg-[#D5D6E2] text-[#22222F] text-sm font-semibold"
-                              : "hover:bg-[#D5D6E2] text-sm font-medium text-[#22222F] cursor-pointer"
+                          ${isActive
+                            ? "bg-[#D5D6E2] text-[#22222F] text-sm font-semibold"
+                            : "hover:bg-[#D5D6E2] text-sm font-medium text-[#22222F] cursor-pointer"
                           }`}
                       >
                         <Image
@@ -116,10 +115,9 @@ export function DialogCloseContentSetting() {
                         key={item.label}
                         onClick={() => setActiveItem(item.label)}
                         className={`flex items-center gap-2 w-full pl-1 pr-2 py-1 mb-2 rounded-lg text-left
-                          ${
-                            isActive
-                              ? "bg-[#D5D6E2] text-[#22222F] text-sm font-semibold"
-                              : "hover:bg-[#D5D6E2] text-sm font-medium text-[#22222F] cursor-pointer"
+                          ${isActive
+                            ? "bg-[#D5D6E2] text-[#22222F] text-sm font-semibold"
+                            : "hover:bg-[#D5D6E2] text-sm font-medium text-[#22222F] cursor-pointer"
                           }`}
                       >
                         <Image
@@ -135,7 +133,7 @@ export function DialogCloseContentSetting() {
               </div>
             </div>
             {/* Main Content Area */}
-            <div className="bg-white flex-1 flex flex-col h-full">
+            <div className="bg-white flex-1 flex flex-col h-full rounded-tr-lg rounded-br-lg">
               <div className="flex-1 overflow-y-auto py-4">
                 <div className="bg-white flex-1 py-4 -pl-3 h-full overflow-y-auto">
                   {
@@ -173,11 +171,11 @@ export function DialogCloseContentSetting() {
                             Sign out
                           </button>
                         </div>
-                        <h4 className="text-sm font-semibold mt-6 text-[#22222F]">
+                        <h4 className="text-sm font-semibold mt-6 -mb-2 text-[#22222F]">
                           Delete my account
                         </h4>
                         <div className="flex justify-between items-center">
-                          <p className="text-[#8588AB] text-[12px]">
+                          <p className="text-[#8588AB] text-xs">
                             Permanently delete this account and data. This
                             action can’t be undone!
                           </p>
@@ -202,14 +200,14 @@ export function DialogCloseContentSetting() {
                             </p>
                           </div>
                           <button
-                    onClick={() => setEnabled(!enabled)}
-                    className={`mr-5 w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
-                      }`}
-                  >
-                    <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
-                      <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
-                    </div>
-                  </button>
+                            onClick={() => setEnabled(!enabled)}
+                            className={`cursor-pointer mr-5 w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
+                              }`}
+                          >
+                            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
+                              <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
+                            </div>
+                          </button>
                         </div>
                         <div className="flex justify-between items-center">
                           <div>
@@ -222,14 +220,14 @@ export function DialogCloseContentSetting() {
                             </p>
                           </div>
                           <button
-                    onClick={() => setEnabled2(!enabled2)}
-                    className={`mr-5 w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled2 ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
-                      }`}
-                  >
-                    <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
-                      <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
-                    </div>
-                  </button>
+                            onClick={() => setEnabled2(!enabled2)}
+                            className={`cursor-pointer mr-5 w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled2 ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
+                              }`}
+                          >
+                            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
+                              <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
+                            </div>
+                          </button>
                         </div>
                       </div>
                     ) : activeItem === "Integrations" ? (
@@ -255,13 +253,13 @@ export function DialogCloseContentSetting() {
                           </div>
 
                           {/* communication */}
-                          <div className="border-t border-b">
-                            <h1 className="text-[#8588AB] pl-5 my-2 px-2 font-semibold">
+                          <div className="border-t border-b bg-[#FCFCFD]">
+                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-4">
                               Communication
-                            </h1>
+                            </h4>
                           </div>
                           <div className="flex justify-between items-center pl-3">
-                            <div className="flex items-center gap-3 py-3 px-2">
+                            <div className="flex items-center gap-3 py-4 px-2">
                               <Image
                                 src="/dashboardIcons/slack.svg"
                                 width={24}
@@ -282,12 +280,12 @@ export function DialogCloseContentSetting() {
                           </div>
                           {/* Email */}
                           <div className="border-t border-b">
-                            <h1 className="text-[#8588AB] pl-5 my-2 px-2 font-semibold">
+                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-4">
                               E-mail
-                            </h1>
+                            </h4>
                           </div>
                           <div className="flex justify-between items-center pl-3">
-                            <div className="flex items-center gap-3 py-3 px-2">
+                            <div className="flex items-center gap-3 py-4 px-2">
                               <Image
                                 src="/dashboardIcons/gmail.svg"
                                 width={24}
@@ -313,13 +311,13 @@ export function DialogCloseContentSetting() {
                             </div>
                           </div>
                           {/* project management */}
-                          <div className="border-t border-b">
-                            <h1 className="text-[#8588AB] pl-5 my-2 px-2 font-semibold">
+                          <div className="border-t border-b bg-[#FCFCFD]">
+                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-4">
                               Project management
-                            </h1>
+                            </h4>
                           </div>
                           <div className="flex justify-between items-center pl-3">
-                            <div className="flex items-center gap-3 py-3 px-2">
+                            <div className="flex items-center gap-3 py-4 px-2">
                               <Image
                                 src="/dashboardIcons/notion.svg"
                                 width={24}
@@ -345,7 +343,7 @@ export function DialogCloseContentSetting() {
                             </div>
                           </div>
                           <div className="flex justify-between items-center pl-3">
-                            <div className="flex items-center gap-3 py-3 px-2">
+                            <div className="flex items-center gap-3 py-4 px-2">
                               <Image
                                 src="/dashboardIcons/linear.svg"
                                 width={24}
@@ -371,7 +369,7 @@ export function DialogCloseContentSetting() {
                             </div>
                           </div>
                           <div className="flex justify-between items-center pl-3">
-                            <div className="flex items-center gap-3 py-3 px-2">
+                            <div className="flex items-center gap-3 py-4 px-2">
                               <Image
                                 src="/dashboardIcons/asana.svg"
                                 width={24}
@@ -391,13 +389,13 @@ export function DialogCloseContentSetting() {
                             </div>
                           </div>
                           {/* file store */}
-                          <div className="border-t border-b">
-                            <h1 className="text-[#8588AB] pl-5 my-2 px-2 font-semibold">
+                          <div className="border-t border-b bg-[#FCFCFD]">
+                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-4">
                               File Store
-                            </h1>
+                            </h4>
                           </div>
                           <div className="flex justify-between items-center pl-3">
-                            <div className="flex items-center gap-3 py-3 px-2">
+                            <div className="flex items-center gap-3 py-4 px-2">
                               <Image
                                 src="/dashboardIcons/googleDrive.svg"
                                 width={24}
@@ -429,9 +427,9 @@ export function DialogCloseContentSetting() {
                             </h1>
                           </div>
                           <div className="flex justify-between items-center pl-3 mb-4">
-                            <div className="flex items-center gap-3 py-3 px-2">
+                            <div className="flex items-center gap-3 py-4 px-2">
                               <Image
-                                src="/dashboardIcons/googleDrive.svg"
+                                src="/dashboardIcons/googleCalendar.svg"
                                 width={24}
                                 height={24}
                                 alt="asana icon"
@@ -598,25 +596,25 @@ export function DialogCloseContentSetting() {
               </div>
               {/* Footer only at the bottom of right side */}
               <div
-                className="flex justify-between items-center border-t py-3 px-5"
+                className="flex justify-between items-center border-t border-[#D5D6E2] py-3 px-5"
                 style={{
                   boxShadow: "0px 1px 1px 0px rgba(0, 2, 2, 0.08)",
                   borderColor: "#D5D6E2", // optional: if you want consistent border color
                 }}
               >
-                <div className="flex items-center gap-2">
-                  <p className="text-[#8588AB] text-sm font-medium">
+                <div className="flex items-center gap-1">
+                  <p className="text-[#8588AB] text-xs font-medium">
                     Need help? Mail
                   </p>
-                  <p className="text-[#217AFC] text-sm font-medium">
+                  <p className="text-[#217AFC] text-xs font-medium">
                     support@namehere.com
                   </p>
                 </div>
-                <div className="flex items-center text-blue-500 gap-5">
-                  <p className="text-sm font-medium text-[#217AFC]">
+                <div className="flex items-center text-blue-500 gap-4">
+                  <p className="text-xs font-medium text-[#217AFC]">
                     Privacy Policy
                   </p>
-                  <p className="text-sm font-medium text-[#217AFC]">
+                  <p className="text-xs font-medium text-[#217AFC]">
                     Terms of Use
                   </p>
                 </div>
