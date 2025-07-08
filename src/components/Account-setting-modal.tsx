@@ -541,7 +541,7 @@ export function DialogCloseContentSetting() {
                               <select
                                 value={selectedRole}
                                 onChange={(e) => setSelectedRole(e.target.value)}
-                                className="appearance-none w-full text-sm font-medium text-[#22222F] focus:outline-none cursor-pointer pr-6 bg-transparent"
+                                className="w-full text-sm font-medium text-[#22222F] focus:outline-none cursor-pointer pr-6 bg-transparent"
                               >
                                 {roles.map((role, idx) => (
                                   <option key={idx} value={role}>
@@ -570,7 +570,7 @@ export function DialogCloseContentSetting() {
                               <select
                                 value={selectedRole1}
                                 onChange={(e) => setSelectedRole1(e.target.value)}
-                                className="appearance-none w-full text-sm font-medium text-[#22222F] focus:outline-none cursor-pointer pr-6 bg-transparent"
+                                className="w-full text-sm font-medium text-[#22222F] focus:outline-none cursor-pointer pr-6 bg-transparent"
                               >
                                 {roles1.map((role, idx) => (
                                   <option key={idx} value={role}>
