@@ -8,6 +8,7 @@ import {
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useState } from "react";
 import Image from "next/image";
+import { HiChevronDown } from "react-icons/hi";
 
 export function DialogCloseContentSetting() {
   // switch button 
@@ -508,9 +509,15 @@ export function DialogCloseContentSetting() {
                         <h1 className="text-xl mb-6 font-semibold text-[#22222F]">
                           Team Members
                         </h1>
-                        <button className="bg-[#217AFC] px-3 py-1.5 rounded-sm mb-6 cursor-pointer text-[#FFFFFF]">
-                          + Invite team members
+                        <button
+                          className="bg-[#217AFC] px-3 py-1.5 text-sm font-semibold rounded-[8px] mb-6 cursor-pointer text-[#FFFFFF] border border-[#0D5AE8]"
+                          style={{
+                            boxShadow: "0px 1px 1px 0px rgba(100, 102, 241, 0.12), 0px 2px 2px 0px rgba(100, 102, 241, 0.12)"
+                          }}
+                        >
+                          + <span className="ml-2">Invite team members</span>
                         </button>
+
                         <div>
                           <div className="flex justify-between items-center mb-6">
                             <div className="flex items-center gap-2">
@@ -530,13 +537,11 @@ export function DialogCloseContentSetting() {
                                 </p>
                               </div>
                             </div>
-                            <div className="flex items-center border border-[#D5D6E2] rounded-md px-2 pb-1 mr-5">
+                            <div className="w-1/3 flex items-center border border-[#D5D6E2] rounded-[8px] px-2 py-1 mr-5 relative">
                               <select
                                 value={selectedRole}
-                                onChange={(e) =>
-                                  setSelectedRole(e.target.value)
-                                }
-                                className="text-sm font-medium text-[#22222F] focus:outline-none cursor-pointer"
+                                onChange={(e) => setSelectedRole(e.target.value)}
+                                className="appearance-none w-full text-sm font-medium text-[#22222F] focus:outline-none cursor-pointer pr-6 bg-transparent"
                               >
                                 {roles.map((role, idx) => (
                                   <option key={idx} value={role}>
@@ -544,6 +549,7 @@ export function DialogCloseContentSetting() {
                                   </option>
                                 ))}
                               </select>
+                              <HiChevronDown className="absolute right-2 top-1/2 w-4 h-4 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
                             </div>
                           </div>
                           <div className="flex justify-between items-center">
@@ -555,18 +561,16 @@ export function DialogCloseContentSetting() {
                                 <h3 className="text-sm text-[#22222F] font-semibold">
                                   rubenvaalt@live.nl
                                 </h3>
-                                <p className="text-sm text-[#217AFC] font-semibold bg-[#D8EEFF] px-3 py-1 rounded-full">
+                                <p className="text-sm text-[#217AFC] font-semibold bg-blue-100 px-2 py-0.5 rounded-full">
                                   Invite sent
                                 </p>
                               </div>
                             </div>
-                            <div className="flex items-center border border-[#D5D6E2] rounded-md px-2 pb-1 mr-5">
+                            <div className="w-1/3 flex items-center border border-[#D5D6E2] rounded-[8px] px-2 p-1 mr-5 relative">
                               <select
                                 value={selectedRole1}
-                                onChange={(e) =>
-                                  setSelectedRole1(e.target.value)
-                                }
-                                className="text-sm font-medium text-[#22222F] focus:outline-none cursor-pointer"
+                                onChange={(e) => setSelectedRole1(e.target.value)}
+                                className="appearance-none w-full text-sm font-medium text-[#22222F] focus:outline-none cursor-pointer pr-6 bg-transparent"
                               >
                                 {roles1.map((role, idx) => (
                                   <option key={idx} value={role}>
@@ -574,6 +578,7 @@ export function DialogCloseContentSetting() {
                                   </option>
                                 ))}
                               </select>
+                              <HiChevronDown className="absolute right-2 w-4 h-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
                             </div>
                           </div>
                         </div>
