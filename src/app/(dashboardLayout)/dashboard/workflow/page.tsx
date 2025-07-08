@@ -169,7 +169,7 @@ const WorkflowPage = () => {
                       className="cursor-pointer"
                       onClick={() => setShowTrigger(false)}
                     >
-                      <RxCross2 />
+                      <RxCross2 className="w-4 h-4 text-[#8588AB]"/>
                     </button>
                   </div>
                   <Separator className="bg-[#D5D6E2]" />
@@ -180,7 +180,7 @@ const WorkflowPage = () => {
                       placeholder="Search Triggers"
                       onChange={(e) => setSearchQuery(e.target.value)}
                       value={searchQuery}
-                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB]"
+                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-sm text-[#8588AB]"
                     />
                   </div>
                   <Separator className="bg-[#D5D6E2]" />
@@ -283,7 +283,7 @@ const WorkflowPage = () => {
                         </div>
 
                         <Separator className="bg-[#D5D6E2]" />
-                        <h4 className="text-xs font-semibold text-[#8588AB] bg-[#FCFCFD] mb-2 py-2 pl-4">
+                        <h4 className="text-xs font-semibold text-[#8588AB] bg-[#FCFCFD] mb-2 pt-3 pb-2  pl-4">
                           Connected Integrations
                         </h4>
                         <Separator className="bg-[#D5D6E2]" />
@@ -382,7 +382,7 @@ const WorkflowPage = () => {
                       className="cursor-pointer"
                       onClick={() => setShowTrigger(false)}
                     >
-                      <RxCross2 />
+                      <RxCross2 className="w-4 h-4 text-[#8588AB]" />
                     </button>
                   </div>
 
@@ -391,10 +391,10 @@ const WorkflowPage = () => {
                     <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
                       type="text"
-                      placeholder="Search Triggers"
+                      placeholder="Search itegrations"
                       onChange={(e) => setSearchQuery(e.target.value)}
                       value={searchQuery}
-                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB]"
+                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-sm text-[#8588AB]"
                     />
                   </div>
                   <Separator className="bg-[#D5D6E2]" />
@@ -403,7 +403,7 @@ const WorkflowPage = () => {
 
                   {/* Communication */}
                   {matchSearch("slack") && (
-                    <>
+                    <div className="bg-[#FCFCFD]">
                       <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-4">
                         Communication
                       </h4>
@@ -427,17 +427,17 @@ const WorkflowPage = () => {
                           size={20}
                         />
                       </div>
-                    </>
+                    </div>
                   )}
 
                   {/* E-mail */}
                   {matchSearch("gmail") && (
                     <>
-                      <Separator className="w-full h-px bg-gray-200" />
+                      <Separator className="bg-[#D5D6E2]" />
                       <h4 className="text-xs font-semibold text-[#8588AB] py-3 pl-4">
                         E-mail
                       </h4>
-                      <Separator className="w-full h-px bg-gray-200" />
+                      <Separator className="bg-[#D5D6E2]" />
                       <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
                         <div className="flex items-center gap-3 my-3">
                           <div className="border p-1 rounded">
@@ -465,11 +465,11 @@ const WorkflowPage = () => {
                     matchSearch("linear") ||
                     matchSearch("asana")) && (
                       <>
-                        <Separator className="w-full h-px bg-gray-200" />
+                        <Separator className="bg-[#D5D6E2]" />
                         <h4 className="text-xs font-semibold text-[#8588AB] py-3 pl-4">
                           Project Management
                         </h4>
-                        <Separator className="w-full h-px bg-gray-200" />
+                        <Separator className="bg-[#D5D6E2]" />
 
                         {matchSearch("notion") && (
                           <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
@@ -542,11 +542,11 @@ const WorkflowPage = () => {
                   {/* File Storage */}
                   {matchSearch("google drive") && (
                     <>
-                      <Separator className="w-full h-px bg-gray-200" />
+                      <Separator className="bg-[#D5D6E2]" />
                       <h4 className="text-xs font-semibold text-[#8588AB] py-3 pl-4">
                         File Storage
                       </h4>
-                      <Separator className="w-full h-px bg-gray-200" />
+                      <Separator className="bg-[#D5D6E2]" />
                       <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
                         <div className="flex items-center gap-3 my-3">
                           <div className="border p-1 rounded">
@@ -572,11 +572,11 @@ const WorkflowPage = () => {
                   {/* Calendar */}
                   {matchSearch("google calendar") && (
                     <>
-                      <Separator className="w-full h-px bg-gray-200" />
+                      <Separator className="bg-[#D5D6E2]" />
                       <h4 className="text-xs font-semibold text-[#8588AB] py-3 pl-4">
                         Calendar
                       </h4>
-                      <Separator className="w-full h-px bg-gray-200" />
+                      <Separator className="bg-[#D5D6E2]" />
                       <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
                         <div className="flex items-center gap-3 my-3">
                           <div className="border p-1 rounded">
@@ -600,7 +600,7 @@ const WorkflowPage = () => {
                   )}
                 </section>
               ) : sectionShow === "manual" ? (
-                <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
+                <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0">
                   <div
                     onClick={() => setSectionShow("add-trigger")}
                     className="p-3 flex items-center justify-between cursor-pointer"
@@ -615,22 +615,22 @@ const WorkflowPage = () => {
                       className="cursor-pointer"
                       onClick={() => setShowTrigger(false)}
                     >
-                      <RxCross2 />
+                      <RxCross2 className="text-[#8588AB] w-4 h-4"/>
                     </button>
                   </div>
 
-                  <Separator />
+                  <Separator className="bg-[#D5D6E2]"/>
                   <div className="relative w-full">
-                    <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 text-[#8588AB] absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
                       type="text"
                       placeholder="Search Manual"
                       onChange={(e) => setSearchQuery(e.target.value)}
                       value={searchQuery}
-                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB] border-2 border-x-0"
+                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-sm text-[#8588AB]"
                     />
                   </div>
-
+                  <Separator className="bg-[#D5D6E2]"/>
                   <div className="space-y-2">
                     {/* manual */}
                     <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
@@ -680,7 +680,7 @@ const WorkflowPage = () => {
                   </div>
                 </section>
               ) : sectionShow === "scheduled" ? (
-                <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0 border border-t-0">
+                <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0">
                   {/* Header */}
                   <div
                     onClick={() => setSectionShow("add-trigger")}
@@ -696,24 +696,24 @@ const WorkflowPage = () => {
                       className="cursor-pointer"
                       onClick={() => setShowTrigger(false)}
                     >
-                      <RxCross2 />
+                      <RxCross2 className="w-4 h-4 text-[#8588AB]" />
                     </button>
                   </div>
 
-                  <Separator />
+                  <Separator className="bg-[#D5D6E2]"/>
 
                   {/* Search */}
                   <div className="relative w-full">
-                    <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 text-[#8588AB] absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
                       type="text"
                       placeholder="Search Scheduled"
                       onChange={(e) => setSearchQuery(e.target.value)}
                       value={searchQuery}
-                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB] border-2 border-x-0"
+                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-sm text-[#8588AB]"
                     />
                   </div>
-
+                  <Separator className="bg-[#D5D6E2]"/>
                   {/* Scheduled */}
                   <Link href="/dashboard/singlesiduled">
                     <div className="space-y-2">
