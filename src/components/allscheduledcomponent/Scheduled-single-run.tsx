@@ -88,7 +88,7 @@ const ScheduledSingleRun = () => {
 
           {/* Right Panel */}
           <div className="w-full md:w-1/2 border rounded-lg bg-white shadow-sm">
-            <div className="flex items-center justify-between p-4 border-b">
+            <div className="flex items-center justify-between p-4 border-b border-[#D5D6E2]">
               <div className="flex items-center gap-3">
                 <div className="border p-1 rounded">
                   <Image
@@ -103,22 +103,25 @@ const ScheduledSingleRun = () => {
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <Button
-                  variant="outline"
-                  className="flex items-center gap-2 text-sm"
+                <div
+                  className="flex items-center gap-2 text-sm border border-[#D5D6E2] px-2 py-1 rounded-lg"
+                  style={{
+                    boxShadow: "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)"
+                  }}
                 >
-                  <span>Run as</span>
+                  <span className="text-xs font-semibold">Run as</span>
                   <Image
                     src="/dashboardIcons/profileImage.jpg"
-                    width={20}
-                    height={20}
+                    width={16}
+                    height={16}
                     alt="Profile"
                     className="rounded-full"
                   />
-                </Button>
+                </div>
+
                 <Link href="/dashboard/workflow">
                   <button type="button">
-                    <RxCross2 className="text-gray-500 cursor-pointer" />
+                    <RxCross2 className="text-[#8588AB] w-4 h-4 cursor-pointer" />
                   </button>
                 </Link>
               </div>
@@ -127,7 +130,7 @@ const ScheduledSingleRun = () => {
             <div className="p-4 space-y-4">
               {/* First Instance */}
               <div>
-                <label className="block text-xs font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-[#22222F] mb-1">
                   First Instance
                 </label>
                 <div className="flex gap-2">
@@ -136,11 +139,11 @@ const ScheduledSingleRun = () => {
                     <DatePicker
                       selected={selectedDate}
                       onChange={(date) => setSelectedDate(date)}
-                      className="w-full p-1 pr-8 border border-gray-300 rounded text-sm focus:outline-none"
+                      className="w-full px-3 py-1 pr-8 border border-[#D5D6E2] rounded-lg text-sm text-[#22222F] font-medium focus:outline-none"
                       dateFormat="dd MMM yyyy"
                       placeholderText="Select date"
                     />
-                    <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xs pointer-events-none" />
+                    <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#22222F]  text-xs pointer-events-none" />
                   </div>
 
                   {/* Time Picker */}
@@ -148,7 +151,7 @@ const ScheduledSingleRun = () => {
                     <DatePicker
                       selected={selectedTime}
                       onChange={(date) => setSelectedTime(date)}
-                      className="w-full p-1 pr-8 border border-gray-300 rounded text-sm focus:outline-none"
+                      className="w-full px-3 py-1 pr-8 border border-[#D5D6E2] rounded-lg text-sm text-[#22222F] font-medium focus:outline-none"
                       showTimeSelect
                       showTimeSelectOnly
                       timeIntervals={30}
@@ -156,21 +159,21 @@ const ScheduledSingleRun = () => {
                       dateFormat="h:mm aa"
                       placeholderText="Select time"
                     />
-                    <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xs pointer-events-none" />
+                    <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#22222F] text-xs pointer-events-none" />
                   </div>
                 </div>
               </div>
 
               {/* Repeats */}
               <div>
-                <label className="block text-xs font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-[#22222F] mb-1">
                   Repeats
                 </label>
                 <div className="relative">
                   <select
                     value={selectedRepeat}
                     onChange={(e) => setSelectedRepeat(e.target.value)}
-                    className="w-full p-1 border rounded text-sm focus:outline-none appearance-none bg-white"
+                    className="w-full px-3 py-1 pr-8 border border-[#D5D6E2] rounded-lg text-sm text-[#22222F] font-medium focus:outline-none appearance-none bg-white"
                   >
                     {repeatOptions.map((option) => (
                       <option key={option} value={option}>
@@ -178,29 +181,33 @@ const ScheduledSingleRun = () => {
                       </option>
                     ))}
                   </select>
-                  <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xs pointer-events-none" />
+                  <FaChevronDown className="absolute right-3 text-[#22222F] top-1/2 transform -translate-y-1/2 text-xs pointer-events-none" />
                 </div>
               </div>
 
               {/* Conditional Inputs */}
               {selectedRepeat === "Custom (every 2 days)" && (
-                <div className="flex gap-2">
+                <div className="flex gap-2 relative">
                   <input
                     type="text"
                     placeholder="2"
                     readOnly
                     value={customNumber}
                     onChange={(e) => setCustomNumber(e.target.value)}
-                    className="w-1/2 border rounded pl-2 py-1 text-sm focus:outline-none"
+                    className="w-1/2 px-3 py-1 pr-8 border border-[#D5D6E2] rounded-lg text-sm text-[#22222F] font-medium focus:outline-none"
                   />
-                  <input
-                    type="text"
-                    placeholder="days"
-                    readOnly
-                    value={customUnit}
-                    onChange={(e) => setCustomUnit(e.target.value)}
-                    className="w-1/2 border rounded pl-2 py-1 text-sm focus:outline-none"
-                  />
+                  <div className="relative w-1/2">
+                    <select
+                      value={customUnit}
+                      onChange={(e) => setCustomUnit(e.target.value)}
+                      className="w-full appearance-none px-3 py-1 pr-8 border border-[#D5D6E2] rounded-lg text-sm text-[#22222F] font-medium focus:outline-none bg-white"
+                    >
+                      <option value="days">days</option>
+                      <option value="weeks">weeks</option>
+                      <option value="months">months</option>
+                    </select>
+                    <FaChevronDown className="absolute right-3 text-[#22222F] top-1/2 transform -translate-y-1/2 text-xs pointer-events-none" />
+                  </div>
                 </div>
               )}
             </div>
@@ -208,12 +215,14 @@ const ScheduledSingleRun = () => {
             <Separator />
 
             <div className="text-right p-4">
-              <Button
-                type="submit"
-                className="bg-blue-500 hover:bg-blue-500 text-white px-4 cursor-pointer"
+              <button
+                className="bg-[#217AFC] py-[5px] border border-[#0D5AE8] text-[#FFFFFF] text-sm font-semibold px-3 rounded-lg cursor-pointer"
+                style={{
+                  boxShadow: "0px 1px 1px 0px rgba(100, 102, 241, 0.12), 0px 2px 2px 0px rgba(100, 102, 241, 0.12)"
+                }}
               >
                 Done
-              </Button>
+              </button>
             </div>
           </div>
         </div>

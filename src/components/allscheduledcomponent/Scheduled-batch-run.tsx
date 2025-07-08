@@ -72,7 +72,7 @@ const ScheduledBatchRun = () => {
 
           {/* Right Panel */}
           <div className="w-full md:w-1/2 border border-[#D5D6E2] rounded-lg bg-white shadow-sm">
-            <div className="flex items-center justify-between p-2 border-b">
+            <div className="flex items-center justify-between px-4 py-4 border-b border-[#D5D6E2]">
               <div className="flex items-center gap-3">
                 <div className="border border-[#D5D6E2] p-1 rounded">
                   <Image
@@ -87,7 +87,12 @@ const ScheduledBatchRun = () => {
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex items-center gap-2 text-sm border border-[#D5D6E2] px-2 py-1 rounded-lg">
+                <div
+                  className="flex items-center gap-2 text-sm border border-[#D5D6E2] px-2 py-1 rounded-lg"
+                  style={{
+                    boxShadow: "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)"
+                  }}
+                >
                   <span className="text-xs font-semibold">Run as</span>
                   <Image
                     src="/dashboardIcons/profileImage.jpg"
@@ -97,6 +102,7 @@ const ScheduledBatchRun = () => {
                     className="rounded-full"
                   />
                 </div>
+
                 <Link href="/dashboard/workflow">
                   <button type="button">
                     <RxCross2 className="text-[#8588AB] w-4 h-4 cursor-pointer" />
