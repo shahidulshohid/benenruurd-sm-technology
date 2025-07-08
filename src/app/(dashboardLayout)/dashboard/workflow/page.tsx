@@ -39,7 +39,7 @@ const WorkflowPage = () => {
   const [sectionShow, setSectionShow] = useState<string>("add-trigger");
 
   return (
-    <div className="bg-[#FCFCFD]">
+    <div>
       <div className="relative flex flex-wrap items-center justify-between px-4 md:px-8 py-2 md:py-0 h-auto md:h-[60px] gap-3">
         {/* Center Section */}
         <div className="w-full md:w-auto md:absolute md:left-1/2 md:transform md:-translate-x-1/2 flex justify-center">
