@@ -39,7 +39,7 @@ const WorkflowPage = () => {
   const [sectionShow, setSectionShow] = useState<string>("add-trigger");
 
   return (
-    <div>
+    <div className="bg-[#FCFCFD]">
       <div className="relative flex flex-wrap items-center justify-between px-4 md:px-8 py-2 md:py-0 h-auto md:h-[60px] gap-3">
         {/* Center Section */}
         <div className="w-full md:w-auto md:absolute md:left-1/2 md:transform md:-translate-x-1/2 flex justify-center">
@@ -367,7 +367,7 @@ const WorkflowPage = () => {
                   </div>
                 </section>
               ) : sectionShow === "integrations" ? (
-                <section className="rounded-lg shadow w-full max-w-md border border-t-0">
+                <section className="rounded-lg shadow w-full max-w-md">
                   <div
                     onClick={() => setSectionShow("add-trigger")}
                     className="p-3 flex items-center justify-between cursor-pointer"
@@ -386,7 +386,7 @@ const WorkflowPage = () => {
                     </button>
                   </div>
 
-                  <Separator />
+                  <Separator className="bg-[#D5D6E2]"/>
                   <div className="relative w-full">
                     <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
@@ -394,9 +394,12 @@ const WorkflowPage = () => {
                       placeholder="Search Triggers"
                       onChange={(e) => setSearchQuery(e.target.value)}
                       value={searchQuery}
-                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB] border-2 border-x-0"
+                      className="w-full pl-10 pr-4 py-3 focus:outline-none text-[#8588AB]"
                     />
                   </div>
+                  <Separator className="bg-[#D5D6E2]" />
+
+                  {/* Integrations Section */}
 
                   {/* Communication */}
                   {matchSearch("slack") && (
@@ -404,7 +407,7 @@ const WorkflowPage = () => {
                       <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-4">
                         Communication
                       </h4>
-                      <Separator className="w-full h-px bg-gray-200" />
+                      <Separator className="bg-[#D5D6E2]" />
                       <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
                         <div className="flex items-center gap-3 my-3">
                           <div className="border p-1 rounded">
