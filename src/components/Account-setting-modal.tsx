@@ -200,15 +200,19 @@ export function DialogCloseContentSetting() {
                               address
                             </p>
                           </div>
-                          <button
+                          <div
                             onClick={() => setEnabled(!enabled)}
-                            className={`cursor-pointer mr-5 w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
+                            className={`mr-5 cursor-pointer w-12 h-7 rounded-full flex items-center transition duration-300 ${enabled ? "bg-[#217AFC] border border-[#0D5AE8] justify-end p-1 shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-transparent border border-[#D5D6E2] justify-start"
                               }`}
                           >
-                            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
-                              <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
+                            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center border border-[#D5D6E2] shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
+                              {
+                                enabled && (
+                                  <div className="w-2 h-2 bg-[#217AFC] rounded-full"></div>
+                                )
+                              }
                             </div>
-                          </button>
+                          </div>
                         </div>
                         <div className="flex justify-between items-center">
                           <div>
@@ -220,15 +224,19 @@ export function DialogCloseContentSetting() {
                               device
                             </p>
                           </div>
-                          <button
+                          <div
                             onClick={() => setEnabled2(!enabled2)}
-                            className={`cursor-pointer mr-5 w-12 h-7 rounded-full p-1 flex items-center transition duration-300 ${enabled2 ? "bg-blue-700 justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-gray-300 justify-start"
+                            className={`mr-5 cursor-pointer w-12 h-7 rounded-full flex items-center transition duration-300 ${enabled2 ? "bg-[#217AFC] border border-[#0D5AE8] justify-end p-1 shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-transparent border border-[#D5D6E2] justify-start"
                               }`}
                           >
-                            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
-                              <div className="w-2 h-2 bg-blue-700 rounded-full"></div>
+                            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center border border-[#D5D6E2] shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
+                              {
+                                enabled2 && (
+                                  <div className="w-2 h-2 bg-[#217AFC] rounded-full"></div>
+                                )
+                              }
                             </div>
-                          </button>
+                          </div>
                         </div>
                       </div>
                     ) : activeItem === "Integrations" ? (

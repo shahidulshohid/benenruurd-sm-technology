@@ -71,7 +71,7 @@ const WorkflowPage = () => {
             className="cursor-pointer"
           />
           {/* "trigger icon" */}
-          <SidebarTrigger className="text-[#8588AB] hover:text-[#8588AB] cursor-pointer"/>
+          <SidebarTrigger className="text-[#8588AB] hover:text-[#8588AB] cursor-pointer" />
         </div>
 
         {/* Bottom Right Icons */}
@@ -169,7 +169,7 @@ const WorkflowPage = () => {
                       className="cursor-pointer"
                       onClick={() => setShowTrigger(false)}
                     >
-                      <RxCross2 className="w-4 h-4 text-[#8588AB]"/>
+                      <RxCross2 className="w-4 h-4 text-[#8588AB]" />
                     </button>
                   </div>
                   <Separator className="bg-[#D5D6E2]" />
@@ -386,7 +386,7 @@ const WorkflowPage = () => {
                     </button>
                   </div>
 
-                  <Separator className="bg-[#D5D6E2]"/>
+                  <Separator className="bg-[#D5D6E2]" />
                   <div className="relative w-full">
                     <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
@@ -615,11 +615,11 @@ const WorkflowPage = () => {
                       className="cursor-pointer"
                       onClick={() => setShowTrigger(false)}
                     >
-                      <RxCross2 className="text-[#8588AB] w-4 h-4"/>
+                      <RxCross2 className="text-[#8588AB] w-4 h-4" />
                     </button>
                   </div>
 
-                  <Separator className="bg-[#D5D6E2]"/>
+                  <Separator className="bg-[#D5D6E2]" />
                   <div className="relative w-full">
                     <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="w-5 h-5 text-[#8588AB] absolute left-3 top-1/2 transform -translate-y-1/2" />
                     <input
@@ -630,7 +630,7 @@ const WorkflowPage = () => {
                       className="w-full pl-10 pr-4 py-3 focus:outline-none text-sm text-[#8588AB]"
                     />
                   </div>
-                  <Separator className="bg-[#D5D6E2]"/>
+                  <Separator className="bg-[#D5D6E2]" />
                   <div className="space-y-2">
                     {/* manual */}
                     <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
@@ -700,7 +700,7 @@ const WorkflowPage = () => {
                     </button>
                   </div>
 
-                  <Separator className="bg-[#D5D6E2]"/>
+                  <Separator className="bg-[#D5D6E2]" />
 
                   {/* Search */}
                   <div className="relative w-full">
@@ -713,7 +713,7 @@ const WorkflowPage = () => {
                       className="w-full pl-10 pr-4 py-3 focus:outline-none text-sm text-[#8588AB]"
                     />
                   </div>
-                  <Separator className="bg-[#D5D6E2]"/>
+                  <Separator className="bg-[#D5D6E2]" />
                   {/* Scheduled */}
                   <Link href="/dashboard/singlesiduled">
                     <div className="space-y-2">
@@ -776,8 +776,9 @@ const WorkflowPage = () => {
         <div className="text-center mt-[330px]">
           <h1 className="text-xl font-semibold">Work in progress</h1>
         </div>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 };
 
