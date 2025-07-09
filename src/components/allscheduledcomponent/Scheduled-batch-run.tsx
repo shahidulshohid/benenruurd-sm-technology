@@ -126,7 +126,7 @@ const ScheduledBatchRun = () => {
                 </label>
                 <select
                   id="whenToRun"
-                  className="border border-[#D5D6E2] rounded-lg px-3 py-1.5 pr-10 text-sm font-medium text-[#22222F] cursor-pointer focus:outline-none focus:ring focus:ring-blue-200 appearance-none"
+                  className="border border-[#D5D6E2] rounded-lg px-3 py-1 pr-10 text-sm font-medium text-[#22222F] cursor-pointer focus:outline-none focus:ring focus:ring-blue-200 appearance-none"
                 >
                   <option className="text-[#22222F] font-medium]">
                     Automatically start this workflow periodically
@@ -135,10 +135,7 @@ const ScheduledBatchRun = () => {
                     Manually
                   </option>
                 </select>
-                <HiChevronDown
-                  className="absolute right-2 top-8 pointer-events-none text-[#22222F]"
-                  size={18}
-                />
+                <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-2 top-9 pointer-events-none text-[#22222F]"/>
               </div>
 
               {/* Select integration dropdown */}
@@ -163,10 +160,7 @@ const ScheduledBatchRun = () => {
                     Integration 2
                   </option>
                 </select>
-                <HiChevronDown
-                  className="absolute right-2 top-8 pointer-events-none text-[#22222F]"
-                  size={18}
-                />
+                <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-2 top-9 pointer-events-none text-[#22222F]"/>
               </div>
 
               {/* Done button */}
