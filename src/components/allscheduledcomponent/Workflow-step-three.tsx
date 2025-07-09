@@ -10,6 +10,7 @@ import { Button } from "../ui/button";
 import DatePicker from "react-datepicker";
 import { FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
+import { Separator } from "@radix-ui/react-separator";
 
 const WorkflowStepThreeError = () => {
   const [enabled, setEnabled] = useState(false);
@@ -132,7 +133,7 @@ const WorkflowStepThreeError = () => {
           {/* Right Panel */}
           <div className="w-full md:w-1/2">
             <div className="rounded-br-lg rounded-lg shadow w-full p-0 border border-[#D5D6E2]">
-              <div className="p-3 flex items-center justify-between border ">
+              <div className="p-3 flex items-center justify-between border-b border-[#D5D6E2]">
                 <div className="flex items-center gap-2">
                   <div className="border rounded p-1">
                     <Image src="/dashboardIcons/like.svg" width={14} height={14} alt="like image" />
@@ -148,6 +149,7 @@ const WorkflowStepThreeError = () => {
                   </button>
                 </Link>
               </div>
+              {/* Description */}
 
               {/* Email Dropdown */}
               <div className="w-full pt-4 px-4 pb-3">
@@ -267,7 +269,7 @@ const WorkflowStepThreeError = () => {
               </div>
 
               {/* Preview */}
-              <div className="mx-4">
+              <div className="mx-4 mb-4">
                 <div className="p-3 mt-4 bg-blue-50 rounded-[8px]">
                   <h4 className="text-sm font-semibold text-[#22222F] mb-2">
                     Preview
@@ -288,9 +290,8 @@ const WorkflowStepThreeError = () => {
 
                 </div>
               </div>
-
               {/* Done Button */}
-              <div className="p-4 text-right">
+              <div className="px-4 py-3 text-right border-t border-[#D5D6E2]">
                 <button
                   type="submit"
                   className="bg-[#217AFC] text-[#FFFFFF] border border-[#0D5AE8] px-3 py-1.5 text-sm font-semibold rounded-[8px] cursor-pointer"

@@ -285,7 +285,7 @@ function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {infoCards.map((item, index) => (
             <div key={index} className="flex items-start gap-3 rounded-xl border border-[#E4E4E7] bg-white px-3 py-4 shadow-sm transition hover:shadow-md">
-              <div className="w-8 h-8 flex items-center justify-center border border-[#D5D6E2] rounded-[3px] bg-[#FCFCFD]">
+              <div className="flex items-center justify-center border border-[#D5D6E2] rounded-[3px] bg-[#FCFCFD]">
                 <Image src={item.icon} width={24} height={24} alt={item.title || "icon"} className="p-1" />
               </div>
               <div>
