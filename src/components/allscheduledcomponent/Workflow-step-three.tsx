@@ -10,7 +10,6 @@ import { Button } from "../ui/button";
 import DatePicker from "react-datepicker";
 import { FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
-import { Separator } from "@radix-ui/react-separator";
 
 const WorkflowStepThreeError = () => {
   const [enabled, setEnabled] = useState(false);
