@@ -286,7 +286,7 @@ function Dashboard() {
           {infoCards.map((item, index) => (
             <div key={index} className="flex items-start gap-3 rounded-xl border border-[#E4E4E7] bg-white px-3 py-4 shadow-sm transition hover:shadow-md">
               <div className="flex items-center justify-center border border-[#D5D6E2] rounded-[3px] bg-[#FCFCFD]">
-                <Image src={item.icon} width={24} height={24} alt={item.title || "icon"} className="" />
+                <Image src={item.icon} width={24} height={24} alt={item.title || "icon"} className="p-1" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-[#1A1A1A]">{item.title}</h3>
