@@ -8,7 +8,6 @@ import {
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useState } from "react";
 import Image from "next/image";
-import { HiChevronDown } from "react-icons/hi";
 
 export function DialogCloseContentSetting() {
   // switch button 
@@ -64,7 +63,7 @@ export function DialogCloseContentSetting() {
   const [selectedRole, setSelectedRole] = useState<string>("Admin");
   const [selectedRole1, setSelectedRole1] = useState<string>("Admin");
   const roles = ["Admin", "User", "Moderator", "Guest"];
-  const roles1 = ["Admin", "User", "Moderator", "Guest"];
+  const roles1 = ["Admin", "Member", "User", "Moderator", "Guest"];
 
   return (
     <DialogContent className="px-0 py-0 h-[612px] min-w-[880px] min-h-[812px] rounded-l-lg">
@@ -545,7 +544,7 @@ export function DialogCloseContentSetting() {
                                 </p>
                               </div>
                             </div>
-                            <div className="w-1/3 flex items-center border border-[#D5D6E2] rounded-[8px] px-2 py-1 mr-5 relative">
+                            <div className="w-[180px] flex items-center border border-[#D5D6E2] rounded-[8px] py-[4px] px-[12px] mr-5 relative">
                               <select
                                 value={selectedRole}
                                 onChange={(e) => setSelectedRole(e.target.value)}
@@ -557,7 +556,7 @@ export function DialogCloseContentSetting() {
                                   </option>
                                 ))}
                               </select>
-                              <HiChevronDown className="absolute right-2 top-1/2 w-4 h-4 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
+                              <Image src="/dashboardIcons/arrow.svg" width={20} height={20} alt="arrow icon" className="absolute right-3 w-4 h-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
                             </div>
                           </div>
                           <div className="flex justify-between items-center">
@@ -574,7 +573,7 @@ export function DialogCloseContentSetting() {
                                 </p>
                               </div>
                             </div>
-                            <div className="w-1/3 flex items-center border border-[#D5D6E2] rounded-[8px] px-2 p-1 mr-5 relative">
+                            <div className="w-[180px] flex items-center border border-[#D5D6E2] rounded-[8px] py-[4px] px-[12px] mr-5 relative">
                               <select
                                 value={selectedRole1}
                                 onChange={(e) => setSelectedRole1(e.target.value)}
@@ -586,7 +585,7 @@ export function DialogCloseContentSetting() {
                                   </option>
                                 ))}
                               </select>
-                              <HiChevronDown className="absolute right-2 w-4 h-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
+                              <Image src="/dashboardIcons/arrow.svg" width={20} height={20} alt="arrow icon" className="absolute right-3 w-4 h-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
                             </div>
                           </div>
                         </div>
