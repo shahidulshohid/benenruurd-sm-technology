@@ -481,7 +481,7 @@ export function DialogCloseContentSetting() {
                               <input
                                 type="text"
                                 placeholder="Acme Inc."
-                                className="border px-3 pb-1 border-[#D5D6E2] rounded-[8px] pr-46 placeholder:text-[#22222F] placeholder:text-sm placeholder:font-medium"
+                                className="w-[300px] border px-3 p-1 border-[#D5D6E2] rounded-[8px] placeholder:text-[#22222F] placeholder:text-sm placeholder:font-medium"
                               />
                             </div>
                           </div>
@@ -494,11 +494,11 @@ export function DialogCloseContentSetting() {
                                 The timezone of your workspace
                               </p>
                             </div>
-                            <div>
+                            <div className="relative w-[300px]">
                               <select
                                 value={selectedTimezone}
                                 onChange={(e) => setSelectedTimezone(e.target.value)}
-                                className="border border-[#D5D6E2] rounded-md px-3 pb-1 text-sm text-[#22222F] font-medium"
+                                className="w-full appearance-none border border-[#D5D6E2] rounded-[8px] px-3 pr-8 py-1 text-sm text-[#22222F] font-medium"
                               >
                                 {timezones.map((tz, idx) => (
                                   <option key={idx} value={tz}>
@@ -507,7 +507,15 @@ export function DialogCloseContentSetting() {
                                 ))}
                               </select>
 
+                              <Image
+                                src="/dashboardIcons/arrow.svg"
+                                width={20}
+                                height={20}
+                                alt="arrow icon"
+                                className="absolute text-[#22222F] right-3 top-1/2 -translate-y-1/2 pointer-events-none w-4 h-4"
+                              />
                             </div>
+
                           </div>
                         </div>
                       </div>
