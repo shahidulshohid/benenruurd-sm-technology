@@ -8,7 +8,6 @@ import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import DatePicker from "react-datepicker";
-import { FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
 import { Separator } from "@radix-ui/react-separator";
 
@@ -169,7 +168,7 @@ const WorkflowStepThreeError = () => {
                     <option>Slack</option>
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#22222F]">
-                    <FaChevronDown className="w-3 h-3 text-[#22222F]" />
+                    <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="text-[#22222F]" />
                   </div>
                 </div>
               </div>
@@ -200,7 +199,7 @@ const WorkflowStepThreeError = () => {
                     ) : (
                       <span>Not assigned</span>
                     )}
-                    <FaChevronDown className="ml-auto -mr-1 w-3 h-3 text-[#22222F]" />
+                    <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="ml-auto -mr-1 text-[#22222F]" />
                   </button>
 
                   {isOpen && (
@@ -234,7 +233,7 @@ const WorkflowStepThreeError = () => {
                 </h4>
                 <textarea
                   placeholder="Add instructions for the assignee"
-                  className="w-full px-3 py-2 border border-[#D5D6E2] rounded-[8px] text-sm text-[#8588AB] font-medium h-24"
+                  className="w-full px-3 py-2 border border-[#D5D6E2] rounded-[8px] text-sm text-[#8588AB] font-medium h-24 resize-none"
                 />
               </div>
 
@@ -253,7 +252,7 @@ const WorkflowStepThreeError = () => {
                       minDate={new Date("2025-06-30T08:53:00+06:00")}
                       placeholderText="Select date"
                     />
-                    <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-700 text-xs pointer-events-none" />
+                    <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="text-[#22222F] absolute right-3 top-1/2 transform -translate-y-1/2" />
                   </div>
                 </div>
                 <div className="flex-1">
@@ -261,13 +260,13 @@ const WorkflowStepThreeError = () => {
                     Remind after notification
                   </label>
                   <div className="relative">
-                    <select className="w-full px-3 py-1 border border-[#D5D6E2] rounded-[8px] text-sm text-medium text-[#22222F] appearance-none bg-white pr-10 cursor-pointer">
+                    <select className="w-full px-3 py-1 border border-[#D5D6E2] rounded-[8px] text-sm font-medium text-[#22222F] appearance-none bg-white pr-10 cursor-pointer">
                       <option>2 days after initial notification</option>
                       <option>1 day after initial notification</option>
                       <option>3 days after initial notification</option>
                     </select>
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                      <FaChevronDown className="w-3 h-3 text-[#22222F]" />
+                      <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="text-[#22222F]" />
                     </div>
                   </div>
                 </div>

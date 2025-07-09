@@ -564,7 +564,7 @@ export function DialogCloseContentSetting() {
                                   </option>
                                 ))}
                               </select>
-                              <Image src="/dashboardIcons/arrow.svg" width={20} height={20} alt="arrow icon" className="absolute right-3 w-4 h-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
+                              <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
                             </div>
                           </div>
                           <div className="flex justify-between items-center">
@@ -593,7 +593,7 @@ export function DialogCloseContentSetting() {
                                   </option>
                                 ))}
                               </select>
-                              <Image src="/dashboardIcons/arrow.svg" width={20} height={20} alt="arrow icon" className="absolute right-3 w-4 h-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
+                              <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
                             </div>
                           </div>
                         </div>
