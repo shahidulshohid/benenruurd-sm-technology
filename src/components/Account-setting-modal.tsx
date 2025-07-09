@@ -86,7 +86,7 @@ export function DialogCloseContentSetting() {
                         onClick={() => setActiveItem(item.label)}
                         className={`flex items-center gap-2 w-full pl-1 pr-2 py-1 mb-2 rounded-lg text-left
                           ${isActive
-                            ? "bg-[#D5D6E2] text-[#22222F] text-sm font-semibold"
+                            ? "bg-[#D5D6E2] text-[#22222F] text-sm py-[5px] font-semibold"
                             : "hover:bg-[#D5D6E2] text-sm font-medium text-[#22222F] cursor-pointer"
                           }`}
                       >
@@ -116,7 +116,7 @@ export function DialogCloseContentSetting() {
                         onClick={() => setActiveItem(item.label)}
                         className={`flex items-center gap-2 w-full pl-1 pr-2 py-1 mb-2 rounded-lg text-left
                           ${isActive
-                            ? "bg-[#D5D6E2] text-[#22222F] text-sm font-semibold"
+                            ? "bg-[#D5D6E2] text-[#22222F] py-[5px] text-sm font-semibold"
                             : "hover:bg-[#D5D6E2] text-sm font-medium text-[#22222F] cursor-pointer"
                           }`}
                       >
@@ -245,24 +245,24 @@ export function DialogCloseContentSetting() {
                         </h1>
                         <div>
                           {/* Search */}
-                          <div className="relative w-full pl-7">
+                          <div className="relative w-full pl-7 mb-1">
                             <Image
                               src="/dashboardIcons/search.svg"
                               width={20}
                               height={20}
                               alt="search icon"
-                              className="w-6 h-6 text-[#8588AB] absolute left-3 top-1/2 transform -translate-y-1/2"
+                              className="w-6 h-6 text-[#8588AB] absolute left-5 top-1/2 transform -translate-y-1/2"
                             />
                             <input
                               type="text"
                               placeholder="Search Integrations"
-                              className="w-full pl-10 pr-4 py-2 -ml-7 focus:outline-none"
+                              className="w-full pl-13 pr-4 py-2 -ml-7 focus:outline-none"
                             />
                           </div>
 
                           {/* communication */}
                           <div className="border-t border-b bg-[#FCFCFD]">
-                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-4">
+                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-5">
                               Communication
                             </h4>
                           </div>
@@ -288,7 +288,7 @@ export function DialogCloseContentSetting() {
                           </div>
                           {/* Email */}
                           <div className="border-t border-b">
-                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-4">
+                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-5">
                               E-mail
                             </h4>
                           </div>
@@ -320,7 +320,7 @@ export function DialogCloseContentSetting() {
                           </div>
                           {/* project management */}
                           <div className="border-t border-b bg-[#FCFCFD]">
-                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-4">
+                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-5">
                               Project management
                             </h4>
                           </div>
@@ -398,7 +398,7 @@ export function DialogCloseContentSetting() {
                           </div>
                           {/* file store */}
                           <div className="border-t border-b bg-[#FCFCFD]">
-                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-4">
+                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-5">
                               File Store
                             </h4>
                           </div>
@@ -429,10 +429,10 @@ export function DialogCloseContentSetting() {
                             </div>
                           </div>
                           {/* calendar */}
-                          <div>
-                            <h1 className="text-[#8588AB] pl-5 my-2 px-2 font-semibold">
+                          <div className="border-t border-b bg-[#FCFCFD]">
+                            <h4 className="text-xs font-semibold text-[#8588AB] mb-3 pt-3 pl-5">
                               Calendar
-                            </h1>
+                            </h4>
                           </div>
                           <div className="flex justify-between items-center pl-3 mb-4">
                             <div className="flex items-center gap-3 py-4 px-2">
