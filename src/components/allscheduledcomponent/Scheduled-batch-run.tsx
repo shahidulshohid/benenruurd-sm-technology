@@ -4,7 +4,6 @@ import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 import "react-datepicker/dist/react-datepicker.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { HiChevronDown } from "react-icons/hi";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -135,7 +134,7 @@ const ScheduledBatchRun = () => {
                     Manually
                   </option>
                 </select>
-                <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-2 top-9 pointer-events-none text-[#22222F]"/>
+                <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-2 top-8.5 pointer-events-none text-[#22222F]"/>
               </div>
 
               {/* Select integration dropdown */}
@@ -160,7 +159,7 @@ const ScheduledBatchRun = () => {
                     Integration 2
                   </option>
                 </select>
-                <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-2 top-9 pointer-events-none text-[#22222F]"/>
+                <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-2 top-8.5 pointer-events-none text-[#22222F]"/>
               </div>
 
               {/* Done button */}

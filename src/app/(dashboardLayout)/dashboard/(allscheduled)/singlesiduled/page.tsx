@@ -41,7 +41,7 @@ const WorkflowPage = () => {
             className="cursor-pointer"
           />
           {/* {/* "trigger icon" */}
-          <SidebarTrigger className="text-[#8588AB] hover:text-[#8588AB] cursor-pointer"/> 
+          <SidebarTrigger className="text-[#8588AB] hover:text-[#8588AB] cursor-pointer" />
         </div>
         <div className="flex items-center gap-2">
           <Image
@@ -77,7 +77,7 @@ const WorkflowPage = () => {
 
       <div className="text-center">
         <Separator className="mb-2 bg-gray-200" />
-        <div className="flex justify-center gap-4 border w-[235px] mx-auto py-1 rounded-lg">
+        <div className="flex justify-center gap-1 border w-[220px] mx-auto py-0.5 rounded-lg">
           <button
             onClick={() => {
               setActiveTab("editor");
