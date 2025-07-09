@@ -38,13 +38,13 @@ export function DialogCloseContent() {
         </DialogDescription>
       </DialogHeader>
 
-      <Separator className="bg-[#D5D6E2]"/>
+      <Separator className="bg-[#D5D6E2]" />
 
       {/* Upload Files Option */}
       <div className="flex items-center justify-between cursor-pointer">
         <div className="flex items-center gap-3 p-2 rounded">
           <div className="border border-[#D5D6E2] p-1 rounded-[3px]">
-            <Image src="/dashboardIcons/knoledgeIcon1.svg" width={20} height={20} alt=""/>
+            <Image src="/dashboardIcons/knoledgeIcon1.svg" width={20} height={20} alt="" />
           </div>
           <h4 className="text-sm font-semibold text-[#22222F]">Upload File(s)</h4>
         </div>
@@ -55,7 +55,7 @@ export function DialogCloseContent() {
       <div onClick={() => setChangeModal(!changeModal)} className="flex items-center justify-between cursor-pointer">
         <div className="flex items-center gap-3 p-2 rounded">
           <div className="border border-[#D5D6E2] p-1 rounded-[3px]">
-            <Image src="/dashboardIcons/knoledgeIcon2.svg" width={20} height={20} alt=""/>
+            <Image src="/dashboardIcons/knoledgeIcon2.svg" width={20} height={20} alt="" />
           </div>
           <h4 className="text-sm font-semibold text-[#22222F]">Text</h4>
         </div>
@@ -63,16 +63,16 @@ export function DialogCloseContent() {
       </div>
     </DialogContent>
   ) : (
-    <DialogContent className="max-w-[560px]">
+    <DialogContent className="max-w-[560px] p-0 m-0">
       <form onSubmit={handleSubmit}>
         <DialogTrigger asChild>
         </DialogTrigger>
         <DialogHeader>
-          <DialogTitle className="mb-6 text-xl font-semibold text-[#22222F]">Add Text</DialogTitle>
+          <DialogTitle className="mb-6 text-xl font-semibold text-[#22222F] p-4">Add Text</DialogTitle>
         </DialogHeader>
         <Separator className="bg-[#D5D6E2] mb-6" />
-        <label className="text-sm font-medium text-[#22222F]">File Name</label>
-        <div className="mt-2">
+        <label className="text-sm font-medium text-[#22222F] px-6">File Name</label>
+        <div className="mt-2 px-6">
           <input
             type="text"
             name="fileName"
@@ -81,18 +81,19 @@ export function DialogCloseContent() {
           />
         </div>
 
-        <label className="text-sm font-medium text-[#22222F]">Text</label>
-        <div className="mt-2">
+        <label className="text-sm font-medium text-[#22222F] px-6">Text</label>
+        <div className="mt-2 px-6">
           <textarea
             name="text"
             placeholder="Enter text"
-            className="w-full placeholder:text-[#8588AB] placeholder:text-sm placeholder:font-semibld border border-[#D5D6E2] px-3 py-2 rounded-lg mb-6 h-24 text-sm font-medium text-[#22222F]"
-          ></textarea>
+            className="w-full placeholder:text-[#8588AB] placeholder:text-sm placeholder:font-semibold border border-[#D5D6E2] px-3 py-2 rounded-lg mb-6 h-24 text-sm font-medium text-[#22222F] resize-none"
+          />
+
         </div>
         <Separator className="bg-[#D5D6E2]" />
         {/* <DialogFooter> */}
         <DialogClose asChild>
-          <div className="text-right mt-3">
+          <div className="text-right px-4 py-3">
             <Button
               onClick={() => setChangeModal(true)}
               type="submit"
