@@ -138,7 +138,7 @@ const KnowledgePage = () => {
                             value={searchTerm}
                             onChange={handleSearch}
                         />
-                        <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-base" />
+                        <Image src="/dashboardIcons/search.svg" width={24} height={24} alt="search icon" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#8588AB]" />
                     </div>
                 </div>
             </div>
