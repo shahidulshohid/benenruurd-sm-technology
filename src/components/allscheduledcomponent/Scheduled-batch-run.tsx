@@ -24,11 +24,11 @@ const ScheduledBatchRun = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left Panel */}
           <div className="w-full md:w-1/2 space-y-4">
-            <div className="border border-[#D5D6E2] rounded-lg bg-white shadow-sm">
+            <div className="border border-[#D5D6E2] rounded-lg shadow-sm bg-[#FCFCFD]">
               <h3 className="p-4 text-[#22222F] font-semibold text-sm border-b">
                 Add a step to turn on the workflow
               </h3>
-              <div className="flex items-center justify-between px-4 py-3">
+              <div className="flex items-center justify-between px-4 py-3 bg-[#FFFFFF] rounded-b-lg">
                 <div className="flex items-center gap-3">
                   <span className="text-sm text-[#8588AB] font-semibold">
                     1
@@ -75,7 +75,7 @@ const ScheduledBatchRun = () => {
 
           {/* Right Panel */}
           <div className="w-full md:w-1/2 border border-[#D5D6E2] rounded-lg bg-white shadow-sm">
-            <div className="flex items-center justify-between px-4 py-4 border-b border-[#D5D6E2]">
+            <div className="flex items-center justify-between px-4 py-4 border-b border-[#D5D6E2] bg-[#FCFCFD] rounded-t-lg">
               <div className="flex items-center gap-3">
                 <div className="border border-[#D5D6E2] p-1 rounded">
                   <Image

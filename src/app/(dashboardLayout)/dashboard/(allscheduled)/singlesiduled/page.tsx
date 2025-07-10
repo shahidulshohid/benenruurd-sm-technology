@@ -12,8 +12,8 @@ const WorkflowPage = () => {
   const [activeTab, setActiveTab] = useState<Tab>("editor");
 
   return (
-    <div>
-      <div className="relative flex items-center justify-between px-8 h-[60px]">
+    <div className="bg-[#FCFCFD] h-screen">
+      <div className="relative flex items-center justify-between px-8 h-[60px] bg-[#FFFFFF]">
         <div className="absolute left-1/2 transform -translate-x-1/2">
           <div className="flex items-center gap-2 p-2">
             <Image
@@ -75,7 +75,7 @@ const WorkflowPage = () => {
         </div>
       </div>
 
-      <div className="text-center">
+      <div className="text-center bg-[#FFFFFF]">
         <Separator className="mb-2 bg-gray-200" />
         <div className="flex justify-center gap-1 border w-[220px] mx-auto py-0.5 rounded-lg">
           <button
