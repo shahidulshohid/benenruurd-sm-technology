@@ -130,9 +130,14 @@ function Dashboard() {
           className="cursor-pointer"
         />
         <Link href="/dashboard/dashboard">
-          <button className="bg-[#0D5AE8] hover:bg-[#0D5AE8] flex items-center gap-2 font-semibold text-sm cursor-pointer text-[#FFFFFF] px-3 py-1.5 rounded-lg">
+          <button className="bg-[#217AFC] hover:bg-[#217AFC] border border-[#0D5AE8] flex items-center gap-2 font-semibold text-sm cursor-pointer text-[#FFFFFF] px-3 py-[5px] rounded-[8px]"
+            style={{
+              boxShadow: "0px 1px 1px 0px rgba(100, 102, 241, 0.12), 0px 2px 2px 0px rgba(100, 102, 241, 0.12)"
+            }}
+            >
             <HiPlus /> New Workflow
           </button>
+
         </Link>
       </div>
 

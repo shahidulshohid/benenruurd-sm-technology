@@ -118,7 +118,10 @@ const KnowledgePage = () => {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full md:w-auto">
                     <button
                         onClick={() => setOpen(true)}
-                        className="bg-[#217AFC] text-[#FFFFFF] px-3 py-1.5 rounded-lg w-full sm:w-auto text-sm font-semibold cursor-pointer"
+                        className="bg-[#217AFC] hover:bg-[#217AFC] border border-[#0D5AE8] flex items-center gap-2 font-semibold text-sm cursor-pointer text-[#FFFFFF] px-3 py-[5px] rounded-[8px]"
+                        style={{
+                            boxShadow: "0px 1px 1px 0px rgba(100, 102, 241, 0.12), 0px 2px 2px 0px rgba(100, 102, 241, 0.12)"
+                        }}
                     >
                         + Add knowledge
                     </button>
@@ -135,7 +138,7 @@ const KnowledgePage = () => {
                             value={searchTerm}
                             onChange={handleSearch}
                         />
-                        <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-base"/>
+                        <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-base" />
                     </div>
                 </div>
             </div>

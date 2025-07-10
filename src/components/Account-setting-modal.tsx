@@ -525,7 +525,7 @@ export function DialogCloseContentSetting() {
                           Team Members
                         </h1>
                         <button
-                          className="bg-[#217AFC] px-3 py-1.5 text-sm font-semibold rounded-[8px] mb-6 cursor-pointer text-[#FFFFFF] border border-[#0D5AE8]"
+                          className="bg-[#217AFC] px-3 py-[5px] text-sm font-semibold rounded-[8px] mb-6 cursor-pointer text-[#FFFFFF] border border-[#0D5AE8]"
                           style={{
                             boxShadow: "0px 1px 1px 0px rgba(100, 102, 241, 0.12), 0px 2px 2px 0px rgba(100, 102, 241, 0.12)"
                           }}
