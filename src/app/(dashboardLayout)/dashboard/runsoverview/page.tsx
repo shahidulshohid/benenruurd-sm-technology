@@ -64,26 +64,26 @@ const RunsTable = () => {
         <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 w-full md:w-auto">
           {/* Status Dropdown */}
           <div className="relative w-full sm:w-auto">
-            <select className="w-full sm:w-auto border text-medium cursor-pointer border-[#D5D6E2] rounded-lg text-[#8588AB] text-medium px-3 py-1.5 text-sm outline-none bg-transparent pr-8 appearance-none">
+            <select className="w-full sm:w-auto border font-medium cursor-pointer border-[#D5D6E2] rounded-[8px] text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
               <option>Status</option>
               <option value="active">Active</option>
               <option value="inactive">Inactive</option>
               <option value="pending">Pending</option>
               <option value="completed">Completed</option>
             </select>
-            <FiChevronDown size={20} className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
+            <Image src="/dashboardIcons/arrow.svg" width={24} height={24} alt="workflow icon" className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
           </div>
 
           {/* Workflow Dropdown */}
           <div className="relative w-full sm:w-auto">
-            <select className="w-full sm:w-auto border cursor-pointer border-[#D5D6E2] text-medium rounded-lg text-[#8588AB] px-3 py-1.5 text-sm outline-none bg-transparent pr-8 appearance-none">
-              <option>Status</option>
+            <select className="w-full sm:w-auto border cursor-pointer border-[#D5D6E2] font-medium rounded-lg text-[#8588AB] px-3 py-1 text-sm outline-none bg-transparent pr-8 appearance-none">
+              <option>Workflow</option>
               <option value="active">Active</option>
               <option value="inactive">Inactive</option>
               <option value="pending">Pending</option>
               <option value="completed">Completed</option>
             </select>
-            <FiChevronDown size={20} className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
+            <Image src="/dashboardIcons/arrow.svg" width={24} height={24} alt="workflow icon" className="absolute right-2 pr-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#22222F]" />
           </div>
 
           {/* Search Input */}
@@ -96,7 +96,7 @@ const RunsTable = () => {
                 setSearchTerm(e.target.value);
                 setCurrentPage(1); // reset to page 1 when searching
               }}
-              className="w-full sm:w-64 border border-[#D5D6E2] text-medium text-[#8588AB] rounded-lg pl-10 pr-3 py-1.5 text-sm outline-none bg-transparent"
+              className="w-full sm:w-64 border border-[#D5D6E2] font-medium text-[#8588AB] rounded-[8px] pl-10 pr-3 py-1 text-sm outline-none bg-transparent"
             />
             <Image src="/dashboardIcons/search.svg" width={20} height={20} alt="search icon" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#8588AB]" />
           </div>
@@ -160,13 +160,16 @@ const RunsTable = () => {
       <div className="flex justify-between items-center mt-4 overflow-x-auto gap-4 whitespace-nowrap">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
-          className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
+          className="px-2 md:px-[12px] py-[5px] border border-gray-300 rounded-[12px] flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
+          style={{
+            boxShadow:
+              "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
+          }}
           disabled={currentPage === 1}
         >
           <FiChevronLeft />
           Previous
         </button>
-
         <div className="flex gap-2">
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
@@ -184,7 +187,11 @@ const RunsTable = () => {
 
         <button
           onClick={() => handlePageChange(currentPage + 1)}
-          className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
+          className="px-2 md:px-[12px] py-[5px] border border-gray-300 rounded-[12px] flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
+          style={{
+            boxShadow:
+              "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
+          }}
           disabled={currentPage === totalPages}
         >
           Next

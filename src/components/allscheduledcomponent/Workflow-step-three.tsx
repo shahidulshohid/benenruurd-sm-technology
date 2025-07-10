@@ -223,7 +223,7 @@ const WorkflowStepThreeError = () => {
                     </div>
                   )}
                 </div>
-                {error && <p className="text-[#D94F4F] text-sm text-medium mt-1">{error}</p>}
+                {error && <p className="text-[#D94F4F] text-sm font-medium mt-1">{error}</p>}
               </div>
 
               {/* Message */}
