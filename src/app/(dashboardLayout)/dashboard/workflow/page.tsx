@@ -39,8 +39,8 @@ const WorkflowPage = () => {
   const [sectionShow, setSectionShow] = useState<string>("add-trigger");
 
   return (
-    <div>
-      <div className="relative flex flex-wrap items-center justify-between px-4 md:px-8 py-2 md:py-0 h-auto md:h-[60px] gap-3">
+    <div className="bg-[#FCFCFD] h-full">
+      <div className="relative flex flex-wrap items-center justify-between px-4 md:px-8 py-2 md:py-0 h-auto md:h-[60px] gap-3 bg-[#FFFFFF]">
         {/* Center Section */}
         <div className="w-full md:w-auto md:absolute md:left-1/2 md:transform md:-translate-x-1/2 flex justify-center">
           <div className="flex items-center gap-2 p-2">
@@ -107,7 +107,7 @@ const WorkflowPage = () => {
         </div>
       </div>
 
-      <div className="text-center">
+      <div className="text-center bg-[#FFFFFF]">
         <Separator className="mb-2 bg-gray-200" />
         <div className="flex justify-center gap-1 border w-[220px] mx-auto py-0.5 rounded-lg">
           <button
@@ -144,7 +144,7 @@ const WorkflowPage = () => {
             <h3 className="px-4 py-3 text-sm font-semibold text-[#22222F] border-b border-[#D5D6E2]">
               Trigger
             </h3>
-            <div className="text-center text-[#217AFC] text-sm font-semibold p-4 flex justify-center items-center cursor-pointer">
+            <div className="text-center text-[#217AFC] text-sm font-semibold p-4 flex justify-center items-center cursor-pointer bg-[#FFFFFF] rounded-b-lg">
               <Image src="/dashboardIcons/plus.svg" width={20} height={20} alt="plus icon" />
               <button onClick={() => setShowTrigger(true)} className=" cursor-pointer">
                 Add trigger
@@ -152,13 +152,12 @@ const WorkflowPage = () => {
             </div>
           </div>
 
-
           {showTrigger && (
             <div className="md:w-1/2 mx-auto border border-[#D5D6E2] shadow-sm rounded-lg mb-6 mr-4 ml-4 md:mr-0 md:ml-0 mt-5 md:mt-0">
               {/* add trigger section  */}
               {sectionShow === "add-trigger" ? (
-                <section>
-                  <div className="p-3 flex items-center justify-between">
+                <section className="bg-[#FFFFFF] rounded-lg">
+                  <div className="p-3 flex items-center justify-between bg-[#FCFCFD] rounded-t-lg">
                     <div className="flex items-center gap-2">
                       {/* <GoArrowLeft /> */}
                       <h3 className="text-sm font-semibold text-[#22222F]">
@@ -367,10 +366,10 @@ const WorkflowPage = () => {
                   </div>
                 </section>
               ) : sectionShow === "integrations" ? (
-                <section className="rounded-lg shadow w-full max-w-md">
+                <section className="rounded-lg shadow w-full max-w-md bg-[#FFFFFF]">
                   <div
                     onClick={() => setSectionShow("add-trigger")}
-                    className="p-3 flex items-center justify-between cursor-pointer"
+                    className="p-3 flex items-center justify-between cursor-pointer bg-[#FCFCFD] rounded-t-lg"
                   >
                     <div className="flex items-center gap-2">
                       <GoArrowLeft />
@@ -600,10 +599,10 @@ const WorkflowPage = () => {
                   )}
                 </section>
               ) : sectionShow === "manual" ? (
-                <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0">
+                <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0 bg-[#FFFFFF] rounded-t-lg">
                   <div
                     onClick={() => setSectionShow("add-trigger")}
-                    className="p-3 flex items-center justify-between cursor-pointer"
+                    className="p-3 flex items-center justify-between cursor-pointer bg-[#FCFCFD] rounded-t-lg"
                   >
                     <div className="flex items-center gap-2">
                       <GoArrowLeft />
@@ -680,11 +679,11 @@ const WorkflowPage = () => {
                   </div>
                 </section>
               ) : sectionShow === "scheduled" ? (
-                <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0">
+                <section className="rounded-br-lg rounded-bl-lg shadow w-full p-0 bg-[#FFFFFF] rounded-t-lg">
                   {/* Header */}
                   <div
                     onClick={() => setSectionShow("add-trigger")}
-                    className="p-3 flex items-center justify-between cursor-pointer"
+                    className="p-3 flex items-center justify-between cursor-pointer bg-[#FCFCFD] rounded-t-lg"
                   >
                     <div className="flex items-center gap-2">
                       <GoArrowLeft />
