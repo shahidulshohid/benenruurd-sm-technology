@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Dialog } from "@/components/ui/dialog"
 import { DialogCloseContent } from '../../../../components/AddKnoledge-modal';
 
