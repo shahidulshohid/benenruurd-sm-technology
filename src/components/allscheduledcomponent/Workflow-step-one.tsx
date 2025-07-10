@@ -18,11 +18,11 @@ const WorkflowStepOne = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left Panel */}
           <div className="w-full md:w-1/2 space-y-4">
-            <div className="border rounded-lg bg-white shadow-sm hover:shadow-md transition">
+            <div className="border rounded-lg shadow-sm hover:shadow-md transition bg-[#FCFCFD]">
               <h3 className="p-4 text-[#22222F] font-semibold border-b">
                 Add a step to turn on the workflow
               </h3>
-              <div className="flex items-center justify-between px-4 py-3">
+              <div className="flex items-center justify-between px-4 py-3 bg-[#FFFFFF] rounded-b-lg">
                 <div className="flex items-center gap-3">
                   <span className="text-sm font-semibold  text-[#8588AB]">
                     1
@@ -68,9 +68,9 @@ const WorkflowStepOne = () => {
 
           {/* Right Panel */}
           <div className="w-full md:w-1/2">
-            <div className="rounded-br-lg rounded-lg shadow w-full p-0 border">
+            <div className="rounded-br-lg rounded-lg shadow w-full p-0 border bg-[#FFFFFF]">
               <Link href="/dashboard/batchrunscheduled">
-                <div className="p-3 flex items-center justify-between">
+                <div className="p-3 flex items-center justify-between bg-[#FCFCFD] rounded-t-lg">
                   <div className="bg-[#FCFCFD]">
                     <h3 className="text-sm font-semibold text-[#22222F]">
                       Add a step

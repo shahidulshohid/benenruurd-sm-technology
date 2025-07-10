@@ -18,11 +18,11 @@ const WorkflowStepTwo = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left Panel */}
           <div className="w-full md:w-1/2 space-y-4">
-            <div className="border rounded-lg bg-white shadow-sm">
+            <div className="border rounded-lg shadow-sm bg-[#FCFCFD]">
               <h3 className="p-4 text-gray-800 font-medium border-b">
                 Add a step to turn on the workflow
               </h3>
-              <div className="flex items-center justify-between px-4 py-3">
+              <div className="flex items-center justify-between px-4 py-3 bg-[#FFFFFF] rounded-b-lg">
                 <div className="flex items-center gap-3">
                   <span className="text-sm text-gray-700">1</span>
                   <div className="border p-1 rounded text-gray-600">
@@ -60,10 +60,10 @@ const WorkflowStepTwo = () => {
           </div>
 
           {/* Right Panel */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 bg-[#FFFFFF]">
             <div className="rounded-br-lg rounded-lg shadow w-full p-0 border border-[#D5D6E2]">
               <Link href="/dashboard/workflowstepone">
-                <div className="p-3 flex items-center justify-between">
+                <div className="p-3 flex items-center justify-between bg-[#FCFCFD] rounded-t-lg">
                   <div className="flex items-center gap-2">
                     <GoArrowLeft />
                     <h3 className="text-sm font-semibold text-[#22222F]">

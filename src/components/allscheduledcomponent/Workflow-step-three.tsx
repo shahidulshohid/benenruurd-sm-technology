@@ -49,11 +49,11 @@ const WorkflowStepThreeError = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left Panel */}
           <div className="w-full md:w-1/2 space-y-4">
-            <div className="border rounded-lg bg-white shadow-sm">
+            <div className="border rounded-lg shadow-sm bg-[#FCFCFD]">
               <h3 className="p-4 text-gray-800 font-medium border-b">
                 Add a step to turn on the workflow
               </h3>
-              <div className="flex items-center justify-between px-4 py-3">
+              <div className="flex items-center justify-between px-4 py-3 bg-[#FFFFFF] rounded-b-lg">
                 <div className="flex items-center gap-3">
                   <span className="text-sm text-[#8588AB]">1</span>
                   <div className="border p-1 rounded text-gray-600">
@@ -134,9 +134,9 @@ const WorkflowStepThreeError = () => {
           </div>
 
           {/* Right Panel */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 bg-[#FFFFFF]">
             <div className="rounded-br-lg rounded-lg shadow w-full p-0 border border-[#D5D6E2]">
-              <div className="p-3 flex items-center justify-between border-b border-[#D5D6E2]">
+              <div className="p-3 flex items-center justify-between border-b border-[#D5D6E2] bg-[#FCFCFD] rounded-t-lg">
                 <div className="flex items-center gap-2">
                   <div className="border rounded p-1">
                     <Image src="/dashboardIcons/like.svg" width={14} height={14} alt="like image" />
