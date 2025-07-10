@@ -5,7 +5,6 @@ import Image from "next/image";
 import {
   FiChevronLeft,
   FiChevronRight,
-  FiChevronDown,
 } from "react-icons/fi";
 
 type WorkflowStatus = "Completed" | "Not completed";
@@ -167,7 +166,7 @@ const RunsTable = () => {
           }}
           disabled={currentPage === 1}
         >
-          <FiChevronLeft />
+          <Image src="/dashboardIcons/leftArrow.svg" width={24} height={24} alt="right arrow icon" className="text-[#22222F] font-semibold -t-0.5"/>
           Previous
         </button>
         <div className="flex gap-2">
@@ -195,7 +194,7 @@ const RunsTable = () => {
           disabled={currentPage === totalPages}
         >
           Next
-          <FiChevronRight />
+          <Image src="/dashboardIcons/rightArrow.svg" width={24} height={24} alt="right arrow icon" className="text-[#22222F] font-semibold -mb-0.5"/>
         </button>
       </div>
 
