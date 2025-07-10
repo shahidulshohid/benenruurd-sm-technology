@@ -113,7 +113,7 @@ function Dashboard() {
     },
     {
       title: "Community",
-      description: "Get support from other users and exchange ideas for functions.",
+      description: "Get support from other users and exchange ideas for new workflows and functions.",
       icon: "/dashboardIcons/documentation.svg",
     },
   ];
@@ -134,7 +134,7 @@ function Dashboard() {
             style={{
               boxShadow: "0px 1px 1px 0px rgba(100, 102, 241, 0.12), 0px 2px 2px 0px rgba(100, 102, 241, 0.12)"
             }}
-            >
+          >
             <HiPlus /> New Workflow
           </button>
 
@@ -156,7 +156,7 @@ function Dashboard() {
             </thead>
             <tbody>
               {workflows.map((item, i) => (
-                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderTop: "1px solid var(--border-colors-dark-blue-200, #D5D6E2)"}}>
+                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderTop: "1px solid var(--border-colors-dark-blue-200, #D5D6E2)" }}>
                   <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                     <Image src={item.icon} width={24} height={24} alt="icon" className="border border-[#D5D6E2] p-1 rounded-[3px]" />
                     <span className="text-sm">{item.workflow}</span>
@@ -289,7 +289,7 @@ function Dashboard() {
         <h3 className="text-xl text-[#22222F] font-semibold mb-3">Explore</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {infoCards.map((item, index) => (
-            <div key={index} className="flex items-start gap-3 rounded-xl border border-[#E4E4E7] bg-white px-3 py-4 shadow-sm transition hover:shadow-md">
+            <div key={index} className="flex items-start gap-3 rounded-xl border border-[#D5D6E2] bg-white p-4 shadow-sm transition hover:shadow-md">
               <div className="flex items-center justify-center border border-[#D5D6E2] rounded-[3px] bg-[#FCFCFD]">
                 <Image src={item.icon} width={24} height={24} alt={item.title || "icon"} className="p-1" />
               </div>
