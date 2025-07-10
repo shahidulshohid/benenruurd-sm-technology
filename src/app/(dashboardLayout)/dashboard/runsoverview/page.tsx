@@ -104,7 +104,7 @@ const RunsTable = () => {
       </div>
 
       {/* Table */}
-      <div className="w-full overflow-x-auto rounded-xl border border-[#D8D8DF]">
+      <div className="w-full overflow-x-auto rounded-xl border border-[#D8D8DF]" style={{ boxShadow: "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)" }}>
         <table className="w-full table-auto min-w-[768px]">
           <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
             <tr>
@@ -118,7 +118,7 @@ const RunsTable = () => {
           <tbody>
             {paginatedWorkflows.length ? (
               paginatedWorkflows.map((item, i) => (
-                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D5D6E2)" }}>
+                <tr key={i} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderTop: "1px solid var(--border-colors-dark-blue-200, #D5D6E2)" }}>
                   <td className="px-3 py-2 flex items-center gap-2 font-semibold text-[#22222F]">
                     <Image
                       src={item.icon}
