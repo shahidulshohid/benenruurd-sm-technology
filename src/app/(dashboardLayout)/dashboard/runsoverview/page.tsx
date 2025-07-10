@@ -2,10 +2,6 @@
 
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
-import {
-  FiChevronLeft,
-  FiChevronRight,
-} from "react-icons/fi";
 
 type WorkflowStatus = "Completed" | "Not completed";
 
@@ -156,47 +152,40 @@ const RunsTable = () => {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-between items-center mt-4 overflow-x-auto gap-4 whitespace-nowrap">
-        <button
-          onClick={() => handlePageChange(currentPage - 1)}
-          className="px-2 md:px-[12px] py-[5px] border border-gray-300 rounded-[12px] flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
-          style={{
-            boxShadow:
-              "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
-          }}
-          disabled={currentPage === 1}
-        >
-          <Image src="/dashboardIcons/leftArrow.svg" width={24} height={24} alt="right arrow icon" className="text-[#22222F] font-semibold -t-0.5"/>
-          Previous
-        </button>
-        <div className="flex gap-2">
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => handlePageChange(page)}
-              className={`px-3 py-1 text-sm rounded-sm font-medium cursor-pointer ${page === currentPage
-                ? "border border-gray-300 text-[#22222F]"
-                : "border border-transparent text-[#8588AB]"
-                }`}
-            >
-              {page}
-            </button>
-          ))}
-        </div>
-
-        <button
-          onClick={() => handlePageChange(currentPage + 1)}
-          className="px-2 md:px-[12px] py-[5px] border border-gray-300 rounded-[12px] flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
-          style={{
-            boxShadow:
-              "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)",
-          }}
-          disabled={currentPage === totalPages}
-        >
-          Next
-          <Image src="/dashboardIcons/rightArrow.svg" width={24} height={24} alt="right arrow icon" className="text-[#22222F] font-semibold -mb-0.5"/>
-        </button>
-      </div>
+      <div className="flex justify-between items-center mt-4">
+                      <button
+                          onClick={() => handlePageChange(currentPage - 1)}
+                          className="px-2 md:px-[12px] py-[5px] border border-gray-300 rounded-[8px] flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold focus:outline-none shadow-[0px_1px_1px_0px_rgba(18,25,44,0.06),0px_1px_1px_0px_rgba(18,25,44,0.04)]"
+                          disabled={currentPage === 1}
+                      >
+                          <Image src="/dashboardIcons/leftArrow.svg" width={24} height={24} alt="right arrow icon" className="text-[#22222F] font-semibold -t-0.5" />
+                          Previous
+                      </button>
+      
+                      <div className="flex gap-2">
+                          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                              <button
+                                  key={page}
+                                  onClick={() => handlePageChange(page)}
+                                  className={`px-3 py-1 text-sm rounded-sm font-medium cursor-pointer ${page === currentPage
+                                      ? "border border-gray-300 text-[#22222F]"
+                                      : "border border-transparent text-[#8588AB]"
+                                      }`}
+                              >
+                                  {page}
+                              </button>
+                          ))}
+                      </div>
+      
+                      <button
+                          onClick={() => handlePageChange(currentPage + 1)}
+                          className="px-2 md:px-[12px] py-[5px] border border-gray-300 rounded-[8px] flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold focus:outline-none shadow-[0px_1px_1px_0px_rgba(18,25,44,0.06),0px_1px_1px_0px_rgba(18,25,44,0.04)]"
+                          disabled={currentPage === totalPages}
+                      >
+                          Next
+                          <Image src="/dashboardIcons/rightArrow.svg" width={24} height={24} alt="right arrow icon" className="text-[#22222F] font-semibold -mb-0.5" />
+                      </button>
+                  </div>
 
     </div>
   );

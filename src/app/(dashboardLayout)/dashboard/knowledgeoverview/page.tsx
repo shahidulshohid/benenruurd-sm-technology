@@ -215,10 +215,10 @@ const KnowledgePage = () => {
             <div className="flex justify-between items-center mt-4">
                 <button
                     onClick={() => handlePageChange(currentPage - 1)}
-                    className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
+                    className="px-2 md:px-[12px] py-[5px] border border-gray-300 rounded-[8px] flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold focus:outline-none shadow-[0px_1px_1px_0px_rgba(18,25,44,0.06),0px_1px_1px_0px_rgba(18,25,44,0.04)]"
                     disabled={currentPage === 1}
                 >
-                    <FiChevronLeft />
+                    <Image src="/dashboardIcons/leftArrow.svg" width={24} height={24} alt="right arrow icon" className="text-[#22222F] font-semibold -t-0.5" />
                     Previous
                 </button>
 
@@ -239,11 +239,11 @@ const KnowledgePage = () => {
 
                 <button
                     onClick={() => handlePageChange(currentPage + 1)}
-                    className="px-2 md:px-4 py-1 border border-gray-300 rounded-lg flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold shadow-sm focus:outline-none"
+                    className="px-2 md:px-[12px] py-[5px] border border-gray-300 rounded-[8px] flex items-center gap-1 cursor-pointer text-[#22222F] font-semibold focus:outline-none shadow-[0px_1px_1px_0px_rgba(18,25,44,0.06),0px_1px_1px_0px_rgba(18,25,44,0.04)]"
                     disabled={currentPage === totalPages}
                 >
                     Next
-                    <FiChevronRight />
+                    <Image src="/dashboardIcons/rightArrow.svg" width={24} height={24} alt="right arrow icon" className="text-[#22222F] font-semibold -mb-0.5" />
                 </button>
             </div>
         </div>
