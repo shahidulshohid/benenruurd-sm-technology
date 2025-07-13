@@ -27,12 +27,12 @@ export function DialogCloseContent() {
   };
 
   return changeModal ? (
-    <DialogContent className="max-w-[512px]">
+    <DialogContent className="max-w-[512px] p-0 m-0">
       <DialogHeader>
-        <DialogTitle className="text-xl font-semibold">
+        <DialogTitle className="text-xl font-semibold mt-6 ml-6">
           Add new knowledge
         </DialogTitle>
-        <DialogDescription className="text-sm text-[#8588AB]">
+        <DialogDescription className="text-sm text-[#8588AB] ml-6 mb-6">
           Sync files and text, and grant the AI access to these sources as
           knowledge during interactions.
         </DialogDescription>
@@ -41,7 +41,7 @@ export function DialogCloseContent() {
       <Separator className="bg-[#D5D6E2]" />
 
       {/* Upload Files Option */}
-      <div className="flex items-center justify-between cursor-pointer">
+      <div className="flex items-center justify-between cursor-pointer mx-6">
         <div className="flex items-center gap-3 p-2 rounded">
           <div className="border border-[#D5D6E2] p-1 rounded-[3px]">
             <Image src="/dashboardIcons/knoledgeIcon1.svg" width={20} height={20} alt="" />
@@ -52,7 +52,7 @@ export function DialogCloseContent() {
       </div>
 
       {/* Text Redirect Option */}
-      <div onClick={() => setChangeModal(!changeModal)} className="flex items-center justify-between cursor-pointer">
+      <div onClick={() => setChangeModal(!changeModal)} className="flex items-center justify-between cursor-pointer mx-6 mb-4">
         <div className="flex items-center gap-3 p-2 rounded">
           <div className="border border-[#D5D6E2] p-1 rounded-[3px]">
             <Image src="/dashboardIcons/knoledgeIcon2.svg" width={20} height={20} alt="" />
