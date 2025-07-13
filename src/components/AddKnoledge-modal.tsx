@@ -41,7 +41,7 @@ export function DialogCloseContent() {
       <Separator className="bg-[#D5D6E2]" />
 
       {/* Upload Files Option */}
-      <div className="flex items-center justify-between cursor-pointer mx-6">
+      <div className="flex items-center justify-between cursor-pointer mx-5">
         <div className="flex items-center gap-3 p-2 rounded">
           <div className="border border-[#D5D6E2] p-1 rounded-[3px]">
             <Image src="/dashboardIcons/knoledgeIcon1.svg" width={20} height={20} alt="" />
@@ -52,7 +52,7 @@ export function DialogCloseContent() {
       </div>
 
       {/* Text Redirect Option */}
-      <div onClick={() => setChangeModal(!changeModal)} className="flex items-center justify-between cursor-pointer mx-6 mb-4">
+      <div onClick={() => setChangeModal(!changeModal)} className="flex items-center justify-between cursor-pointer mx-5 mb-4">
         <div className="flex items-center gap-3 p-2 rounded">
           <div className="border border-[#D5D6E2] p-1 rounded-[3px]">
             <Image src="/dashboardIcons/knoledgeIcon2.svg" width={20} height={20} alt="" />
