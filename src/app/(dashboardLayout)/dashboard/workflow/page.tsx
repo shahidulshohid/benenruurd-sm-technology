@@ -336,7 +336,7 @@ const WorkflowPage = () => {
 
                           {/* Slack */}
                           {matchSearch("slack") && (
-                            <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                            <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded-b-lg">
                               <div className="flex items-center gap-3 my-3">
                                 <div className="border p-1 rounded border-[#D5D6E2]">
                                   <Image
@@ -576,7 +576,7 @@ const WorkflowPage = () => {
                         Calendar
                       </h4>
                       <Separator className="bg-[#D5D6E2]" />
-                      <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded">
+                      <div className="flex justify-between items-center hover:bg-gray-100 hover:cursor-pointer transition duration-200 px-3 rounded-b-lg">
                         <div className="flex items-center gap-3 my-3">
                           <div className="border p-1 rounded">
                             <Image
@@ -655,7 +655,7 @@ const WorkflowPage = () => {
                     </div>
 
                     {/* batch */}
-                    <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                    <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200 rounded-b-lg">
                       <div className="flex items-center gap-4">
                         <div className="border rounded p-1">
                           <Image
@@ -743,7 +743,7 @@ const WorkflowPage = () => {
                   {/* Batch */}
                   <Link href="/dashboard/batchrunscheduled">
                     <div className="space-y-2">
-                      <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200">
+                      <div className="flex justify-between items-center px-4 py-3 hover:bg-gray-100 hover:cursor-pointer transition duration-200 rounded-b-lg">
                         <div className="flex items-center gap-4">
                           <div className="border rounded p-1">
                             <Image

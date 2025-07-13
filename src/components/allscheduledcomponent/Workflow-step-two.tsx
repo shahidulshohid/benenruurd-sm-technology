@@ -87,7 +87,7 @@ const WorkflowStepTwo = () => {
               <Separator className="bg-[#D5D6E2]" />
               <div className="space-y-2">
                 <Link href="/dashboard/workflowstepthree">
-                  <div className="flex justify-between items-center p-3 cursor-pointer">
+                  <div className="flex justify-between items-center p-3 cursor-pointer hover:bg-gray-50">
                     <div className="flex items-center gap-3">
                       <div>
                         <Image
@@ -109,7 +109,7 @@ const WorkflowStepTwo = () => {
                     <MdKeyboardArrowRight className="text-gray-400" size={20} />
                   </div>
                 </Link>
-                <div className="flex justify-between items-center p-3 cursor-pointer">
+                <div className="flex justify-between items-center p-3 cursor-pointer hover:bg-gray-50">
                   <div className="flex items-center gap-3">
                     <div className="border p-1 rounded">
                       <Image
@@ -130,7 +130,7 @@ const WorkflowStepTwo = () => {
                   </div>
                   <MdKeyboardArrowRight className="text-gray-400" size={20} />
                 </div>
-                <div className="flex justify-between items-center p-3 cursor-pointer">
+                <div className="flex justify-between items-center p-3 cursor-pointer hover:bg-gray-50 rounded-b-lg">
                   <div className="flex items-center gap-3">
                     <div className="border p-1 rounded">
                       <Image src="/ai.svg" width={14} height={14} alt="" />

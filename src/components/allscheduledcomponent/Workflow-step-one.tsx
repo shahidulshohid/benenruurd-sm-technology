@@ -228,7 +228,7 @@ const WorkflowStepOne = () => {
                   </div>
                 </div>
 
-                <div className="p-3 hover:bg-gray-50 cursor-pointer transition rounded">
+                <div className="p-3 hover:bg-gray-50 cursor-pointer transition rounded-b-lg">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-3">
                       <div className="border p-1 rounded">
