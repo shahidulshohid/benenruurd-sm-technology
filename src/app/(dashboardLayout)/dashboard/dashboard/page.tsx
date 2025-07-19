@@ -119,7 +119,7 @@ function Dashboard() {
   ];
 
   return (
-    <div className="w-full px-10 py-4">
+    <div className="w-full px-10 py-4 bg-[#FCFCFD]">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <Image
@@ -135,7 +135,7 @@ function Dashboard() {
               boxShadow: "0px 1px 1px 0px rgba(100, 102, 241, 0.12), 0px 2px 2px 0px rgba(100, 102, 241, 0.12)"
             }}
           >
-            <HiPlus /> New Workflow
+            <HiPlus /> New workflow
           </button>
 
         </Link>
