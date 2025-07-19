@@ -7,6 +7,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import ToggleSwitch from "../shared/switchButton/Switch-button";
 
 const ScheduledBatchRun = () => {
   // switch button 
@@ -46,26 +47,10 @@ const ScheduledBatchRun = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div
-                    onClick={() => setEnabled(!enabled)}
-                    className={`cursor-pointer w-12 h-7 rounded-full flex items-center transition duration-300 ${enabled
-                        ? "bg-[#217AFC] border-2 border-[#0D5AE8] justify-end shadow-[0_0_0_3px_rgba(33,122,252,0.3)]"
-                        : "bg-transparent border-2 border-[#D5D6E2] justify-start"
-                      }`}
-                  >
-                    <div
-                      className={`w-6 h-6 bg-white rounded-full flex items-center justify-center transition duration-300 ${enabled
-                          ? "border-2 border-[#0D5AE8]"
-                          : "border-2 border-[#D5D6E2]"
-                        }`}
-                    >
-                      {enabled && (
-                        <div className="w-2 h-2 bg-[#217AFC] rounded-full"></div>
-                      )}
-                    </div>
-                  </div>
-
-
+                  <ToggleSwitch
+                    enabled={enabled}
+                    onToggle={() => setEnabled(!enabled)}
+                  />
                   <BsThreeDotsVertical className="text-[#8588AB]" />
                 </div>
               </div>

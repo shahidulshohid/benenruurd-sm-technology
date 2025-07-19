@@ -9,6 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
+import ToggleSwitch from "../shared/switchButton/Switch-button";
 
 const ScheduledSingleRun = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
@@ -63,19 +64,10 @@ const ScheduledSingleRun = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div
-                    onClick={() => setEnabled(!enabled)}
-                    className={`cursor-pointer w-12 h-7 rounded-full flex items-center transition duration-300 ${enabled ? "bg-[#217AFC] border border-[#0D5AE8] justify-end p-1 shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-transparent border border-[#D5D6E2] justify-start"
-                      }`}
-                  >
-                    <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center border border-[#D5D6E2] shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
-                      {
-                        enabled && (
-                          <div className="w-2 h-2 bg-[#217AFC] rounded-full"></div>
-                        )
-                      }
-                    </div>
-                  </div>
+                  <ToggleSwitch
+                    enabled={enabled}
+                    onToggle={() => setEnabled(!enabled)}
+                  />
                   <BsThreeDotsVertical className="text-[#8588AB]" />
                 </div>
               </div>

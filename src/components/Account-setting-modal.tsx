@@ -8,6 +8,7 @@ import {
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useState } from "react";
 import Image from "next/image";
+import ToggleSwitch from "./shared/switchButton/Switch-button";
 
 export function DialogCloseContentSetting() {
   // switch button 
@@ -199,18 +200,11 @@ export function DialogCloseContentSetting() {
                               address
                             </p>
                           </div>
-                          <div
-                            onClick={() => setEnabled(!enabled)}
-                            className={`mr-5 cursor-pointer w-12 h-7 rounded-full flex items-center transition duration-300 ${enabled
-                                ? "bg-[#217AFC] border border-[#0D5AE8] justify-end p-1 shadow-[0_0_0_3px_rgba(33,122,252,0.3)]"
-                                : "bg-gray-200 border border-gray-300 justify-start p-1"
-                              }`}
-                          >
-                            <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
-                              {enabled && (
-                                <div className="w-2 h-2 bg-[#217AFC] rounded-full"></div>
-                              )}
-                            </div>
+                          <div className="mr-5">
+                            <ToggleSwitch
+                              enabled={enabled}
+                              onToggle={() => setEnabled(!enabled)}
+                            />
                           </div>
 
                         </div>
@@ -224,17 +218,12 @@ export function DialogCloseContentSetting() {
                               device
                             </p>
                           </div>
-                          <div
-                            onClick={() => setEnabled2(!enabled2)}
-                            className={`mr-5 cursor-pointer w-12 h-7 rounded-full flex items-center transition duration-300 ${enabled2 ? "bg-[#217AFC] border border-[#0D5AE8] justify-end shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-transparent border border-[#D5D6E2] justify-start"
-                              }`}
-                          >
-                            <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center border border-[#D5D6E2] shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
-                              {
-                                enabled2 && (
-                                  <div className="w-2 h-2 bg-[#217AFC] rounded-full"></div>
-                                )
-                              }
+                          <div>
+                            <div className="mr-5">
+                              <ToggleSwitch
+                                enabled={enabled2}
+                                onToggle={() => setEnabled2(!enabled2)}
+                              />
                             </div>
                           </div>
                         </div>
