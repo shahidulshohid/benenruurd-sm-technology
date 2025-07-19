@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import ToggleSwitch from "../shared/switchButton/Switch-button";
+import ScheduledLeft from "../shared/scheduledLeft/Scheduled-left";
 
 const WorkflowStepTwo = () => {
   const [enabled, setEnabled] = useState(true);
@@ -19,7 +20,7 @@ const WorkflowStepTwo = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left Panel */}
           <div className="w-full md:w-1/2 space-y-4">
-            <div className="border rounded-lg shadow-sm bg-[#FCFCFD]">
+            {/* <div className="border rounded-lg shadow-sm bg-[#FCFCFD]">
               <h3 className="p-4 text-gray-800 font-medium border-b">
                 Add a step to turn on the workflow
               </h3>
@@ -41,7 +42,15 @@ const WorkflowStepTwo = () => {
                   <BsThreeDotsVertical className="text-[#8588AB]" />
                 </div>
               </div>
-            </div>
+            </div> */}
+            <ScheduledLeft
+              title=" Add a step to turn on the workflow"
+              stepNumber={1}
+              iconSrc="/dashboardIcons/scheduled.svg"
+              frequencyText="Every 2 days"
+              enabled={enabled}
+              onToggle={() => setEnabled(!enabled)}
+            />
 
             <button
               type="button"

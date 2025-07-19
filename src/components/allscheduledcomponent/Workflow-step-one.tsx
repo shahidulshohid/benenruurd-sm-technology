@@ -3,12 +3,10 @@
 import { Separator } from "@/components/ui/separator";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import "react-datepicker/dist/react-datepicker.css";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import ToggleSwitch from "../shared/switchButton/Switch-button";
 import ScheduledLeft from "../shared/scheduledLeft/Scheduled-left";
 
 const WorkflowStepOne = () => {
