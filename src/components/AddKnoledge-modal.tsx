@@ -27,7 +27,7 @@ export function DialogCloseContent() {
   };
 
   return changeModal ? (
-    <DialogContent className="max-w-[512px] p-0 m-0 bg-[#FCFCFD]">
+    <DialogContent className="max-w-[600px] p-0 m-0 bg-[#FCFCFD]">
       <DialogHeader>
         <DialogTitle className="text-xl text-[#22222F] font-semibold mt-6 ml-6">
           Add new knowledge
@@ -63,12 +63,12 @@ export function DialogCloseContent() {
       </div>
     </DialogContent>
   ) : (
-    <DialogContent className="max-w-[560px] p-0 m-0">
+    <DialogContent className="max-w-[600px] p-0 m-0 bg-[#FCFCFD]">
       <form onSubmit={handleSubmit}>
         <DialogTrigger asChild>
         </DialogTrigger>
         <DialogHeader>
-          <DialogTitle className="mb-6 text-xl font-semibold text-[#22222F] p-4">Add Text</DialogTitle>
+          <DialogTitle className="mb-6 text-xl font-semibold text-[#22222F] p-6">Add Text</DialogTitle>
         </DialogHeader>
         <Separator className="bg-[#D5D6E2] mb-6" />
         <label className="text-sm font-medium text-[#22222F] px-6">File Name</label>
