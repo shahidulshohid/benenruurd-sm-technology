@@ -48,17 +48,23 @@ const ScheduledBatchRun = () => {
                 <div className="flex items-center gap-2">
                   <div
                     onClick={() => setEnabled(!enabled)}
-                    className={`cursor-pointer w-12 h-7 rounded-full flex items-center transition duration-300 ${enabled ? "bg-[#217AFC] border border-[#0D5AE8] justify-end p-1 shadow-[0_0_0_3px_rgba(59,130,246,0.3)]" : "bg-transparent border border-[#D5D6E2] justify-start"
+                    className={`cursor-pointer w-12 h-7 rounded-full flex items-center transition duration-300 ${enabled
+                        ? "bg-[#217AFC] border-2 border-[#0D5AE8] justify-end shadow-[0_0_0_3px_rgba(33,122,252,0.3)]"
+                        : "bg-transparent border-2 border-[#D5D6E2] justify-start"
                       }`}
                   >
-                    <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center border border-[#D5D6E2] shadow-[2px_2px_5px_rgba(0,0,0,0.2)]">
-                      {
-                        enabled && (
-                          <div className="w-2 h-2 bg-[#217AFC] rounded-full"></div>
-                        )
-                      }
+                    <div
+                      className={`w-6 h-6 bg-white rounded-full flex items-center justify-center transition duration-300 ${enabled
+                          ? "border-2 border-[#0D5AE8]"
+                          : "border-2 border-[#D5D6E2]"
+                        }`}
+                    >
+                      {enabled && (
+                        <div className="w-2 h-2 bg-[#217AFC] rounded-full"></div>
+                      )}
                     </div>
                   </div>
+
 
                   <BsThreeDotsVertical className="text-[#8588AB]" />
                 </div>
@@ -134,7 +140,7 @@ const ScheduledBatchRun = () => {
                     Manually
                   </option>
                 </select>
-                <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-2 top-8.5 pointer-events-none text-[#22222F]"/>
+                <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-2 top-8.5 pointer-events-none text-[#22222F]" />
               </div>
 
               {/* Select integration dropdown */}
@@ -159,7 +165,7 @@ const ScheduledBatchRun = () => {
                     Integration 2
                   </option>
                 </select>
-                <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-2 top-8.5 pointer-events-none text-[#22222F]"/>
+                <Image src="/dashboardIcons/arrow.svg" width={16} height={16} alt="arrow icon" className="absolute right-2 top-8.5 pointer-events-none text-[#22222F]" />
               </div>
 
               {/* Done button */}
