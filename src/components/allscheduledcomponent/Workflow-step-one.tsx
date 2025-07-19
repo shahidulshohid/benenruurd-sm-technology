@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import ToggleSwitch from "../shared/switchButton/Switch-button";
+import ScheduledLeft from "../shared/scheduledLeft/Scheduled-left";
 
 const WorkflowStepOne = () => {
   const [enabled, setEnabled] = useState(false);
@@ -19,40 +20,18 @@ const WorkflowStepOne = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left Panel */}
           <div className="w-full md:w-1/2 space-y-4">
-            <div className="border rounded-lg shadow-sm hover:shadow-md transition bg-[#FCFCFD]">
-              <h3 className="p-4 text-[#22222F] font-semibold border-b">
-                Add a step to turn on the workflow
-              </h3>
-              <div className="flex items-center justify-between px-4 py-3 bg-[#FFFFFF] rounded-b-lg">
-                <div className="flex items-center gap-3">
-                  <span className="text-sm font-semibold  text-[#8588AB]">
-                    1
-                  </span>
-                  <div className="border p-1 rounded text-[#000000]">
-                    <Image
-                      src="/dashboardIcons/scheduled.svg"
-                      width={16}
-                      height={16}
-                      alt="Scheduled image"
-                    />
-                  </div>
-                  <span className="text-sm text-[#22222F] font-semibold">
-                    Every 2 days
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ToggleSwitch
-                    enabled={enabled}
-                    onToggle={() => setEnabled(!enabled)}
-                  />
-                  <BsThreeDotsVertical className="text-[#8588AB]" />
-                </div>
-              </div>
-            </div>
+            <ScheduledLeft
+              title="Add a step to turn on the workflow"
+              stepNumber={1}
+              iconSrc="/dashboardIcons/scheduled.svg"
+              frequencyText="Every 2 days"
+              enabled={enabled}
+              onToggle={() => setEnabled(!enabled)}
+            />
 
             <button
               type="button"
-              className="w-full text-[#217AFC] font-semibold border-2 border-dotted border-[#217AFC] bg-blue-50 py-2 rounded-lg text-center cursor-pointer"
+              className="w-full text-blue-700 font-semibold border-2 border-dotted border-blue-400 bg-blue-50 text-sm py-3 rounded-lg text-center hover:bg-blue-100 transition cursor-pointer"
             >
               + Add Step
             </button>
