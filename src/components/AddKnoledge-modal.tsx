@@ -27,9 +27,9 @@ export function DialogCloseContent() {
   };
 
   return changeModal ? (
-    <DialogContent className="max-w-[512px] p-0 m-0">
+    <DialogContent className="max-w-[512px] p-0 m-0 bg-[#FCFCFD]">
       <DialogHeader>
-        <DialogTitle className="text-xl font-semibold mt-6 ml-6">
+        <DialogTitle className="text-xl text-[#22222F] font-semibold mt-6 ml-6">
           Add new knowledge
         </DialogTitle>
         <DialogDescription className="text-sm text-[#8588AB] ml-6 mb-6">
@@ -44,7 +44,7 @@ export function DialogCloseContent() {
       <div className="flex items-center justify-between cursor-pointer mx-5">
         <div className="flex items-center gap-3 p-2 rounded">
           <div className="border border-[#D5D6E2] p-1 rounded-[3px]">
-            <Image src="/dashboardIcons/knoledgeIcon1.svg" width={20} height={20} alt="" />
+            <Image src="/dashboardIcons/knoledgeIcon1.svg" width={14} height={14} alt="" />
           </div>
           <h4 className="text-sm font-semibold text-[#22222F]">Upload File(s)</h4>
         </div>
@@ -55,7 +55,7 @@ export function DialogCloseContent() {
       <div onClick={() => setChangeModal(!changeModal)} className="flex items-center justify-between cursor-pointer mx-5 mb-4">
         <div className="flex items-center gap-3 p-2 rounded">
           <div className="border border-[#D5D6E2] p-1 rounded-[3px]">
-            <Image src="/dashboardIcons/knoledgeIcon2.svg" width={20} height={20} alt="" />
+            <Image src="/dashboardIcons/knoledgeIcon2.svg" width={14} height={14} alt="" className="w-[14px] h-[14px]" />
           </div>
           <h4 className="text-sm font-semibold text-[#22222F]">Text</h4>
         </div>
