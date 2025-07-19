@@ -14,7 +14,7 @@ export function DialogCloseContentSetting() {
   // switch button 
   const [enabled, setEnabled] = useState(false);
   const [enabled2, setEnabled2] = useState(false);
-  const [activeItem, setActiveItem] = useState<string>("Account Details"); // Default active item
+  const [activeItem, setActiveItem] = useState<string>("Account Details"); 
 
   const menuItems = [
     {
@@ -635,3 +635,4 @@ export function DialogCloseContentSetting() {
     </DialogContent>
   );
 }
+

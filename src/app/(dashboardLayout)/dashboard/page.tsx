@@ -90,47 +90,98 @@ export default function AppSidebar() {
 
                 {/* Manage */}
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Manage</p>
-                {[
-                  { label: "Workflow", icon: "/dashboardIcons/workflow.svg", href: "/dashboard/workflow" },
-                  { label: "Runs", icon: "/dashboardIcons/runs.svg", href: "/dashboard/runsoverview" },
-                  { label: "Integrations", icon: "/dashboardIcons/integrations.svg", href: "/dashboard/integration" },
-                  { label: "Knowledge", icon: "/dashboardIcons/knowledge.svg", href: "/dashboard/knowledgeoverview" },
-                ].map(({ label, icon, href }) => (
-                  <div key={label}>
-                    <button
-                      className={`flex items-center w-full gap-2 rounded-sm px-2 py-1.5 transition-colors ${pathname === href
+                <div className="space-y-2">
+                  {/* Workflow */}
+                  <button
+                    className={`flex items-center w-full gap-2 rounded-sm px-2 py-1.5 transition-colors ${pathname === "/dashboard/workflow"
+                      ? "bg-[#F7F7F81A] text-white"
+                      : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
+                      }`}
+                  >
+                    <Link href="/dashboard/workflow" className="flex items-center gap-2 w-full">
+                      <Image src="/dashboardIcons/workflow.svg" width={20} height={20} alt="Workflow" />
+                      <span className="text-sm">Workflow</span>
+                    </Link>
+                  </button>
+
+                  {/* Runs */}
+                  <button
+                    className={`flex items-center w-full gap-2 rounded-sm px-2 py-1.5 transition-colors ${pathname === "/dashboard/runsoverview"
+                      ? "bg-[#F7F7F81A] text-white"
+                      : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
+                      }`}
+                  >
+                    <Link href="/dashboard/runsoverview" className="flex items-center gap-2 w-full">
+                      <Image src="/dashboardIcons/runs.svg" width={20} height={20} alt="Runs" />
+                      <span className="text-sm">Runs</span>
+                    </Link>
+                  </button>
+
+                  {/* Integrations */}
+                  <button
+                    onClick={() => setOpen(true)}
+                    className={`flex items-center w-full gap-2 rounded-sm px-2 py-1.5 transition-colors cursor-pointer ${pathname === "/dashboard/integration"
                         ? "bg-[#F7F7F81A] text-white"
                         : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
-                        }`}
-                    >
-                      <Link href={href} className="flex items-center gap-2 w-full">
-                        <Image src={icon} width={20} height={20} alt={label} />
-                        <span className="text-sm">{label}</span>
-                      </Link>
-                    </button>
-                  </div>
-                ))}
+                      }`}
+                  >
+                    <Image
+                      src="/dashboardIcons/integrations.svg"
+                      width={20}
+                      height={20}
+                      alt="Integrations"
+                    />
+                    <span className="text-sm">Integrations</span>
+                  </button>
+
+
+                  {/* Knowledge */}
+                  <button
+                    className={`flex items-center w-full gap-2 rounded-sm px-2 py-1.5 transition-colors ${pathname === "/dashboard/knowledgeoverview"
+                      ? "bg-[#F7F7F81A] text-white"
+                      : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
+                      }`}
+                  >
+                    <Link href="/dashboard/knowledgeoverview" className="flex items-center gap-2 w-full">
+                      <Image src="/dashboardIcons/knowledge.svg" width={20} height={20} alt="Knowledge" />
+                      <span className="text-sm">Knowledge</span>
+                    </Link>
+                  </button>
+                </div>
+
 
                 {/* Explore */}
                 <p className="text-[#8588AB] mt-4 mb-2 text-sm font-medium">Explore</p>
-                {[
-                  { label: "Templates", icon: "/dashboardIcons/templates.svg", href: "/dashboard/template" },
-                  { label: "Documentation", icon: "/dashboardIcons/documentaionDash.svg", href: "/dashboard/documentation" },
-                ].map(({ label, icon, href }) => (
-                  <SidebarMenuItem key={label}>
-                    <SidebarMenuButton
-                      className={`flex items-center gap-2 rounded-sm px-2 py-1.5 transition-color ${pathname === href
-                        ? "bg-[#F7F7F81A] text-white"
-                        : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
-                        }`}
-                    >
-                      <Link href={href} className="flex items-center gap-2 w-full">
-                        <Image src={icon} width={20} height={20} alt={label} />
-                        <span className="text-sm">{label}</span>
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
+                {/* Templates */}
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    className={`flex items-center gap-2 rounded-sm px-2 py-1.5 transition-color ${pathname === "/dashboard/template"
+                      ? "bg-[#F7F7F81A] text-white"
+                      : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
+                      }`}
+                  >
+                    <Link href="/dashboard/template" className="flex items-center gap-2 w-full">
+                      <Image src="/dashboardIcons/templates.svg" width={20} height={20} alt="Templates" />
+                      <span className="text-sm">Templates</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+
+                {/* Documentation */}
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    className={`flex items-center gap-2 rounded-sm px-2 py-1.5 transition-color ${pathname === "/dashboard/documentation"
+                      ? "bg-[#F7F7F81A] text-white"
+                      : "text-[#D5D6E2] hover:bg-[#F7F7F81A] hover:text-white focus:bg-[#F7F7F81A] focus:text-white"
+                      }`}
+                  >
+                    <Link href="/dashboard/documentation" className="flex items-center gap-2 w-full">
+                      <Image src="/dashboardIcons/documentaionDash.svg" width={20} height={20} alt="Documentation" />
+                      <span className="text-sm">Documentation</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
