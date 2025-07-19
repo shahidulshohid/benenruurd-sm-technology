@@ -9,8 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
-import ToggleSwitch from "../shared/switchButton/Switch-button";
-import ScheduledLeft from "../shared/scheduledLeft/Scheduled-left";
+import ScheduledLeft from "../shared/scheduled-left/Scheduled-left";
 
 const ScheduledSingleRun = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());

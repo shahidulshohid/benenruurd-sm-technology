@@ -7,7 +7,7 @@ import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import ScheduledLeft from "../shared/scheduledLeft/Scheduled-left";
+import ScheduledLeft from "../shared/scheduled-left/Scheduled-left";
 
 const WorkflowStepOne = () => {
   const [enabled, setEnabled] = useState(false);

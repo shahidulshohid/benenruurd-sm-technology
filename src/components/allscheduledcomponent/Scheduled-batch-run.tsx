@@ -3,12 +3,10 @@
 import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 import "react-datepicker/dist/react-datepicker.css";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import ToggleSwitch from "../shared/switchButton/Switch-button";
-import ScheduledLeft from "../shared/scheduledLeft/Scheduled-left";
+import ScheduledLeft from "../shared/scheduled-left/Scheduled-left";
 
 const ScheduledBatchRun = () => {
   // switch button 

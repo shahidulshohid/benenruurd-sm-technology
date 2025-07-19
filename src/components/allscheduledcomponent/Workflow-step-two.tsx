@@ -1,16 +1,14 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
-import { MdKeyboardArrowRight, MdOutlineWatchLater } from "react-icons/md";
+import { MdKeyboardArrowRight} from "react-icons/md";
 import "react-datepicker/dist/react-datepicker.css";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
 import { GoArrowLeft } from "react-icons/go";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import ToggleSwitch from "../shared/switchButton/Switch-button";
-import ScheduledLeft from "../shared/scheduledLeft/Scheduled-left";
+import ScheduledLeft from "../shared/scheduled-left/Scheduled-left";
 
 const WorkflowStepTwo = () => {
   const [enabled, setEnabled] = useState(true);
@@ -20,29 +18,6 @@ const WorkflowStepTwo = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left Panel */}
           <div className="w-full md:w-1/2 space-y-4">
-            {/* <div className="border rounded-lg shadow-sm bg-[#FCFCFD]">
-              <h3 className="p-4 text-gray-800 font-medium border-b">
-                Add a step to turn on the workflow
-              </h3>
-              <div className="flex items-center justify-between px-4 py-3 bg-[#FFFFFF] rounded-b-lg">
-                <div className="flex items-center gap-3">
-                  <span className="text-sm text-gray-700">1</span>
-                  <div className="border p-1 rounded text-gray-600">
-                    <MdOutlineWatchLater />
-                  </div>
-                  <span className="text-sm text-[#22222F] font-semibold">
-                    Every 2 days
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ToggleSwitch
-                    enabled={enabled}
-                    onToggle={() => setEnabled(!enabled)}
-                  />
-                  <BsThreeDotsVertical className="text-[#8588AB]" />
-                </div>
-              </div>
-            </div> */}
             <ScheduledLeft
               title=" Add a step to turn on the workflow"
               stepNumber={1}
