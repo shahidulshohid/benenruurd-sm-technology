@@ -52,7 +52,7 @@ const RunsTable = () => {
   };
 
   return (
-    <div className="w-full px-6 py-4">
+    <div className="w-full px-6 py-4 bg-[#FCFCFD] h-screen">
       <div className="flex flex-col md:flex-row justify-between mb-4 gap-3">
         <h2 className="text-xl font-bold">Runs</h2>
 

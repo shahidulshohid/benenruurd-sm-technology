@@ -109,7 +109,7 @@ const KnowledgePage = () => {
 
 
     return (
-        <div className="w-full px-6 py-4">
+        <div className="w-full px-6 py-4 bg-[#FCFCFD] h-screen">
             {/* Header */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-3">
                 <h1 className="text-xl md:text-2xl font-bold">Knowledge</h1>
@@ -146,7 +146,7 @@ const KnowledgePage = () => {
             {/* Table */}
             <div className="w-full overflow-x-auto rounded-xl border border-[#D8D8DF]" style={{ boxShadow: "0px 1px 1px 0px rgba(18, 25, 44, 0.06), 0px 1px 1px 0px rgba(18, 25, 44, 0.04)" }}>
                 <table className="w-full table-auto min-w-[768px]">
-                    <thead style={{ borderBottom: "1px solid var(--border-colors-dark-blue-200, #D8D8DF)" }}>
+                    <thead style={{ borderBottom: "1px solid #D8D8DF" }}>
                         <tr>
                             <th className="px-3 py-2 text-left text-[#8588AB] font-semibold text-sm">
                                 File name
@@ -168,8 +168,12 @@ const KnowledgePage = () => {
                     </thead>
                     <tbody>
                         {currentItems.map((item) => (
-                            <tr key={item.id} className="hover:bg-[#FAFAFA] cursor-pointer transition" style={{ borderTop: "1px solid var(--border-colors-dark-blue-200, #D5D6E2)" }}>
-                                <td className="px-3 py-3 -pb-1 flex items-center gap-2 font-semibold text-[#22222F]">
+                            <tr
+                                key={item.id}
+                                className="hover:bg-[#FAFAFA] cursor-pointer transition"
+                                style={{ borderTop: "1px solid #D5D6E2" }}
+                            >
+                                <td className="px-3 py-1 flex items-center gap-2 font-semibold text-[#22222F]">
                                     <Image
                                         src={item.icon}
                                         width={24}
@@ -177,30 +181,31 @@ const KnowledgePage = () => {
                                         alt="icon"
                                         className="border border-[#D5D6E2] p-1 rounded-[3px]"
                                     />
-                                    <span className="text-[#22222F] text-sm font-medium">{item.name}</span>
+                                    <span className="text-[#22222F] text-sm font-medium">
+                                        {item.name}
+                                    </span>
                                 </td>
-
-                                <td className="px-6 py-2 text-[#707187] font-medium">{item.size}</td>
-                                <td className="px-6 py-2 text-[#707187] font-medium">{item.usedIn}</td>
-                                <td className="px-6 py-2 text-[#707187] font-medium">{item.lastSynced}</td>
-                                <td className="px-6 py-2 text-[#707187] font-medium">
+                                <td className="px-6 py-1 text-[#707187] font-medium">{item.size}</td>
+                                <td className="px-6 py-1 text-[#707187] font-medium">{item.usedIn}</td>
+                                <td className="px-6 py-1 text-[#707187] font-medium">{item.lastSynced}</td>
+                                <td className="px-6 py-1 text-[#707187] font-medium">
                                     <span
                                         className={
                                             item.status === "Syncing"
-                                                ? "bg-[#EEF2FF] px-2 p-2 rounded-full text-[#6466F1] text-sm font-semibold"
-                                                : "text-[#26252C] text-sm bg-[#EEEDF1] px-2 p-1 rounded-full font-semibold"
+                                                ? "bg-[#EEF2FF] px-2 py-1 rounded-full text-[#6466F1] text-sm font-semibold"
+                                                : "text-[#26252C] text-sm bg-[#EEEDF1] px-2 py-1 rounded-full font-semibold"
                                         }
                                     >
                                         {item.status}
                                     </span>
                                 </td>
-                                <td className="px-6 py-2">
+                                <td className="px-6 py-1">
                                     <button className="text-red-500 hover:text-red-700 cursor-pointer">
                                         <Image
                                             src="/dashboardIcons/delete.svg"
                                             width={24}
                                             height={24}
-                                            alt="icon"
+                                            alt="delete icon"
                                         />
                                     </button>
                                 </td>
@@ -250,6 +255,11 @@ const KnowledgePage = () => {
 };
 
 export default KnowledgePage;
+
+
+
+
+
 
 
 
